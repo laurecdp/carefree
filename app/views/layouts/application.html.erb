@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <%= render 'shared/topbar' %>
+    <%= render 'shared/topbar' unless request.fullpath=='/'%>
     <%= render 'shared/flashes' %>
 
     <%= yield %>

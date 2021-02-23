@@ -1,18 +1,23 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+.nav-link {
+  margin: 10px 20px;
+}
+
+.dropdown {
+  margin-top: 18px;
 }
 
 .search-form-control {
   position: relative;
+  margin: 20px 50px;
 }
 
 .search-form-control .btn {
@@ -33,3 +38,12 @@
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+.fa-user-nurse {
+  font-size: 28px;
+}
+
+.fa-user-nurse:hover {
+  cursor: pointer;
+}
+
