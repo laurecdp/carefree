@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+
+csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
+filepath    = './db/open-ccam0.csv'
+
+CSV.foreach(filepath, csv_options) do |row|
+  p row[7], row[11], row[12]
+end
