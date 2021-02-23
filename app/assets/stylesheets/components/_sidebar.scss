@@ -2,7 +2,6 @@
 .sidebar {
   background-color: white;
   height: 100%;
-  width: 280px;
   position: fixed;
   font-size: 16px;
   border-right: 1px solid lightgrey;
@@ -33,5 +32,13 @@
 .button {
   display: flex;
   justify-content: flex-end;
+}
+
+.sidebar span {
+  display: none;
+}
+
+.sidebar.expanded span {
+  display: inline-block;
 }
 
