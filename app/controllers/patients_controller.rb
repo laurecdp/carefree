@@ -10,7 +10,9 @@ class PatientsController < ApplicationController
   end
 
   def show
+    @action = Action.find(params[:id])
     @patient = Patient.find(params[:id])
+    @patient.action = @action
     authorize @patient
   end
 

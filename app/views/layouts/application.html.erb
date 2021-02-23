@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <%= render 'shared/topbar' unless request.fullpath=='/' || '/sign_in' %>
+    <%= render 'shared/topbar' unless request.fullpath=='/' && '/sign_in' %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/sidebar' unless request.fullpath=='/' %>
+    <%= render 'shared/sidebar' unless request.fullpath=='/' && '/sign_in' %>
 
     <%= yield %>
   </body>

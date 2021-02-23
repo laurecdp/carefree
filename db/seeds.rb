@@ -21,14 +21,14 @@ puts 'Destroying users'
 
 puts 'Creating Users'
 
-@user1 = User.new(email: 'nastasia@gmail.com', password: '123456')
-@user1.save!
-@user2 = User.new(email: 'manon@gmail.com', password: '123456')
-@user2.save!
-@user3 = User.new(email: 'laure@gmail.com', password: '123456')
-@user3.save!
-@user4 = User.new(email: 'sami@gmail.com', password: '123456')
-@user4.save!
+user1 = User.new(email: 'nastasia@gmail.com', password: '123456')
+user1.save!
+user2 = User.new(email: 'manon@gmail.com', password: '123456')
+user2.save!
+user3 = User.new(email: 'laure@gmail.com', password: '123456')
+user3.save!
+user4 = User.new(email: 'sami@gmail.com', password: '123456')
+user4.save!
 puts "#{User.all.length} users created"
 
 #---------------------------CSV parsing----------------------------#
@@ -49,10 +49,10 @@ end
 
 puts 'Creating Patients'
 
-@patient1 = Patient.new(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: '23 Février 2021', nss:'269054958815787', description: '', number_of_weeks: '9 month')
-@patient2 = Patient.new(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: '1 Mars 2021', nss:'269055968916790', description: '', number_of_weeks: '8 month')
-@patient1.save!
-@patient2.save!
+patient1 = Patient.new(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: '23 Février 2021', nss:'269054958815787', description: '', number_of_weeks: '9 month')
+patient2 = Patient.new(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: '1 Mars 2021', nss:'269055968916790', description: '', number_of_weeks: '8 month')
+patient1.save!
+patient2.save!
 
 
 puts "#{Patient.all.length} patients created"
