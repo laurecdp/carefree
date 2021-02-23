@@ -1,0 +1,37 @@
+
+.sidebar {
+  background-color: white;
+  height: 100%;
+  width: 280px;
+  position: fixed;
+  font-size: 16px;
+  border-right: 1px solid lightgrey;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-top: 100px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar li {
+  padding-bottom: 16px;
+}
+
+.fas {
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+  padding: 8px 16px;
+  background-color: white;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
