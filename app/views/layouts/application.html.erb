@@ -13,7 +13,7 @@
 
   <body>
 
-    <%= render 'shared/topbar' unless request.fullpath=='/'%>
+    <%= render 'shared/topbar' unless request.fullpath=='/' || '/sign_in' %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>

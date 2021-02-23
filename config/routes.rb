@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard'
+  get '/login', to: 'pages#login'
   resources :actions, only: [:new, :create, :edit, :update]
   resources :patients, only: [:new, :create, :index, :edit, :update, :show]
 
