@@ -14,6 +14,8 @@
   </head>
 
   <body>
+
+    <%= render 'shared/topbar' unless request.fullpath=='/'%>
     <%= render 'shared/flashes' %>
     <%= render 'shared/sidebar' unless request.fullpath=='/' %>
 
