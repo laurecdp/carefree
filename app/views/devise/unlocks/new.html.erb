@@ -6,13 +6,14 @@
 
   <div class="form-inputs">
     <%= f.input :email,
+                label: "Addresse électronique"
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Resend unlock instructions" %>
+    <%= f.button :submit, "Renvoyer les instructions de déverouillage" %>
   </div>
 <% end %>
 

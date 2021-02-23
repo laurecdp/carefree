@@ -5,13 +5,14 @@
 
   <div class="form-inputs">
     <%= f.input :email,
+                label: "Adresse électronique",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+    <%= f.button :submit, "Envoyer les instruction de reinitialisation de mot de passe" %>
   </div>
 <% end %>
 
