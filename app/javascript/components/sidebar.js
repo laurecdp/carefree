@@ -1,7 +1,11 @@
-// const sidebar = () => {
-//   $('.openbtn').click(function(){
-//     $('.sidebar').toggleClass('expanded')
-//   })
-// }
+const sidebar = () => {
+  const button = document.querySelector(".sidebar .button");
+  const sidebar = document.querySelector(".sidebar");
+  if (sidebar) {
+    button.addEventListener("click", (event) => {
+      sidebar.classList.toggle("expanded");
+    });
+  }
+}
 
-// export { sidebar }
+export { sidebar }
