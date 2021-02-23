@@ -5,6 +5,5 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @patients = policy
   end
 end
