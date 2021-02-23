@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url(<%= image_path "undraw_medicine_b1ol.svg" %>);">
+  <div class="container">
+      <h1>Carefree est le nouveau tableau de bord indispensable à toutes les sages-femmes!</h1>
+      <p>Centraliser l'ensemble de vos activités quotidiennes sur une seule interface</p>
+      <%= link_to "Connexion", new_user_session_path, class: "btn btn-primary" %>
+  </div>
+</div>
