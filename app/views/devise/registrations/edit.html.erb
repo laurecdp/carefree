@@ -11,25 +11,28 @@
     <% end %>
 
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                label: "Mot de passe",
+                hint: "laissez le champ vide si vous ne voulez pas le changer",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                label: "Confirmer le mot de passe",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                label: "Mot de passe actuel",
+                hint: "nous avons besoin de votre mot de passe actuel pour confirmer",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Mettre à jour" %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= link_to "Supprimez mon compte", registration_path(resource_name), data: { confirm: "Êtes vous sûre?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Retour", :back %>
