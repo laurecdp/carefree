@@ -5,11 +5,14 @@
   position: fixed;
   font-size: 16px;
   border-right: 1px solid lightgrey;
+  font-family: Libre Franklin;
+  font-weight: 200;
 }
 
 .sidebar ul {
   list-style-type: none;
   padding-top: 100px;
+  padding-right: 24px;
 }
 
 .sidebar a {
@@ -18,27 +21,58 @@
 }
 
 .sidebar li {
-  padding-bottom: 16px;
+  padding: 16px;
 }
 
-.fas {
+.fas.fa-bars {
+  color: grey;
+  padding-top: 10px;
+}
+
+.sidebar .icone {
   font-size: 20px;
   cursor: pointer;
-  color: black;
-  padding: 8px 16px;
   background-color: white;
+  padding-right: 16px;
+  color: grey;
+  width: 42px;
+  display: inline-block;
+  text-align: center;
+}
+
+.sidebar .action:hover {
+  background-color: $pink;
+  .icone {
+    background-color: $pink;
+  }
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
 }
 
 .button {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  padding-top: 8px;
+  cursor: pointer;
 }
 
 .sidebar span {
   display: none;
+
 }
 
-.sidebar.expanded span {
+.sidebar.expanded .label {
   display: inline-block;
 }
+
+.sidebar.expanded .button {
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+
+
 
