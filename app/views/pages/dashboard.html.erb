@@ -1,5 +1,38 @@
-<div class="container"> 
+<div class="container-dashboard"> 
 
   <h1>Hello <%= current_user.email %>! 🙂</h1>
+
+  <div class="container-dashboard">
+
+    <div class="row row-cols-3">
+     <div class="buttons">
+      
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action">Admission</button> 
+      <%end%> 
+
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action">Consultation</button> 
+      <%end%>
+
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action">Accouchement</button> 
+      <%end%>
+
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action">Hospitalisation</button> 
+      <%end%>
+
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action"> Ordonnances </button> 
+      <%end%>
+
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action"> Impressions </button> 
+      <%end%>
+    
+      </div>
+     </div>
+  </div>
 
 </div>
