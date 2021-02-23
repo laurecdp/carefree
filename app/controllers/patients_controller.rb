@@ -1,8 +1,9 @@
 class PatientsController < ApplicationController
   def index
+    @patients = Patient.all
     @patients = policy_scope(Patient).order(created_at: :desc)
-    if params[:query]
-      @patients = Patient.search_by_name(params[:query])
+    if params[:search][:query]
+      @patients = Patient.search_by_last_name_and_first_name(params[:search][:query])
     else
       @patients = policy_scope(Patient).order(created_at: :desc)
     end
