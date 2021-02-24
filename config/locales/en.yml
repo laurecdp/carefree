@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+  # dates:
+  #   formats:
+  #   default: "%d-%m-%Y"
+  #   short: "%d %b"
+  #   long: "%d %B, %Y"
+  #   month_names: [~, Janvier, Février, Marcs, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Decembre]
+  #   abbr_month_names: [~, Jan, Fev, Mar, Avr, Mai, Juin, Juil, Août, Sep, Oct, Nov, Dec]
+  #    order:
+  #     - :day
+  #     - :month
+  #     - :year
