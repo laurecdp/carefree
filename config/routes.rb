@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard'
   get '/login', to: 'pages#login'
-  resources :actions, only: [:new, :create, :edit, :update]
+  resources :labours, only: [:new, :create, :edit, :update]
   resources :patients, only: [:new, :create, :index, :edit, :update, :show]
   resources :babies, only: [:new, :create, :index, :show]
 

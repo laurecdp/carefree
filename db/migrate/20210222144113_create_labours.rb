@@ -1,8 +1,7 @@
-class CreateActions < ActiveRecord::Migration[6.0]
+class CreateLabours < ActiveRecord::Migration[6.0]
   def change
-    create_table :actions do |t|
+    create_table :labours do |t|
       t.string :name
-
       t.datetime :labour_start_at
       t.datetime :labour_end_at
       t.string :labour_start, array: true, default: []

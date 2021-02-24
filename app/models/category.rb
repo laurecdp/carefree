@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
-  has_many :actions
-  
+
+  has_many :labours
+
   CATEGORIES = ['Naissance', 'Hospitalisation', 'Admission', 'Consultation', 'Ordonnance']
   validate :each_name
 
@@ -9,5 +10,4 @@ class Category < ApplicationRecord
   def each_name
     name.map { |cat| CATEGORIES.include?(cat) }.all?
   end
-
 end

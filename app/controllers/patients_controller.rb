@@ -10,8 +10,9 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @action = Action.new
+    @labour = Labour.find(params[:id])
     @patient = Patient.find(params[:id])
+    @patient.labour = @labour
     authorize @patient
   end
 
