@@ -44,9 +44,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_153904) do
   create_table "babies", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.date "birth_date"
-    t.boolean "alive", default: true
-    t.text "description"
+    t.datetime "birth_date"
     t.bigint "patient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -63,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_153904) do
     t.string "name"
     t.string "code"
     t.float "price"
-    t.text "description"
+    t.text "diagnostic"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
