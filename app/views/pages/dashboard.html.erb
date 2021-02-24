@@ -1,4 +1,4 @@
-<div class="container-dashboard"> 
+<div class="container-dashboard">
 
   <h1>Hello <%= current_user.email %>! 🙂</h1>
 
@@ -7,7 +7,7 @@
   <div class="container">
 
     <div class="card-dashboard">
-     
+
       <div class="card-category-dashboard">
         <p> <%= current_user.email %> </p>
       </div>
@@ -23,15 +23,15 @@
     </div>
 
      <div class="buttons">
-      
+
       <%= link_to(dashboard_path) do %>
         <button type="button" class="button-action">
         <i class="fas fa-user-plus fa-3x"></i>
         <br>
         <br>
         <p> Admission </p>
-        </button> 
-      <%end%> 
+        </button>
+      <%end%>
 
       <%= link_to(dashboard_path) do %>
         <button type="button" class="button-action">
@@ -39,17 +39,15 @@
         <br>
         <br>
         <p> Consultation </p>
-        </button> 
+        </button>
       <%end%>
 
-      <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">
+        <button type="button" class="button-action" id="baby-card">
         <i class="fas fa-baby fa-3x"></i>
         <br>
         <br>
         <p> Accouchement </p>
-        </button> 
-      <%end%>
+        </button>
 
       <%= link_to(dashboard_path) do %>
         <button type="button" class="button-action">
@@ -57,7 +55,7 @@
         <br>
         <br>
         <p> Hospitalisation </p>
-        </button> 
+        </button>
       <%end%>
 
       <%= link_to(dashboard_path) do %>
@@ -66,7 +64,7 @@
         <br>
         <br>
         <p> Ordonnance </p>
-        </button> 
+        </button>
       <%end%>
 
       <%= link_to(dashboard_path) do %>
@@ -75,11 +73,11 @@
         <br>
         <br>
         <p> Impression </p>
-        </button> 
+        </button>
       <%end%>
-    
+
     </div>
 
   </div>
-
+<%= render 'shared/form_popup' unless request.fullpath == "/" %>
 </div>

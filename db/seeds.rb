@@ -1,20 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 require 'csv'
 
-Category.destroy_all
-puts 'Destroying categories'
 
-=begin 
 Action.destroy_all
-puts 'Destroying actions' 
-=end
+puts 'Destroying actions'
 
 Code.destroy_all
 puts 'Destroying codes'
@@ -24,6 +12,9 @@ puts 'Destroying patients'
 
 User.destroy_all
 puts 'Destroying users'
+
+Category.destroy_all
+puts 'Destroying categories'
 
 #----------------------------#
 
@@ -98,3 +89,37 @@ naissance = Action.create(patient: patient1, user: annick, category: naissance, 
 puts "#{Action.all.length} actions created"
 
 puts 'done seeding'
+
+#----------------------------#
+
+puts 'Creating Categories'
+
+category1 = Category.new(name: 'Admission')
+category1.save!
+category2 = Category.new(name: 'Consultation')
+category2.save!
+category3 = Category.new(name: 'Hospitalisation')
+category3.save!
+category4 = Category.new(name: 'Naissance')
+category4.save!
+category5 = Category.new(name: 'Ordonnance')
+category5.save!
+
+puts "#{Category.all.length} categories created"
+
+#----------------------------#
+
+puts 'Creating Actions'
+
+action1 = Action.new(patient: patient1, user: user1, category: category4)
+action1.save!
+action2 = Action.new(patient: patient1, user: user3, category: category1)
+action2.save!
+action3 = Action.new(patient: patient1, user: user2, category_id: category2)
+action3.save!
+
+puts "#{Action.all.length} actions created"
+
+
+
+

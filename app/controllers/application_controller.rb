@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
   before_action :store_user_location!, if: :storable_location?
+
   include Pundit
 
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -12,6 +13,13 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def after_sign_in_path_for(user)
+    dashboard_path
+  end
+
+  def set_locale
+    I18n.locale = params.fetch(:locale, I18n.default_locale).to_sym
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
@@ -30,3 +38,4 @@ class ApplicationController < ActionController::Base
     store_location_for(:user, request.fullpath)
   end
 end
+

@@ -9,4 +9,5 @@ class Category < ApplicationRecord
   def each_name
     name.map { |cat| CATEGORIES.include?(cat) }.all?
   end
+
 end
