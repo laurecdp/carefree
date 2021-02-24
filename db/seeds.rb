@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'csv'
+Action.destroy_all
+puts 'Destroying actions'
+
+Category.destroy_all
+puts 'Destroying categories'
 
 Code.destroy_all
 puts 'Destroying codes'
@@ -21,14 +26,16 @@ puts 'Destroying users'
 
 puts 'Creating Users'
 
-user1 = User.new(email: 'nastasia@gmail.com', password: '123456')
-user1.save!
-user2 = User.new(email: 'manon@gmail.com', password: '123456')
-user2.save!
-user3 = User.new(email: 'laure@gmail.com', password: '123456')
-user3.save!
-user4 = User.new(email: 'sami@gmail.com', password: '123456')
-user4.save!
+nastasia = User.new(first_name: 'Nastasia', email: 'nastasia@gmail.com', password: '123456')
+nastasia.save!
+manon = User.new(first_name: 'Manon', email: 'manon@gmail.com', password: '123456')
+manon.save!
+laure = User.new(first_name: 'Laure', email: 'laure@gmail.com', password: '123456')
+laure.save!
+sami = User.new(first_name: 'Sami', email: 'sami@gmail.com', password: '123456')
+sami.save!
+annick = User.create(first_name: 'Annick', email: 'annick@gmail.com', password: '123456' )
+
 puts "#{User.all.length} users created"
 
 #---------------------------CSV parsing----------------------------#
