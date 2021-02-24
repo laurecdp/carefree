@@ -7,7 +7,7 @@
   <div class="container">
 
     <div class="card-dashboard">
-     
+
       <div class="card-category-dashboard">
         <p> <%= current_user.email %> </p>
       </div>
@@ -30,8 +30,8 @@
         <br>
         <br>
         <p> Admission </p>
-        </button> 
-      <%end%> 
+        </button>
+      <%end%>
 
       <%= link_to(dashboard_path) do %>
         <button type="button" class="button-action">
@@ -39,17 +39,15 @@
         <br>
         <br>
         <p> Consultation </p>
-        </button> 
+        </button>
       <%end%>
 
-      <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">
+        <button type="button" class="button-action" id="baby-card">
         <i class="fas fa-baby fa-3x"></i>
         <br>
         <br>
         <p> Accouchement </p>
-        </button> 
-      <%end%>
+        </button>
 
       <%= link_to(dashboard_path) do %>
         <button type="button" class="button-action">
@@ -57,7 +55,7 @@
         <br>
         <br>
         <p> Hospitalisation </p>
-        </button> 
+        </button>
       <%end%>
 
       <%= link_to(dashboard_path) do %>
@@ -66,7 +64,7 @@
         <br>
         <br>
         <p> Ordonnance </p>
-        </button> 
+        </button>
       <%end%>
 
       <%= link_to(dashboard_path) do %>
@@ -75,9 +73,9 @@
         <br>
         <br>
         <p> Impression </p>
-        </button> 
+        </button>
       <%end%>
-    
+
     </div>
 
   </div>
