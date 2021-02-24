@@ -1,4 +1,4 @@
-<div class="container-dashboard"> 
+<div class="container-dashboard">
 
   <h1>Hello <%= current_user.email %>! 🙂</h1>
 
@@ -23,7 +23,7 @@
     </div>
 
      <div class="buttons">
-      
+
       <%= link_to(dashboard_path) do %>
         <button type="button" class="button-action">
         <i class="fas fa-user-plus fa-3x"></i>
@@ -81,5 +81,5 @@
     </div>
 
   </div>
-
+<%= render 'shared/form_popup' unless request.fullpath == "/" %>
 </div>

@@ -27,8 +27,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { sidebar } from '../components/sidebar';
+import { popup } from '../components/formpopup';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   sidebar();
+  popup();
 });

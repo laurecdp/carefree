@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="form-popup">
+    <div class="d-flex justify-content-end">
+      <%= simple_form_for @baby do |f| %>
+        <%= f.input :first_name, label: "Prénom" %>
+        <%= f.input :last_name,  label: "Nom de Famille" %>
+        <%= f.input :birth_date %>
+        <%= f.input :description %>
+        <%= f.submit 'Enregister naissance 👶' %>
+      <% end %>
+    </div>
+  </div>
+</div>
