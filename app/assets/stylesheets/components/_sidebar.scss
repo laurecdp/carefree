@@ -1,12 +1,13 @@
 
 .sidebar {
   background-color: white;
-  height: 100%;
-  position: fixed;
+  height: 100vh;
   font-size: 16px;
   border-right: 1px solid lightgrey;
   font-family: Libre Franklin;
   font-weight: 200;
+  position: sticky;
+  top: 0;
 }
 
 .sidebar ul {

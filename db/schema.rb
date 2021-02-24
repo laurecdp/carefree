@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 2021_02_22_150903) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    
+    t.string "startoflabour"
+    t.string "labourdate"
+    t.string "drugslabour"
+    t.string "endoflabour"
+    t.string "anaesthesia"
+
     t.index ["category_id"], name: "index_actions_on_category_id"
     t.index ["patient_id"], name: "index_actions_on_patient_id"
     t.index ["user_id"], name: "index_actions_on_user_id"
