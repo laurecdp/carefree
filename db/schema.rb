@@ -45,6 +45,22 @@ ActiveRecord::Schema.define(version: 2021_02_23_153904) do
     t.string "first_name"
     t.string "last_name"
     t.datetime "birth_date"
+    t.boolean "alive", default: true
+    t.string "diagnostic"
+    t.float "weight"
+    t.float "heigh"
+    t.float "head_circumference"
+    t.string "sex"
+    t.boolean "monitoring", default: false
+    t.string "monitoring_options", default: [], array: true
+    t.boolean "intensivecare", default: false
+    t.string "intensivecare_options", default: [], array: true
+    t.boolean "malformation", default: false
+    t.boolean "infectiouscontext", default: false
+    t.string "infectiouscontext_options", default: [], array: true
+    t.string "exit_room"
+    t.string "breastfeeding"
+    t.string "pathologies", default: [], array: true
     t.bigint "patient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_153904) do
     t.string "name"
     t.string "code"
     t.float "price"
-    t.text "diagnostic"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

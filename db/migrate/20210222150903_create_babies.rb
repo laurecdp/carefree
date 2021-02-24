@@ -17,7 +17,6 @@ class CreateBabies < ActiveRecord::Migration[6.0]
       t.boolean :malformation, default: false
       t.boolean :infectiouscontext, default: false
       t.string :infectiouscontext_options, array: true, default: []
-      t.boolean :alive, default: true
       t.string :exit_room
       t.string :breastfeeding
       t.string :pathologies, array: true, default: []
