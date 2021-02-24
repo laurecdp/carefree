@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/login', to: 'pages#login'
   resources :labours, only: [:new, :create, :edit, :update]
   resources :patients, only: [:new, :create, :index, :edit, :update, :show]
+  resources :babies, only: [:new, :create, :index, :show]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

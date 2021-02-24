@@ -1,7 +1,7 @@
 class Baby < ApplicationRecord
   belongs_to :patient
 
-  SEX = "('masculin', 'féminin', 'indéterminé')"
+  SEX = ['masculin', 'féminin', 'indéterminé']
   validates :sex, inclusion: { in: SEX }
 
   MONITORINGOPTIONS = ['Fréquence cardiaque', 'Mise en incubateur', 'Saturation', 'Glycémie']
@@ -12,9 +12,6 @@ class Baby < ApplicationRecord
 
   INFECTIOUSCONTEXTOPTIONS = ['antibiotiques à la naissance', 'prélèvements bactériologiques','liquide amniotique teinté','fièvre maternelle > 38°', 'infection maternelle']
   validates :infectiouscontext_options, inclusion: { in: INFECTIOUSCONTEXTOPTIONS }
-
-  MENSURATIONS = ['Poids', 'Taille', 'Périmère cranien']
-  validates :mensurations, inclusion: { in: MENSURATIONS }
 
   EXITROOM = ['Avec sa mère', 'Décès', 'Transfert immédiat', 'Mutation intra-muros']
   validates :exit_room, inclusion: { in: EXITROOM }

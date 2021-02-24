@@ -1,13 +1,69 @@
 <div class= "container">
-  <h1>C'est un nouvelle naissance</h1>
-  <div class="card">
-    <h2>Nom: <%= @patient.first_name %></h2>
-    <h2>Prénom: <%= @patient.last_name %></h2>
-    <h2>Age: <%= @patient.age %></h2>
-    <h3>Numéro de sécurité social: <%= @patient.nss %></h3>
-    <p>Nombre de semaine: <%= @patient.number_of_weeks %> mois</p>
+  <div class="title"><h2>Nouvelle naissance</h2></div>
+  <div class="cards-show">
+    <div class="card-patient">
+      <div class="card-title">
+        <h3>Infos Patient</h3>
+      </div>
+      <ul>
+        <li>
+          <%= @patient.first_name %>
+          <%= @patient.last_name %>
+        </li>
+        <li><%= @patient.age %> ans</li>
+        <li><%= @patient.birth_date %></li>
+        <li><%= @patient.nss %></li>
+        <li><%= @patient.description %></li>
+        <li><%= @patient.number_of_weeks %> semaines</li>
+      </ul>
+
+    </div>
+
+    <div class="card-patient">
+      <div class="card-title"><h3>Important</h3></div>
+    </div>
   </div>
-  <div class="card-highlights">
-    <h2>Rien à signaler</h2>
+<<<<<<< HEAD
+=======
+
+  <div class="form_wrapper">
+    <%= simple_form_for(@action) do |f| %>
+      <div class="part1">
+        <%#= f.input :name %>
+        <%#= f.input :code %>
+        <%#= f.input :price %>
+        <%#= f.input :description %>
+        <%#= f.submit %>
+      </div>
+      <div class="part2">
+        <%#= f.input :startoflabour %>
+        <%#= f.input :code %>
+        <%#= f.input :price %>
+        <%#= f.input :description %>
+        <%#= f.submit %>
+      </div>
+      <div class="part3">
+        <%#= f.input :labourdate %>
+        <%#= f.input :code %>
+        <%#= f.input :price %>
+        <%#= f.input :description %>
+        <%#= f.submit %>
+      </div>
+      <div class="part4">
+        <%#= f.input :drugslabour %>
+        <%#= f.input :code %>
+        <%#= f.input :price %>
+        <%#= f.input :description %>
+        <%#= f.submit %>
+      </div>
+      <div class="part5">
+        <%#= f.input :endoflabour %>
+        <%#= f.input :code %>
+        <%#= f.input :price %>
+        <%#= f.input :description %>
+        <%#= f.submit %>
+      </div>
+    <% end %>
   </div>
+>>>>>>> e58100f319ee3ca1469b54f088739f2d735c49f3
 </div>

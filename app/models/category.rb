@@ -1,6 +1,13 @@
 class Category < ApplicationRecord
+
   has_many :labours
 
-  CATEGORIES = %w(Accouchement Hospitalisation Admission Consultation Ordonnance)
-  validates :categories, inclusion: { in: CATEGORIES }
+  CATEGORIES = ['Naissance', 'Hospitalisation', 'Admission', 'Consultation', 'Ordonnance']
+  validate :each_name
+
+  private
+
+  def each_name
+    name.map { |cat| CATEGORIES.include?(cat) }.all?
+  end
 end
