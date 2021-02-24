@@ -2,37 +2,84 @@
 
   <h1>Hello <%= current_user.email %>! 🙂</h1>
 
-  <div class="container-dashboard">
+</div>
 
-    <div class="row row-cols-3">
+  <div class="container">
+
+    <div class="card-dashboard">
+     
+      <div class="card-category-dashboard">
+        <p> <%= current_user.email %> </p>
+      </div>
+
+      <div class="card-category-dashboard">
+        <p> <%= current_user.email %> </p>
+      </div>
+
+      <div class="card-category-dashboard">
+        <p> <%= current_user.email %>  </p>
+      </div>
+
+    </div>
+
      <div class="buttons">
       
       <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">Admission</button> 
+        <button type="button" class="button-action">
+        <i class="fas fa-user-plus fa-3x"></i>
+        <br>
+        <br>
+        <p> Admission </p>
+        </button> 
       <%end%> 
 
       <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">Consultation</button> 
+        <button type="button" class="button-action">
+        <i class="fas fa-stethoscope fa-3x"></i>
+        <br>
+        <br>
+        <p> Consultation </p>
+        </button> 
       <%end%>
 
       <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">Accouchement</button> 
+        <button type="button" class="button-action">
+        <i class="fas fa-baby fa-3x"></i>
+        <br>
+        <br>
+        <p> Accouchement </p>
+        </button> 
       <%end%>
 
       <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">Hospitalisation</button> 
+        <button type="button" class="button-action">
+        <i class="fas fa-clinic-medical fa-3x"></i>
+        <br>
+        <br>
+        <p> Hospitalisation </p>
+        </button> 
       <%end%>
 
       <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action"> Ordonnances </button> 
+        <button type="button" class="button-action">
+        <i class="fas fa-prescription-bottle-alt fa-3x"></i>
+        <br>
+        <br>
+        <p> Ordonnance </p>
+        </button> 
       <%end%>
 
       <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action"> Impressions </button> 
+        <button type="button" class="button-action">
+        <i class="fas fa-print fa-3x"></i>
+        <br>
+        <br>
+        <p> Impression </p>
+        </button> 
       <%end%>
     
-      </div>
-     </div>
+    </div>
+
   </div>
 
 </div>
