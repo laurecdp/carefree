@@ -11,3 +11,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.main-container {
+  display: flex;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+

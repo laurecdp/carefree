@@ -8,6 +8,9 @@
 
 require 'csv'
 
+Action.destroy_all
+puts 'Destroying actions'
+
 Code.destroy_all
 puts 'Destroying codes'
 
@@ -16,6 +19,9 @@ puts 'Destroying patients'
 
 User.destroy_all
 puts 'Destroying users'
+
+Category.destroy_all
+puts 'Destroying categories'
 
 #----------------------------#
 
@@ -58,3 +64,37 @@ patient2.save!
 puts "#{Patient.all.length} patients created"
 
 puts 'done seeding'
+
+#----------------------------#
+
+puts 'Creating Categories'
+
+category1 = Category.new(name: 'Admission')
+category1.save!
+category2 = Category.new(name: 'Consultation')
+category2.save!
+category3 = Category.new(name: 'Hospitalisation')
+category3.save!
+category4 = Category.new(name: 'Naissance')
+category4.save!
+category5 = Category.new(name: 'Ordonnance')
+category5.save!
+
+puts "#{Category.all.length} categories created"
+
+#----------------------------#
+
+puts 'Creating Actions'
+
+action1 = Action.new(patient: patient1, user: user1, category: category4)
+action1.save!
+action2 = Action.new(patient: patient1, user: user3, category: category1)
+action2.save!
+action3 = Action.new(patient: patient1, user: user2, category_id: category2)
+action3.save!
+
+puts "#{Action.all.length} actions created"
+
+
+
+
