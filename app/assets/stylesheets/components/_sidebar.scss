@@ -12,7 +12,7 @@
 .sidebar ul {
   list-style-type: none;
   padding-top: 100px;
-  padding-right: 24px;
+  padding-left: 16px;
 }
 
 .sidebar a {
@@ -40,14 +40,62 @@
   text-align: center;
 }
 
-.sidebar .action:hover {
+.sidebar .action1:hover {
   background-color: $pink;
   .icone {
     background-color: $pink;
+    color: white;
+  }
+  .label {
+    color: white;
   }
 }
 
-.action {
+.sidebar .action2:hover {
+  background-color: $teal;
+  .icone {
+    background-color: $teal;
+    color: white;
+  }
+  .label {
+    color: white;
+  }
+}
+
+.sidebar .action3:hover {
+  background-color: $coral;
+  .icone {
+    background-color: $coral;
+    color: white;
+  }
+  .label {
+    color: white;
+  }
+}
+
+.sidebar .action4:hover {
+  background-color: $navy;
+  .icone {
+    background-color: $navy;
+    color: white;
+  }
+  .label {
+    color: white;
+  }
+}
+
+.sidebar .action5:hover {
+  background-color: $teal;
+  .icone {
+    background-color: $teal;
+    color: white;
+  }
+  .label {
+    color: white;
+  }
+}
+
+.action1, .action2, .action3, .action4, .action5 {
   display: flex;
   align-items: center;
   border-radius: 8px;
@@ -62,7 +110,6 @@
 
 .sidebar span {
   display: none;
-
 }
 
 .sidebar.expanded .label {
