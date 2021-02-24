@@ -1,5 +1,5 @@
 class Patient < ApplicationRecord
-  has_many :actions
+  has_many :labours
   has_many :babies, dependent: :destroy
 
   include PgSearch::Model

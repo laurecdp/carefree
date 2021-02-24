@@ -1,5 +1,5 @@
-class Action < ApplicationRecord
-  has_many :action_codes
+class Labour < ApplicationRecord
+  has_many :labour_codes
   belongs_to :patient
   belongs_to :category
   belongs_to :user
@@ -14,7 +14,7 @@ class Action < ApplicationRecord
   validates :labour_drugs, inclusion: { in: LABOUR_DRUGS }
 
   LABOUR_END = ['dirigé', 'naturelle', 'compléte', 'incomplete']
-  validates :labour_end_at, inclusion: { in: LABOUR_END_AT }
+  validates :labour_end_at, inclusion: { in: LABOUR_END }
 
   ANAESTHESIA_CATEGORY = ['anesthésie avant la naissance', 'anesthésie loco-régionale', 'anesthésie générale', 'anesthésie locale', 'moment de l\'anestésie', 'complication de l\'anesthésie']
   validates :anaesthesia_category, inclusion: { in: ANAESTHESIA_CATEGORY }

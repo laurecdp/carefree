@@ -36,7 +36,7 @@ puts "#{User.all.length} users created"
 csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
 filepath    = './db/open-ccam0.csv'
 
-CSV.foreach(filepath, csv_options) do |row|
+CSV.foreach(filepath, csv_labour) do |row|
   code = Code.new(
     name: row[3],
     code: row[0],
