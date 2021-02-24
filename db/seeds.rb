@@ -38,14 +38,12 @@ filepath    = './db/open-ccam0.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
   code = Code.new(
-    name: row[7],
-    code: row[11],
-    price: row[12],
+    name: row[3],
+    code: row[0],
+    price: row[4],
     description: " ",
   )
 end
-
-#----------------------------#
 
 puts 'Creating Patients'
 
