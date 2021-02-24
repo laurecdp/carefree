@@ -46,19 +46,18 @@ puts "#{User.all.length} users created"
 puts 'Creating Codes'
 
 csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
-filepath    = './db/open-ccam0.csv'
+filepath = './db/labour_unicode.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
-  code = Code.create(
+
+  code = Code.create!(
     name: row[3],
     code: row[0],
     price: row[4],
     diagnostic: " ",
-    category: ""
+    category: row[1]
   )
 end
-
-puts Code.first
 
 puts "#{Code.all.length} codes created"
 
@@ -79,7 +78,6 @@ puts "#{Patient.all.length} patients created"
 puts 'Creating Categories'
 
 admission = Category.create(name: 'Admission')
-puts admission
 
 consultation = Category.create(name: 'Consultation')
 
@@ -94,11 +92,8 @@ puts "#{Category.all.length} categories created"
 #----------------------------#
 puts 'Creating Actions'
 
-naissance = Action.create(patient: patient1, user: annick, category: naissance)
+naissance = Action.create(patient: patient1, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h', labour_start:  )
 
-accouchement = Action.create(patient: patient1, user: nastasia, category: naissance)
-
-césarienne = Action.create(patient: patient2, user: sami, category_id: naissance)
 
 puts "#{Action.all.length} actions created"
 
