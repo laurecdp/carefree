@@ -1,40 +1,21 @@
 <div class="form_wrapper">
     <%= simple_form_for(@labour) do |f| %>
       <div class="part1">
-        <%= f.input :name %>
-<<<<<<< HEAD
-        <%= f.input :labour_start, as: :select, collection: Action::LABOUR_START %>
-        <%= f.input :artificial_labour, as: :select, collection: Action::ARTIFICIAL_LABOUR %>
-        <%= f.input :labour_drugs, as: :select, collection: Action::LABOUR_DRUGS %>
+        <%= f.input :labour_start, label: 'Mode de début du travail', as: :select, collection: Labour::LABOUR_START %>
+        <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, collection: Labour::ARTIFICIAL_LABOUR %>
+        <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :select, collection: Labour::LABOUR_DRUGS %>
 
       </div>
       <div class="part2">
-        <%= f.input :labour_end, as: :select, collection: Action::LABOUR_END %>
-        <%= f.input :labour_complication, as: :radio_buttons, collection: ['oui', 'non'] %>
-        <%= f.input :labour_complication_type, as: :select, collection: Action::LABOUR_COMPLICATION_TYPE %>
-        <%= f.input :labour_actes, as: :select, collection: Action::LABOUR_ACTES %>
+        <%= f.input :labour_end, label: 'Délivrance', as: :select, collection: Labour::LABOUR_END %>
+        <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
+        <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :select, collection: Labour::LABOUR_COMPLICATION_TYPE %>
+        <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :select, collection: Labour::LABOUR_ACTES %>
       </div>
       <div class="part3">
-        <%= f.input :anaesthesia_category, as: :select, collection: Action::ANAESTHESIA_CATEGORY %>
-        <%= f.input :anaesthesia_general, as: :select, collection: Action::ANAESTHESIA_GENERAL %>
-        <%= f.input :labour_actes, as: :select, collection: Action::LABOUR_ACTES %>
-=======
-        <%= f.input :labour_start, as: :select, collection: Labour::LABOUR_START %>
-        <%= f.input :artificial_labour, as: :select, collection: Labour::ARTIFICIAL_LABOUR %>
-        <%= f.input :labour_drugs, as: :select, collection: Labour::LABOUR_DRUGS %>
-
-      </div>
-      <div class="part2">
-        <%= f.input :labour_end, as: :select, collection: Labour::LABOUR_END %>
-        <%= f.input :labour_complication, as: :radio_buttons, collection: ['oui', 'non'] %>
-        <%= f.input :labour_complication_type, as: :select, collection: Labour::LABOUR_COMPLICATION_TYPE %>
-        <%= f.input :labour_actes, as: :select, collection: Labour::LABOUR_ACTES %>
-      </div>
-      <div class="part3">
-        <%= f.input :anaesthesia_category, as: :select, collection: Labour::ANAESTHESIA_CATEGORY %>
-        <%= f.input :anaesthesia_general, as: :select, collection: Labour::ANAESTHESIA_GENERAL %>
-        <%= f.input :labour_actes, as: :select, collection: Labour::LABOUR_ACTES %>
->>>>>>> 2b37820af7d99b850f7aed4296c9e4dc48ddde8e
+        <%= f.input :anaesthesia_category, label: 'Type d\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_CATEGORY %>
+        <%= f.input :anaesthesia_general, label: 'Anésthésie générale', as: :select, collection: Labour::ANAESTHESIA_GENERAL %>
+        <%= f.input :labour_actes, label: 'Complication lors de la délivrance ', as: :select, collection: Labour::LABOUR_ACTES %>
       </div>
       <div class="part4">
 
