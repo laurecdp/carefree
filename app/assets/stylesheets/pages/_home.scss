@@ -1,32 +1,35 @@
 // Specific CSS for your home-page
-.banner {
-  background-size: cover;
+.wrapper.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  padding-top: 80px;
+  width: 100%;
+  z-index: 1;
+}
+
+.half {
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
-  padding: 150px 0;
-  height: 100vh;
+  height: 600px;
+  display: flex;
+  align-items: center;
 }
 
-hr {
-  visibility: hidden;
+.half h1 {
+  font-size: 40px;
+  font-weight: 600;
 }
 
-.banner h1 {
-  margin: 0;
-  color: black;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-  position: absolute;
-  top: 43vh;
-}
-
-.banner p {
+.half p {
+  margin-top: 10px;
   font-size: 20px;
-  color: black;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  position: absolute;
-  top: 53vh;
+  font-weight: 400;
+}
+
+.banner-2 h3{
+  text-align: center;
 }
 
 .banner-2 {
@@ -49,7 +52,6 @@ hr {
   background-position: center;
   padding: 50px 0;
   height: 60vh;
-  background-color: grey;
 }
 
 .cards {
