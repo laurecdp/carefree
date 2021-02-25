@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @categories = Category.all
     @baby = Baby.new
     @patients = Patient.all
     @patients = policy_scope(Patient).order(created_at: :desc)

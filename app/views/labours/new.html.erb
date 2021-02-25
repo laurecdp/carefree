@@ -4,6 +4,7 @@
     <%= simple_form_for(@labour) do |f| %>
       <div class="part1">
         <%= f.hidden_field :patient_id, :value => @patient.id %>
+        <%= f.hidden_field :category_id, :value => @category.id %>
         <%= f.input :labour_start_at %>
         <%= f.input :labour_start, collection:Labour::LABOUR_START,
                     label: 'Mode de début du travail',
