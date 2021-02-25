@@ -5,7 +5,7 @@ class CreateLabours < ActiveRecord::Migration[6.0]
       t.string :labour_start
       t.string :labour_end
       t.datetime :labour_end_at
-      t.string :artificial_labour,
+      t.string :artificial_labour
       t.string :labour_drugs, array: true, default: []
       t.string :anaesthesia_category
       t.string :anaesthesia_general
