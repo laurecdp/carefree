@@ -1,0 +1,618 @@
+[
+  {
+    "acte": "JQGA003",
+    "category": "césarienne",
+    "regroupement": "Acte d'obstétrique/Actes d'anesthésie",
+    "libelle": "Accouchement par césarienne au cours du travail, par laparotomie",
+    "tarif_secteur_1_adherent_optam_optam_co": 362.61
+  },
+  {
+    "acte": "YYYY028",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Guidage échographique",
+    "tarif_secteur_1_adherent_optam_optam_co": 34.97
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "JQGD010",
+    "category": "voie naturelle",
+    "regroupement": "Acte d'obstétrique",
+    "libelle": "Accouchement céphalique unique par voie naturelle, chez une primipare",
+    "tarif_secteur_1_adherent_optam_optam_co": 313.5
+  },
+  {
+    "acte": "ZCQM006",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "JKFA031",
+    "category": "Actes",
+    "regroupement": "Actes d'anesthésie/Actes de chirurgie",
+    "libelle": "Conisation du col de l'utérus",
+    "tarif_secteur_1_adherent_optam_optam_co": 93.42
+  },
+  {
+    "acte": "JQGA003",
+    "category": "césarienne",
+    "regroupement": "Acte d'obstétrique/Actes d'anesthésie",
+    "libelle": "Accouchement par césarienne au cours du travail, par laparotomie",
+    "tarif_secteur_1_adherent_optam_optam_co": 362.61
+  },
+  {
+    "acte": "JQGD012",
+    "category": "voie naturelle",
+    "regroupement": "Acte d'obstétrique",
+    "libelle": "Accouchement céphalique unique par voie naturelle, chez une multipare",
+    "tarif_secteur_1_adherent_optam_optam_co": 313.5
+  },
+  {
+    "acte": "JNJD002",
+    "category": "Actes",
+    "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
+    "libelle": "Évacuation d'un utérus gravide par aspiration et/ou curetage, au 1er trimestre de la grossesse",
+    "tarif_secteur_1_adherent_optam_optam_co": 57.6
+  },
+  {
+    "acte": "ZCQM006",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "ZCQM006",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "EJQM003",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des veines des membres inférieurs et des veines iliaques, pour recherche de thrombose veineuse profonde",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "ZCQM008",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "JKFA031",
+    "category": "Actes",
+    "regroupement": "Actes d'anesthésie/Actes de chirurgie",
+    "libelle": "Conisation du col de l'utérus",
+    "tarif_secteur_1_adherent_optam_optam_co": 93.42
+  },
+  {
+    "acte": "DGQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler de l'aorte abdominale, de ses branches viscérales, des artères iliaques et des artères des membres inférieurs",
+    "tarif_secteur_1_adherent_optam_optam_co": 76.59
+  },
+  {
+    "acte": "DGQM002",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler de l'aorte abdominale, de ses branches viscérales et des artères iliaques",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "ZCQM004",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen avec échographie-doppler des vaisseaux digestifs",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "JNJD002",
+    "category": "Actes",
+    "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
+    "libelle": "Évacuation d'un utérus gravide par aspiration et/ou curetage, au 1er trimestre de la grossesse",
+    "tarif_secteur_1_adherent_optam_optam_co": 57.6
+  },
+  {
+    "acte": "EBQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des artères cervicocéphaliques extracrâniennes, sans mesure de l'épaisseur de l'intima-média",
+    "tarif_secteur_1_adherent_optam_optam_co": 69.93
+  },
+  {
+    "acte": "DZQJ001",
+    "category": "voie naturelle",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler du cœur et des vaisseaux intrathoraciques, par voie œsophagienne [Échocardiographie-doppler transœsophagienne]",
+    "tarif_secteur_1_adherent_optam_optam_co": 143.08
+  },
+  {
+    "acte": "JAQJ001",
+    "category": "voie naturelle",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée de la vessie et échographie de la prostate et des vésicules séminales par voie rectale",
+    "tarif_secteur_1_adherent_optam_optam_co": 56.7
+  },
+  {
+    "acte": "JAQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée du petit bassin [pelvis] féminin",
+    "tarif_secteur_1_adherent_optam_optam_co": 69.93
+  },
+  {
+    "acte": "JAQJ001",
+    "category": "voie naturelle",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée de la vessie et échographie de la prostate et des vésicules séminales par voie rectale",
+    "tarif_secteur_1_adherent_optam_optam_co": 56.7
+  },
+  {
+    "acte": "BFQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Biométrie oculaire par échographie avec mesure des différents paramètres oculaires pour détermination de la puissance d'un implant",
+    "tarif_secteur_1_adherent_optam_optam_co": 33.22
+  },
+  {
+    "acte": "JQGA003",
+    "category": "césarienne",
+    "regroupement": "Acte d'obstétrique/Actes d'anesthésie",
+    "libelle": "Accouchement par césarienne au cours du travail, par laparotomie",
+    "tarif_secteur_1_adherent_optam_optam_co": 362.61
+  },
+  {
+    "acte": "DGQM002",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler de l'aorte abdominale, de ses branches viscérales et des artères iliaques",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "JDQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de la vessie et/ou de la prostate",
+    "tarif_secteur_1_adherent_optam_optam_co": 52.45
+  },
+  {
+    "acte": "ZCQM008",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "ZCQM010",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen et du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 74.1
+  },
+  {
+    "acte": "ZCQM004",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen avec échographie-doppler des vaisseaux digestifs",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "JAQM003",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale",
+    "tarif_secteur_1_adherent_optam_optam_co": 52.45
+  },
+  {
+    "acte": "EJQM003",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des veines des membres inférieurs et des veines iliaques, pour recherche de thrombose veineuse profonde",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "JAQM004",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée de la vessie",
+    "tarif_secteur_1_adherent_optam_optam_co": 52.45
+  },
+  {
+    "acte": "JQGA002",
+    "category": "césarienne",
+    "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
+    "libelle": "Accouchement par césarienne programmée, par laparotomie",
+    "tarif_secteur_1_adherent_optam_optam_co": 313.5
+  },
+  {
+    "acte": "DZQJ001",
+    "category": "voie naturelle",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler du cœur et des vaisseaux intrathoraciques, par voie œsophagienne [Échocardiographie-doppler transœsophagienne]",
+    "tarif_secteur_1_adherent_optam_optam_co": 143.08
+  },
+  {
+    "acte": "EBQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des artères cervicocéphaliques extracrâniennes, sans mesure de l'épaisseur de l'intima-média",
+    "tarif_secteur_1_adherent_optam_optam_co": 69.93
+  },
+  {
+    "acte": "JKFA031",
+    "category": "Actes",
+    "regroupement": "Actes d'anesthésie/Actes de chirurgie",
+    "libelle": "Conisation du col de l'utérus",
+    "tarif_secteur_1_adherent_optam_optam_co": 93.42
+  },
+  {
+    "acte": "EDQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des artères iliaques et des artères des membres inférieurs",
+    "tarif_secteur_1_adherent_optam_optam_co": 69.93
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "QZQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie de la peau, des ongles et/ou des tissus mous",
+    "tarif_secteur_1_adherent_optam_optam_co": 37.8
+  },
+  {
+    "acte": "JAQM004",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée de la vessie",
+    "tarif_secteur_1_adherent_optam_optam_co": 52.45
+  },
+  {
+    "acte": "JAQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée du petit bassin [pelvis] féminin",
+    "tarif_secteur_1_adherent_optam_optam_co": 69.93
+  },
+  {
+    "acte": "EJQM003",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des veines des membres inférieurs et des veines iliaques, pour recherche de thrombose veineuse profonde",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "ZCQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie-doppler des vaisseaux digestifs",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "QZQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie de la peau, des ongles et/ou des tissus mous",
+    "tarif_secteur_1_adherent_optam_optam_co": 37.8
+  },
+  {
+    "acte": "EJQM004",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des veines des membres inférieurs et des veines iliaques, sans marquage cutané",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "DGQM002",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler de l'aorte abdominale, de ses branches viscérales et des artères iliaques",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "EDQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des artères iliaques et des artères des membres inférieurs",
+    "tarif_secteur_1_adherent_optam_optam_co": 69.93
+  },
+  {
+    "acte": "ZCQM010",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen et du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 74.1
+  },
+  {
+    "acte": "BFQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Biométrie oculaire par échographie avec mesure des différents paramètres oculaires pour détermination de la puissance d'un implant",
+    "tarif_secteur_1_adherent_optam_optam_co": 33.22
+  },
+  {
+    "acte": "JDQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de la vessie et/ou de la prostate",
+    "tarif_secteur_1_adherent_optam_optam_co": 52.45
+  },
+  {
+    "acte": "EDQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des artères iliaques et des artères des membres inférieurs",
+    "tarif_secteur_1_adherent_optam_optam_co": 69.93
+  },
+  {
+    "acte": "ZCQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie-doppler des vaisseaux digestifs",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "PCQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie de muscle et/ou de tendon",
+    "tarif_secteur_1_adherent_optam_optam_co": 37.8
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "JQGD010",
+    "category": "voie naturelle",
+    "regroupement": "Acte d'obstétrique",
+    "libelle": "Accouchement céphalique unique par voie naturelle, chez une primipare",
+    "tarif_secteur_1_adherent_optam_optam_co": 313.5
+  },
+  {
+    "acte": "JDQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de la vessie et/ou de la prostate",
+    "tarif_secteur_1_adherent_optam_optam_co": 52.45
+  },
+  {
+    "acte": "JQGA002",
+    "category": "césarienne",
+    "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
+    "libelle": "Accouchement par césarienne programmée, par laparotomie",
+    "tarif_secteur_1_adherent_optam_optam_co": 313.5
+  },
+  {
+    "acte": "BFQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Biométrie oculaire par échographie avec mesure des différents paramètres oculaires pour détermination de la puissance d'un implant",
+    "tarif_secteur_1_adherent_optam_optam_co": 33.22
+  },
+  {
+    "acte": "YYYY028",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Guidage échographique",
+    "tarif_secteur_1_adherent_optam_optam_co": 34.97
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "JQGD012",
+    "category": "voie naturelle",
+    "regroupement": "Acte d'obstétrique",
+    "libelle": "Accouchement céphalique unique par voie naturelle, chez une multipare",
+    "tarif_secteur_1_adherent_optam_optam_co": 313.5
+  },
+  {
+    "acte": "DZQM006",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler transthoracique du cœur et des vaisseaux intrathoraciques",
+    "tarif_secteur_1_adherent_optam_optam_co": 96.49
+  },
+  {
+    "acte": "ZCQM004",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen avec échographie-doppler des vaisseaux digestifs",
+    "tarif_secteur_1_adherent_optam_optam_co": 54.02
+  },
+  {
+    "acte": "ZCQM005",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'abdomen, avec échographie transcutanée du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "EJQM003",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des veines des membres inférieurs et des veines iliaques, pour recherche de thrombose veineuse profonde",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "JQGA002",
+    "category": "césarienne",
+    "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
+    "libelle": "Accouchement par césarienne programmée, par laparotomie",
+    "tarif_secteur_1_adherent_optam_optam_co": 313.5
+  },
+  {
+    "acte": "EBQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des artères cervicocéphaliques extracrâniennes, sans mesure de l'épaisseur de l'intima-média",
+    "tarif_secteur_1_adherent_optam_optam_co": 69.93
+  },
+  {
+    "acte": "JHQM001",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du contenu des bourses",
+    "tarif_secteur_1_adherent_optam_optam_co": 37.05
+  },
+  {
+    "acte": "JAQM004",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée de la vessie",
+    "tarif_secteur_1_adherent_optam_optam_co": 52.45
+  },
+  {
+    "acte": "DZQM006",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler transthoracique du cœur et des vaisseaux intrathoraciques",
+    "tarif_secteur_1_adherent_optam_optam_co": 96.49
+  },
+  {
+    "acte": "EJQM004",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie-doppler des veines des membres inférieurs et des veines iliaques, sans marquage cutané",
+    "tarif_secteur_1_adherent_optam_optam_co": 75.6
+  },
+  {
+    "acte": "ZCQM010",
+    "category": "Actes",
+    "regroupement": "Acte d'échographie",
+    "libelle": "Échographie transcutanée de l'étage supérieur de l'abdomen et du petit bassin [pelvis]",
+    "tarif_secteur_1_adherent_optam_optam_co": 74.1
+  },
+  {
+    "acte": "AFLB010",
+    "category": "voie naturelle",
+    "regroupement": "Actes d'anesthésie/Actes d'anesthésie",
+    "libelle": "Anesthésie rachidienne au cours d'un accouchement par voie basse",
+    "tarif_secteur_1_adherent_optam_optam_co": ""
+  },
+  {
+    "acte": "FELF004",
+    "category": "Complication",
+    "regroupement": "",
+    "libelle": "Transfusion",
+    "tarif_secteur_1_adherent_optam_optam_co": 0
+  },
+  {
+    "acte": "JMCA002",
+    "category": "Complication",
+    "regroupement": "",
+    "libelle": "Déchirure simple/suture",
+    "tarif_secteur_1_adherent_optam_optam_co": 150
+  },
+  {
+    "acte": "JMCA003",
+    "category": "Complication",
+    "regroupement": "",
+    "libelle": "Déchirure périné compléte",
+    "tarif_secteur_1_adherent_optam_optam_co": 250
+  },
+  {
+    "acte": "JQGD006",
+    "category": "Complication",
+    "regroupement": "",
+    "libelle": "Forceps",
+    "tarif_secteur_1_adherent_optam_optam_co": 0
+  },
+  {
+    "acte": "JQGA004",
+    "category": "césarienne",
+    "regroupement": "",
+    "libelle": "césarienne en urgence et en dehors du travail",
+    "tarif_secteur_1_adherent_optam_optam_co": 313
+  },
+  {
+    "acte": "PBLB001",
+    "category": "Actes",
+    "regroupement": "",
+    "libelle": "prostaglandines",
+    "tarif_secteur_1_adherent_optam_optam_co": 20.77
+  },
+  {
+    "acte": "MELH001",
+    "category": "Actes",
+    "regroupement": "",
+    "libelle": "oxytocine dose totale",
+    "tarif_secteur_1_adherent_optam_optam_co": 42.21
+  },
+  {
+    "acte": "EDSA003",
+    "category": "Complication",
+    "regroupement": "",
+    "libelle": "ligature des artères utérine",
+    "tarif_secteur_1_adherent_optam_optam_co": 372.23
+  },
+  {
+    "acte": "JQGD004",
+    "category": "voie naturelle",
+    "regroupement": "",
+    "libelle": "Accouchement unique par le siège, voie naturelle, chez une primipare",
+    "tarif_secteur_1_adherent_optam_optam_co": 385.44
+  },
+  {
+    "acte": "JQGD001",
+    "category": "voie naturelle",
+    "regroupement": "",
+    "libelle": "Accouchement unique par le siège, voie naturelle, chez une multipare",
+    "tarif_secteur_1_adherent_optam_optam_co": 316.94
+  }
+]
