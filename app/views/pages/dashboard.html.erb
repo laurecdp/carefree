@@ -61,7 +61,7 @@
       </div>
     </div>
 
-  <div class="search-window">
+  <div class="search-window <%= 'appear' if params[:category] %>">  
     <%= simple_form_for :search, url: dashboard_path, method: :get do |f| %>
       <div class="search-form-control form-group">
         <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Recherche"/>
@@ -71,7 +71,7 @@
     <% end %>
     <% @patients.each do |patient| %>
       <div class="cards-window">
-        <%= link_to patient_path(patient) do %>
+        <%= link_to new_labour_path(patient_id:patient.id, category:params[:category]) do %>
         <div class="card-patient-window">
           <div class="card-title-window">
             <h3>

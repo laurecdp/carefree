@@ -3,6 +3,8 @@
   <div class="form_wrapper">
     <%= simple_form_for(@labour) do |f| %>
       <div class="part1">
+        <%= f.hidden_field :patient_id, :value => @patient.id %>
+        <%= f.input :labour_start_at %>
         <%= f.input :labour_start, collection:Labour::LABOUR_START,
                     label: 'Mode de début du travail',
                     as: :radio_buttons,
@@ -14,6 +16,7 @@
         <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :check_boxes, collection: Labour::LABOUR_DRUGS %>
       </div>
       <div class="part2">
+        <%= f.input :labour_end_at %>
         <%= f.input :labour_end, label: 'Délivrance', as: :select, collection: Labour::LABOUR_END %>
         <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
         <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :check_boxes, collection: Labour::LABOUR_COMPLICATION_TYPE %>
