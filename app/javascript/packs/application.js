@@ -37,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   sidebar();
   popup();
   initSelect2();
+  searchWindow();
 });
 
 
