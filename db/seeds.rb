@@ -82,9 +82,9 @@ puts "#{Category.all.length} categories created"
 #----------------------------#
 puts 'Creating Labours'
 
-=begin
-naissance = Labour.create!(patient: patient1, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h' )
-puts "#{Labour.all.length} labours created"
-=end
 
-puts 'done seeding'
+# naissance = Labour.create!(patient: meghan, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h' )
+# puts "#{Labour.all.length} labours created"
+
+
+# puts 'done seeding'
