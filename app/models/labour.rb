@@ -8,13 +8,10 @@ class Labour < ApplicationRecord
   validates :labour_start, inclusion: { in: LABOUR_START }
 
   ARTIFICIAL_LABOUR = ['activation de convenance', 'gross prolongée/dépassée', 'patho maternelle', 'patho foetale', 'mort in utero']
-  validates :artificiel_labour, inclusion: { in: ARTIFICIAL_LABOUR }
-
-  LABOUR_DRUGS = ['antibiotiques', 'anthypertenseurs', 'antispasmodiques', 'tocolytiques', 'oxytociques', 'sédatifs']
-  validates :labour_drugs, inclusion: { in: LABOUR_DRUGS }
+  validates :artificial_labour, inclusion: { in: ARTIFICIAL_LABOUR }
 
   LABOUR_END = ['dirigé', 'naturelle', 'compléte', 'incomplete']
-  validates :labour_end_at, inclusion: { in: LABOUR_END }
+  validates :labour_end, inclusion: { in: LABOUR_END }
 
   ANAESTHESIA_CATEGORY = ['anesthésie avant la naissance', 'anesthésie loco-régionale', 'anesthésie générale', 'anesthésie locale', 'moment de l\'anestésie', 'complication de l\'anesthésie']
   validates :anaesthesia_category, inclusion: { in: ANAESTHESIA_CATEGORY }
@@ -28,9 +25,26 @@ class Labour < ApplicationRecord
   ANAESTHESIA_MOMENT = ['en début de travail', 'pour intervention VB', 'pour césarienne']
   validates :anaesthesia_moment, inclusion: { in: ANAESTHESIA_MOMENT }
 
-  LABOUR_COMPLICATION_TYPE = ['hémorragies', 'actes']
-  validates :labour_start_at, presence: true
+  LABOUR_DRUGS = ['antibiotiques', 'anthypertenseurs', 'antispasmodiques', 'tocolytiques', 'oxytociques', 'sédatifs']
+  validate :each_labour_drugs
+
+  LABOUR_COMPLICATION_TYPE = ['hémorragies', 'rétention placentaire', 'inversion utérine']
+  validate :each_labour_complication_type
 
   LABOUR_ACTES = ['délivrance artificelle', 'transfusion', 'Déchirure simple/suture', 'Forceps', 'ligature des artères utérine']
-  validates :labour_actes, inclusion: { in: LABOUR_ACTES }
+  validate :each_labour_actes
+
+  private
+
+  def each_labour_complication_type
+    labour_complication_type.map { |lab| LABOUR_COMPLICATION_TYPE.include?(lab) }.all?
+  end
+
+  def each_labour_actes
+    labour_actes.map { |lab| LABOUR_ACTES.include?(lab) }.all?
+  end
+
+  def each_labour_drugs
+    labour_drugs.map { |lab| LABOUR_DRUGS.include?(lab) }.all?
+  end
 end
