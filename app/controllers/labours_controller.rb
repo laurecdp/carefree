@@ -6,11 +6,12 @@ class LaboursController < ApplicationController
 
   def create
     #@patient = Patient.find(params[:id])
+    # @category = Category.find(params[:id])
     @labour = Labour.new(labour_params)
-    raise
     #@labour.patient = @patient
     @labour.user = current_user
     authorize @labour
+    raise
     if @labour.save
       redirect_to patient_path(@patient)
     else
