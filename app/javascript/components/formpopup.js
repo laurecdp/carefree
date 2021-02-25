@@ -4,8 +4,10 @@ const popup = () => {
   [naissance, naissance2].forEach((card) => {
     card.addEventListener("click", (event) => {
       // $("#modal").show();
-      $('#modal').modal('show');
+      console.log(event);
+      $('#myModal2').modal('show');
       event.preventDefault();
+
     });
   })
 };
