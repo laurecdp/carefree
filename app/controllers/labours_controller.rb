@@ -45,15 +45,14 @@ class LaboursController < ApplicationController
                                    :anaesthesia_loco_general,
                                    :anaesthesia_moment,
                                    :labour_complication,
-                                   :labour_actes,
                                    :anaesthesia_complication,
                                    :caesarean,
                                    :labour_actes_done,
                                    :patient_id,
                                    :user_id,
                                    :category_id,
-                                   labour_drugs: [], 
-                                   labour_complication_type: []
-                                   )
+                                   labour_actes: [],
+                                   labour_drugs: [],
+                                   labour_complication_type: [])
   end
 end
