@@ -5,11 +5,11 @@
 
       <div class="card-dashboard">
         <div class="card-category-dashboard">
-          <p> <%= current_user.first_name %> </p>
+          <p> <%= current_user.labours.count %> </p>
         </div>
 
         <div class="card-category-dashboard">
-          <p> <%= current_user.first_name %> </p>
+          <p> <%= current_user.email %> </p>
         </div>
 
         <div class="card-category-dashboard">
@@ -32,9 +32,18 @@
             </button>
           <%end%>
 
-          <button type="button" class="button-action" id="baby-card">
-            <i class="fas fa-baby fa-3x"></i>
-            <p> Accouchement </p>
+          <button type="button" class="button-action">
+             <% if params[:category] %>
+                <%= link_to dashboard_path do %>
+                  <i class="fas fa-baby fa-3x"></i>
+                  <p> Naissance </p>
+                <% end %>
+            <% else %>
+                <%= link_to dashboard_path(category: "Naissance")  do %>
+                  <i class="fas fa-baby fa-3x"></i>
+                  <p> Naissance </p>
+                <% end %>
+            <% end %>
           </button>
 
           <%= link_to(dashboard_path) do %>

@@ -8,14 +8,11 @@ class LaboursController < ApplicationController
   end
 
   def create
-    # @category = Category.find(params[:id])
     @labour = Labour.new(labour_params)
-    #@labour.category = @category
     @labour.user = current_user
     authorize @labour
-    raise
     if @labour.save
-      redirect_to patient_path(@patient)
+      redirect_to dashboard_path
     else
       render :new
     end
