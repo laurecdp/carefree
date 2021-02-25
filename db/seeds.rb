@@ -46,7 +46,6 @@ CSV.foreach(filepath, csv_options) do |row|
     name: row[3],
     code: row[0],
     price: row[4],
-    diagnostic: " ",
     category: row[1]
   )
 end
