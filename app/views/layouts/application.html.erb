@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Carefree</title>
+    <title>EasyCare</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,6 +17,7 @@
    <% if current_user %>
     <div class="main-container">
     <%= render 'shared/sidebar' unless request.fullpath == "/" %>
+    <%= render 'shared/search_right' %>
     <div class="main-content">
     <%= render 'shared/topbar' unless request.fullpath == "/" %>
     <%= render 'shared/flashes' %>

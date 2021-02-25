@@ -9,6 +9,7 @@
                     item_wrapper_class: 'tag-item' %>
 
         <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR %>
+
         <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :select, collection: Labour::LABOUR_DRUGS %>
       </div>
       <div class="part2">
