@@ -1,0 +1,33 @@
+.cards-window {
+  display: flex;
+  justify-content: center;
+}
+
+.card-patient-window {
+  color: black;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: whitesmoke;
+  height: 200px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card-patient-window ul {
+  list-style-type: none;
+  padding-left: 0px;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+
+.card-title-window {
+  background-color: $teal;
+  color: whitesmoke;
+  padding: 8px;
+  text-align: center;
+}
+
+.cards-window a {
+  text-decoration: none;
+}
+
