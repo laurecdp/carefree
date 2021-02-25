@@ -28,6 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 import { sidebar } from '../components/sidebar';
 import { popup } from '../components/formpopup';
+import { searchWindow } from '../components/search-window';
 
 import { initSelect2 } from '../components/select2';
 
@@ -36,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   sidebar();
   popup();
   initSelect2();
+  searchWindow();
 });
 
 

@@ -4,8 +4,7 @@ class CreateCodes < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :code
       t.float :price
-      t.text :diagnostic
-      t.string :category, array: true, default: []
+      t.string :category
 
       t.timestamps
     end

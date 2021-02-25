@@ -1,83 +1,95 @@
-<div class="container-dashboard">
+<div class="dashboard-container">
+  <div class="container-dashboard">
+    <div class="dashboard-action">
+      <h1>Hello <%= current_user.first_name %>! 🙂</h1>
 
-  <h1>Hello <%= current_user.email %>! 🙂</h1>
+      <div class="card-dashboard">
+        <div class="card-category-dashboard">
+          <p> <%= current_user.first_name %> </p>
+        </div>
 
-</div>
+        <div class="card-category-dashboard">
+          <p> <%= current_user.first_name %> </p>
+        </div>
 
-  <div class="container">
-
-    <div class="card-dashboard">
-
-      <div class="card-category-dashboard">
-        <p> <%= current_user.email %> </p>
+        <div class="card-category-dashboard">
+          <p> <%= current_user.email %>  </p>
+        </div>
       </div>
 
-      <div class="card-category-dashboard">
-        <p> <%= current_user.email %> </p>
-      </div>
+        <div class="buttons">
+          <%= link_to(dashboard_path) do %>
+            <button type="button" class="button-action">
+              <i class="fas fa-user-plus fa-3x"></i>
+              <p> Admission </p>
+            </button>
+          <%end%>
 
-      <div class="card-category-dashboard">
-        <p> <%= current_user.email %>  </p>
-      </div>
+          <%= link_to(dashboard_path) do %>
+            <button type="button" class="button-action">
+              <i class="fas fa-stethoscope fa-3x"></i>
+              <p> Consultation </p>
+            </button>
+          <%end%>
 
+          <button type="button" class="button-action" id="baby-card">
+            <i class="fas fa-baby fa-3x"></i>
+            <p> Accouchement </p>
+          </button>
+
+          <%= link_to(dashboard_path) do %>
+            <button type="button" class="button-action">
+              <i class="fas fa-clinic-medical fa-3x"></i>
+              <p> Hospitalisation </p>
+            </button>
+          <%end%>
+
+          <%= link_to(dashboard_path) do %>
+            <button type="button" class="button-action">
+              <i class="fas fa-prescription-bottle-alt fa-3x"></i>
+              <p> Ordonnance </p>
+            </button>
+          <%end%>
+
+          <%= link_to(dashboard_path) do %>
+            <button type="button" class="button-action">
+              <i class="fas fa-print fa-3x"></i>
+              <p> Impression </p>
+            </button>
+          <%end%>
+        </div>
+      </div>
     </div>
 
-     <div class="buttons">
-
-      <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">
-        <i class="fas fa-user-plus fa-3x"></i>
-        <br>
-        <br>
-        <p> Admission </p>
-        </button>
-      <%end%>
-
-      <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">
-        <i class="fas fa-stethoscope fa-3x"></i>
-        <br>
-        <br>
-        <p> Consultation </p>
-        </button>
-      <%end%>
-
-        <button type="button" class="button-action" id="baby-card">
-        <i class="fas fa-baby fa-3x"></i>
-        <br>
-        <br>
-        <p> Accouchement </p>
-        </button>
-
-      <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">
-        <i class="fas fa-clinic-medical fa-3x"></i>
-        <br>
-        <br>
-        <p> Hospitalisation </p>
-        </button>
-      <%end%>
-
-      <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">
-        <i class="fas fa-prescription-bottle-alt fa-3x"></i>
-        <br>
-        <br>
-        <p> Ordonnance </p>
-        </button>
-      <%end%>
-
-      <%= link_to(dashboard_path) do %>
-        <button type="button" class="button-action">
-        <i class="fas fa-print fa-3x"></i>
-        <br>
-        <br>
-        <p> Impression </p>
-        </button>
-      <%end%>
-
-    </div>
-
+  <div class="search-window">
+    <%= simple_form_for :search, url: dashboard_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Recherche"/>
+        <button name="button" type="submit" class="btn btn-flat" >
+          <i class="fas fa-search"></i> </button>
+      </div>
+    <% end %>
+    <% @patients.each do |patient| %>
+      <div class="cards-window">
+        <%= link_to patient_path(patient) do %>
+        <div class="card-patient-window">
+          <div class="card-title-window">
+            <h3>
+              <%= patient.first_name %>
+              <%= patient.last_name %>
+            </h3>
+          </div>
+              <ul>
+                <li><%= patient.age %> ans</li>
+                <li><%= patient.birth_date %></li>
+                <li><%= patient.nss %></li>
+                <li><%= patient.description %></li>
+                <li><%= patient.number_of_weeks %> semaines</li>
+              </ul>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
   </div>
-<%= render 'shared/form_popup' unless request.fullpath == "/" %>
 </div>
+

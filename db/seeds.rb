@@ -1,4 +1,4 @@
-require 'csv'
+require 'json'
 
 
 Labour.destroy_all
@@ -32,23 +32,21 @@ annick = User.create!(first_name: 'Annick', email: 'annick@hospital.com', passwo
 
 puts "#{User.all.length} users created"
 
-#---------------------------CSV parsing----------------------------#
+#---------------------------JSON parsing----------------------------#
 
 puts 'Creating Codes'
 
-csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
-filepath = './db/labour_unicode.csv'
+filepath = './db/labour_unicode.json'
+serialized_codes = File.read(filepath)
+codes = JSON.parse(serialized_codes)
 
-CSV.foreach(filepath, csv_options) do |row|
-
-  code = Code.create!(
-
-    name: row[3],
-    code: row[0],
-    price: row[4],
-    diagnostic: " ",
-    category: row[1]
-  )
+codes.each do |code|
+  new_code = Code.create!(
+    name: code["libelle"],
+    code: code["acte"],
+    price: code["tarif_secteur_1_adherent_optam_optam_co"],
+    category: code["category"]
+    )
 end
 
 puts "#{Code.all.length} codes created"
@@ -82,9 +80,9 @@ puts "#{Category.all.length} categories created"
 #----------------------------#
 puts 'Creating Labours'
 
-=begin
-naissance = Labour.create!(patient: patient1, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h' )
-puts "#{Labour.all.length} labours created"
-=end
 
-puts 'done seeding'
+# naissance = Labour.create!(patient: meghan, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h' )
+# puts "#{Labour.all.length} labours created"
+
+
+# puts 'done seeding'
