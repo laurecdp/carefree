@@ -10,8 +10,8 @@ class LaboursController < ApplicationController
     #@labour.patient = @patient
     @labour.user = current_user
     authorize @labour
-    raise
     if @labour.save
+      raise
       redirect_to patient_path(@patient)
     else
       render :new

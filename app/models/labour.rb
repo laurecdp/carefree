@@ -28,7 +28,7 @@ class Labour < ApplicationRecord
   LABOUR_DRUGS = ['antibiotiques', 'anthypertenseurs', 'antispasmodiques', 'tocolytiques', 'oxytociques', 'sédatifs']
   validate :each_labour_drugs
 
-  LABOUR_COMPLICATION_TYPE = ['hémorragies', 'actes']
+  LABOUR_COMPLICATION_TYPE = ['hémorragies', 'rétention placentaire', 'inversion utérine']
   validate :each_labour_complication_type
 
   LABOUR_ACTES = ['délivrance artificelle', 'transfusion', 'Déchirure simple/suture', 'Forceps', 'ligature des artères utérine']
@@ -37,14 +37,14 @@ class Labour < ApplicationRecord
   private
 
   def each_labour_complication_type
-    labour_complication_type.map { |lab| CATEGORIES.include?(lab) }.all?
+    labour_complication_type.map { |lab| LABOUR_COMPLICATION_TYPE.include?(lab) }.all?
   end
 
   def each_labour_actes
-    labour_actes.map { |lab| CATEGORIES.include?(lab) }.all?
+    labour_actes.map { |lab| LABOUR_ACTES.include?(lab) }.all?
   end
 
   def each_labour_drugs
-    labour_drugs.map { |lab| CATEGORIES.include?(lab) }.all?
+    labour_drugs.map { |lab| LABOUR_DRUGS.include?(lab) }.all?
   end
 end
