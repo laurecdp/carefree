@@ -42,39 +42,6 @@
 }
 
 .sidebar .action1:hover {
-  background-color: $pink;
-  .icone {
-    background-color: $pink;
-    color: white;
-  }
-  .label {
-    color: white;
-  }
-}
-
-.sidebar .action2:hover {
-  background-color: $teal;
-  .icone {
-    background-color: $teal;
-    color: white;
-  }
-  .label {
-    color: white;
-  }
-}
-
-.sidebar .action3:hover {
-  background-color: $coral;
-  .icone {
-    background-color: $coral;
-    color: white;
-  }
-  .label {
-    color: white;
-  }
-}
-
-.sidebar .action4:hover {
   background-color: $navy;
   .icone {
     background-color: $navy;
@@ -85,7 +52,51 @@
   }
 }
 
+.sidebar .action2:hover {
+  background-color: $lightblue;
+  .icone {
+    background-color: $lightblue;
+    color: white;
+  }
+  .label {
+    color: white;
+  }
+}
+
+.sidebar .action3:hover {
+  background-color: $dark-pink;
+  .icone {
+    background-color: $dark-pink;
+    color: white;
+  }
+  .label {
+    color: white;
+  }
+}
+
+.sidebar .action4:hover {
+  background-color: $pink;
+  .icone {
+    background-color: $pink;
+    color: white;
+  }
+  .label {
+    color: white;
+  }
+}
+
 .sidebar .action5:hover {
+  background-color: $coral;
+  .icone {
+    background-color: $coral;
+    color: white;
+  }
+  .label {
+    color: white;
+  }
+}
+
+.sidebar .action6:hover {
   background-color: $teal;
   .icone {
     background-color: $teal;
@@ -96,7 +107,7 @@
   }
 }
 
-.action1, .action2, .action3, .action4, .action5 {
+.action1, .action2, .action3, .action4, .action5, .action6 {
   display: flex;
   align-items: center;
   border-radius: 8px;
