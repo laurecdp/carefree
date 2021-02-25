@@ -14,9 +14,14 @@
 .search-window {
   flex: 0 0 250px;
   background-color: lightgrey;
+  display: none;
 }
 
 .dashboard-container {
   display: flex;
   justify-content: space-around;
+}
+
+.search-window.appear {
+  display: inline-block;
 }

@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "name"
     t.string "code"
     t.float "price"
-    t.text "diagnostic"
     t.string "category", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "labour_codes", force: :cascade do |t|
+    t.text "diagnostic"
     t.bigint "labour_id", null: false
     t.bigint "code_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -67,17 +67,16 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
   end
 
   create_table "labours", force: :cascade do |t|
-    t.string "name"
     t.datetime "labour_start_at"
+    t.string "labour_start"
+    t.string "labour_end"
     t.datetime "labour_end_at"
-    t.string "labour_start", default: [], array: true
-    t.string "labour_end", default: [], array: true
     t.string "artificial_labour"
-    t.string "anaesthesia_category", default: [], array: true
-    t.string "anaesthesia_general", default: [], array: true
-    t.string "anaesthesia_loco_general", default: [], array: true
-    t.string "anaesthesia_moment", default: [], array: true
     t.string "labour_drugs", default: [], array: true
+    t.string "anaesthesia_category"
+    t.string "anaesthesia_general"
+    t.string "anaesthesia_loco_general"
+    t.string "anaesthesia_moment"
     t.string "labour_complication_type", default: [], array: true
     t.string "labour_actes", default: [], array: true
     t.boolean "anaesthesia_complication", default: false
