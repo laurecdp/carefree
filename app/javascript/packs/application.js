@@ -29,8 +29,13 @@ import "bootstrap";
 import { sidebar } from '../components/sidebar';
 import { popup } from '../components/formpopup';
 
+import { initSelect2 } from '../components/select2';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   sidebar();
   popup();
+  initSelect2();
 });
+
+
