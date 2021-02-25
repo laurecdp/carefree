@@ -1,5 +1,4 @@
 class LaboursController < ApplicationController
-
   def new
     @labour = Labour.new
     authorize @labour
