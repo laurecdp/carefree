@@ -1,8 +1,8 @@
 require 'csv'
 
 
-Action.destroy_all
-puts 'Destroying actions'
+Labour.destroy_all
+puts 'Destroying labours'
 
 Code.destroy_all
 puts 'Destroying codes'
@@ -20,15 +20,15 @@ puts 'Destroying categories'
 
 puts 'Creating Users'
 
-nastasia = User.create(first_name: 'Nastasia', email: 'nastasia@gmail.com', password: '123456')
+nastasia = User.create!(first_name: 'Nastasia', email: 'nastasia@gmail.com', password: '123456')
 
-manon = User.create(first_name: 'Manon', email: 'manon@gmail.com', password: '123456')
+manon = User.create!(first_name: 'Manon', email: 'manon@gmail.com', password: '123456')
 
-laure = User.create(first_name: 'Laure', email: 'laure@gmail.com', password: '123456')
+laure = User.create!(first_name: 'Laure', email: 'laure@gmail.com', password: '123456')
 
-sami = User.create(first_name: 'Sami', email: 'sami@gmail.com', password: '123456')
+sami = User.create!(first_name: 'Sami', email: 'sami@gmail.com', password: '123456')
 
-annick = User.create(first_name: 'Annick', email: 'annick@hospital.com', password: '123456' )
+annick = User.create!(first_name: 'Annick', email: 'annick@hospital.com', password: '123456' )
 
 puts "#{User.all.length} users created"
 
@@ -57,11 +57,9 @@ puts "#{Code.all.length} codes created"
 
 puts 'Creating Patients'
 
-patient1 = Patient.new(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: '23 Février 2021', nss:'269054958815787', description: '', number_of_weeks: '39')
-patient1.save!
+meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: '23 Février 2021', nss:'269054958815787', description: '', number_of_weeks: '39')
 
-patient2 = Patient.new(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: '1 Mars 2021', nss:'269055968916790', description: '', number_of_weeks: '35')
-patient2.save!
+kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: '1 Mars 2021', nss:'269055968916790', description: '', number_of_weeks: '35')
 
 puts "#{Patient.all.length} patients created"
 
@@ -69,58 +67,24 @@ puts "#{Patient.all.length} patients created"
 
 puts 'Creating Categories'
 
-admission = Category.create(name: 'Admission')
+admission = Category.create!(name: 'Admission')
 
-consultation = Category.create(name: 'Consultation')
+consultation = Category.create!(name: 'Consultation')
 
-hospitalisation = Category.create(name: 'Hospitalisation')
+hospitalisation = Category.create!(name: 'Hospitalisation')
 
-naissance = Category.create(name: 'Naissance')
+naissance = Category.create!(name: 'Naissance')
 
-ordonnance = Category.create(name: 'Ordonnance')
+ordonnance = Category.create!(name: 'Ordonnance')
 
 puts "#{Category.all.length} categories created"
 
 #----------------------------#
-puts 'Creating Actions'
+puts 'Creating Labours'
 
-naissance = Action.create(patient: patient1, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h', labour_start:  )
-
-
-puts "#{Action.all.length} actions created"
+=begin
+naissance = Labour.create!(patient: patient1, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h' )
+puts "#{Labour.all.length} labours created"
+=end
 
 puts 'done seeding'
-
-#----------------------------#
-
-puts 'Creating Categories'
-
-category1 = Category.new(name: 'Admission')
-category1.save!
-category2 = Category.new(name: 'Consultation')
-category2.save!
-category3 = Category.new(name: 'Hospitalisation')
-category3.save!
-category4 = Category.new(name: 'Naissance')
-category4.save!
-category5 = Category.new(name: 'Ordonnance')
-category5.save!
-
-puts "#{Category.all.length} categories created"
-
-#----------------------------#
-
-puts 'Creating Actions'
-
-action1 = Action.new(patient: patient1, user: user1, category: category4)
-action1.save!
-action2 = Action.new(patient: patient1, user: user3, category: category1)
-action2.save!
-action3 = Action.new(patient: patient1, user: user2, category_id: category2)
-action3.save!
-
-puts "#{Action.all.length} actions created"
-
-
-
-
