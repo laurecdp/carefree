@@ -6,7 +6,7 @@ const popup = () => {
       card.addEventListener("click", (event) => {
         // $("#modal").show();
         $('#modal').modal('show');
-        event.preventDefault();
+        /* event.preventDefault(); */
       });
     }
   })
