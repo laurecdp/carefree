@@ -1,14 +1,16 @@
 class LaboursController < ApplicationController
   def new
+    @patient = Patient.find(params[:patient_id])
     @labour = Labour.new
+    @labour.patient = @patient
     authorize @labour
+    authorize @patient
   end
 
   def create
-    #@patient = Patient.find(params[:id])
     # @category = Category.find(params[:id])
     @labour = Labour.new(labour_params)
-    #@labour.patient = @patient
+    #@labour.category = @category
     @labour.user = current_user
     authorize @labour
     raise
