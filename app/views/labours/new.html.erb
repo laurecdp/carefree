@@ -1,14 +1,25 @@
-<div class="form_wrapper">
+<div class= "container-form">
+  <div class="form_wrapper">
     <%= simple_form_for(@labour) do |f| %>
       <div class="part1">
-        <%= f.input :labour_start, label: 'Mode de début du travail', as: :select, collection: Labour::LABOUR_START %>
-        <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, collection: Labour::ARTIFICIAL_LABOUR %>
+        <%= f.input :labour_start, collection:Labour::LABOUR_START,
+                    label: 'Mode de début du travail',
+                    as: :radio_buttons,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
+
+        <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR %>
+
         <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :select, collection: Labour::LABOUR_DRUGS %>
       </div>
       <div class="part2">
         <%= f.input :labour_end, label: 'Délivrance', as: :select, collection: Labour::LABOUR_END %>
+
         <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
-        <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :select, collection: Labour::LABOUR_COMPLICATION_TYPE %>
+        <% if @labour.labour_complication %>
+          <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :select, collection: Labour::LABOUR_COMPLICATION_TYPE %>
+        <% end %>
+
         <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :select, collection: Labour::LABOUR_ACTES %>
       </div>
       <div class="part3">
@@ -24,4 +35,3 @@
     <% end %>
   </div>
 </div>
-
