@@ -1,15 +1,18 @@
 <div class="form_wrapper">
     <%= simple_form_for(@labour) do |f| %>
       <div class="part1">
-        <%= f.input :labour_start, label: 'Mode de début du travail', as: :select, collection: Labour::LABOUR_START %>
-        <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, collection: Labour::ARTIFICIAL_LABOUR %>
-        <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :select, collection: Labour::LABOUR_DRUGS %>
+        <%= f.input :labour_start_at %>
+        <%= f.input :labour_start,  as: :select, collection: Labour::LABOUR_START %>
+        <%= f.input :labour_end, as: :select, collection: Labour::LABOUR_END %>
+        <%= f.input :labour_end_at %>
+        <%= f.input :artificial_labour, as: :select, collection: Labour::ARTIFICIAL_LABOUR %>
+        <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :check_boxes, collection: Labour::LABOUR_DRUGS %>
 
       </div>
       <div class="part2">
         <%= f.input :labour_end, label: 'Délivrance', as: :select, collection: Labour::LABOUR_END %>
         <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
-        <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :select, collection: Labour::LABOUR_COMPLICATION_TYPE %>
+        <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :check_boxes, collection: Labour::LABOUR_COMPLICATION_TYPE %>
         <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :select, collection: Labour::LABOUR_ACTES %>
       </div>
       <div class="part3">

@@ -1,12 +1,11 @@
 class CreateLabours < ActiveRecord::Migration[6.0]
   def change
     create_table :labours do |t|
-      t.string :name
       t.datetime :labour_start_at
-      t.datetime :labour_end_at
-      t.string :labour_start, array: true, default: []
+      t.string :labour_start, 
       t.string :labour_end, array: true, default: []
-      t.string :artificial_labour
+      t.datetime :labour_end_at,
+      t.string :artificial_labour,
       t.string :anaesthesia_category, array: true, default: []
       t.string :anaesthesia_general, array: true, default: []
       t.string :anaesthesia_loco_general, array: true, default: []

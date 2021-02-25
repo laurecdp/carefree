@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.datetime "labour_end_at"
     t.string "labour_start", default: [], array: true
     t.string "labour_end", default: [], array: true
-    t.string "artificial_labour"
+    t.string "artificial_labour", default: [], array: true
     t.string "anaesthesia_category", default: [], array: true
     t.string "anaesthesia_general", default: [], array: true
     t.string "anaesthesia_loco_general", default: [], array: true
