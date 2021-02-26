@@ -16,7 +16,7 @@ class Baby < ApplicationRecord
   EXITROOM = ['Avec sa mère', 'Décès', 'Transfert immédiat', 'Mutation intra-muros']
   validates :exit_room, inclusion: { in: EXITROOM }
 
-  PATHOLOGIES = ['Retard de croissance', 'SIDA', 'Diabète']
+  PATHOLOGIES = ['Retard de croissance', 'VIH', 'Diabète']
   validate :each_pathologies
 
   BREASTFEEDING = ['Maternel', 'Artificiel', 'Mixte']
