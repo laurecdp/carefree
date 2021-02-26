@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard'
   get '/login', to: 'pages#login'
-  resources :labours, only: [:new, :create, :edit, :update]
+  resources :labours, only: [:new, :create, :edit, :update] do
+    resources :babies, only: [:new, :create, :index, :show]
+  end
   resources :patients, only: [:new, :create, :index, :edit, :update, :show]
-  resources :babies, only: [:new, :create, :index, :show]
   resources :labour_codes, only: [:new, :create]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
