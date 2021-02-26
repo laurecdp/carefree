@@ -15,7 +15,7 @@ class LaboursController < ApplicationController
     if @labour.save
       redirect_to dashboard_path
     else
-      redirect_to dashboard_path
+      render :new
     end
   end
 

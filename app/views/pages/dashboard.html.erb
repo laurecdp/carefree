@@ -32,18 +32,23 @@
             </button>
           <%end%>
 
-          <button type="button" class="button-action">
+          <button type="button" class="button-action3">
              <% if params[:category] %>
                 <%= link_to dashboard_path do %>
                   <i class="fas fa-baby fa-3x"></i>
                   <p> Naissance </p>
                 <% end %>
             <% else %>
-                <%= link_to dashboard_path(category: "Naissance")  do %>
-                  <i class="fas fa-baby fa-3x"></i>
-                  <p> Naissance </p>
-                <% end %>
+              <% @categories.each do |categorie|%> 
+               <% if categorie.name == "Naissance"%>
+                  <% @naissance = categorie %>
+                  <%= link_to dashboard_path(category: @naissance.id) do %>
+                    <i class="fas fa-baby fa-3x"></i>
+                    <p> Naissance </p>
+                  <% end %>
+               <% end %>
             <% end %>
+          <% end %>
           </button>
 
           <%= link_to(dashboard_path) do %>
