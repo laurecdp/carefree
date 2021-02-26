@@ -65,20 +65,20 @@ puts "#{Patient.all.length} patients created"
 
 puts 'Creating Categories'
 
-admission = Category.create!(name: 'Admission')
+admission = Category.create(name: 'Admission')
 
-consultation = Category.create!(name: 'Consultation')
+consultation = Category.create(name: 'Consultation')
 
-hospitalisation = Category.create!(name: 'Hospitalisation')
+hospitalisation = Category.create(name: 'Hospitalisation')
 
-naissance = Category.create!(name: 'Naissance')
+naissance = Category.create(name: 'Naissance')
 
-ordonnance = Category.create!(name: 'Ordonnance')
+ordonnance = Category.create(name: 'Ordonnance')
 
 puts "#{Category.all.length} categories created"
 
 #----------------------------#
-puts 'Creating Labours'
+#puts 'Creating Labours'
 
 
 # naissance = Labour.create!(patient: meghan, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h' )

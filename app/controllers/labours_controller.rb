@@ -1,23 +1,21 @@
 class LaboursController < ApplicationController
   def new
     @patient = Patient.find(params[:patient_id])
+    @category = Category.find(params[:category])
     @labour = Labour.new
     @labour.patient = @patient
+    @labour.category = @category
     authorize @labour
-    authorize @patient
   end
 
   def create
-    # @category = Category.find(params[:id])
     @labour = Labour.new(labour_params)
-    #@labour.category = @category
     @labour.user = current_user
     authorize @labour
-    raise
     if @labour.save
-      redirect_to patient_path(@patient)
+      redirect_to dashboard_path
     else
-      render :new
+      redirect_to dashboard_path
     end
   end
 
