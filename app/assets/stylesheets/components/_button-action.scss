@@ -7,7 +7,7 @@
 }
 
 .button-action1, .button-action2, .button-action3, .button-action4, .button-action5, .button-action6 {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   color: whitesmoke;
   font-size: 16px;
   padding: 8px 24px;
@@ -50,7 +50,7 @@
   margin-top: 20px;
 }
 
-.btn-flat {
+#btn-home {
   font-size: 20px;
   letter-spacing: 1.3px;
   color: white;
@@ -61,7 +61,7 @@
   margin-top: 10px;
 }
 
-.btn-flat:hover {
+#btn-home:hover {
   background: $teal;
   color: white;
 }

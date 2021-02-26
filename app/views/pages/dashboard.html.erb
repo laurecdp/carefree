@@ -1,8 +1,14 @@
 <div class="dashboard-container">
   <div class="container-dashboard">
-    <div class="dashboard-action">
-    <h1>Bonjour <%= current_user.first_name %> 🙂</h1>
+    <div class="card-product" id= "welcome-message">
+      <div class="card-product-infos">
+        <h2>Bonjour <%= current_user.first_name %></h2>
+        <p>Passez une belle journée !</p>
+      </div>
+      <img src="https://cdn.dribbble.com/users/1355613/screenshots/6637974/doctor.jpg" />
+    </div>
 
+    <div class="dashboard-action">
       <div class="card-dashboard">
         <div class="card-category-dashboard">
           <p> <%= current_user.first_name %> </p>
@@ -61,7 +67,7 @@
       </div>
     </div>
 
-  <div class="search-window <%= 'appear' if params[:category] %>">  
+  <div class="search-window <%= 'appear' if params[:category] %>">
     <%= simple_form_for :search, url: dashboard_path, method: :get do |f| %>
       <div class="search-form-control form-group">
         <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Recherche"/>
