@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name", default: [], array: true
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
