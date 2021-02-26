@@ -6,7 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @categories = Category.all
-    @baby = Baby.new
     @patients = Patient.all
     @patients = policy_scope(Patient).order(created_at: :desc)
     if params[:search] && params[:search][:query]

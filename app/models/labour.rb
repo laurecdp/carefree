@@ -4,34 +4,34 @@ class Labour < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
-  LABOUR_START = ['travail spontané', 'déclenchement artificiel', 'césarienne avant travail']
+  LABOUR_START = ['Travail spontané', 'Déclenchement artificiel', 'Césarienne avant travail']
   validates :labour_start, inclusion: { in: LABOUR_START }
 
-  ARTIFICIAL_LABOUR = ['activation de convenance', 'gross prolongée/dépassée', 'patho maternelle', 'patho foetale', 'mort in utero']
+  ARTIFICIAL_LABOUR = ['Activation de convenance', 'Grossesse prolongée/dépassée', 'Pathologie maternelle', 'Pathologie foetale', 'Mort in utero']
   validates :artificial_labour, inclusion: { in: ARTIFICIAL_LABOUR }
 
-  LABOUR_END = ['dirigé', 'naturelle', 'compléte', 'incomplete']
+  LABOUR_END = ['Dirigée', 'Naturelle', 'Complète', 'Incomplète']
   validates :labour_end, inclusion: { in: LABOUR_END }
 
-  ANAESTHESIA_CATEGORY = ['anesthésie avant la naissance', 'anesthésie loco-régionale', 'anesthésie générale', 'anesthésie locale', 'moment de l\'anestésie', 'complication de l\'anesthésie']
+  ANAESTHESIA_CATEGORY = ['Anesthésie avant la naissance', 'Anesthésie loco-régionale', 'Anesthésie générale', 'Anesthésie locale', 'Moment de l\'anesthésie', 'Complication de l\'anesthésie']
   validates :anaesthesia_category, inclusion: { in: ANAESTHESIA_CATEGORY }
 
-  ANAESTHESIA_GENERAL = ['d\'emblé', 'après péridurale']
+  ANAESTHESIA_GENERAL = ['D\'emblée', 'Post péridurale', 'Après rachianesthésie']
   validates :anaesthesia_general, inclusion: { in: ANAESTHESIA_GENERAL }
 
-  ANAESTHESIA_LOCO_GENERAL = ['injection unique', 'sur cathéter auto-poussé']
+  ANAESTHESIA_LOCO_GENERAL = ['Injection unique', 'Péridurale', 'Sur cathéter auto-poussé']
   validates :anaesthesia_loco_general, inclusion: { in: ANAESTHESIA_LOCO_GENERAL }
 
-  ANAESTHESIA_MOMENT = ['en début de travail', 'pour intervention VB', 'pour césarienne']
+  ANAESTHESIA_MOMENT = ['En début de travail', 'Pour intervention VB', 'Pour césarienne']
   validates :anaesthesia_moment, inclusion: { in: ANAESTHESIA_MOMENT }
 
-  LABOUR_DRUGS = ['antibiotiques', 'anthypertenseurs', 'antispasmodiques', 'tocolytiques', 'oxytociques', 'sédatifs']
+  LABOUR_DRUGS = ['Antibiotiques', 'Anthypertenseurs', 'Antispasmodiques', 'Tocolytiques', 'Oxytociques', 'Sédatifs']
   validate :each_labour_drugs
 
-  LABOUR_COMPLICATION_TYPE = ['hémorragies', 'rétention placentaire', 'inversion utérine']
+  LABOUR_COMPLICATION_TYPE = ['Hémorragies', 'Rétention placentaire', 'Inversion utérine']
   validate :each_labour_complication_type
 
-  LABOUR_ACTES = ['délivrance artificelle', 'transfusion', 'Déchirure simple/suture', 'Forceps', 'ligature des artères utérine']
+  LABOUR_ACTES = ['Délivrance artificelle', 'Transfusion', 'Déchirure simple/suture', 'Forceps', 'Ligature des artères utérines']
   validate :each_labour_actes
 
   private

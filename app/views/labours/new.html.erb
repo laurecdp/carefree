@@ -26,16 +26,16 @@
         <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :check_boxes, collection: Labour::LABOUR_ACTES, include_hidden: false %>
       </div>
       <div class="part3">
+        <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
         <%= f.input :anaesthesia_category, label: 'Type d\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_CATEGORY, include_hidden: false %>
-        <%= f.input :anaesthesia_moment, as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
-        <%= f.input :anaesthesia_loco_general,  as: :select, collection: Labour::ANAESTHESIA_LOCO_GENERAL, include_hidden: false %>
-        <%= f.input :anaesthesia_general,  as: :select, collection: Labour::ANAESTHESIA_GENERAL, include_hidden: false %>
+        <%= f.input :anaesthesia_loco_general, label: 'Anésthésie loco-régionale',  as: :select, collection: Labour::ANAESTHESIA_LOCO_GENERAL, include_hidden: false %>
+        <%= f.input :anaesthesia_general,  label: 'Anésthésie générale', as: :select, collection: Labour::ANAESTHESIA_GENERAL, include_hidden: false %>
       
       </div>
       <div class="part4">
       </div>
       <div class="part5">
-        <%= f.submit "Enregistrer l'accouchement" %>
+        <%= f.submit "Enregistrer l'accouchement", class: "btn-flat" %>
       </div>
     <% end %>
   </div>

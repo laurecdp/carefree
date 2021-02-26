@@ -4,6 +4,7 @@
   grid-gap: 16px;
   margin-top: 50px;
   margin-bottom: 50px;
+  text-decoration: none;
 }
 
 .button-action1, .button-action2, .button-action3, .button-action4, .button-action5, .button-action6 {
@@ -31,6 +32,11 @@
 
 .button-action3 {
   background-color: $pink;
+}
+
+.button-action3 a {
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 .button-action4 {
