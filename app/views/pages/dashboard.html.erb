@@ -5,11 +5,12 @@
 
       <div class="card-dashboard">
         <div class="card-category-dashboard">
-          <p> <%= current_user.labours.count %> </p>
+          <p>
+          <%= current_user.labours.count %> </p>
         </div>
 
         <div class="card-category-dashboard">
-          <p><%= current_user.first_name %></p>
+          <p><%= current_user.labours.last.patient.babies.count %></p>
         </div>
 
         <div class="card-category-dashboard">

@@ -1,8 +1,11 @@
 class Labour < ApplicationRecord
   has_many :labour_codes
   belongs_to :patient
+  has_many :babies, through: :patient
   belongs_to :category
   belongs_to :user
+
+  accepts_nested_attributes_for :babies
 
   LABOUR_START = ['Travail spontané', 'Déclenchement artificiel', 'Césarienne avant travail']
   validates :labour_start, inclusion: { in: LABOUR_START }

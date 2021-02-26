@@ -1,4 +1,6 @@
 class Baby < ApplicationRecord
+  belongs_to :patient
+  
   SEX = ['masculin', 'féminin', 'indéterminé']
   validates :sex, inclusion: { in: SEX }
 
@@ -20,7 +22,6 @@ class Baby < ApplicationRecord
   BREASTFEEDING = ['Maternel', 'Artificiel', 'Mixte']
   validates :breastfeeding, inclusion: { in: BREASTFEEDING }
 
-  belongs_to :patient
 
   private
 
