@@ -61,25 +61,37 @@
 }
 
 .card-category {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   border-radius: 5px;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #72A8A8;
+  background-color: white;
 }
 
 .fas.fa-laptop-medical {
-  background-color: #72A8A8;
-  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #53c3a838;
+  color: $teal;
   font-size: 60px;
 }
 
 .far.fa-calendar-alt{
- background-color: #72A8A8;
-  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #53c3a838;
+  color: $teal;
+  font-size: 60px;
+}
+
+.fa-stopwatch {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #53c3a838;
+  color: $teal;
   font-size: 60px;
 }
 
@@ -96,4 +108,20 @@
   display: flex;
   justify-content: center;
   padding: 50px;
+}
+
+#contact-us {
+  font-size: 20px;
+  letter-spacing: 1.3px;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50rem;
+  background: $pink;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+#contact-us:hover {
+  background: $pink;
+  color: white;
 }

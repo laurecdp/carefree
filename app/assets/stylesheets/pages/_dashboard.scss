@@ -1,5 +1,3 @@
-
-
 .dashboard-action {
   flex-grow: 1;
 }
@@ -20,7 +18,6 @@
 .search-window.appear {
   display: inline-block;
 }
-
 
 #welcome-message {
   overflow: hidden;
@@ -56,4 +53,77 @@
 .card-product .card-product-infos {
   padding-right: 15px;
   padding-left: 35px;
+}
+
+
+.box-number {
+  background-color: $coral;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  bottom: unset;
+  align-content: unset;
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+
+#labour-icon {
+  color: $coral;
+  font-size: 3em;
+  border: 1px solid $coral;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: #f2c07640;
+}
+
+
+#life-icon {
+  color: $pink;
+  font-size: 3em;
+  border: 1px solid $pink;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: #f9d2bd38;
+}
+
+.box-number-baby {
+  background-color: $pink;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  bottom: unset;
+  align-content: unset;
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+.fas.fa-user-injured {
+  color: $navy;
+  font-size: 3em;
+  border: 1px solid $navy;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: #2d32601f;
+}
+
+
+.box-patients {
+  background-color: $navy;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  bottom: unset;
+  align-content: unset;
+  padding-left: 21px;
+  padding-right: 21px;
 }
