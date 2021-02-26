@@ -1,6 +1,6 @@
 <div class= "container-form">
   <div class="form_wrapper">
-    <%= simple_form_for [ @labour, @baby] do |f| %>
+    <%= simple_form_for @labour do |f| %>
       <div class="part1">
         <%= f.hidden_field :patient_id  %>
         <%= f.hidden_field :category_id %>
@@ -29,30 +29,29 @@
         <%= f.input :anaesthesia_general,  label: 'Anésthésie générale', as: :select, collection: Labour::ANAESTHESIA_GENERAL, include_hidden: false %>
       </div>
       <div class="part4">
-        <h2> Bébééééééééé</h2>
+        <h2> Informations du bébé</h2>
           <div class="form_wrapper">
-              <%#= simple_form_for @baby do |f| %>
-                <%= f.input :first_name, label: "Prénom" %>
-                <%= f.input :last_name,  label: "Nom de Famille" %>
-                <%= f.input :sex, as: :select, collection: Baby::SEX ,label: "Sexe"  %>
-                <%= f.input :birth_date,  label: "Date et heure de naissance"  %>
-                <%= f.input :diagnostic,  label: "Diagnostic"  %>
-                <%= f.input :weight,  label: "Poids"  %>
-                <%= f.input :heigh,  label: "Taille"  %>
-                <%= f.input :head_circumference,  label: "Périmètre crânien"%>
-                <%= f.input :monitoring,  label: "Monitorage"  %>
-                <%= f.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Types de monitorage", input_html: { multiple: true }, include_hidden: false  %>
-                <%= f.input :intensivecare,  label: "Réanimation"  %>
-                <%= f.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation", input_html: { multiple: true }, include_hidden: false  %>
-                <%= f.input :malformation,  label: "Malformation"   %>
-                <%= f.input :infectiouscontext,  label: "Infections"  %>
-                <%= f.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, as: :check_boxes, label: "Types d'infections", input_html: { multiple: true }, include_hidden: false  %>
-                <%= f.input :exit_room, collection: Baby::EXITROOM, label: "Sortie de la salle de naissance", include_hidden: false  %>
-                <%= f.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false  %>
-                <%= f.input :pathologies, collection: Baby::PATHOLOGIES, as: :check_boxes, label: "Pathologies", input_html: { multiple: true }, include_hidden: false  %>
-                <%#= f.submit 'Enregistrer naissance :bébé:' %>
-              <%# end %>
-              </div>
+              <%= f.simple_fields_for :babies do |p| %>
+                <%= p.input :first_name, label: "Prénom" %>
+                <%= p.input :last_name,  label: "Nom de Famille" %>
+                <%= p.input :sex, as: :select, collection: Baby::SEX ,label: "Sexe"  %>
+                <%= p.input :birth_date,  label: "Date et heure de naissance"  %>
+                <%= p.input :diagnostic,  label: "Diagnostic"  %>
+                <%= p.input :weight,  label: "Poids"  %>
+                <%= p.input :heigh,  label: "Taille"  %>
+                <%= p.input :head_circumference,  label: "Périmètre crânien"%>
+                <%= p.input :monitoring,  label: "Monitorage"  %>
+                <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Types de monitorage", input_html: { multiple: true }, include_hidden: false  %>
+                <%= p.input :intensivecare,  label: "Réanimation"  %>
+                <%= p.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation", input_html: { multiple: true }, include_hidden: false  %>
+                <%= p.input :malformation,  label: "Malformation"   %>
+                <%= p.input :infectiouscontext,  label: "Infections"  %>
+                <%= p.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, as: :check_boxes, label: "Types d'infections", input_html: { multiple: true }, include_hidden: false  %>
+                <%= p.input :exit_room, collection: Baby::EXITROOM, label: "Sortie de la salle de naissance", include_hidden: false  %>
+                <%= p.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false  %>
+                <%= p.input :pathologies, collection: Baby::PATHOLOGIES, as: :check_boxes, label: "Pathologies", input_html: { multiple: true }, include_hidden: false  %>
+              <% end %>
+            </div>
       </div>
       <div class="part5">
         <%= f.submit "Enregistrer l'accouchement", class: "btn-flat" %>

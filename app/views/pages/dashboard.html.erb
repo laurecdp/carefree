@@ -10,6 +10,7 @@
 
     <div class="dashboard-action">
       <div class="card-dashboard">
+
         <div class="card-category-dashboard">
           <i class="fas fa-dove" id="labour-icon"></i>
           <div class="box-number">
@@ -20,7 +21,7 @@
         <div class="card-category-dashboard">
           <i class="fas fa-user-injured"></i>
           <div class="box-patients">
-            <p>Patients</p>
+            <p> <%= current_user.labours.last.patient.babies.count %> Patients</p>
           </div>
         </div>
 
