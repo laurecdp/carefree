@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :labours, only: [:new, :create, :edit, :update]
   resources :patients, only: [:new, :create, :index, :edit, :update, :show]
   resources :babies, only: [:new, :create, :index, :show]
-  resources :actions_codes, only: [:new, :create]
+  resources :labour_codes, only: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
