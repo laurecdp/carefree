@@ -1,0 +1,13 @@
+<div class= "container-form">
+
+  <div class="form_wrapper">
+    <%= simple_form_for(@labour_codes) do |f| %>
+      <div class="part1">
+        <%#= f.hidden_field :labour_id  %>
+        <%#= f.hidden_field :code_id %>
+        <%= f.input :diagnostic %>
+        <%= f.submit "Diagnostic ok", class: "btn-flat" %>
+      </div>
+    <% end %>
+  </div>
+</div>

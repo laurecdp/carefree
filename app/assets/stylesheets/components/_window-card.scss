@@ -8,27 +8,36 @@
   font-weight: lighter;
   transition: opacity 0.3s ease;
   background-color: white;
-  height: 200px;
+  height: 180px;
   border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
+  border-radius: 10px;
   margin-bottom: 20px;
+  padding: 5px;
+}
+
+.card-patient-window:hover {
+  border: 1px solid $turquoise;
 }
 
 .card-patient-window ul {
   list-style-type: none;
   padding-left: 0px;
   padding-left: 8px;
-  padding-top: 8px;
-}
-
-.card-title-window {
-  background-color: $teal;
-  color: whitesmoke;
-  padding: 8px;
-  text-align: center;
+  padding-top: 16px;
 }
 
 .cards-window a {
   text-decoration: none;
 }
+
+.card-patient-window .patient-name {
+  font-weight: 400;
+}
+
+.user {
+  color: $turquoise;
+  text-align: center;
+  padding-top: 5px;
+}
+
 

@@ -8,6 +8,7 @@ fr:
 
   devise:
     failure:
+      already_authenticated: "Vous êtes déjà connecté(e)s"
       unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer."
       unconfirmed: "Vous devez confirmer votre compte pour continuer."
       locked: "Votre compte est verrouillé."

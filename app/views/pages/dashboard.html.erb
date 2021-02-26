@@ -47,7 +47,7 @@
           </button>
         <% end %>
 
-        <button type="button" class="button-action">
+        <button type="button" class="button-action3">
           <% if params[:category] %>
             <%= link_to dashboard_path do %>
               <i class="fas fa-baby fa-3x"></i>
@@ -84,8 +84,6 @@
       </div>
     </div>
 
-
-
   <div class="search-window <%= 'appear' if params[:category] %>">
     <%= simple_form_for :search, url: dashboard_path, method: :get do |f| %>
       <div class="search-form-control form-group">
@@ -97,23 +95,20 @@
     <% @patients.each do |patient| %>
       <div class="cards-window">
         <%= link_to new_labour_path(patient_id:patient.id, category:params[:category]) do %>
-        <div class="card-patient-window">
-          <div class="card-title-window">
-            <h3>
-              <%= patient.first_name %>
-              <%= patient.last_name %>
-            </h3>
-          </div>
+          <div class="card-patient-window">
+            <div class="user"><i class="far fa-user fa-lg"></i></div>
+            <div class="patient-info">
               <ul>
-                <li><%= patient.age %> ans</li>
+                <li class="patient-name">
+                  <%= patient.first_name %>
+                  <%= patient.last_name %>
+                </li>
                 <li><%= patient.birth_date %></li>
-                <li><%= patient.nss %></li>
-                <li><%= patient.description %></li>
-                <li><%= patient.number_of_weeks %> semaines</li>
               </ul>
-        </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <% end %>
     <% end %>
   </div>
 </div>

@@ -7,17 +7,17 @@
     <%= f.input :weight,  label: "Poids"  %>
     <%= f.input :heigh,  label: "Taille"  %>
     <%= f.input :head_circumference,  label: "Périmètre crânien"  %>
-    <%= f.input :sex, collection: Baby::SEX ,label: "Sexe"  %>
+    <%= f.input :sex, as: :select, collection: Baby::SEX ,label: "Sexe"  %>
     <%= f.input :monitoring,  label: "Monitorage"  %>
-    <%= f.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, label: "Types de monitorage (utiliser ctrl ou cmd pour une sélection multiple)", input_html: { multiple: true }  %>
+    <%= f.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Types de monitorage (utiliser ctrl ou cmd pour une sélection multiple)", input_html: { multiple: true }, include_hidden: false  %>
     <%= f.input :intensivecare,  label: "Réanimation"  %>
-    <%= f.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, label: "Actes de réanimation (utiliser ctrl ou cmd pour une sélection multiple)", input_html: { multiple: true }  %>
+    <%= f.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation (utiliser ctrl ou cmd pour une sélection multiple)", input_html: { multiple: true }, include_hidden: false  %>
     <%= f.input :malformation,  label: "Malformation"   %>
     <%= f.input :infectiouscontext,  label: "Infections"  %>
-    <%= f.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, label: "Types d'infections (utiliser ctrl ou cmd pour une sélection multiple)", input_html: { multiple: true }  %>
-    <%= f.input :exit_room, collection: Baby::EXITROOM, label: "Exit room"  %>
-    <%= f.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement"  %>
-    <%= f.input :pathologies, collection: Baby::PATHOLOGIES, label: "Pathologies (utiliser ctrl ou cmd pour une sélection multiple)", input_html: { multiple: true }  %>
+    <%= f.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, as: :check_boxes, label: "Types d'infections (utiliser ctrl ou cmd pour une sélection multiple)", input_html: { multiple: true }, include_hidden: false  %>
+    <%= f.input :exit_room, collection: Baby::EXITROOM, label: "Exit room", include_hidden: false  %>
+    <%= f.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false  %>
+    <%= f.input :pathologies, collection: Baby::PATHOLOGIES, as: :check_boxes, label: "Pathologies (utiliser ctrl ou cmd pour une sélection multiple)", input_html: { multiple: true }, include_hidden: false  %>
     <%= f.submit 'Enregistrer naissance 👶' %>
   <% end %>
 </div>
