@@ -2,7 +2,7 @@ class LaboursController < ApplicationController
   def new
     @baby = Baby.new
     @labour = Labour.new
-    @labour_codes = LabourCode.new
+    @labour_code = LabourCode.new
     #------------#
     @patient = Patient.find(params[:patient_id])
     @labour.patient = @patient
@@ -15,26 +15,25 @@ class LaboursController < ApplicationController
   end
 
   def create
+    @codes = Code.all
     @labour = Labour.new(labour_params)
     @patient = @labour.patient
     @labour.user = current_user
-    # Babyform nested in form labour
+    # Form "baby" nested in form "Labour"
     @baby = Baby.new(babies_params[:babies_attributes]["0"])
     @baby.patient = @patient
     @baby.save
     #------------#
+    @labour.save
     authorize @labour
     authorize @baby
-    if @labour.save
-    # Codesform nested in form labour
-      @labour_codes = LabourCode.new(labour_codes_params)
-      raise
-    end
-    if @labour_codes.save
+    # Form "Labour_codes" included in form "Labour"
+    # @labour_code = LabourCode.new(labour_code_params)
+    # if @labour_codes.save
       redirect_to dashboard_path
-    else
-      render :new
-    end
+    # else
+      # render :new
+    # end
   end
 
   def edit
@@ -96,10 +95,9 @@ class LaboursController < ApplicationController
                                                        infectiouscontext_options: []])
   end
 
-  def labour_codes_params
+  def labour_code_params
     params.require(:labour_code).permit(:diagnostic,
                                         :labour_id,
                                         :code_id)
   end
-
 end

@@ -19,7 +19,6 @@
         <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
         <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :check_boxes, collection: Labour::LABOUR_DRUGS, include_hidden: false %>
         <%= f.input :labour_end, label: 'Délivrance', as: :select, collection: Labour::LABOUR_END, include_hidden: false %>
-        <%= f.input :labour_end_at, label: "Fin de l'accouchement" %>
       </div>
 
       <%# Partie anésthésie %>
@@ -46,7 +45,7 @@
       <%# Partie bébé %>
 
       <div class="part4">
-        <h3> Informations du bébé</h2>
+        <h3> Informations du bébé</h3>
           <%= f.simple_fields_for :babies do |p| %>
             <%= p.input :first_name, label: "Prénom" %>
             <%= p.input :last_name,  label: "Nom de Famille" %>
@@ -82,6 +81,11 @@
       <%# ----------------------------- %>
 
       <div class="part5">
+
+       <% @codes.each do |code|  %>
+       <%= code.name %>
+       <% end  %>
+
              <h2> Codes </h2>
               <%#= simple_form_for [@labour, @labour_codes ] do |f| %>
                   <%#= f.hidden_field :labour_id  %>
@@ -89,11 +93,14 @@
                   <%#= f.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
                   <%#= f.submit "Enregistrer les codes", class: "btn-flat" %>
               <%# end %>
-            </div>
+      </div>
+
+      <%# ----------------------------- %>
 
       <div class="part6">
-              <%= f.submit "Enregistrer l'accouchement", id: "btn-home" %>
-            </div>
+        <%= f.submit "Enregistrer l'accouchement", id: "btn-home" %>
+      </div> 
+
     <% end %>
   </div>
 </div>

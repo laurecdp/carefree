@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :labour_codes, only: [:new, :create]
   end
   resources :patients, only: [:new, :create, :index, :edit, :update, :show]
+  resources :labour_codes, only: [:new, :create]
 end
