@@ -1,23 +1,27 @@
 class LaboursController < ApplicationController
   def new
-    @patient = Patient.find(params[:patient_id])
-    @category = Category.find(params[:category])
     @baby = Baby.new
-    @labour_codes = LabourCode.new
+    @labour_code = LabourCode.new
     @labour = Labour.new
+    @patient = Patient.find(params[:patient_id])
     @labour.patient = @patient
-    #@labour.labour_codes = @labour_code
-    @labour.babies.build
+    @category = Category.find(params[:category])
     @labour.category = @category
+    @labour.babies.build
     authorize @labour
-    authorize @labour_codes
   end
+
   def create
     @labour = Labour.new(labour_params)
     @patient = @labour.patient
+    # Babyform nested in form labour
     @baby = Baby.new(babies_params[:babies_attributes]["0"])
     @baby.patient = @patient
     @baby.save
+    #------------#
+    # Codesform nested in form labour
+    @labour_codes = LabourCode.new
+    @code
     @labour.user = current_user
     authorize @labour
     authorize @baby
@@ -63,31 +67,29 @@ class LaboursController < ApplicationController
                                    :category_id,
                                    labour_actes: [],
                                    labour_drugs: [],
-                                   labour_complication_type: [] 
-                                   )
+                                   labour_complication_type: [])
   end
 
   def babies_params
-    params.require(:labour).permit(babies_attributes: [ :first_name,
-                                                        :last_name,
-                                                        :birth_date,
-                                                        :alive,
-                                                        :diagnostic,
-                                                        :weight,
-                                                        :heigh,
-                                                        :head_circumference,
-                                                        :sex,
-                                                        :monitoring,
-                                                        :intensivecare,
-                                                        :malformation,
-                                                        :infectiouscontext,
-                                                        :exit_room,
-                                                        :breastfeeding,
-                                                        pathologies: [],
-                                                        monitoring_options: [],
-                                                        intensivecare_options: [],
-                                                        infectiouscontext_options: [] 
-                                                      ])
+    params.require(:labour).permit(babies_attributes: [:first_name,
+                                                       :last_name,
+                                                       :birth_date,
+                                                       :alive,
+                                                       :diagnostic,
+                                                       :weight,
+                                                       :heigh,
+                                                       :head_circumference,
+                                                       :sex,
+                                                       :monitoring,
+                                                       :intensivecare,
+                                                       :malformation,
+                                                       :infectiouscontext,
+                                                       :exit_room,
+                                                       :breastfeeding,
+                                                       pathologies: [],
+                                                       monitoring_options: [],
+                                                       intensivecare_options: [],
+                                                       infectiouscontext_options: []])
   end
-  
+
 end

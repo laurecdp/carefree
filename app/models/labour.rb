@@ -7,7 +7,6 @@ class Labour < ApplicationRecord
   has_many :codes, through: :labour_code
 
   accepts_nested_attributes_for :babies
-  accepts_nested_attributes_for :codes
 
   LABOUR_START = ['Travail spontané', 'Déclenchement artificiel', 'Césarienne avant travail']
   validates :labour_start, inclusion: { in: LABOUR_START }
