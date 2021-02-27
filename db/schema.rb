@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "code"
     t.float "price"
     t.string "category"
+    t.text "diagnostic"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
