@@ -20,7 +20,6 @@
         <%= f.input :labour_end_at, label: "Fin de l'accouchement" %>
         <%= f.input :labour_end, label: 'Délivrance', as: :select, collection: Labour::LABOUR_END, include_hidden: false %>
         <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
-        <%= f.association :labour_codes, label: "Diagnostic", as: :text %>
         <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :check_boxes, collection: Labour::LABOUR_COMPLICATION_TYPE, include_hidden: false %>
         <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :check_boxes, collection: Labour::LABOUR_ACTES, include_hidden: false %>
       </div>
