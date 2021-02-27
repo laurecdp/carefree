@@ -20,7 +20,7 @@
   <% end %>
       <% if current_user %>
         <div class="main-container">
-          <%#= render 'shared/sidebar' unless request.fullpath == "/" %>
+          <%= render 'shared/sidebar' unless request.fullpath == "/" %>
           <div class="main-content">
             <%= render 'shared/topbar' unless request.fullpath == "/" %>
             <%= render 'shared/flashes' %>
