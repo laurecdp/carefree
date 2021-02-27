@@ -20,6 +20,7 @@
         <%= f.input :labour_end_at, label: "Fin de l'accouchement" %>
         <%= f.input :labour_end, label: 'Délivrance', as: :select, collection: Labour::LABOUR_END, include_hidden: false %>
         <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
+        <%= f.association :labour_codes, label: "Diagnostic", as: :text %>
         <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :check_boxes, collection: Labour::LABOUR_COMPLICATION_TYPE, include_hidden: false %>
         <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :check_boxes, collection: Labour::LABOUR_ACTES, include_hidden: false %>
       </div>
@@ -55,15 +56,12 @@
       </div>
             <div class="part5">
               <%#= simple_form_for [@labour, @labour_codes ] do |f| %>
-                <div class="part1">
                   <%#= f.hidden_field :labour_id  %>
                   <%#= f.hidden_field :code_id %>
                   <%#= f.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
-                  <%= f.association :labour_codes, label: "Diagnostic" %>
-                </div>
               <%# end %>
-            </div> 
-            <div>
+            </div>
+            <div class="part6">
               <%= f.submit "Enregistrer l'accouchement", class: "btn-flat" %>
             </div>
     <% end %>

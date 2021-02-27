@@ -21,6 +21,7 @@ class LaboursController < ApplicationController
     @labour.user = current_user
     authorize @labour
     authorize @baby
+    raise
     if @labour.save
       redirect_to dashboard_path
     else
