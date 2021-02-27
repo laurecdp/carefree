@@ -83,8 +83,8 @@
       <div class="part5">
         <h3> Codes </h3>
           <%= f.simple_fields_for :labour_codes do |l| %>
-          <%#= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
-          <%#= l.input :diagnostic %>
+          <%= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
+          <%= l.input :diagnostic %>
           <% end %>
       </div>
 
