@@ -1,12 +1,15 @@
 class LaboursController < ApplicationController
   def new
     @baby = Baby.new
-    @labour_code = LabourCode.new
     @labour = Labour.new
+    @labour_codes = LabourCode.new
+    #------------#
     @patient = Patient.find(params[:patient_id])
     @labour.patient = @patient
+    #------------#
     @category = Category.find(params[:category])
     @labour.category = @category
+    #------------#
     @labour.babies.build
     authorize @labour
   end
@@ -14,19 +17,20 @@ class LaboursController < ApplicationController
   def create
     @labour = Labour.new(labour_params)
     @patient = @labour.patient
+    @labour.user = current_user
     # Babyform nested in form labour
     @baby = Baby.new(babies_params[:babies_attributes]["0"])
     @baby.patient = @patient
     @baby.save
     #------------#
-    # Codesform nested in form labour
-    @labour_codes = LabourCode.new
-    @code
-    @labour.user = current_user
     authorize @labour
     authorize @baby
-    raise
     if @labour.save
+    # Codesform nested in form labour
+      @labour_codes = LabourCode.new(labour_codes_params)
+      raise
+    end
+    if @labour_codes.save
       redirect_to dashboard_path
     else
       render :new
@@ -90,6 +94,12 @@ class LaboursController < ApplicationController
                                                        monitoring_options: [],
                                                        intensivecare_options: [],
                                                        infectiouscontext_options: []])
+  end
+
+  def labour_codes_params
+    params.require(:labour_code).permit(:diagnostic,
+                                        :labour_id,
+                                        :code_id)
   end
 
 end
