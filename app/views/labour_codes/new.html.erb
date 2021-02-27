@@ -5,6 +5,7 @@
       <div class="part1">
         <%#= f.hidden_field :labour_id  %>
         <%#= f.hidden_field :code_id %>
+        <%= f.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.name} | Prix: #{code.price}€" } %>
         <%= f.input :diagnostic %>
         <%= f.submit "Diagnostic ok", class: "btn-flat" %>
       </div>
