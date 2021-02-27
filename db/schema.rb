@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "last_name"
     t.datetime "birth_date"
     t.boolean "alive", default: true
-    t.string "diagnostic"
     t.float "weight"
     t.float "heigh"
     t.float "head_circumference"

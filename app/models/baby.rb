@@ -1,7 +1,7 @@
 class Baby < ApplicationRecord
   belongs_to :patient
-  
-  SEX = ['masculin', 'féminin', 'indéterminé']
+
+  SEX = ['Masculin', 'Féminin', 'Indéterminé']
   validates :sex, inclusion: { in: SEX }
 
   MONITORINGOPTIONS = ['Fréquence cardiaque', 'Mise en incubateur', 'Saturation', 'Glycémie']
@@ -10,18 +10,17 @@ class Baby < ApplicationRecord
   INTENSIVECAREOPTIONS = ['Ventilation au masque', 'Massage cardiaque', 'Incubation', 'Injection médicamenteuse']
   validate :each_intensive_care_options
 
-  INFECTIOUSCONTEXTOPTIONS = ['antibiotiques à la naissance', 'prélèvements bactériologiques','liquide amniotique teinté','fièvre maternelle > 38°', 'infection maternelle']
+  INFECTIOUSCONTEXTOPTIONS = ['Antibiotiques à la naissance', 'Prélèvements bactériologiques', 'Liquide amniotique teinté','Fièvre maternelle > 38°', 'Infection maternelle']
   validate :each_infectious_context_options
 
   EXITROOM = ['Avec sa mère', 'Décès', 'Transfert immédiat', 'Mutation intra-muros']
   validates :exit_room, inclusion: { in: EXITROOM }
 
-  PATHOLOGIES = ['Retard de croissance', 'SIDA', 'Diabète']
+  PATHOLOGIES = ['Retard de croissance', 'VIH', 'Diabète']
   validate :each_pathologies
 
   BREASTFEEDING = ['Maternel', 'Artificiel', 'Mixte']
   validates :breastfeeding, inclusion: { in: BREASTFEEDING }
-
 
   private
 

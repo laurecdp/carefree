@@ -1,7 +1,7 @@
 [
   {
     "acte": "JQGA003",
-    "category": "césarienne",
+    "category": "Césarienne",
     "regroupement": "Acte d'obstétrique/Actes d'anesthésie",
     "libelle": "Accouchement par césarienne au cours du travail, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 362.61
@@ -22,7 +22,7 @@
   },
   {
     "acte": "JQGD010",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Acte d'obstétrique",
     "libelle": "Accouchement céphalique unique par voie naturelle, chez une primipare",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -43,14 +43,14 @@
   },
   {
     "acte": "JQGA003",
-    "category": "césarienne",
+    "category": "Césarienne",
     "regroupement": "Acte d'obstétrique/Actes d'anesthésie",
     "libelle": "Accouchement par césarienne au cours du travail, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 362.61
   },
   {
     "acte": "JQGD012",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Acte d'obstétrique",
     "libelle": "Accouchement céphalique unique par voie naturelle, chez une multipare",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -148,14 +148,14 @@
   },
   {
     "acte": "DZQJ001",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Acte d'échographie",
     "libelle": "Échographie-doppler du cœur et des vaisseaux intrathoraciques, par voie œsophagienne [Échocardiographie-doppler transœsophagienne]",
     "tarif_secteur_1_adherent_optam_optam_co": 143.08
   },
   {
     "acte": "JAQJ001",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Acte d'échographie",
     "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée de la vessie et échographie de la prostate et des vésicules séminales par voie rectale",
     "tarif_secteur_1_adherent_optam_optam_co": 56.7
@@ -169,7 +169,7 @@
   },
   {
     "acte": "JAQJ001",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Acte d'échographie",
     "libelle": "Échographie transcutanée unilatérale ou bilatérale du rein et de la région lombale, avec échographie transcutanée de la vessie et échographie de la prostate et des vésicules séminales par voie rectale",
     "tarif_secteur_1_adherent_optam_optam_co": 56.7
@@ -183,7 +183,7 @@
   },
   {
     "acte": "JQGA003",
-    "category": "césarienne",
+    "category": "Césarienne",
     "regroupement": "Acte d'obstétrique/Actes d'anesthésie",
     "libelle": "Accouchement par césarienne au cours du travail, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 362.61
@@ -253,14 +253,14 @@
   },
   {
     "acte": "JQGA002",
-    "category": "césarienne",
+    "category": "Césarienne",
     "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
     "libelle": "Accouchement par césarienne programmée, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
   },
   {
     "acte": "DZQJ001",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Acte d'échographie",
     "libelle": "Échographie-doppler du cœur et des vaisseaux intrathoraciques, par voie œsophagienne [Échocardiographie-doppler transœsophagienne]",
     "tarif_secteur_1_adherent_optam_optam_co": 143.08
@@ -414,7 +414,7 @@
   },
   {
     "acte": "JQGD010",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Acte d'obstétrique",
     "libelle": "Accouchement céphalique unique par voie naturelle, chez une primipare",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -428,7 +428,7 @@
   },
   {
     "acte": "JQGA002",
-    "category": "césarienne",
+    "category": "Césarienne",
     "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
     "libelle": "Accouchement par césarienne programmée, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -456,7 +456,7 @@
   },
   {
     "acte": "JQGD012",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Acte d'obstétrique",
     "libelle": "Accouchement céphalique unique par voie naturelle, chez une multipare",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -491,7 +491,7 @@
   },
   {
     "acte": "JQGA002",
-    "category": "césarienne",
+    "category": "Césarienne",
     "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
     "libelle": "Accouchement par césarienne programmée, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -540,7 +540,7 @@
   },
   {
     "acte": "AFLB010",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "Actes d'anesthésie/Actes d'anesthésie",
     "libelle": "Anesthésie rachidienne au cours d'un accouchement par voie basse",
     "tarif_secteur_1_adherent_optam_optam_co": ""
@@ -575,7 +575,7 @@
   },
   {
     "acte": "JQGA004",
-    "category": "césarienne",
+    "category": "Césarienne",
     "regroupement": "",
     "libelle": "césarienne en urgence et en dehors du travail",
     "tarif_secteur_1_adherent_optam_optam_co": 313
@@ -603,14 +603,14 @@
   },
   {
     "acte": "JQGD004",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "",
     "libelle": "Accouchement unique par le siège, voie naturelle, chez une primipare",
     "tarif_secteur_1_adherent_optam_optam_co": 385.44
   },
   {
     "acte": "JQGD001",
-    "category": "voie naturelle",
+    "category": "Voie naturelle",
     "regroupement": "",
     "libelle": "Accouchement unique par le siège, voie naturelle, chez une multipare",
     "tarif_secteur_1_adherent_optam_optam_co": 316.94

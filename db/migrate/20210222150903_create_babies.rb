@@ -5,7 +5,6 @@ class CreateBabies < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.datetime :birth_date
       t.boolean :alive, default: true
-      t.string :diagnostic
       t.float :weight
       t.float :heigh
       t.float :head_circumference

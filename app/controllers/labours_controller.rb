@@ -3,11 +3,14 @@ class LaboursController < ApplicationController
     @patient = Patient.find(params[:patient_id])
     @category = Category.find(params[:category])
     @baby = Baby.new
+    @labour_codes = LabourCode.new
     @labour = Labour.new
     @labour.patient = @patient
+    #@labour.labour_codes = @labour_code
     @labour.babies.build
     @labour.category = @category
     authorize @labour
+    authorize @labour_codes
   end
   def create
     @labour = Labour.new(labour_params)
