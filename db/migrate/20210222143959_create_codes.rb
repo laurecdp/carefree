@@ -5,7 +5,7 @@ class CreateCodes < ActiveRecord::Migration[6.0]
       t.string :code
       t.float :price
       t.string :category
-      tf.text_area :diagnostic
+      t.text :diagnostic
 
       t.timestamps
     end
