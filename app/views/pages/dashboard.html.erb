@@ -56,7 +56,6 @@
             <% @categories.each do |categorie|%> 
                <% if categorie.name == "Naissance"%>
                   <% @naissance = categorie %>
-                  <% raise %>
                   <%= link_to dashboard_path(category: @naissance.id)  do %>
                   <i class="fas fa-baby fa-3x"></i>
                   <p> Naissance </p>
