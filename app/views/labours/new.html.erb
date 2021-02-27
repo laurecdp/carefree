@@ -81,18 +81,11 @@
       <%# ----------------------------- %>
 
       <div class="part5">
-
-       <% @codes.each do |code|  %>
-       <%= code.name %>
-       <% end  %>
-
-             <h2> Codes </h2>
-              <%#= simple_form_for [@labour, @labour_codes ] do |f| %>
-                  <%#= f.hidden_field :labour_id  %>
-                  <%#= f.hidden_field :code_id %>
-                  <%#= f.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
-                  <%#= f.submit "Enregistrer les codes", class: "btn-flat" %>
-              <%# end %>
+        <h3> Codes </h3>
+          <%= f.simple_fields_for :labour_codes do |l| %>
+          <%#= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
+          <%#= l.input :diagnostic %>
+          <% end %>
       </div>
 
       <%# ----------------------------- %>

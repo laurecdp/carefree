@@ -1,8 +1,8 @@
 class LaboursController < ApplicationController
   def new
     @baby = Baby.new
-    @labour = Labour.new
     @labour_code = LabourCode.new
+    @labour = Labour.new
     #------------#
     @patient = Patient.find(params[:patient_id])
     @labour.patient = @patient
@@ -11,29 +11,32 @@ class LaboursController < ApplicationController
     @labour.category = @category
     #------------#
     @labour.babies.build
+    @labour.labour_codes.build
+    #------------#
     authorize @labour
   end
 
   def create
-    @codes = Code.all
     @labour = Labour.new(labour_params)
     @patient = @labour.patient
-    @labour.user = current_user
     # Form "baby" nested in form "Labour"
     @baby = Baby.new(babies_params[:babies_attributes]["0"])
     @baby.patient = @patient
     @baby.save
+    # Form "Labour_codes" included in form "Labour"
+    @labour_code = LabourCode.new(labour_code_params[:labour_codes_attributes])
+    @labour_code.save
     #------------#
+    @labour.user = current_user
     @labour.save
     authorize @labour
     authorize @baby
-    # Form "Labour_codes" included in form "Labour"
-    # @labour_code = LabourCode.new(labour_code_params)
-    # if @labour_codes.save
+    #------------#
+    if @labour.save
       redirect_to dashboard_path
-    # else
-      # render :new
-    # end
+    else
+      render :new
+    end
   end
 
   def edit
