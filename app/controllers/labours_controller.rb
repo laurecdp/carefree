@@ -18,14 +18,17 @@ class LaboursController < ApplicationController
 
   def create
     @categories = Category.all
+    @codes = Code.all
     @labour = Labour.new(labour_params)
     @patient = @labour.patient
+    @labour_id = @labour.id
     # Form "baby" nested in form "Labour"
     @baby = Baby.new(babies_params[:babies_attributes]["0"])
     @baby.patient = @patient
     @baby.save
     # Form "Labour_codes" included in form "Labour"
     @labour_code = LabourCode.new(labour_code_params[:labour_codes_attributes]["0"])
+    @labour_code.labour_id = @labour_id
     @labour_code.save
     #------------#
     @labour.user = current_user
@@ -35,6 +38,7 @@ class LaboursController < ApplicationController
     authorize @labour_code
     #------------#
     if @labour.save
+      raise
       redirect_to dashboard_path
     else
       render :new
@@ -101,8 +105,6 @@ class LaboursController < ApplicationController
   end
 
   def labour_code_params
-    params.require(:labour).permit(labour_codes_attributes: [:diagnostic,
-                                                             :labour_id,
-                                                             :code_id])
+    params.require(:labour).permit(labour_codes_attributes: [:diagnostic])
   end
 end
