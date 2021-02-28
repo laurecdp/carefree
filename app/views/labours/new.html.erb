@@ -77,8 +77,21 @@
       <div class="part3">
         <h3> Complications </h3>
         <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
+        <%# Complications %>
         <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :check_boxes, collection: Labour::LABOUR_COMPLICATION_TYPE, include_hidden: false %>
+        <%# ------------Partie codes------------- %>           
+        <%= f.simple_fields_for :labour_codes do |l| %>
+          <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+          <%= l.input :diagnostic %>
+        <% end %>
+        <%# Actes de la délivrance %>
         <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :check_boxes, collection: Labour::LABOUR_ACTES, include_hidden: false %>
+        <%# ------------Partie codes------------- %>           
+        <%= f.simple_fields_for :labour_codes do |l| %>
+          <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+          <%= l.input :diagnostic %>
+        <% end %>
+
       </div>
 
       <%# ----------------------------- %>
@@ -99,18 +112,38 @@
             <%# Partie monitoring %>
             <%= p.input :monitoring,  label: "Monitorage", as: :radio_buttons, collection: ['oui', 'non'] %>
             <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Types de monitorage", input_html: { multiple: true }, include_hidden: false  %>
+            <%# ------------Partie codes------------- %> 
+            <%= f.simple_fields_for :labour_codes do |l| %>
+              <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+              <%= l.input :diagnostic %>
+            <% end %>
 
             <%# Partie réanimation %>
             <%= p.input :intensivecare,  label: "Réanimation", as: :radio_buttons, collection: ['oui', 'non'] %>
             <%= p.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation", input_html: { multiple: true }, include_hidden: false  %>
+            <%# ------------Partie codes------------- %> 
+            <%= f.simple_fields_for :labour_codes do |l| %>
+              <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+              <%= l.input :diagnostic %>
+            <% end %>
 
             <%# Partie infections %>
             <%= p.input :infectiouscontext,  label: "Infections", as: :radio_buttons, collection: ['oui', 'non']  %>
             <%= p.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, as: :check_boxes, label: "Types d'infections", input_html: { multiple: true }, include_hidden: false  %>
+            <%# ------------Partie codes------------- %> 
+            <%= f.simple_fields_for :labour_codes do |l| %>
+              <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+              <%= l.input :diagnostic %>
+            <% end %>
 
             <%# Partie pathologies %>
             <%= p.input :malformation,  label: "Malformation", as: :radio_buttons, collection: ['oui', 'non']   %>
             <%= p.input :pathologies, collection: Baby::PATHOLOGIES, as: :check_boxes, label: "Pathologies", input_html: { multiple: true }, include_hidden: false  %>
+            <%# ------------Partie codes------------- %> 
+            <%= f.simple_fields_for :labour_codes do |l| %>
+              <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+              <%= l.input :diagnostic %>
+            <% end %>
 
             <%# Partie sorties salle de naissance%>
             <%= p.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false  %>
@@ -123,13 +156,13 @@
 
       <%# Partie codes %>
 
-      <div class="part5">
+      <%# <div class="part5">
         <h3> Codes </h3>
           <%= f.simple_fields_for :labour_codes do |l| %>
-          <%= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
-          <%= l.input :diagnostic %>
-          <% end %>
-      </div>
+          <%#= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
+          <%#= l.input :diagnostic %>
+          <%# end %>
+      <%# </div> 
 
       <%# ----------------------------- %>
 
