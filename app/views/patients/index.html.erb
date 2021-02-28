@@ -1,3 +1,21 @@
+<div class= "container">
 
+  <h2>Patients</h2>
 
+  <%= @patients.each do |patient| %>
+    <div class="cards-show">
+      <div class="card-patient">
+        <div class="card-title">
+          <h3><%= "#{patient.first_name} #{patient.last_name}" %></h3>
+        </div>
+        <ul>
+          <li><%= patient.age %> ans</li>
+          <li><%= patient.birth_date %></li>
+          <li><%= patient.nss %></li>
+          <li><%= patient.number_of_weeks %> semaines</li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
 
+</div>

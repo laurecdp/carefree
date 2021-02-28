@@ -14,13 +14,17 @@
         <div class="card-category-dashboard">
           <i class="fas fa-dove" id="labour-icon"></i>
           <div class="box-number">
-            <p><%= current_user.labours.count %> Accouchements</p>
+            <%= @labours.count %> 
+            <p> Accouchements</p>
           </div>
         </div>
 
         <div class="card-category-dashboard">
+          <%= link_to(patients_path) do %>
           <i class="fas fa-user-injured"></i>
+          <% end %>
           <div class="box-patients">
+            <%= @patients.count %>
             <p> Patients</p>
           </div>
         </div>
@@ -28,6 +32,7 @@
         <div class="card-category-dashboard">
           <i class="fas fa-star-of-life" id="life-icon"></i>
           <div class="box-number-baby">
+            <%= @babies.count %>
             <p>Naissances</p>
           </div>
         </div>
