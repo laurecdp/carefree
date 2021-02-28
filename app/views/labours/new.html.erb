@@ -16,17 +16,26 @@
                     as: :radio_buttons,
                     input_html: { class: "tag-selector" },
                     item_wrapper_class: 'tag-item' %>
+
         <%# ------------Partie codes------------- %>         
             <%= f.simple_fields_for :labour_codes do |l| %>
               <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+              <%#= l.collection_check_boxes(:labour_code,
+                                           :diagnostic, 
+                                           Code.all,
+                                           :id) %>
               <%= l.input :diagnostic %>
+              
             <% end %>
+
+            <%#= grouped_collection_select(:code, :labour_code_id, @labour, :labour_codes, :name, :id, :name) %>
 
         <%# Partie déclenchement artificel %>
         <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
         <%# ------------Partie codes------------- %>           
         <%= f.simple_fields_for :labour_codes do |l| %>
-          <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+          <%#= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+          <%= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
           <%= l.input :diagnostic %>
         <% end %>
 
@@ -44,7 +53,7 @@
 
       <div class="part2">
        <h3> Anésthésie </h3>
-        <%= f.input :anaesthesia, label: 'Anésthésie', as: :radio_buttons, collection: ['oui', 'non'] %>
+        <%= f.input :anaesthesia, label: 'Anésthésie', as: :radio_buttons, radio_buttons_style: :inline, collection: ['oui', 'non'] %>
         <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
         <%= f.input :anaesthesia_category, label: 'Type d\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_CATEGORY, include_hidden: false %>
         <%# ------------Partie codes------------- %>           
@@ -80,8 +89,6 @@
 
       <%# ----------------------------- %>
 
-      <%# Partie bébé %>
-
        <%# Partie complications %>
 
       <div class="part4">
@@ -105,6 +112,8 @@
       </div>
 
       <%# ----------------------------- %>
+
+       <%# Partie bébé %>
 
       <div class="part5">
         <h3> Informations du bébé</h3>

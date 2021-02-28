@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "infectiouscontext_options", default: [], array: true
     t.string "exit_room"
     t.string "breastfeeding"
+    t.boolean "pathology", default: false
     t.string "pathologies", default: [], array: true
     t.bigint "patient_id", null: false
     t.datetime "created_at", precision: 6, null: false
