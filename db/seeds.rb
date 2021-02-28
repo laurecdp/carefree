@@ -37,7 +37,7 @@ puts "#{User.all.length} users created"
 
 puts 'Creating Codes'
 
-filepath = './db/labour_unicode.json'
+filepath = './db/labour_unicode_copy.json'
 serialized_codes = File.read(filepath)
 codes = JSON.parse(serialized_codes)
 
