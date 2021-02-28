@@ -4,10 +4,24 @@
 
 .search-window {
   flex: 0 0 250px;
-  background-color: $light-gray;
+  background-color: #0249A7;
   display: none;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.search-window .search-form-control.form-group {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#close {
+  position: absolute;
+  top: 11px;
+  right: 14px;
+  color: white;
+  cursor: pointer;
 }
 
 .dashboard-container {
@@ -58,18 +72,12 @@
 
 .box-number {
   background-color: $coral;
-  text-align: center;
   color: white;
   font-weight: 700;
   font-size: 20px;
   margin-top: 20px;
   border-radius: 15px;
-  bottom: unset;
-  align-content: unset;
-  padding-left: 21px;
-  padding-right: 21px;
 }
-
 
 #labour-icon {
   color: $coral;
@@ -93,7 +101,7 @@
 .box-number-baby {
   background-color: $pink;
   text-align: center;
-  color: white;
+  color: $pink;
   font-weight: 700;
   font-size: 20px;
   margin-top: 20px;
