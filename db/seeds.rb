@@ -68,9 +68,9 @@ puts 'Creating Patients'
   )
 end
 
-meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: '23 Février 2021', nss:'269054958815787', number_of_weeks: 39)
+meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), nss:'269054958815787', number_of_weeks: 39)
 
-kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: '1 Mars 2021', nss:'269055968916790', number_of_weeks: 35)
+kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), nss:'269055968916790', number_of_weeks: 35)
 
 puts "#{Patient.all.length} patients created"
 
