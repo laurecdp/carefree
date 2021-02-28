@@ -1,6 +1,11 @@
 <div class= "container">
 
-  <div class="title"><h2><%= "#{@patient.first_name} #{@patient.last_name}" %> </h2></div>
+  <div class="card-product" id= "welcome-message">
+      <div class="card-product-infos">
+        <h2><%= "#{@patient.first_name} #{@patient.last_name}" %> </h2>
+      </div>
+      <%=image_tag "app/assets/images/pregnant.jpg" %>
+    </div>
 
   <div class="cards-show">
     <div class="card-patient">
