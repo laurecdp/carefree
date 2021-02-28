@@ -1,9 +1,8 @@
 <div class= "container">
-
-  <h2>Patients</h2>
-
-  <%= @patients.each do |patient| %>
-    <div class="cards-show">
+  <div class="title"><h2>Patientes</h2></div>
+  
+  <div class="cards-index">
+    <% @patients.each do |patient| %>
       <div class="card-patient">
         <div class="card-title">
           <h3><%= "#{patient.first_name} #{patient.last_name}" %></h3>
@@ -15,7 +14,5 @@
           <li><%= patient.number_of_weeks %> semaines</li>
         </ul>
       </div>
-    </div>
-  <% end %>
-
-</div>
+    <% end %>
+  </div>
