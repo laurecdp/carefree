@@ -1,6 +1,6 @@
 
 .sidebar {
-  background-color: white;
+  background-color: #0249A7;
   height: 100vh;
   font-size: 16px;
   border-right: 1px solid lightgrey;
@@ -18,7 +18,7 @@
 
 .sidebar a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .sidebar li {
@@ -26,16 +26,16 @@
 }
 
 .fas.fa-bars {
-  color: grey;
+  color: white;
   padding-top: 10px;
 }
 
 .sidebar .icone {
   font-size: 20px;
   cursor: pointer;
-  background-color: white;
+  background-color: #0249A7;
   padding-right: 16px;
-  color: grey;
+  color: white;
   width: 42px;
   display: inline-block;
   text-align: center;

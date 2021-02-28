@@ -53,7 +53,7 @@
             <%= link_to(dashboard_path) do %>
             <% end %>
           <% else %>
-            <% @categories.each do |categorie|%> 
+            <% @categories.each do |categorie|%>
                <% if categorie.name == "Naissance"%>
                   <% @naissance = categorie %>
                   <%= link_to dashboard_path(category: @naissance.id)  do %>
@@ -92,7 +92,7 @@
     <%= simple_form_for :search, url: dashboard_path, method: :get do |f| %>
       <div class="search-form-control form-group">
         <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Recherche"/>
-        <button name="button" type="submit" class="btn btn-flat" >
+        <button name="button" type="submit" class="btn btn-flat">
           <i class="fas fa-search"></i> </button>
       </div>
     <% end %>
