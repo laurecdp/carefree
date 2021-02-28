@@ -4,9 +4,11 @@
   <div class="cards-index">
     <% @patients.each do |patient| %>
       <div class="card-patient">
+        <%= link_to(patient_path(patient.id)) do %>
         <div class="card-title">
           <h3><%= "#{patient.first_name} #{patient.last_name}" %></h3>
         </div>
+        <% end %>
         <ul>
           <li><%= patient.age %> ans</li>
           <li><%= patient.birth_date %></li>

@@ -17,14 +17,16 @@ class PatientsController < ApplicationController
     @baby = Baby.new
     @labour_code = LabourCode.new
     #------------#
-    @labour.patient = @patient
-    #------------#
-    @category = Category.find(params[:category])
-    @labour.category = @category
-    #------------#
-    @labour.babies.build
-    @labour.labour_codes.build
-    #------------#
+    if params[:category]
+      @labour.patient = @patient
+      #------------#
+      @category = Category.find(params[:category])
+      @labour.category = @category
+      #------------#
+      @labour.babies.build
+      @labour.labour_codes.build
+      #------------#
+    end
     authorize @patient
   end
 
