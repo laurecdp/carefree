@@ -1,4 +1,5 @@
 require 'json'
+require 'faker'
 
 
 Labour.destroy_all
@@ -36,7 +37,7 @@ puts "#{User.all.length} users created"
 
 puts 'Creating Codes'
 
-filepath = './db/labour_unicode.json'
+filepath = './db/labour_unicode_copy.json'
 serialized_codes = File.read(filepath)
 codes = JSON.parse(serialized_codes)
 
@@ -55,9 +56,21 @@ puts "#{Code.all.length} codes created"
 
 puts 'Creating Patients'
 
-meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: '23 Février 2021', nss:'269054958815787', description: '', number_of_weeks: '39')
+20.times do 
+  patient = Patient.create!(
+    first_name: Faker::Name.female_first_name,
+    last_name: Faker::Name.last_name, 
+    age: rand(16..50), 
+    blood_group: Faker::Blood.group,
+    birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), 
+    nss:Faker::NationalHealthService.british_number, 
+    number_of_weeks: rand(3..39)
+  )
+end
 
-kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: '1 Mars 2021', nss:'269055968916790', description: '', number_of_weeks: '35')
+meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), nss:'269054958815787', number_of_weeks: 39)
+
+kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), nss:'269055968916790', number_of_weeks: 35)
 
 puts "#{Patient.all.length} patients created"
 
@@ -78,11 +91,5 @@ ordonnance = Category.create(name: 'Ordonnance')
 puts "#{Category.all.length} categories created"
 
 #----------------------------#
-#puts 'Creating Labours'
 
-
-# naissance = Labour.create!(patient: meghan, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h' )
-# puts "#{Labour.all.length} labours created"
-
-
-# puts 'done seeding'
+puts 'Done'

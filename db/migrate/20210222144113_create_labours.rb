@@ -13,6 +13,7 @@ class CreateLabours < ActiveRecord::Migration[6.0]
       t.string :anaesthesia_moment
       t.string :labour_complication_type, array: true, default: []
       t.string :labour_actes, array: true, default: []
+      t.boolean :anaesthesia, default: false
       t.boolean :anaesthesia_complication, default: false
       t.boolean :caesarean, default: false
       t.boolean :labour_complication, default: false
