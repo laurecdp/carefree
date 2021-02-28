@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "anaesthesia_moment"
     t.string "labour_complication_type", default: [], array: true
     t.string "labour_actes", default: [], array: true
+    t.boolean "anaesthesia", default: false
     t.boolean "anaesthesia_complication", default: false
     t.boolean "caesarean", default: false
     t.boolean "labour_complication", default: false

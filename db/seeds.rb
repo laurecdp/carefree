@@ -91,11 +91,5 @@ ordonnance = Category.create(name: 'Ordonnance')
 puts "#{Category.all.length} categories created"
 
 #----------------------------#
-#puts 'Creating Labours'
 
-
-# naissance = Labour.create!(patient: meghan, user: annick, category: naissance, labour_start_at: 'Fevrier 12 16h', labour_end_at: 'Fevrier 12 22h' )
-# puts "#{Labour.all.length} labours created"
-
-
-# puts 'done seeding'
+puts 'Done'

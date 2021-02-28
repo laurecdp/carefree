@@ -9,7 +9,7 @@
 
   {
     "acte": "JQGD010",
-    "category": "Voie naturelle",
+    "category": "Travail spontané",
     "regroupement": "Acte d'obstétrique",
     "libelle": "Accouchement céphalique unique par voie naturelle, chez une primipare",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -17,7 +17,7 @@
 
   {
     "acte": "JKFA031",
-    "category": "Actes",
+    "category": "Acte",
     "regroupement": "Actes d'anesthésie/Actes de chirurgie",
     "libelle": "Conisation du col de l'utérus",
     "tarif_secteur_1_adherent_optam_optam_co": 93.42
@@ -31,14 +31,14 @@
   },
   {
     "acte": "JQGD012",
-    "category": "Voie naturelle",
+    "category": "Travail spontané",
     "regroupement": "Acte d'obstétrique",
     "libelle": "Accouchement céphalique unique par voie naturelle, chez une multipare",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
   },
   {
     "acte": "JNJD002",
-    "category": "Actes",
+    "category": "Acte",
     "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
     "libelle": "Évacuation d'un utérus gravide par aspiration et/ou curetage, au 1er trimestre de la grossesse",
     "tarif_secteur_1_adherent_optam_optam_co": 57.6
@@ -46,7 +46,7 @@
   
   {
     "acte": "JKFA031",
-    "category": "Actes",
+    "category": "Acte",
     "regroupement": "Actes d'anesthésie/Actes de chirurgie",
     "libelle": "Conisation du col de l'utérus",
     "tarif_secteur_1_adherent_optam_optam_co": 93.42
@@ -54,7 +54,7 @@
  
   {
     "acte": "JNJD002",
-    "category": "Actes",
+    "category": "Acte",
     "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
     "libelle": "Évacuation d'un utérus gravide par aspiration et/ou curetage, au 1er trimestre de la grossesse",
     "tarif_secteur_1_adherent_optam_optam_co": 57.6
@@ -78,7 +78,7 @@
 
   {
     "acte": "DZQJ001",
-    "category": "Voie naturelle",
+    "category": "Travail spontané",
     "regroupement": "Acte d'échographie",
     "libelle": "Échographie-doppler du cœur et des vaisseaux intrathoraciques, par voie œsophagienne [Échocardiographie-doppler transœsophagienne]",
     "tarif_secteur_1_adherent_optam_optam_co": 143.08
@@ -86,7 +86,7 @@
  
   {
     "acte": "JKFA031",
-    "category": "Actes",
+    "category": "Acte",
     "regroupement": "Actes d'anesthésie/Actes de chirurgie",
     "libelle": "Conisation du col de l'utérus",
     "tarif_secteur_1_adherent_optam_optam_co": 93.42
@@ -94,7 +94,7 @@
 
   {
     "acte": "JQGD010",
-    "category": "Voie naturelle",
+    "category": "Travail spontané",
     "regroupement": "Acte d'obstétrique",
     "libelle": "Accouchement céphalique unique par voie naturelle, chez une primipare",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -110,7 +110,7 @@
 
   {
     "acte": "JQGD012",
-    "category": "Voie naturelle",
+    "category": "Travail spontané",
     "regroupement": "Acte d'obstétrique",
     "libelle": "Accouchement céphalique unique par voie naturelle, chez une multipare",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
@@ -126,7 +126,7 @@
  
   {
     "acte": "AFLB010",
-    "category": "Voie naturelle",
+    "category": "Travail spontané",
     "regroupement": "Actes d'anesthésie/Actes d'anesthésie",
     "libelle": "Anesthésie rachidienne au cours d'un accouchement par voie basse",
     "tarif_secteur_1_adherent_optam_optam_co": ""
@@ -169,14 +169,14 @@
   },
   {
     "acte": "PBLB001",
-    "category": "Actes",
+    "category": "Acte",
     "regroupement": "",
     "libelle": "Prostaglandines",
     "tarif_secteur_1_adherent_optam_optam_co": 20.77
   },
   {
     "acte": "MELH001",
-    "category": "Actes",
+    "category": "Acte",
     "regroupement": "",
     "libelle": "Oxytocine dose totale",
     "tarif_secteur_1_adherent_optam_optam_co": 42.21
@@ -190,14 +190,14 @@
   },
   {
     "acte": "JQGD004",
-    "category": "Voie naturelle",
+    "category": "Travail spontané",
     "regroupement": "",
     "libelle": "Accouchement unique par le siège, voie naturelle, chez une primipare",
     "tarif_secteur_1_adherent_optam_optam_co": 385.44
   },
   {
     "acte": "JQGD001",
-    "category": "Voie naturelle",
+    "category": "Travail spontané",
     "regroupement": "",
     "libelle": "Accouchement unique par le siège, voie naturelle, chez une multipare",
     "tarif_secteur_1_adherent_optam_optam_co": 316.94

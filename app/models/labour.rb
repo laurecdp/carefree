@@ -18,7 +18,7 @@ class Labour < ApplicationRecord
   LABOUR_END = ['Dirigée', 'Naturelle', 'Complète', 'Incomplète']
   validates :labour_end, inclusion: { in: LABOUR_END }
 
-  ANAESTHESIA_CATEGORY = ['Anesthésie avant la naissance', 'Anesthésie loco-régionale', 'Anesthésie générale', 'Anesthésie locale', 'Moment de l\'anesthésie', 'Complication de l\'anesthésie']
+  ANAESTHESIA_CATEGORY = ['Anesthésie avant la naissance', 'Anesthésie loco-régionale', 'Anesthésie générale', 'Anesthésie locale']
   validates :anaesthesia_category, inclusion: { in: ANAESTHESIA_CATEGORY }
 
   ANAESTHESIA_GENERAL = ['D\'emblée', 'Post péridurale', 'Après rachianesthésie']
