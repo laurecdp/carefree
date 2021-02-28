@@ -38,15 +38,13 @@
           <%= l.input :diagnostic %>
         <% end %>
 
-        <%# Délivrance %>
-        <%= f.input :labour_end, label: 'Délivrance', as: :select, collection: Labour::LABOUR_END, include_hidden: false %>
-
       </div>
 
       <%# Partie anésthésie %>
 
       <div class="part2">
        <h3> Anésthésie </h3>
+        <%= f.input :anaesthesia, label: 'Anésthésie', as: :radio_buttons, collection: ['oui', 'non'] %>
         <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
         <%= f.input :anaesthesia_category, label: 'Type d\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_CATEGORY, include_hidden: false %>
         <%# ------------Partie codes------------- %>           
@@ -72,9 +70,21 @@
 
       </div>
 
-      <%# Partie complications %>
-
+      <%# Délivrance %>
       <div class="part3">
+       <h3>Délivrance</h3>
+
+        <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false %>
+      
+      </div>
+
+      <%# ----------------------------- %>
+
+      <%# Partie bébé %>
+
+       <%# Partie complications %>
+
+      <div class="part4">
         <h3> Complications </h3>
         <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
         <%# Complications %>
@@ -96,9 +106,7 @@
 
       <%# ----------------------------- %>
 
-      <%# Partie bébé %>
-
-      <div class="part4">
+      <div class="part5">
         <h3> Informations du bébé</h3>
           <%= f.simple_fields_for :babies do |p| %>
             <%= p.input :first_name, label: "Prénom" %>
@@ -111,7 +119,7 @@
 
             <%# Partie monitoring %>
             <%= p.input :monitoring,  label: "Monitorage", as: :radio_buttons, collection: ['oui', 'non'] %>
-            <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Types de monitorage", input_html: { multiple: true }, include_hidden: false  %>
+            <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Type de monitorage", input_html: { multiple: true }, include_hidden: false  %>
             <%# ------------Partie codes------------- %> 
             <%= f.simple_fields_for :labour_codes do |l| %>
               <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
@@ -138,7 +146,8 @@
 
             <%# Partie pathologies %>
             <%= p.input :malformation,  label: "Malformation", as: :radio_buttons, collection: ['oui', 'non']   %>
-            <%= p.input :pathologies, collection: Baby::PATHOLOGIES, as: :check_boxes, label: "Pathologies", input_html: { multiple: true }, include_hidden: false  %>
+            <%= p.input :pathology,  label: "Pathologies", as: :radio_buttons, collection: ['oui', 'non']   %>
+            <%= p.input :pathologies, collection: Baby::PATHOLOGIES, as: :check_boxes, label: "Pathologies observées", input_html: { multiple: true }, include_hidden: false  %>
             <%# ------------Partie codes------------- %> 
             <%= f.simple_fields_for :labour_codes do |l| %>
               <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
@@ -156,7 +165,7 @@
 
       <%# Partie codes %>
 
-      <%# <div class="part5">
+      <%# <div class="part6">
         <h3> Codes </h3>
           <%= f.simple_fields_for :labour_codes do |l| %>
           <%#= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
@@ -166,7 +175,7 @@
 
       <%# ----------------------------- %>
 
-      <div class="part6">
+      <div class="part7">
         <%= f.submit "Enregistrer l'accouchement", id: "btn-home" %>
       </div> 
 

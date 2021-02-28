@@ -36,7 +36,7 @@ class Labour < ApplicationRecord
   LABOUR_COMPLICATION_TYPE = ['Hémorragies', 'Rétention placentaire', 'Inversion utérine']
   validate :each_labour_complication_type
 
-  LABOUR_ACTES = ['Délivrance artificelle', 'Transfusion', 'Déchirure simple/suture', 'Forceps', 'Ligature des artères utérines']
+  LABOUR_ACTES = ['Délivrance artificelle', 'Transfusion', 'Déchirure simple/suture', 'Embolisation artérielle', 'Ligature des artères utérines']
   validate :each_labour_actes
 
   private

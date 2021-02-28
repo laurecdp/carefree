@@ -18,6 +18,7 @@ class CreateBabies < ActiveRecord::Migration[6.0]
       t.string :infectiouscontext_options, array: true, default: []
       t.string :exit_room
       t.string :breastfeeding
+      t.boolean :pathology, default: false
       t.string :pathologies, array: true, default: []
       t.references :patient, null: false, foreign_key: true
 
