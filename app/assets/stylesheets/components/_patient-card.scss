@@ -4,6 +4,12 @@
   grid-gap: 32px;
 }
 
+.cards-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
+
 .card-patient {
   color: black;
   font-weight: lighter;

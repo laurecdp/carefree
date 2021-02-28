@@ -14,13 +14,17 @@
         <div class="card-category-dashboard">
           <i class="fas fa-dove" id="labour-icon"></i>
           <div class="box-number">
-            <p><%= current_user.labours.count %> Accouchements</p>
+            <%= @labours.count %> 
+            <p> Accouchements</p>
           </div>
         </div>
 
         <div class="card-category-dashboard">
+          <%= link_to(patients_path) do %>
           <i class="fas fa-user-injured"></i>
+          <% end %>
           <div class="box-patients">
+            <%= @patients.count %>
             <p> Patients</p>
           </div>
         </div>
@@ -28,6 +32,7 @@
         <div class="card-category-dashboard">
           <i class="fas fa-star-of-life" id="life-icon"></i>
           <div class="box-number-baby">
+            <%= @babies.count %>
             <p>Naissances</p>
           </div>
         </div>
@@ -75,7 +80,7 @@
         <%= link_to(dashboard_path) do %>
           <button type="button" class="button-action5">
             <i class="fas fa-prescription-bottle-alt fa-3x"></i>
-            <p>Ordonnance</p>
+            <p>Pharmacie</p>
           </button>
         <% end %>
 
@@ -99,7 +104,7 @@
     <% end %>
     <% @patients.each do |patient| %>
       <div class="cards-window">
-        <%= link_to new_labour_path(patient_id:patient.id, category:params[:category]) do %>
+        <%= link_to patient_path(id:patient.id, category:params[:category]) do %>
           <div class="card-patient-window">
             <div class="user"><i class="far fa-user fa-lg"></i></div>
             <div class="patient-info">
