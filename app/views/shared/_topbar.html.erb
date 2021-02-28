@@ -19,11 +19,11 @@
           <%= link_to "Accueil", root_path, class: "nav-link"%>
         </li>
         <li class="nav-item active">
-          <%= link_to "Mon compte", dashboard_path, class: "nav-link"%>
+          <%#= link_to "Mon compte", dashboard_path, class: "nav-link"%>
         </li>
         <li class="nav-item dropdown">
         <% if current_user %>
-          <i class="fas fa-user-nurse dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+          <i class="fas fa-user-nurse" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Mon compte", dashboard_path, class: "dropdown-item" %>
             <%= link_to "Mes patientes", patients_path, class: "dropdown-item" %>
