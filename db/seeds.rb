@@ -72,7 +72,6 @@ meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', b
 
 kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: '1 Mars 2021', nss:'269055968916790', number_of_weeks: 35)
 
-
 puts "#{Patient.all.length} patients created"
 
 #----------------------------#

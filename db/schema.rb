@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.integer "age"
     t.date "birth_date"
     t.string "nss"
+    t.string "blood_group"
     t.integer "number_of_weeks"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
