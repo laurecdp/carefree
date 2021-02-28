@@ -38,8 +38,7 @@ class LaboursController < ApplicationController
     authorize @labour_code
     #------------#
     if @labour.save
-      raise
-      redirect_to dashboard_path
+      redirect_to patient_path(@patient)
     else
       render :new
     end

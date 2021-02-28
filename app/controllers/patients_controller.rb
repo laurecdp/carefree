@@ -10,9 +10,21 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @labour = Labour.find(params[:id])
     @patient = Patient.find(params[:id])
-    @patient.labour = @labour
+
+    # Methode new pour le form
+    @labour = Labour.new
+    @baby = Baby.new
+    @labour_code = LabourCode.new
+    #------------#
+    @labour.patient = @patient
+    #------------#
+    @category = Category.find(params[:category])
+    @labour.category = @category
+    #------------#
+    @labour.babies.build
+    @labour.labour_codes.build
+    #------------#
     authorize @patient
   end
 

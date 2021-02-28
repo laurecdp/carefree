@@ -103,7 +103,7 @@
     <% end %>
     <% @patients.each do |patient| %>
       <div class="cards-window">
-        <%= link_to new_labour_path(patient_id:patient.id, category:params[:category]) do %>
+        <%= link_to patient_path(id:patient.id, category:params[:category]) do %>
           <div class="card-patient-window">
             <div class="user"><i class="far fa-user fa-lg"></i></div>
             <div class="patient-info">
