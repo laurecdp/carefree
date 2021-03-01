@@ -14,7 +14,7 @@
         <div class="card-category-dashboard">
           <i class="fas fa-dove" id="labour-icon"></i>
           <div class="box-number">
-            <%= @labours.count %> 
+            <%= @labours.count %>
             <p> Accouchements</p>
           </div>
         </div>
@@ -93,6 +93,7 @@
       </div>
     </div>
   </div>
+
   <div class="search-window <%= 'appear' if params[:category] %>">
     <%= simple_form_for :search, url: dashboard_path, method: :get do |f| %>
       <i class="fas fa-times" id="close"></i>
@@ -102,6 +103,7 @@
           <i class="fas fa-search"></i> </button>
       </div>
     <% end %>
+
     <% @patients.each do |patient| %>
       <div class="cards-window">
         <%= link_to patient_path(id:patient.id, category:params[:category]) do %>

@@ -10,13 +10,8 @@
           <li class="action3"><a href="#"><span class="icone"><i class="fas fa-clinic-medical"></i></span><span class="label">Hospitalisation</span></a></li>
 
           <li class="action4" id="baby-sidebar">
-          <% if params[:category] %>
-            <%= link_to dashboard_path do %>
-            <span class="icone"><i class="fas fa-baby"></i></span><span class="label">Naissance</span>
-            <% end %>
-          <% else %>
             <% @categories = Category.all %>
-            <% @categories.each do |categorie|%> 
+            <% @categories.each do |categorie|%>
                <% if categorie.name == "Naissance"%>
               <% @naissance = categorie %>
                 <%= link_to dashboard_path(category: @naissance.id)  do %>
@@ -24,14 +19,13 @@
                 <% end %>
             <% end %>
             <% end %>
-          <% end %>
           </li>
 
-          
+
           <li class="action5"><a href="#"><span class="icone"><i class="fas fa-prescription-bottle-alt"></i></span><span class="label">Pharmacie</span></a></li>
 
           <li class="action6"><a href="#"><span class="icone"><i class="fas fa-print"></i></span><span class="label">Impression</span></a></li>
-          
+
    </ul>
 </div>
 
