@@ -110,9 +110,87 @@ const searchForm = () => {
     })
   
   /* Partie 6 du Form "Informations du bébé" */
-
   
+    /* Monitorage */
+    /* If yes */
+    const inputYesMonitoring = document.getElementById("labour_babies_attributes_0_monitoring_oui");
 
+    inputYesMonitoring.addEventListener("click", (event) => {
+      document.getElementById("monitoring-options").style.display = "block"
+      document.getElementById("monitoring-checkbox").style.display = "block"
+    })
+
+    /* If no */
+    const inputNoMonitoring = document.getElementById("labour_babies_attributes_0_monitoring_non");
+
+    inputNoMonitoring.addEventListener("click", (event) => {
+      document.getElementById("monitoring-options").style.display = "none"
+      document.getElementById("monitoring-checkbox").style.display = "none"
+    })
+  
+  /* ------------------- */
+
+    /* réanimation */
+    /* If yes */
+    const inputYesIntensive = document.getElementById("labour_babies_attributes_0_intensivecare_oui");
+
+    inputYesIntensive.addEventListener("click", (event) => {
+      document.getElementById("intensivecare-options").style.display = "block"
+      document.getElementById("intensivecare-checkbox").style.display = "block"
+    })
+
+    /* If no */
+    const inputNoIntensive = document.getElementById("labour_babies_attributes_0_intensivecare_non");
+
+    inputNoIntensive.addEventListener("click", (event) => {
+      document.getElementById("intensivecare-options").style.display = "none"
+      document.getElementById("intensivecare-checkbox").style.display = "none"
+    })
+
+    /* ------------------- */
+
+    /* Infections */
+    /* If yes */
+    const inputYesInfection = document.getElementById("labour_babies_attributes_0_infectiouscontext_oui");
+
+    inputYesInfection.addEventListener("click", (event) => {
+      document.getElementById("infections-options").style.display = "block"
+      document.getElementById("infections-checkbox").style.display = "block"
+    })
+
+    /* If no */
+    const inputNoInfection = document.getElementById("labour_babies_attributes_0_infectiouscontext_non");
+
+    inputNoInfection.addEventListener("click", (event) => {
+      document.getElementById("infections-options").style.display = "none"
+      document.getElementById("infections-checkbox").style.display = "none"
+    })
+
+    /* ------------------- */
+
+    /* Malformation */
+    
+    /* ------------------- */
+
+    /* Pathologies*/
+
+      /* If yes */
+    const inputYesPathology = document.getElementById("labour_babies_attributes_0_pathology_oui");
+
+      inputYesPathology.addEventListener("click", (event) => {
+        document.getElementById("pathologies-options").style.display = "block"
+        document.getElementById("pathologies-checkbox").style.display = "block"
+      })
+
+      /* If no */
+    const inputNoPathology = document.getElementById("labour_babies_attributes_0_pathology_non");
+
+      inputNoPathology.addEventListener("click", (event) => {
+        document.getElementById("pathologies-options").style.display = "none"
+        document.getElementById("pathologies-checkbox").style.display = "none"
+      })
+
+    /* ------------------- */
   }
 }
   

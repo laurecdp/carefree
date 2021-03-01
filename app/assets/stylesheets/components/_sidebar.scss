@@ -1,13 +1,13 @@
 
 .sidebar {
-  background-color: #0249A7;
+  background-color: $white;
   height: 100vh;
   font-size: 16px;
-  border-right: 1px solid lightgrey;
   font-family: Libre Franklin;
   font-weight: 200;
   position: sticky;
   top: 0;
+  box-shadow: 0 0 10px #5897fb54;
 }
 
 .sidebar ul {
@@ -18,7 +18,7 @@
 
 .sidebar a {
   text-decoration: none;
-  color: white;
+  color: grey;
 }
 
 .sidebar li {
@@ -33,76 +33,76 @@
 .sidebar .icone {
   font-size: 20px;
   cursor: pointer;
-  background-color: #0249A7;
-  color: white;
+  background-color: $white;
+  color: grey;
   width: 42px;
   display: inline-block;
   text-align: center;
 }
 
 .sidebar .action1:hover {
-  background-color: $white;
+  background-color: $navy;
   .icone {
-    background-color: $white;
-    color: $navy;
+    background-color: $navy;
+    color: $white;
   }
   .label {
-    color: $navy;
+    color: $white;
   }
 }
 
 .sidebar .action2:hover {
-  background-color: $white;
+  background-color: $lightblue;
   .icone {
-    background-color: $white;
-    color: lightblue;
+    background-color: $lightblue;
+    color: $white;
   }
   .label {
-    color: lightblue;
+    color: $white;
   }
 }
 
 .sidebar .action3:hover {
-  background-color: $white;
+  background-color: $dark-pink;
   .icone {
-    background-color: $white;
-    color: $dark-pink;
+    background-color: $dark-pink;
+    color: $white;
   }
   .label {
-    color: $dark-pink;
+    color: $white;
   }
 }
 
 .sidebar .action4:hover {
-  background-color: $white;
+  background-color: $pink;
   .icone {
-    background-color: $white;
-    color: $pink;
+    background-color: $pink;
+    color: $white;
   }
   .label {
-    color: $pink;
+    color: $white;
   }
 }
 
 .sidebar .action5:hover {
-  background-color: $white;
+  background-color: $coral;
   .icone {
-    background-color: $white;
-    color: $coral;
+    background-color: $coral;
+    color: $white;
   }
   .label {
-    color: $coral;
+    color: $white;
   }
 }
 
 .sidebar .action6:hover {
-  background-color: $white;
+  background-color: $teal;
   .icone {
-    background-color: $white;
-    color: $teal;
+    background-color: $teal;
+    color: $white;
   }
   .label {
-    color: $teal;
+    color: $white;
   }
 }
 
@@ -117,6 +117,7 @@
   justify-content: center;
   padding-top: 8px;
   cursor: pointer;
+  color: grey;
 }
 
 .sidebar span {
@@ -130,11 +131,15 @@
 .sidebar .button {
   justify-content: flex-end;
   padding-right: 16px;
-  color: white;
+  color: grey;
 }
 
 .sidebar.hidden .button {
   padding-right: 30px;
+}
+
+.logo-sidebar {
+  width: 50px;
 }
 
 
