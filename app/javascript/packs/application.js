@@ -29,7 +29,8 @@ import "bootstrap";
 import { sidebar } from '../components/sidebar';
 import { popup } from '../components/formpopup';
 import { searchWindow } from '../components/search-window';
-
+import {searchForm } from '../components/form_labour';
+import { searchautocomplete } from '../components/search-topbar';
 import { initSelect2 } from '../components/select2';
 import { initFlatpickr } from "../plugins/flatpickr";
 
@@ -40,6 +41,9 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   searchWindow();
   initFlatpickr();
+  searchForm();
+  searchautocomplete();
+
 });
 
 

@@ -1,0 +1,82 @@
+.container-dashboard {
+  width: 80%;
+}
+
+#welcome-message {
+  overflow: hidden;
+  height: 250px;
+  background: white;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  border-radius: 4rem;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+.cards-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.cards-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
+
+.card-patient {
+  color: black;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: #e7f6ed;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.card-highlight {
+  color: black;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: white;
+  height: 200px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card-patient ul {
+  list-style-type: none;
+  padding-top: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.card-patient li {
+  background-color: #a6cdbb;
+  border-radius: 16px;
+}
+.card-patient li p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 10px;
+  font-weight: 600;
+  color: white;
+}
+
+.card-title {
+  background-color: #a6cdbb;
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 6px;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.container-form {
+  width: 80vw;
+  margin: 0 auto;
+}
