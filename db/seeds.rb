@@ -57,20 +57,22 @@ puts "#{Code.all.length} codes created"
 puts 'Creating Patients'
 
 20.times do 
-  patient = Patient.create!(
+  patient = Patient.new(
     first_name: Faker::Name.female_first_name,
     last_name: Faker::Name.last_name, 
     age: rand(16..50), 
     blood_group: Faker::Blood.group,
     birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), 
     nss:Faker::NationalHealthService.british_number, 
-    number_of_weeks: rand(3..39)
+    number_of_weeks: rand(0..39)
   )
+  patient.pregnant = patient.number_of_weeks > 12 
+  patient.save! 
 end
 
-meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), nss:'269054958815787', number_of_weeks: 39)
+meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), blood_group: Faker::Blood.group, nss:Faker::NationalHealthService.british_number, number_of_weeks: 39)
 
-kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), nss:'269055968916790', number_of_weeks: 35)
+kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), blood_group: Faker::Blood.group, nss:Faker::NationalHealthService.british_number, number_of_weeks: 35)
 
 puts "#{Patient.all.length} patients created"
 

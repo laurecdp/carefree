@@ -25,6 +25,69 @@
         <%= simple_form_for @labour do |f| %>
         <fieldset>
           <h3 class="fs-title">Résumé de l'accouchement</h3>
+        <p><%= @patient.age %> ans</p>
+        <p><%= @patient.birth_date %>
+        <p><%= @patient.nss %></p>
+        <p><%= @patient.number_of_weeks %> semaines</p>
+      </div>
+      <%= image_tag "pregnant.jpg" %>
+    </div>
+
+  <div class= "container-form">
+    <form id="msform">
+      <ul id="progressbar">
+        <li class="active"><p>Résumé de l'accouchement</p></li>
+        <li><p>Anésthésie</p></li>
+        <li><p>Délivrance</p></li>
+        <li><p>Informations du bébé</p></li>
+      </ul>
+      <%= simple_form_for @labour do |f| %>
+      <fieldset>
+        <h3 class="fs-title">Résumé de l'accouchement</h3>
+        <%= f.hidden_field :patient_id  %>
+        <%= f.hidden_field :category_id %>
+        <%= f.input :labour_start_at, label: "Début de l'accouchement" %>
+        <%= f.input :labour_start,
+                    collection:Labour::LABOUR_START,
+                    include_hidden: false,
+                    label: 'Mode de début du travail',
+                    as: :radio_buttons,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
+        <%= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+      <% end %>
+      </fieldset>
+      <fieldset>
+        <h3 class="fs-title">Anésthésie</h3>
+        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+        <input type="button" name="next" class="next action-button" value="Next"/>
+      </fieldset>
+      <fieldset>
+        <h3 class="fs-title">Délivrance</h3>
+        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+        <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+      </fieldset>
+      <fieldset>
+        <h3 class="fs-title">Informations du bébé</h3>
+        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+        <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+      </fieldset>
+    </form>
+    <div class="dme_link">
+    </div>
+  </div>
+
+  <% if params[:category] %>
+
+  <div class= "dashboard-container">
+    <div class= "container-form">
+      <div class="form_wrapper">
+      <%= simple_form_for @labour do |f| %>
+
+        <%# Partie accouchement %>
+
+        <div class="part1">
+          <h3>Résumé de l'accouchement </h2>
           <%= f.hidden_field :patient_id  %>
           <%= f.hidden_field :category_id %>
           <%= f.input :labour_start_at, label: "Début de l'accouchement" %>
@@ -305,4 +368,5 @@
     <% end %>
     </div>
   </div>
+</div>
 </div>

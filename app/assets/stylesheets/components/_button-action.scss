@@ -46,13 +46,10 @@
 
 .button-action3 {
   border: 1px solid $pink;
+  color: $pink;
   &:hover {
     background-color: $pink;
     color: $white;
-  }
-  & a {
-  color: $pink;
-  text-decoration: none;
   }
 }
 
