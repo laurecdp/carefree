@@ -169,18 +169,27 @@
   },
   {
     "acte": "PBLB001",
-    "category": "Acte",
+    "category": "Pharmacie",
     "regroupement": "",
     "libelle": "Prostaglandines",
     "tarif_secteur_1_adherent_optam_optam_co": 20.77
   },
   {
     "acte": "MELH001",
-    "category": "Acte",
+    "category": "Pharmacie",
     "regroupement": "",
     "libelle": "Oxytocine dose totale",
     "tarif_secteur_1_adherent_optam_optam_co": 42.21
   },
+
+  {
+    "acte": "AFLB007",
+    "category": "Pharmacie",
+    "regroupement": "",
+    "libelle": "Injection thérapeutique péridurale d'agent pharmacologique",
+    "tarif_secteur_1_adherent_optam_optam_co": 44.9
+  },
+
   {
     "acte": "EDSA003",
     "category": "Complication",

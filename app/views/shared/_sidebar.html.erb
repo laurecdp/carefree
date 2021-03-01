@@ -1,6 +1,5 @@
 <div class="sidebar">
-  <div class="button"><i class="fas fa-bars"></i>
-  </div>
+  <div class="button"><i class="fas fa-times"></i></div>
     <ul>
 
           <li class="action1"><a href="#"><span class="icone"><i class="fas fa-user-plus"></i></span><span class="label">Admission</span></a></li>
@@ -13,11 +12,11 @@
             <% @categories = Category.all %>
             <% @categories.each do |categorie|%>
                <% if categorie.name == "Naissance"%>
-              <% @naissance = categorie %>
-                <%= link_to dashboard_path(category: @naissance.id)  do %>
+                  <% @naissance = categorie %>
+                  <%= link_to dashboard_path(category: @naissance.id)  do %>
                   <span class="icone"><i class="fas fa-baby"></i></span><span class="label"> Naissance</span>
-                <% end %>
-            <% end %>
+                  <% end %>
+               <% end %>
             <% end %>
           </li>
 
