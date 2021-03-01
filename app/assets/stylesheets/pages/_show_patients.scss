@@ -1,0 +1,190 @@
+.container-dashboard {
+  width: 80%;
+}
+
+.badge {
+  background-color: #ffca5a;
+  padding: 11px;
+  font-size: 15px;
+  border-radius: 23px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+#patient-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 31em;
+  padding-top: 10px;
+  height: 300px;
+  background: white;
+  display: flex;
+  border-radius: 4rem;
+  margin-top: 15px;
+  margin-bottom: 80px;
+}
+
+.cards-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.cards-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
+
+.card-patient {
+  color: black;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: #e7f6ed;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.card-highlight {
+  color: black;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: white;
+  height: 200px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card-patient ul {
+  list-style-type: none;
+  padding-top: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.card-patient li {
+  background-color: #a6cdbb;
+  border-radius: 16px;
+}
+.card-patient li p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 10px;
+  font-weight: 600;
+  color: white;
+}
+
+.card-title {
+  background-color: #a6cdbb;
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 6px;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-product img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 53px;
+}
+
+.container-form {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+ #travail-spontane-checkbox {
+  display: none;
+ }
+
+ #cesarienne-checkbox {
+  display: none;
+ }
+
+ #artificial-labour {
+  display: none;
+ }
+
+ #labour_drugs {
+  display: none;
+ }
+
+ #pharmacie-checkbox {
+  display: none;
+ }
+
+ #category-anesthesia {
+  display: none;
+ }
+
+ #moment-anesthesia {
+  display: none;
+ }
+
+ #anesthesia-loco-general {
+  display: none;
+ }
+
+ #anesthesia-general {
+  display: none;
+ }
+
+ #anesthia-checkbox {
+  display: none;
+ }
+
+ #complication-type {
+  display: none;
+ }
+
+ #complication-checkbox {
+  display: none;
+ }
+
+ #labour-actes {
+  display: none;
+ }
+
+ #delivrance-checkbox {
+  display: none;
+ }
+
+ #monitoring-options {
+  display: none;
+ }
+
+ #monitoring-checkbox {
+  display: none;
+ }
+
+ #intensivecare-checkbox {
+  display: none;
+ }
+
+ #intensivecare-options {
+  display: none;
+ }
+
+ #infections-options {
+  display: none;
+ }
+
+#infections-checkbox {
+  display: none;
+ }
+
+ #pathologies-checkbox {
+   display: none;
+ }
+
+ #pathologies-options {
+   display: none;
+ }

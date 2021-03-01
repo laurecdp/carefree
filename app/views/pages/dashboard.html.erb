@@ -8,89 +8,66 @@
       <img src="https://cdn.dribbble.com/users/1355613/screenshots/6637974/doctor.jpg" />
     </div>
 
-    <div class="dashboard-action">
-      <div class="card-dashboard">
-
-        <div class="card-category-dashboard">
-          <i class="fas fa-dove" id="labour-icon"></i>
-          <div class="box-number">
-            <%= @labours.count %>
-            <p> Accouchements</p>
-          </div>
-        </div>
-
-        <div class="card-category-dashboard">
-          <%= link_to(patients_path) do %>
-          <i class="fas fa-user-injured"></i>
-          <% end %>
-          <div class="box-patients">
-            <%= @patients.count %>
-            <p> Patients</p>
-          </div>
-        </div>
-
-        <div class="card-category-dashboard">
-          <i class="fas fa-star-of-life" id="life-icon"></i>
-          <div class="box-number-baby">
-            <%= @babies.count %>
-            <p>Naissances</p>
-          </div>
-        </div>
+    <div class="info-dashboard">
+      <div class="stat-card">
+        <ul>
+          <li id="accouchement"><%= @labours.count %> Accouchements</li>
+          <li id="patients"><%= @patients.count %> Patients</li>
+          <li id="babies"><%= @babies.count %> Naissances</li>
+        </ul>
       </div>
+      <div class="calendar">
+        <input type="text" class="datepicker d-none">
+      </div>
+    </div>
 
-      <div class="buttons">
-        <%= link_to(dashboard_path) do %>
-          <button type="button" class="button-action1">
-            <i class="fas fa-user-plus fa-3x"></i>
-            <p>Admission</p>
-          </button>
-        <% end %>
-
-        <%= link_to(dashboard_path) do %>
-          <button type="button" class="button-action2">
-            <i class="fas fa-stethoscope fa-3x"></i>
-            <p>Consultation</p>
-          </button>
-        <% end %>
-
-        <button type="button" class="button-action3">
-          <% if params[:category] %>
-            <%= link_to(dashboard_path) do %>
-            <% end %>
-          <% else %>
-            <% @categories.each do |categorie|%>
-               <% if categorie.name == "Naissance"%>
-                  <% @naissance = categorie %>
-                  <%= link_to dashboard_path(category: @naissance.id)  do %>
-                  <i class="fas fa-baby fa-3x"></i>
-                  <p> Naissance </p>
-                  <% end %>
-              <% end %>
-            <% end %>
-          <% end %>
+    <div class="buttons">
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action1">
+          <i class="fas fa-user-plus fa-3x"></i>
+          <p>Admission</p>
         </button>
+      <% end %>
 
-        <%= link_to(dashboard_path) do %>
-          <button type="button" class="button-action4">
-            <i class="fas fa-clinic-medical fa-3x"></i>
-            <p>Hospitalisation</p>
-          </button>
-        <% end %>
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action2">
+          <i class="fas fa-stethoscope fa-3x"></i>
+          <p>Consultation</p>
+        </button>
+      <% end %>
 
-        <%= link_to(dashboard_path) do %>
-          <button type="button" class="button-action5">
-            <i class="fas fa-prescription-bottle-alt fa-3x"></i>
-            <p>Pharmacie</p>
-          </button>
+      <% @categories.each do |categorie|%>
+         <% if categorie.name == "Naissance"%>
+            <% @naissance = categorie %>
+            <%= link_to dashboard_path(category: @naissance.id)  do %>
+              <button type="button" class="button-action3">
+                <i class="fas fa-baby fa-3x"></i>
+                <p> Naissance </p>
+              </button>
+            <% end %>
         <% end %>
+      <% end %>
 
-        <%= link_to(dashboard_path) do %>
-          <button type="button" class="button-action6">
-            <i class="fas fa-print fa-3x"></i>
-            <p>Impression</p>
-          </button>
-        <% end %>
-      </div>
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action4">
+          <i class="fas fa-clinic-medical fa-3x"></i>
+          <p>Hospitalisation</p>
+        </button>
+      <% end %>
+
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action5">
+          <i class="fas fa-prescription-bottle-alt fa-3x"></i>
+          <p>Pharmacie</p>
+        </button>
+      <% end %>
+
+      <%= link_to(dashboard_path) do %>
+        <button type="button" class="button-action6">
+          <i class="fas fa-print fa-3x"></i>
+          <p>Impression</p>
+        </button>
+      <% end %>
     </div>
   </div>
 
@@ -98,7 +75,7 @@
     <%= simple_form_for :search, html: { class: 'search-patient-form' },  url: dashboard_path, method: :get do |f| %>
       <i class="fas fa-times" id="close"></i>
       <div class="search-form-control form-group form-search search-right" id= "search-right" data-patients="<%= @filterpatients.to_json %>">
-        <input class="form-control string required search-input" type="text" name="search[query]" id="search_right_query" placeholder="Recherche"/>
+        <input class="form-control string required search-input" type="text" name="search[query]" id="search_right_query" placeholder="Patient"/>
         <button name="button" type="submit" class="btn btn-flat">
           <i class="fas fa-search"></i> </button>
       </div>
