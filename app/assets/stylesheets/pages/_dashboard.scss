@@ -2,13 +2,26 @@
   flex-grow: 1;
 }
 
-.search-window {
-  flex: 0 0 250px;
-  background-color: #0249A7;
-  display: none;
-  border-radius: 16px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+.main-content {
   position: relative;
+}
+
+.search-window {
+  background-color: $blue;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  overflow-y: scroll;
+  top: 0;
+  display: none;
+}
+
+.search-window.appear {
+  display: inline-block;
+}
+
+.container-dashboard {
+  width: 80%;
 }
 
 .search-window .search-form-control.form-group {
@@ -26,11 +39,7 @@
 
 .dashboard-container {
   display: flex;
-  justify-content: space-around;
-}
-
-.search-window.appear {
-  display: inline-block;
+  justify-content: center;
 }
 
 #welcome-message {
@@ -43,6 +52,7 @@
   border-radius: 4rem;
   margin-top: 15px;
   margin-bottom: 40px;
+  justify-content: space-around;
 }
 
 .card-product img {
