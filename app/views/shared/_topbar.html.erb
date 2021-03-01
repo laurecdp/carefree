@@ -1,11 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
-  <%= simple_form_for :search, url: dashboard_path, method: :get do |f| %>
-    <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Recherche"/>
-      <button name="button" type="submit" class="btn btn-flat">
+  <%= simple_form_for :search, url:   patients_path, method: :get do |f| %>
+    <!-- <div class="search-form-control form-group"> -->
+      <div id= "search-data" class="form-search search-data" data-patients="<%= Patient.pluck(:first_name, :last_name).map {|x| x.join(" ")}.to_json %>">
+        <input class="form-control string required search-input" type="text" name="search[query]" id="search_query" placeholder="Recherche"/>
+        <button name="button" type="submit" class="btn btn-flat">
         <i class="fas fa-search"></i> </button>
-    </div>
+      </div>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,8 +20,8 @@
         </li>
         <li class="nav-item dropdown">
         <% if current_user %>
-          <%= image_tag "avatar.png", class:"avatar dropdown-toggle", id:"navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <img id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://img.icons8.com/color/48/000000/user-female-circle--v1.png"/>
+           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Mon compte", dashboard_path, class: "dropdown-item" %>
             <%= link_to "Mes patientes", patients_path, class: "dropdown-item" %>
             <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -36,3 +36,4 @@
   </div>
 </div>
 
+<!-- Patient.select([:first_name, :last_name]).map {|e| {first_name: e.first_name, last_name: e.last_name} } -->

@@ -13,7 +13,7 @@
 .sidebar ul {
   list-style-type: none;
   padding-top: 100px;
-  padding-left: 12px;
+  padding-inline-start: 0;
 }
 
 .sidebar a {
@@ -41,68 +41,68 @@
 }
 
 .sidebar .action1:hover {
-  background-color: $navy;
+  background-color: $white;
   .icone {
-    background-color: $navy;
-    color: white;
+    background-color: $white;
+    color: $navy;
   }
   .label {
-    color: white;
+    color: $navy;
   }
 }
 
 .sidebar .action2:hover {
-  background-color: $lightblue;
+  background-color: $white;
   .icone {
-    background-color: $lightblue;
-    color: white;
+    background-color: $white;
+    color: lightblue;
   }
   .label {
-    color: white;
+    color: lightblue;
   }
 }
 
 .sidebar .action3:hover {
-  background-color: $dark-pink;
+  background-color: $white;
   .icone {
-    background-color: $dark-pink;
-    color: white;
+    background-color: $white;
+    color: $dark-pink;
   }
   .label {
-    color: white;
+    color: $dark-pink;
   }
 }
 
 .sidebar .action4:hover {
-  background-color: $pink;
+  background-color: $white;
   .icone {
-    background-color: $pink;
-    color: white;
+    background-color: $white;
+    color: $pink;
   }
   .label {
-    color: white;
+    color: $pink;
   }
 }
 
 .sidebar .action5:hover {
-  background-color: $coral;
+  background-color: $white;
   .icone {
-    background-color: $coral;
-    color: white;
+    background-color: $white;
+    color: $coral;
   }
   .label {
-    color: white;
+    color: $coral;
   }
 }
 
 .sidebar .action6:hover {
-  background-color: $teal;
+  background-color: $white;
   .icone {
-    background-color: $teal;
-    color: white;
+    background-color: $white;
+    color: $teal;
   }
   .label {
-    color: white;
+    color: $teal;
   }
 }
 
@@ -120,16 +120,21 @@
 }
 
 .sidebar span {
-  display: none;
-}
-
-.sidebar.expanded .label {
   display: inline-block;
 }
 
-.sidebar.expanded .button {
+.sidebar.hidden .label {
+  display: none;
+}
+
+.sidebar .button {
   justify-content: flex-end;
   padding-right: 16px;
+  color: white;
+}
+
+.sidebar.hidden .button {
+  padding-right: 30px;
 }
 
 

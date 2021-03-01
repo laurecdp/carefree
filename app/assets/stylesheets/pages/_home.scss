@@ -12,7 +12,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 600px;
+  height: 450px;
   display: flex;
   align-items: center;
 }
@@ -23,7 +23,7 @@
 }
 
 .half p {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 20px;
   font-weight: 400;
 }
@@ -61,8 +61,6 @@
 }
 
 .card-category {
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  border-radius: 5px;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -71,12 +69,19 @@
   background-color: white;
 }
 
+.card-category:hover {
+  box-shadow: 0 0 12px #53c3a838;
+  border-radius: 10px;
+}
+
 .fas.fa-laptop-medical {
   padding: 20px;
   border-radius: 20px;
   background-color: #53c3a838;
   color: $teal;
   font-size: 60px;
+  height: 110px;
+  width: 100px;
 }
 
 .far.fa-calendar-alt{
@@ -85,17 +90,23 @@
   background-color: #53c3a838;
   color: $teal;
   font-size: 60px;
+  height: 110px;
+  width: 100px;
 }
 
-.fa-stopwatch {
-  padding: 20px;
+.one-click {
+  padding: 10px;
   border-radius: 20px;
   background-color: #53c3a838;
-  color: $teal;
+  color: #53C3A8;
   font-size: 60px;
+  height: 110px;
+  width: 100px;
 }
 
 .banner-3 h1 {
+  font-family: "Ubuntu";
+  font-weight: 300;
   font-size: 32px;
   font-weight: bold;
 }
@@ -116,12 +127,50 @@
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 50rem;
-  background: $pink;
+  background: $coral;
   transition: background 0.3s ease;
   margin-top: 10px;
 }
 
 #contact-us:hover {
-  background: $pink;
+  background: #ffba519e;
   color: white;
+}
+
+.logo-container {
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.logo {
+  width: 50%;
+  position: relative;
+  left: 115px;
+  top: 30px;
+}
+
+.logo-violet {
+  width: 40%;
+  margin-left: -20px;
+}
+
+.main-services h3 {
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 52px;
+  margin-top: 25px;
+  color: $teal;
+}
+
+.main-services p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.half-text h3 {
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 18px;
+  color: $coral;
 }
