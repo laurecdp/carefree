@@ -8,6 +8,7 @@ class CreatePatients < ActiveRecord::Migration[6.0]
       t.string :nss
       t.string :blood_group
       t.integer :number_of_weeks
+      t.boolean :pregnant, default: true
 
       t.timestamps
     end
