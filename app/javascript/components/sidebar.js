@@ -4,10 +4,7 @@ const sidebar = () => {
   const sidebar = document.querySelector(".sidebar");
   if (sidebar) {
     button.addEventListener("click", (event) => {
-      sidebar.classList.toggle("expanded");
-    });
-    sideButton.addEventListener("mouseover", (event) => {
-      sidebar.classList.add("expanded");
+      sidebar.classList.toggle("hidden");
     });
   }
 }

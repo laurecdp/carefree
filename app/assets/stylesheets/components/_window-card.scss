@@ -8,11 +8,11 @@
   font-weight: lighter;
   transition: opacity 0.3s ease;
   background-color: white;
-  height: 180px;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 10px;
   margin-bottom: 20px;
-  padding: 5px;
+  width: 150px;
+  text-align: center;
 }
 
 .card-patient-window:hover {
