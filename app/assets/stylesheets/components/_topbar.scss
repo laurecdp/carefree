@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  margin-bottom: 24px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,6 +13,7 @@
 
 .dropdown {
   margin-top: 5px;
+  margin-right: 32px;
 }
 
 .search-form-control {
@@ -39,8 +41,8 @@
 }
 
 .fa-user-nurse {
-  font-size: 28px;
-  color: grey;
+  font-size: 26px;
+  color: #0249A7;
 }
 
 .fa-user-nurse:hover {
@@ -51,3 +53,9 @@
   content: "\f002";
   color: #7fb2fb;
 }
+
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+  border-radius: 18px;
+}
+
+

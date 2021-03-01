@@ -1,17 +1,24 @@
 const searchWindow = () => {
 
-/*   const naissance = document.querySelector(".sidebar .action4");
-  const searchButton = document.querySelector(".search-form-control .btn");
+  const sideButton = document.querySelector(".sidebar .action4");
+  // const mainButton = document.querySelector(".button-action3");
+  const searchButton = document.querySelector(".btn.btn-flat");
+  const closeButton = document.getElementById("close");
   const searchWindow = document.querySelector(".search-window");
   if (searchWindow) {
-    naissanceBtn1.addEventListener("click", (event) => {
+    sideButton.addEventListener("click", (event) => {
       searchWindow.classList.toggle("appear");
     });
     searchButton.addEventListener("click", (event) => {
-      searchWindow.classList.toggle("appear");
+      searchWindow.classList.add("appear");
     });
-  } */
-
+    // mainButton.addEventListener("click", (event) => {
+    //   searchWindow.classList.toggle("appear");
+    // });
+    // closeButton.addEventListener("click", (event) => {
+    //   searchWindow.classList.remove("search-window");
+    // });
+  }
 }
 
 export { searchWindow }

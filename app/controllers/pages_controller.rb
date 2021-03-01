@@ -6,6 +6,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @categories = Category.all
+    @babies = Baby.all
+    @labours = Labour.all
     @patients = Patient.all
     @patients = policy_scope(Patient).order(created_at: :desc)
     if params[:search] && params[:search][:query]
@@ -17,5 +19,4 @@ class PagesController < ApplicationController
 
   def login
   end
-  
 end

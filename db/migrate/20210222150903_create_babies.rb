@@ -5,7 +5,6 @@ class CreateBabies < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.datetime :birth_date
       t.boolean :alive, default: true
-      t.string :diagnostic
       t.float :weight
       t.float :heigh
       t.float :head_circumference
@@ -19,6 +18,7 @@ class CreateBabies < ActiveRecord::Migration[6.0]
       t.string :infectiouscontext_options, array: true, default: []
       t.string :exit_room
       t.string :breastfeeding
+      t.boolean :pathology, default: false
       t.string :pathologies, array: true, default: []
       t.references :patient, null: false, foreign_key: true
 

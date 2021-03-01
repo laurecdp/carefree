@@ -6,7 +6,7 @@ class CreatePatients < ActiveRecord::Migration[6.0]
       t.integer :age
       t.date :birth_date
       t.string :nss
-      t.text :description
+      t.string :blood_group
       t.integer :number_of_weeks
 
       t.timestamps

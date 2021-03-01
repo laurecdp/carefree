@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "last_name"
     t.datetime "birth_date"
     t.boolean "alive", default: true
-    t.string "diagnostic"
     t.float "weight"
     t.float "heigh"
     t.float "head_circumference"
@@ -34,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "infectiouscontext_options", default: [], array: true
     t.string "exit_room"
     t.string "breastfeeding"
+    t.boolean "pathology", default: false
     t.string "pathologies", default: [], array: true
     t.bigint "patient_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "code"
     t.float "price"
     t.string "category"
+    t.text "diagnostic"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.string "anaesthesia_moment"
     t.string "labour_complication_type", default: [], array: true
     t.string "labour_actes", default: [], array: true
+    t.boolean "anaesthesia", default: false
     t.boolean "anaesthesia_complication", default: false
     t.boolean "caesarean", default: false
     t.boolean "labour_complication", default: false
@@ -99,7 +101,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_153910) do
     t.integer "age"
     t.date "birth_date"
     t.string "nss"
-    t.text "description"
+    t.string "blood_group"
     t.integer "number_of_weeks"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,8 +1,13 @@
 class Labour < ApplicationRecord
-  has_many :labour_codes
   belongs_to :patient
   belongs_to :category
   belongs_to :user
+
+  has_many :labour_codes
+  has_many :babies, through: :patient
+
+  accepts_nested_attributes_for :babies
+  accepts_nested_attributes_for :labour_codes
 
   LABOUR_START = ['Travail spontané', 'Déclenchement artificiel', 'Césarienne avant travail']
   validates :labour_start, inclusion: { in: LABOUR_START }
@@ -13,7 +18,7 @@ class Labour < ApplicationRecord
   LABOUR_END = ['Dirigée', 'Naturelle', 'Complète', 'Incomplète']
   validates :labour_end, inclusion: { in: LABOUR_END }
 
-  ANAESTHESIA_CATEGORY = ['Anesthésie avant la naissance', 'Anesthésie loco-régionale', 'Anesthésie générale', 'Anesthésie locale', 'Moment de l\'anesthésie', 'Complication de l\'anesthésie']
+  ANAESTHESIA_CATEGORY = ['Anesthésie avant la naissance', 'Anesthésie loco-régionale', 'Anesthésie générale', 'Anesthésie locale']
   validates :anaesthesia_category, inclusion: { in: ANAESTHESIA_CATEGORY }
 
   ANAESTHESIA_GENERAL = ['D\'emblée', 'Post péridurale', 'Après rachianesthésie']
@@ -31,7 +36,7 @@ class Labour < ApplicationRecord
   LABOUR_COMPLICATION_TYPE = ['Hémorragies', 'Rétention placentaire', 'Inversion utérine']
   validate :each_labour_complication_type
 
-  LABOUR_ACTES = ['Délivrance artificelle', 'Transfusion', 'Déchirure simple/suture', 'Forceps', 'Ligature des artères utérines']
+  LABOUR_ACTES = ['Délivrance artificelle', 'Transfusion', 'Déchirure simple/suture', 'Embolisation artérielle', 'Ligature des artères utérines']
   validate :each_labour_actes
 
   private
