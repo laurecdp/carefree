@@ -6,6 +6,10 @@ const sidebar = () => {
     button.addEventListener("click", (event) => {
       sidebar.classList.toggle("hidden");
     });
+    // sideButton.addEventListener("mouseover", (event) => {
+    //   sidebar.classList.add("");
+    // });
+
   }
 }
 
