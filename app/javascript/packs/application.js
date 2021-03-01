@@ -29,7 +29,7 @@ import "bootstrap";
 import { sidebar } from '../components/sidebar';
 import { popup } from '../components/formpopup';
 import { searchWindow } from '../components/search-window';
-
+import {searchForm } from '../components/form_labour';
 import { initSelect2 } from '../components/select2';
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   popup();
   initSelect2();
   searchWindow();
+  searchForm();
 });
 
 
