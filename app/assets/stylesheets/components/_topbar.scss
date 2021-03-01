@@ -54,8 +54,18 @@
   color: #7fb2fb;
 }
 
+
 .navbar-expand-sm .navbar-nav .dropdown-menu {
   border-radius: 18px;
 }
 
+.fas.fa-search {
+    position: absolute;
+    top: 11px;
+    right: 9px;
+}
+
+#search-data {
+  position: relative;
+}
 
