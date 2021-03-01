@@ -1,8 +1,30 @@
 <div class="dashboard-container">
-<div class="container-dashboard">
-    <div class="card-product" id= "welcome-message">
+  <div class="container-dashboard">
+    <div class="card-product" id= "patient-info">
       <div class="card-product-infos">
+        <span class="badge">Enceinte</span>
         <h2><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
+        <% d = @patient.birth_date %>
+        <% @age = d.strftime("%d/%m/%y") %>
+        <p><%= "#{@patient.age} ans (#{@age})" %></p>
+        <p><i class="far fa-address-card"></i> <%= @patient.nss %></p>
+        <p><%= @patient.number_of_weeks %> semaines</p>
+        <p><i class="fas fa-vial"></i> <%= @patient.blood_group %> </p>
+      </div>
+        <%= image_tag "pregnant.jpg" %>
+      </div>
+
+      <div class= "container-form">
+      <form id="msform">
+        <ul id="progressbar">
+          <li class="active"><p>Résumé de l'accouchement</p></li>
+          <li><p>Anésthésie</p></li>
+          <li><p>Délivrance</p></li>
+          <li><p>Informations du bébé</p></li>
+        </ul>
+        <%= simple_form_for @labour do |f| %>
+        <fieldset>
+          <h3 class="fs-title">Résumé de l'accouchement</h3>
         <p><%= @patient.age %> ans</p>
         <p><%= @patient.birth_date %>
         <p><%= @patient.nss %></p>
@@ -76,230 +98,275 @@
                       as: :radio_buttons,
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
-
-          <%# ------------Partie codes------------- %>
-
-          <%# Partie déclenchement artificel %>
-          <div id= "artificial-labour">
-          <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
-          </div>
-          
-          <%# ------------Partie codes------------- %>           
-
-          <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="travail-spontane-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Travail spontané") %>
-            <%= l.input :diagnostic %>
-            </div>
-            <div id="cesarienne-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Césarienne") %>
-            <%= l.input :diagnostic %>
-            </div>
-            <% end %>
-
-          <%# Pharmacie %>
-          <div id= "labour_drugs">
-          <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :check_boxes, collection: Labour::LABOUR_DRUGS, include_hidden: false %>
-          </div>
-          <%# ------------Partie codes------------- %>           
-          <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="pharmacie-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Pharmacie") %>
-            <%= l.input :diagnostic %>
-            </div>
-          <% end %>
-
-        </div>
-
-        <%# Partie anésthésie %>
-
-        <div class="part2">
-
-          <div id= "anaesthesia">
-          <%= f.input :anaesthesia, label: 'Anésthésie', as: :radio_buttons, radio_buttons_style: :inline, collection: ['oui', 'non'] %>
-
-          <div id= "category-anesthesia">
-          <%= f.input :anaesthesia_category, 
-                      label: 'Type d\'anésthésie', 
-                      as: :radio_buttons, 
-                      collection: Labour::ANAESTHESIA_CATEGORY, 
-                      include_hidden: false,
-                      input_html: { class: "tag-selector" },
-                      item_wrapper_class: 'tag-item' %>
-          </div>
-
-          <%# Anésthésie loco-générale %>
-          <div id= "anesthesia-loco-general">
-          <%= f.input :anaesthesia_loco_general, label: 'Anésthésie loco-régionale',  as: :select, collection: Labour::ANAESTHESIA_LOCO_GENERAL, include_hidden: false %>
-
-          </div>
-
-          <%# Anésthésie générale %>
-          <div id= "anesthesia-general">
-          <%= f.input :anaesthesia_general,  label: 'Anésthésie générale', as: :select, collection: Labour::ANAESTHESIA_GENERAL, include_hidden: false %>
-          </div>
-          
-          <%# Moment de l'anésthesie %>
-          <div id= "moment-anesthesia">
-          <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
-          </div>
-
-          <%# ------------Partie codes------------- %>  
-            
-          <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="anesthia-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Acte") %>
-            <%= l.input :diagnostic %>
-            </div>
-          <% end %>
-          
-        </div>
-
-        <%# Délivrance %>
-        <div class="part3">
-
-          <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false %>
-
-        </div>
-
-        <%# ----------------------------- %>
-
-        <%# Partie complications %>
-
-        <div class="part4">
-          <div id= "complications">
-          <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
-          <%# Complications %>
-          <div id= "complication-type">
-          <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :check_boxes, collection: Labour::LABOUR_COMPLICATION_TYPE, include_hidden: false %>
-          </div>
-
-          <%# ------------Partie codes------------- %>           
-          <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="complication-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
-            <%= l.input :diagnostic %>
-            </div>
-          <% end %>
-
-          <%# Actes %>
-
-          <div id= "actes">
-          <%= f.input :labour_actes_done, label: 'Actes', as: :radio_buttons, collection: ['oui', 'non'] %>
-          </div>
-          
-
-          <%# Actes de la délivrance %>
-          <div id= "labour-actes">
-          <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :check_boxes, collection: Labour::LABOUR_ACTES, include_hidden: false %>
-          </div>
-           
-          <%# ------------Partie codes------------- %> 
-            
-          <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="delivrance-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Acte") %>
-            <%= l.input :diagnostic %>
-            </div>
-          <% end %>
-
-        </div>
-
-        <%# ----------------------------- %>
-
-        <%# Partie bébé %>
-        <div class="part5">
-          <h3> Informations du bébé</h3>
-
-          <%= f.simple_fields_for :babies do |p| %>
-            <%= p.input :first_name, label: "Prénom" %>
-            <%= p.input :last_name,  label: "Nom de Famille" %>
-            <%= p.input :sex, as: :select, collection: Baby::SEX ,label: "Sexe"  %>
-            <%= p.input :birth_date,  label: "Date et heure de naissance" %>
-            <%= p.input :weight,  label: "Poids (kg)"  %>
-            <%= p.input :heigh,  label: "Taille (cm)"  %>
-            <%= p.input :head_circumference,  label: "Périmètre crânien (cm)"%>
-
-          <%# Partie monitoring %>
-            <div id="monitoring">
-            <%= p.input :monitoring,  label: "Monitorage", as: :radio_buttons, collection: ['oui', 'non'] %>
-            </div>
-            <div id="monitoring-options">
-            <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Type de monitorage", input_html: { multiple: true }, include_hidden: false  %>
-            </div>
-          <%# ------------Partie codes------------- %> 
-            <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="monitoring-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
-            <%= l.input :diagnostic %>
-            </div>
-          <% end %>
-
-          <%# Partie réanimation %>
-            <div id="intensivecare">
-            <%= p.input :intensivecare,  label: "Réanimation", as: :radio_buttons, collection: ['oui', 'non'] %>
-            </div>
-            <div id="intensivecare-options">
-            <%= p.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation", input_html: { multiple: true }, include_hidden: false  %>
-            </div>
-          <%# ------------Partie codes------------- %> 
-            <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="intensivecare-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
-            <%= l.input :diagnostic %>
-            </div>
-          <% end %>
-
-          <%# Partie infections %>
-            <div id="infections">
-            <%= p.input :infectiouscontext,  label: "Infections", as: :radio_buttons, collection: ['oui', 'non']  %>
-            </div>
-            <div id="infections-options">
-            <%= p.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, as: :check_boxes, label: "Types d'infections", input_html: { multiple: true }, include_hidden: false  %>
-            </div>
-          <%# ------------Partie codes------------- %> 
-            <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="infections-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
-            <%= l.input :diagnostic %>
-            </div>
-          <% end %>
-
-          <%# Partie pathologies %>
-            <div id="malformation">
-            <%= p.input :malformation,  label: "Malformation", as: :radio_buttons, collection: ['oui', 'non']   %>
-            </div>
-            <div id="pathology">
-            <%= p.input :pathology,  label: "Pathologies", as: :radio_buttons, collection: ['oui', 'non']   %>
-            </div>
-            <div id="pathologies-options">
-            <%= p.input :pathologies, collection: Baby::PATHOLOGIES, as: :check_boxes, label: "Pathologies observées", input_html: { multiple: true }, include_hidden: false  %>
-            </div>
-          <%# ------------Partie codes------------- %> 
-            <%= f.simple_fields_for :labour_codes do |l| %>
-            <div id="pathologies-checkbox">
-            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
-            <%= l.input :diagnostic %>
-            </div>
-          <% end %>
-
-          <%# Partie sorties salle de naissance%>
-            <%= p.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
-            <%= p.input :exit_room, collection: Baby::EXITROOM, label: "Sortie de la salle de naissance", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
-            <% end %>
-        </div>
-
-
-        <div class="part6">
-          <%= f.submit "Enregistrer l'accouchement", id: "btn-home" %>
-        </div>
-
-      <% end %>
+          <%= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+        <% end %>
+        </fieldset>
+        <fieldset>
+          <h3 class="fs-title">Anésthésie</h3>
+          <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+          <input type="button" name="next" class="next action-button" value="Next"/>
+        </fieldset>
+        <fieldset>
+          <h3 class="fs-title">Délivrance</h3>
+          <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+          <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+        </fieldset>
+        <fieldset>
+          <h3 class="fs-title">Informations du bébé</h3>
+          <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+          <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+        </fieldset>
+      </form>
+      <div class="dme_link">
       </div>
+      </div>
+
+
+      <% if params[:category] %>
+
+      <div class= "dashboard-container">
+        <div class= "container-form">
+          <div class="form_wrapper">
+          <%= simple_form_for @labour do |f| %>
+
+            <%# Partie accouchement %>
+
+            <div class="part1">
+              <h3>Résumé de l'accouchement </h2>
+              <%= f.hidden_field :patient_id  %>
+              <%= f.hidden_field :category_id %>
+              <%= f.input :labour_start_at, label: "Début de l'accouchement" %>
+              <%= f.input :labour_start,
+                          collection:Labour::LABOUR_START,
+                          include_hidden: false,
+                          label: 'Mode de début du travail',
+                          as: :radio_buttons,
+                          input_html: { class: "tag-selector" },
+                          item_wrapper_class: 'tag-item' %>
+
+              <%# ------------Partie codes------------- %>
+
+              <%# Partie déclenchement artificel %>
+              <div id= "artificial-labour">
+              <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
+              </div>
+
+              <%# ------------Partie codes------------- %>
+
+              <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="travail-spontane-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Travail spontané") %>
+                <%= l.input :diagnostic %>
+                </div>
+                <div id="cesarienne-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Césarienne") %>
+                <%= l.input :diagnostic %>
+                </div>
+                <% end %>
+
+              <%# Pharmacie %>
+              <div id= "labour_drugs">
+              <%= f.input :labour_drugs, label: 'Moyens utilisés', as: :check_boxes, collection: Labour::LABOUR_DRUGS, include_hidden: false %>
+              </div>
+              <%# ------------Partie codes------------- %>
+              <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="pharmacie-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Pharmacie") %>
+                <%= l.input :diagnostic %>
+                </div>
+              <% end %>
+
+            </div>
+
+            <%# Partie anésthésie %>
+
+            <div class="part2">
+
+              <div id= "anaesthesia">
+              <%= f.input :anaesthesia, label: 'Anésthésie', as: :radio_buttons, radio_buttons_style: :inline, collection: ['oui', 'non'] %>
+
+              <div id= "category-anesthesia">
+              <%= f.input :anaesthesia_category,
+                          label: 'Type d\'anésthésie',
+                          as: :radio_buttons,
+                          collection: Labour::ANAESTHESIA_CATEGORY,
+                          include_hidden: false,
+                          input_html: { class: "tag-selector" },
+                          item_wrapper_class: 'tag-item' %>
+              </div>
+
+              <%# Anésthésie loco-générale %>
+              <div id= "anesthesia-loco-general">
+              <%= f.input :anaesthesia_loco_general, label: 'Anésthésie loco-régionale',  as: :select, collection: Labour::ANAESTHESIA_LOCO_GENERAL, include_hidden: false %>
+
+              </div>
+
+              <%# Anésthésie générale %>
+              <div id= "anesthesia-general">
+              <%= f.input :anaesthesia_general,  label: 'Anésthésie générale', as: :select, collection: Labour::ANAESTHESIA_GENERAL, include_hidden: false %>
+              </div>
+
+              <%# Moment de l'anésthesie %>
+              <div id= "moment-anesthesia">
+              <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
+              </div>
+
+              <%# ------------Partie codes------------- %>
+
+              <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="anesthia-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Acte") %>
+                <%= l.input :diagnostic %>
+                </div>
+              <% end %>
+
+            </div>
+
+            <%# Délivrance %>
+            <div class="part3">
+
+              <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false %>
+
+            </div>
+
+            <%# ----------------------------- %>
+
+            <%# Partie complications %>
+
+            <div class="part4">
+              <div id= "complications">
+              <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
+              <%# Complications %>
+              <div id= "complication-type">
+              <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :check_boxes, collection: Labour::LABOUR_COMPLICATION_TYPE, include_hidden: false %>
+              </div>
+
+              <%# ------------Partie codes------------- %>
+              <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="complication-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
+                <%= l.input :diagnostic %>
+                </div>
+              <% end %>
+
+              <%# Actes %>
+
+              <div id= "actes">
+              <%= f.input :labour_actes_done, label: 'Actes', as: :radio_buttons, collection: ['oui', 'non'] %>
+              </div>
+
+
+              <%# Actes de la délivrance %>
+              <div id= "labour-actes">
+              <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :check_boxes, collection: Labour::LABOUR_ACTES, include_hidden: false %>
+              </div>
+
+              <%# ------------Partie codes------------- %>
+
+              <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="delivrance-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Acte") %>
+                <%= l.input :diagnostic %>
+                </div>
+              <% end %>
+
+            </div>
+
+            <%# ----------------------------- %>
+
+            <%# Partie bébé %>
+            <div class="part5">
+              <h3> Informations du bébé</h3>
+
+              <%= f.simple_fields_for :babies do |p| %>
+                <%= p.input :first_name, label: "Prénom" %>
+                <%= p.input :last_name,  label: "Nom de Famille" %>
+                <%= p.input :sex, as: :select, collection: Baby::SEX ,label: "Sexe"  %>
+                <%= p.input :birth_date,  label: "Date et heure de naissance" %>
+                <%= p.input :weight,  label: "Poids (kg)"  %>
+                <%= p.input :heigh,  label: "Taille (cm)"  %>
+                <%= p.input :head_circumference,  label: "Périmètre crânien (cm)"%>
+
+              <%# Partie monitoring %>
+                <div id="monitoring">
+                <%= p.input :monitoring,  label: "Monitorage", as: :radio_buttons, collection: ['oui', 'non'] %>
+                </div>
+                <div id="monitoring-options">
+                <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Type de monitorage", input_html: { multiple: true }, include_hidden: false  %>
+                </div>
+              <%# ------------Partie codes------------- %>
+                <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="monitoring-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
+                <%= l.input :diagnostic %>
+                </div>
+              <% end %>
+
+              <%# Partie réanimation %>
+                <div id="intensivecare">
+                <%= p.input :intensivecare,  label: "Réanimation", as: :radio_buttons, collection: ['oui', 'non'] %>
+                </div>
+                <div id="intensivecare-options">
+                <%= p.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation", input_html: { multiple: true }, include_hidden: false  %>
+                </div>
+              <%# ------------Partie codes------------- %>
+                <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="intensivecare-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
+                <%= l.input :diagnostic %>
+                </div>
+              <% end %>
+
+              <%# Partie infections %>
+                <div id="infections">
+                <%= p.input :infectiouscontext,  label: "Infections", as: :radio_buttons, collection: ['oui', 'non']  %>
+                </div>
+                <div id="infections-options">
+                <%= p.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, as: :check_boxes, label: "Types d'infections", input_html: { multiple: true }, include_hidden: false  %>
+                </div>
+              <%# ------------Partie codes------------- %>
+                <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="infections-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
+                <%= l.input :diagnostic %>
+                </div>
+              <% end %>
+
+              <%# Partie pathologies %>
+                <div id="malformation">
+                <%= p.input :malformation,  label: "Malformation", as: :radio_buttons, collection: ['oui', 'non']   %>
+                </div>
+                <div id="pathology">
+                <%= p.input :pathology,  label: "Pathologies", as: :radio_buttons, collection: ['oui', 'non']   %>
+                </div>
+                <div id="pathologies-options">
+                <%= p.input :pathologies, collection: Baby::PATHOLOGIES, as: :check_boxes, label: "Pathologies observées", input_html: { multiple: true }, include_hidden: false  %>
+                </div>
+              <%# ------------Partie codes------------- %>
+                <%= f.simple_fields_for :labour_codes do |l| %>
+                <div id="pathologies-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
+                <%= l.input :diagnostic %>
+                </div>
+              <% end %>
+
+              <%# Partie sorties salle de naissance%>
+                <%= p.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
+                <%= p.input :exit_room, collection: Baby::EXITROOM, label: "Sortie de la salle de naissance", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
+                <% end %>
+            </div>
+
+
+            <div class="part6">
+              <%= f.submit "Enregistrer l'accouchement", id: "btn-home" %>
+            </div>
+
+          <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
     </div>
   </div>
-
-  <% end %>
-
 </div>
 </div>
