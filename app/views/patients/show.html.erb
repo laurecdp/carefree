@@ -1,4 +1,19 @@
+<style> 
+ #travail-spontane-checkbox {
+   display: none;
+ }
+
+ #cesarienne-checkbox {
+   display: none;
+ }
+
+ #artificial-labour {
+   display: none;
+ }
+</style>
+
 <div class="container">
+
 
     <div class= "dashboard-container">
 
@@ -58,22 +73,28 @@
                       item_wrapper_class: 'tag-item' %>
 
           <%# ------------Partie codes------------- %>         
-          <%= f.simple_fields_for :labour_codes do |l| %>
-          <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+          <%#= f.simple_fields_for :labour_codes do |l| %>
+          <%#= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
           <%#= l.collection_check_boxes(:labour_code,
                                                 :diagnostic, 
                                                 Code.all,
                                                 :id) %>
           <%#= grouped_collection_select(:code, :labour_code_id, @labour, :labour_codes, :name, :id, :name) %>
-          <%= l.input :diagnostic %>      
-          <% end %>
+          <%#= l.input :diagnostic %>      
+          <%# end %>
           
         <%# Partie déclenchement artificel %>
+          <div id= "artificial-labour">
           <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
+          </div>
           <%# ------------Partie codes------------- %>           
           <%= f.simple_fields_for :labour_codes do |l| %>
-          <%#= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
-            <%= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
+            <div id="travail-spontane-checkbox">
+            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Travail spontané") %>
+            </div>
+            <div id="cesarienne-checkbox">
+            <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Césarienne") %>
+            </div>
             <%= l.input :diagnostic %>
             <% end %>
 

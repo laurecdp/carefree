@@ -32,7 +32,7 @@
         <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
         <%# ------------Partie codes------------- %>           
         <%= f.simple_fields_for :labour_codes do |l| %>
-          <%#= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
+          <%= l.association :codes, as: :select, include_blank: :false, include_hidden: false, input_html: { class: "select2" }, collection: Code::CATEGORIES %>
           <%= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
           <%= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
           <%= l.association :codes, as: :check_boxes, include_blank: :false, label_method: lambda { |code| "#{code.category} | #{code.name} | Prix: #{code.price}€ " } %>
