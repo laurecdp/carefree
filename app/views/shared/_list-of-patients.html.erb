@@ -1,0 +1,18 @@
+<% @patients.each do |patient| %>
+  <div class="cards-window">
+    <%= link_to patient_path(id:patient.id, category:params[:category]) do %>
+      <div class="card-patient-window">
+        <div class="user"><i class="far fa-user fa-lg"></i></div>
+        <div class="patient-info">
+          <ul>
+            <li class="patient-name">
+              <%= patient.first_name %>
+              <%= patient.last_name %>
+            </li>
+            <li><%= patient.birth_date %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

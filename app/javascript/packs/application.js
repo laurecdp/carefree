@@ -30,6 +30,8 @@ import { sidebar } from '../components/sidebar';
 import { popup } from '../components/formpopup';
 import { searchWindow } from '../components/search-window';
 import { searchautocomplete } from '../components/search-topbar';
+import { searchbirthautocomplete } from '../components/search-bar-window-right';
+import { filterpatients } from '../components/filter-patients';
 
 import { initSelect2 } from '../components/select2';
 
@@ -40,6 +42,8 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   searchWindow();
   searchautocomplete();
+  searchbirthautocomplete();
+  filterpatients();
 });
 
 
