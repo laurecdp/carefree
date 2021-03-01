@@ -31,6 +31,8 @@ import { popup } from '../components/formpopup';
 import { searchWindow } from '../components/search-window';
 import {searchForm } from '../components/form_labour';
 import { searchautocomplete } from '../components/search-topbar';
+import { searchbirthautocomplete } from '../components/search-bar-window-right';
+import { filterpatients } from '../components/filter-patients';
 import { initSelect2 } from '../components/select2';
 import { initFlatpickr } from "../plugins/flatpickr";
 
@@ -43,7 +45,8 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   searchForm();
   searchautocomplete();
-
+  searchbirthautocomplete();
+  filterpatients();
 });
 
 

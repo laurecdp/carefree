@@ -10,9 +10,7 @@ import autocomplete from 'js-autocomplete';
 
 const searchautocomplete = function() {
   const patients = JSON.parse(document.getElementById('search-data').dataset.patients)
-  const searchInput = document.getElementById('search_query');
-  console.log(patients);
-  console.log(searchInput);
+  const searchInput = document.getElementById('search_query')
   if (patients && searchInput) {
     new autocomplete({
       selector: searchInput,
