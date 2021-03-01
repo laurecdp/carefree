@@ -23,46 +23,65 @@
   border-radius: 20px;
   margin-bottom: 40px;
   margin-right: 40px;
+  background-color: white;
 }
 
 .button-action1 {
   color: $navy;
-  background-color: white;
   border: 1px solid $navy;
+  &:hover {
+    background-color: navy;
+    color: $white;
+  }
 }
 
 .button-action2 {
   color: $lightblue;
-  background-color: white;
   border: 1px solid $lightblue;
+  &:hover {
+    background-color: $lightblue;
+    color: white;
+  }
 }
 
 .button-action3 {
-  background-color: white;
   border: 1px solid $pink;
+  &:hover {
+    background-color: $pink;
+    color: $white;
+  }
+  & a {
+  color: $pink;
+  text-decoration: none;
+  }
 }
 
-.button-action3 a {
-  text-decoration: none;
-  color: $pink;
-}
 
 .button-action4 {
   color: $dark-pink;
-  background-color: white;
   border: 1px solid $dark-pink;
+  &:hover {
+    background-color: $dark-pink;
+    color: $white;
+  }
 }
 
 .button-action5 {
   color: $coral;
-  background-color: white;
   border: 1px solid $coral;
+  &:hover {
+    background-color: $coral;
+    color: $white;
+  }
 }
 
 .button-action6 {
   color: $teal;
-  background-color: white;
   border: 1px solid $teal;
+  &:hover {
+    background-color: $teal;
+    color: $white;
+  }
 }
 
 

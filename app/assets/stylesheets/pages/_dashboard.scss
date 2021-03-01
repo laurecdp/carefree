@@ -79,34 +79,39 @@
   padding-left: 35px;
 }
 
-
-.box-number {
-  background-color: $coral;
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 20px;
-  border-radius: 15px;
-}
-
-#labour-icon {
-  color: $coral;
-  font-size: 3em;
-  border: 1px solid $coral;
-  padding: 15px;
-  border-radius: 25px;
-  background-color: #f2c07640;
+.info-dashboard {
+  display: flex;
+  justify-content: space-around;
 }
 
 
-#life-icon {
-  color: $pink;
-  font-size: 3em;
-  border: 1px solid $pink;
-  padding: 15px;
-  border-radius: 25px;
-  background-color: #f9d2bd38;
-}
+// .box-number {
+//   background-color: $coral;
+//   color: white;
+//   font-weight: 700;
+//   font-size: 20px;
+//   margin-top: 20px;
+//   border-radius: 15px;
+// }
+
+// #labour-icon {
+//   color: $coral;
+//   font-size: 3em;
+//   border: 1px solid $coral;
+//   padding: 15px;
+//   border-radius: 25px;
+//   background-color: #f2c07640;
+// }
+
+
+// #life-icon {
+//   color: $pink;
+//   font-size: 3em;
+//   border: 1px solid $pink;
+//   padding: 15px;
+//   border-radius: 25px;
+//   background-color: #f9d2bd38;
+// }
 
 .box-number-baby {
   background-color: $pink;
@@ -145,3 +150,4 @@
   padding-left: 21px;
   padding-right: 21px;
 }
+

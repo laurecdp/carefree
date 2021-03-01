@@ -31,6 +31,7 @@ import { popup } from '../components/formpopup';
 import { searchWindow } from '../components/search-window';
 
 import { initSelect2 } from '../components/select2';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   popup();
   initSelect2();
   searchWindow();
+  initFlatpickr();
 });
 
 
