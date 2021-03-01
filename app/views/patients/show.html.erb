@@ -1,3 +1,8 @@
+<div class="dashboard-container">
+  <div class="container-dashboard">
+    <div class="card-product" id= "welcome-message">
+      <div class="card-product-infos">
+        <h2><%= "#{@patient.first_name} #{@patient.last_name}" %> </h2>
 <style> 
  #travail-spontane-checkbox {
   display: none;
@@ -89,42 +94,76 @@
 
 </style>
 
-<div class="container">
-
-    <div class= "dashboard-container">
-
-      <div class="card-product" id= "welcome-message">
-          <div class="card-product-infos">
-            <h2><%= "#{@patient.first_name} #{@patient.last_name}" %> </h2>
-          </div>
-          <%= image_tag "pregnant.jpg" %>
+<div class="dashboard-container">
+  <div class="container-dashboard">
+    <div class="card-product" id= "welcome-message">
+      <div class="card-product-infos">
+        <h2><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
+        <p><%= @patient.age %> ans</p>
+        <p><%= @patient.birth_date %>
+        <p><%= @patient.nss %></p>
       </div>
+      <%= image_tag "pregnant.jpg" %>
     </div>
 
-  <div class= "dashboard-container">
-
-    <div class="cards-show">
-      <div class="card-patient">
-        <div class="card-title">
-          <h3>Infos Patient</h3>
-        </div>
+ <div class= "dashboard-action">
+      <div class="cards-show">
+        <div class="card-patient">
+          <div class="card-title"><h3>Important</h3></div>
           <ul>
-          <li><%= @patient.age %> ans</li>
-          <li><%= @patient.birth_date %></li>
-          <li><%= @patient.nss %></li>
+            <li><%= @patient.number_of_weeks %> semaines</li>
           </ul>
-      </div>
-
-      <div class="card-patient">
-        <div class="card-title"><h3>Important</h3></div>
-        <ul>
-          <li><%= @patient.number_of_weeks %> semaines</li>
-        </ul>
         </div>
       </div>
     </div>
-
   </div>
+</div>
+
+<div class= "dashboard-container">
+  <div class= "container-form">
+    <form id="msform">
+      <ul id="progressbar">
+        <li class="active"><p>Résumé de l'accouchement</p></li>
+        <li><p>Anésthésie</p></li>
+        <li><p>Délivrance</p></li>
+        <li><p>Informations du bébé</p></li>
+      </ul>
+      <%= simple_form_for @labour do |f| %>
+      <fieldset>
+        <h3 class="fs-title">Résumé de l'accouchement</h3>
+        <%= f.hidden_field :patient_id  %>
+        <%= f.hidden_field :category_id %>
+        <%= f.input :labour_start_at, label: "Début de l'accouchement" %>
+        <%= f.input :labour_start,
+                    collection:Labour::LABOUR_START,
+                    include_hidden: false,
+                    label: 'Mode de début du travail',
+                    as: :radio_buttons,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
+        <%= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+      <% end %>
+      </fieldset>
+      <fieldset>
+        <h3 class="fs-title">Anésthésie</h3>
+        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+        <input type="button" name="next" class="next action-button" value="Next"/>
+      </fieldset>
+      <fieldset>
+        <h3 class="fs-title">Délivrance</h3>
+        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+        <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+      </fieldset>
+      <fieldset>
+        <h3 class="fs-title">Informations du bébé</h3>
+        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+        <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+      </fieldset>
+    </form>
+    <div class="dme_link">
+    </div>
+  </div>
+</div>
 
   <% if params[:category] %>
 
@@ -134,7 +173,7 @@
       <%= simple_form_for @labour do |f| %>
 
         <%# Partie accouchement %>
-            
+
         <div class="part1">
           <h3>Résumé de l'accouchement </h2>
           <%= f.hidden_field :patient_id  %>
@@ -148,11 +187,15 @@
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
 
+          <%# ------------Partie codes------------- %>
+
           <%# Partie déclenchement artificel %>
           <div id= "artificial-labour">
           <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
           </div>
+          
           <%# ------------Partie codes------------- %>           
+
           <%= f.simple_fields_for :labour_codes do |l| %>
             <div id="travail-spontane-checkbox">
             <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Travail spontané") %>
@@ -184,6 +227,7 @@
 
           <div id= "anaesthesia">
           <%= f.input :anaesthesia, label: 'Anésthésie', as: :radio_buttons, radio_buttons_style: :inline, collection: ['oui', 'non'] %>
+
           <div id= "category-anesthesia">
           <%= f.input :anaesthesia_category, 
                       label: 'Type d\'anésthésie', 
@@ -197,6 +241,7 @@
           <%# Anésthésie loco-générale %>
           <div id= "anesthesia-loco-general">
           <%= f.input :anaesthesia_loco_general, label: 'Anésthésie loco-régionale',  as: :select, collection: Labour::ANAESTHESIA_LOCO_GENERAL, include_hidden: false %>
+
           </div>
 
           <%# Anésthésie générale %>
@@ -209,7 +254,8 @@
           <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
           </div>
 
-          <%# ------------Partie codes------------- %>           
+          <%# ------------Partie codes------------- %>  
+            
           <%= f.simple_fields_for :labour_codes do |l| %>
             <div id="anesthia-checkbox">
             <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Acte") %>
@@ -223,7 +269,7 @@
         <div class="part3">
 
           <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false %>
-           
+
         </div>
 
         <%# ----------------------------- %>
@@ -233,8 +279,6 @@
         <div class="part4">
           <div id= "complications">
           <%= f.input :labour_complication, label: 'Complications', as: :radio_buttons, collection: ['oui', 'non'] %>
-          </div>
-          
           <%# Complications %>
           <div id= "complication-type">
           <%= f.input :labour_complication_type, label: 'Complications de la délivrance', as: :check_boxes, collection: Labour::LABOUR_COMPLICATION_TYPE, include_hidden: false %>
@@ -260,7 +304,8 @@
           <%= f.input :labour_actes, label: 'Actes de la délivrance', as: :check_boxes, collection: Labour::LABOUR_ACTES, include_hidden: false %>
           </div>
            
-          <%# ------------Partie codes------------- %>           
+          <%# ------------Partie codes------------- %> 
+            
           <%= f.simple_fields_for :labour_codes do |l| %>
             <div id="delivrance-checkbox">
             <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Acte") %>
@@ -354,15 +399,16 @@
             <% end %>
         </div>
 
+
         <div class="part6">
           <%= f.submit "Enregistrer l'accouchement", id: "btn-home" %>
-        </div> 
+        </div>
 
       <% end %>
       </div>
     </div>
   </div>
-  
+
   <% end %>
 
 </div>
