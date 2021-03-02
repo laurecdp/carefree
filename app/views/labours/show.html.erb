@@ -1,12 +1,30 @@
- 
  <h3> Accouchement de <%= "#{@labour.patient.first_name} #{@labour.patient.last_name}" %> </h3>
  
-
   <% b = @labour.labour_start_at %>
-  <%=@labour.labour_end_at %>
+  <% e = @labour.labour_end_at %>
+  <% @duration = ((e - b)/3600).round %>
   <% @labourbegin = b.strftime("Déclenchement: %d/%m/%Y à %Hh%M") %>
-  <% @labourend = e.strftime("Déclenchement: %d/%m/%Y à %Hh%M") %>
-  <%=  "#{@labourbegin}" %>
-  <%= "#{@labourbegin}" %>
-  
+  <% @labourend = e.strftime("Délivrance: %d/%m/%Y à %Hh%M") %>
+
+  <ul>
+    <li> Durée de l'accouchement: <%=@duration%> heures</li>
+    <li><%= "Age gestationnel à l'accouchement: #{@labour.patient.number_of_weeks} semaines" %></li>
+    <li> <%= "Mode de début du travail :#{@labour.labour_start}" %></li>
+    <li><%= "#{@labourbegin}" %></li>
+    <li> <%= "#{@labourend}" %> </li>
+    <li> <%= "Motif de déclenchement artificiel:#{@labour.artificial_labour}" %> </li>
+    <li> <%= "Moyens utilisés: #{@labour.labour_drugs}" %> </li>
+    <li> <%= "Type et modalité de la délivrance:#{@labour.labour_end}" %></li>
+    <li> <%= "#{@labour.anaesthesia_category}" %> </li>
+    <li> <%= "#{@labour.anaesthesia_general}" %> </li>
+    <li> <%= "#{@labour.anaesthesia_loco_general}" %> </li>
+    <li> <%= "#{@labour.anaesthesia_moment}" %> </li>
+    <li> <%= "#{@labour.labour_complication_type}" %> </li>
+    <li> <%= "#{@labour.labour_actes}" %> </li>
+    <li> <%= "#{@labour.anaesthesia}" %> </li>
+    <li> <%= "#{@labour.anaesthesia_complication}" %> </li>
+    <li> <%= "#{@labour.labour_complication}" %> </li>
+    <li> <%= "#{@labour.labour_actes_done}" %> </li>
+    <li> <%= "#{@labour.caesarean}" %> </li>
+  </ul>
  
