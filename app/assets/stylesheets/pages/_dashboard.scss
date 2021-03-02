@@ -6,6 +6,21 @@
   position: relative;
 }
 
+.bottom-content {
+  display: flex;
+  margin-top: 20px;
+}
+
+.info-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.patients {
+  border: 1px solid lightgrey;
+  width: 56%;
+}
+
 .search-window {
   background-color: $blue;
   position: absolute;
@@ -21,7 +36,7 @@
 }
 
 .container-dashboard {
-  width: 80%;
+  width: 100%;
 }
 
 .search-window .search-form-control.form-group {
@@ -79,75 +94,40 @@
   padding-left: 35px;
 }
 
-.info-dashboard {
-  display: flex;
-  justify-content: space-around;
-}
+// .box-number-baby {
+//   background-color: $pink;
+//   text-align: center;
+//   color: $pink;
+//   font-weight: 700;
+//   font-size: 20px;
+//   margin-top: 20px;
+//   border-radius: 15px;
+//   bottom: unset;
+//   align-content: unset;
+//   padding-left: 21px;
+//   padding-right: 21px;
+// }
 
+// .fas.fa-user-injured {
+//   color: $navy;
+//   font-size: 3em;
+//   border: 1px solid $navy;
+//   padding: 15px;
+//   border-radius: 25px;
+//   background-color: #2d32601f;
+// }
 
-// .box-number {
-//   background-color: $coral;
+// .box-patients {
+//   background-color: $navy;
+//   text-align: center;
 //   color: white;
 //   font-weight: 700;
 //   font-size: 20px;
 //   margin-top: 20px;
 //   border-radius: 15px;
+//   bottom: unset;
+//   align-content: unset;
+//   padding-left: 21px;
+//   padding-right: 21px;
 // }
-
-// #labour-icon {
-//   color: $coral;
-//   font-size: 3em;
-//   border: 1px solid $coral;
-//   padding: 15px;
-//   border-radius: 25px;
-//   background-color: #f2c07640;
-// }
-
-
-// #life-icon {
-//   color: $pink;
-//   font-size: 3em;
-//   border: 1px solid $pink;
-//   padding: 15px;
-//   border-radius: 25px;
-//   background-color: #f9d2bd38;
-// }
-
-.box-number-baby {
-  background-color: $pink;
-  text-align: center;
-  color: $pink;
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 20px;
-  border-radius: 15px;
-  bottom: unset;
-  align-content: unset;
-  padding-left: 21px;
-  padding-right: 21px;
-}
-
-.fas.fa-user-injured {
-  color: $navy;
-  font-size: 3em;
-  border: 1px solid $navy;
-  padding: 15px;
-  border-radius: 25px;
-  background-color: #2d32601f;
-}
-
-
-.box-patients {
-  background-color: $navy;
-  text-align: center;
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 20px;
-  border-radius: 15px;
-  bottom: unset;
-  align-content: unset;
-  padding-left: 21px;
-  padding-right: 21px;
-}
 
