@@ -1,0 +1,148 @@
+.container-babyinfo-actions {
+  display: flex;
+  jusitfy-content: space-around;
+}
+.buttons-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-decoration: none;
+}
+
+.buttons-show p {
+  margin-top: 8px;
+}
+
+.buttons-show a {
+  width: 200px;
+}
+
+.button-action1-show, .button-action2-show, .button-action3-show, .button-action4-show, .button-action5-show, .button-action6-show {
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  font-size: 16px;
+  padding: 8px 24px;
+  transition: opacity 0.3s ease;
+  width: 82%;
+  height: 82%;
+  word-wrap: break-word;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 20px;
+  margin-bottom: 40px;
+  margin-right: 40px;
+  background-color: white;
+}
+
+.button-action1-show {
+  color: $navy;
+  border: 1px solid $navy;
+  &:hover {
+    background-color: navy;
+    color: $white;
+  }
+}
+
+.button-action2-show {
+  color: $lightblue;
+  border: 1px solid $lightblue;
+  &:hover {
+    background-color: $lightblue;
+    color: white;
+  }
+}
+
+.button-action3-show {
+  border: 1px solid $pink;
+  color: $pink;
+  &:hover {
+    background-color: $pink;
+    color: $white;
+  }
+}
+
+
+.button-action4-show {
+  color: $dark-pink;
+  border: 1px solid $dark-pink;
+  &:hover {
+    background-color: $dark-pink;
+    color: $white;
+  }
+}
+
+.button-action5-show {
+  color: $coral;
+  border: 1px solid $coral;
+  &:hover {
+    background-color: $coral;
+    color: $white;
+  }
+}
+
+.button-action6-show {
+  color: $teal;
+  border: 1px solid $teal;
+  &:hover {
+    background-color: $teal;
+    color: $white;
+  }
+}
+
+
+.button-action p {
+  margin-top: 20px;
+}
+
+#btn-home {
+  font-size: 20px;
+  letter-spacing: 1.3px;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50rem;
+  background: #6b63ff;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+#btn-home:hover {
+  background: #6b63ff9c;
+  color: white;
+}
+
+.card-product-baby {
+  padding: 32px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.card-product-baby img {
+  padding: 0px;
+}
+
+
+#baby-info {
+    padding-top: 8px;
+    height: 135px;
+    width: 445px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4rem;
+    margin-top: 15px;
+    margin-bottom: 80px;
+}
+
+#baby-info h2 {
+font-weight: black;
+font-size: 16px;
+}
+
+#baby-info p {
+font-weight: black;
+font-size: 10px;
+}
+
+.card-product-baby-info {
+  line-height: 8px;
+}

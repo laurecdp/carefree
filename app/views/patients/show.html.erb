@@ -14,7 +14,75 @@
         <%= image_tag "pregnant.jpg" %>
     </div>
 
-  <% if params[:category] %>
+    <div class="container-babyinfo-actions">
+      <div class="buttons-show">
+        <%= link_to(patient_path) do %>
+          <button type="button" class="button-action1-show">
+            <i class="fas fa-user-plus fa-3x"></i>
+            <p>Admission</p>
+          </button>
+        <% end %>
+
+        <%= link_to(patient_path) do %>
+          <button type="button" class="button-action2-show">
+            <i class="fas fa-stethoscope fa-3x"></i>
+            <p>Consultation</p>
+          </button>
+        <% end %>
+
+        <% @categories.each do |categorie|%>
+           <% if categorie.name == "Naissance"%>
+              <% @naissance = categorie %>
+              <%= link_to patient_path(category: @naissance.id)  do %>
+                <button type="button" class="button-action3-show">
+                  <i class="fas fa-baby fa-3x"></i>
+                  <p> Naissance </p>
+                </button>
+              <% end %>
+          <% end %>
+        <% end %>
+
+        <%= link_to(patient_path) do %>
+          <button type="button" class="button-action4-show">
+            <i class="fas fa-clinic-medical fa-3x"></i>
+            <p>Hospitalisation</p>
+          </button>
+        <% end %>
+
+        <%= link_to(patient_path) do %>
+          <button type="button" class="button-action5-show">
+            <i class="fas fa-prescription-bottle-alt fa-3x"></i>
+            <p>Pharmacie</p>
+          </button>
+        <% end %>
+
+        <%= link_to(patient_path) do %>
+          <button type="button" class="button-action6-show">
+            <i class="fas fa-print fa-3x"></i>
+            <p>Impression</p>
+          </button>
+        <% end %>
+      </div>
+      <div class="card-product-baby" id="baby-info">
+        <div class="card-product-baby-info">
+            <% if @patient.babies.any? %>
+              <% @patient.babies.each do |baby| %>
+              <h2><%= "Prénom: #{baby.first_name} Nom: #{baby.last_name}" %></h2>
+              <p><%= "Né(e) le: #{baby.birth_date}" %></p>
+              <p><i class="fas fa-venus-mars"></i> <%= "Sexe: #{baby.sex}"%></p>
+              <p><i class="fas fa-weight"></i> <%= "Poids: #{baby.weight} kg" %></p>
+              <p><i class="fas fa-arrows-alt-v"></i> <%= "Taille: #{baby.heigh} cm" %></p>
+              <% end %>
+            <% else %>
+              <h2>Baby information:</h2>
+              <p>No baby for the moment</p>
+            <% end %>
+        </div>
+        <%= image_tag "motherhood.png" %>
+      </div>
+    </div>
+
+    <% if params[:category] %>
 
     <div class= "container-form" id="msform">
       <ul id="progressbar">
@@ -74,6 +142,7 @@
         <fieldset class= "form_step" data-step="2">
           <h3 class="fs-title">Anésthésie</h3>
           <%# Partie anésthésie %>
+
               <div id= "anaesthesia">
                 <%= f.input :anaesthesia, label: 'Anésthésie', as: :radio_buttons, radio_buttons_style: :inline, collection: ['oui', 'non'] %>
               </div>
@@ -246,11 +315,10 @@
                 <button type= "button", class= "btn btn-ghost next" >suivant</button>
               </div>
         </fieldset>
-        <%= f.button :submit, name: "Enregistrer l'accouchement",class: "next action-button", value: "Enregistrer l'accouchement" %>
+        <%= f.button :submit, name: "Enregistrer l'accouchement", class: "next action-button", value: "Enregistrer l'accouchement" %>
       <% end %>
-
-     <div class="dme_link">
      </div>
+
     </div>
 
 
