@@ -106,6 +106,7 @@
                       as: :radio_buttons,
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
+          <%= f.input :labour_end_at, label: "Fin de l'accouchement" %>           
           <%# Partie déclenchement artificel %>
           <div id= "artificial-labour">
             <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
@@ -169,6 +170,10 @@
               <%# Moment de l'anésthesie %>
               <div id= "moment-anesthesia">
                 <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
+              </div>
+
+              <div id= "anaesthesia_complication">
+                <%= f.input :anaesthesia_complication, as: :radio_buttons, collection: ['oui', 'non'] %>
               </div>
 
               <%# ------------Partie codes------------- %>

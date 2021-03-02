@@ -15,8 +15,12 @@ class LabourPolicy
   end
 
   def update?
-    false
+    true
   end
+
+  def show?
+    true
+  end 
 
   def edit?
     update?
