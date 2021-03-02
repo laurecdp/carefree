@@ -41,9 +41,9 @@
 }
 
 .sidebar .action1:hover {
-  background-color: $navy;
+  background-color: $blue;
   .icone {
-    background-color: $navy;
+    background-color: $blue;
     color: $white;
   }
   .label {
@@ -139,7 +139,13 @@
 }
 
 .logo-sidebar {
-  width: 50px;
+  width: 65px;
+  padding-top: 8px;
+}
+
+.top-sidebar {
+  display: flex;
+  justify-content: center;
 }
 
 

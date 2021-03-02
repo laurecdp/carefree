@@ -1,0 +1,17 @@
+<% @patients[0..2].each do |patient| %>
+  <div class="patients-list">
+    <%= link_to patient_path(id:patient.id, category:params[:category]) do %>
+      <div class="list-patient-dashboard">
+        <div class="list-patient-info">
+          <ul>
+            <li class="patient-name">
+              <%= patient.first_name %>
+              <%= patient.last_name %>
+            </li>
+            <li class="patient-birth"><%= patient.birth_date %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
