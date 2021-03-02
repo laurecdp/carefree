@@ -1,4 +1,4 @@
- <h3> Accouchement de <%= "#{@labour.patient.first_name} #{@labour.patient.last_name}" %> </h3>
+ <h3> Résumé de l'accouchement de <%= "#{@labour.patient.first_name} #{@labour.patient.last_name}" %> </h3>
  
   <% b = @labour.labour_start_at %>
   <% e = @labour.labour_end_at %>
@@ -6,24 +6,48 @@
   <% @labourbegin = b.strftime("Déclenchement: %d/%m/%Y à %Hh%M") %>
   <% @labourend = e.strftime("Délivrance: %d/%m/%Y à %Hh%M") %>
   <% @actesdelivrance = @labour.labour_actes.join(", ").downcase %>
+  <% @complicationdelivrance = @labour.labour_complication_type.join(", ").downcase %>
+  <% @moyensutilises = @labour.labour_drugs.join(", ").downcase %>
 
   <ul>
-    <li> Durée de l'accouchement: <%=@duration%> heures</li>
     <li><%= "Age gestationnel à l'accouchement: #{@labour.patient.number_of_weeks} semaines" %></li>
     <li> <%= "Mode de début du travail :#{@labour.labour_start}" %></li>
-    <li> <%= "Motif de déclenchement artificiel:#{@labour.artificial_labour}" %> </li>
-    <li> <%= "Moyens utilisés: #{@labour.labour_drugs}" %> </li>
+    <% if @labour.artificial_labour != "" %>
+      <li> <%= "Motif de déclenchement artificiel:#{@labour.artificial_labour}" %> </li>
+    <% end %>
+    <% if @labour.labour_drugs.any? %>
+      <li> <%= "Moyens utilisés: #{@moyensutilises}" %> </li>
+    <% end %>
     <li><%= "#{@labourbegin}" %></li>
     <li> <%= "#{@labourend}" %> </li>
-    <li> <%= "Type et modalité de la délivrance:#{@labour.labour_end}" %></li>
-    <li> <%= "Anesthésie: #{@labour.anaesthesia}" %> </li>
+    <li> Durée de l'accouchement: <%=@duration%> heures</li>
+    <% if @labour.labour_end %>
+      <li> <%= "Type et modalité de la délivrance:#{@labour.labour_end}" %></li>
+    <% end %>
+    <% if @labour.anaesthesia %>
+      <li> Anesthésie: oui </li>
+    <% else %>
+      <li> Anesthésie: non </li>
+    <% end %>
     <li> <%= "Type d'anésthésie: #{@labour.anaesthesia_category}, #{@labour.anaesthesia_general}, #{@labour.anaesthesia_loco_general}" %> </li>
-    <li> <%= "Complication de l'anesthésie: #{@labour.anaesthesia_complication}" %> </li>
     <li> <%= "Moment de l'anesthésie: #{@labour.anaesthesia_moment}" %> </li>
-    <li> <%= "Complications: #{@labour.labour_complication}" %> </li>
-    <li> <%= "Complications de la délivrance: #{@labour.labour_complication_type}" %> </li>
-    <li> <%= "Actes : #{@labour.labour_actes_done}" %> </li>
-    <li> <%= "Actes de la délivrance : #{@actesdelivrance}" %> </li>
+    <% if @labour.anaesthesia_complication %>
+      <li> Complication de l'anesthésie: oui </li>
+    <% else %>
+      <li> Complication de l'anesthésie: non </li>
+    <% end  %>
     
+    <% if @labour.labour_complication %>
+      <li> Complication de la délivrance: oui </li>
+    <% else %>
+      <li> Complication de la délivrance: non </li>
+    <% end  %>
+    <li> <%= "Complications de la délivrance: #{@complicationdelivrance}" %> </li>
+    <% if @labour.labour_actes_done %>
+      <li> Actes: oui </li>
+    <% else %>
+      <li> Actes: non </li>
+    <% end  %>
+    <li> <%= "Actes de la délivrance : #{@actesdelivrance}" %> </li>
     
   </ul>
