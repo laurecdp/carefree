@@ -252,8 +252,8 @@
                             label: "Date et heure de naissance",
                             as: :string,
                             input_html: {class: "datetime-picker"}%>
-                <%= p.input :weight,  label: "Poids (kg)"  %>
-                <%= p.input :heigh,  label: "Taille (cm)"  %>
+                <%= p.input :weight,  label: "Poids (kg)", collection: 1..10  %>
+                <%= p.input :heigh,  label: "Taille (cm)", collection: 30..60 %>
                 <%= p.input :head_circumference,  label: "Périmètre crânien (cm)"%>
 
                 <%# Partie monitoring %>
@@ -306,7 +306,7 @@
 
                 <%# Partie pathologies %>
                 <div id="malformation">
-                  <%= p.input :malformation,  label: "Malformation", as: :radio_buttons, collection: ['oui', 'non']   %>
+                  <%= p.input :malformation,  label: "Malformation", as: :check_boxes, collection: ['oui', 'non']   %>
                 </div>
                 <div id="pathology">
                   <%= p.input :pathology,  label: "Pathologies", as: :radio_buttons, collection: ['oui', 'non']   %>
