@@ -1,7 +1,7 @@
 const searchForm = () => {
  
   /* Partie 1 du Form "Résumé de l'accouchement */
-  if (document.getElementById("new_labour")) {
+  if (document.getElementById("msform")) {
 
     const tagItem = document.querySelectorAll(".tag-item");
      tagItem.forEach(element => {
