@@ -13,7 +13,7 @@
       </div>
         <%= image_tag "pregnant.jpg" %>
     </div>
-  
+
   <% if params[:category] %>
 
     <div class= "container-form">
@@ -65,7 +65,7 @@
               <%= l.input :diagnostic %>
             </div>
           <% end %>
-          <%#= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+          <button type= "button", class= "btn btn-ghost" id= "next" >suivant</button>
         </fieldset>
 
         <fieldset>
@@ -106,8 +106,8 @@
                   <%= l.input :diagnostic %>
                 </div>
               <% end %>
-          <%#= f.button :submit, name: "previous", class: "previous action-button-previous", value: "Previous" %>
-          <%#= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+              <button type= "button", class= "btn btn-ghost" id= "next" >suivant></button>
+              <button type= "button", class= "btn btn-ghost" id= "previous" >précédent></button>
         </fieldset>
 
         <fieldset>
@@ -149,8 +149,8 @@
                   <%= l.input :diagnostic %>
                 </div>
               <% end %>
-          <%= f.button :submit, name: "previous", class: "previous action-button-previous", value: "Previous" %>
-          <%#= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+              <button type= "button", class= "btn btn-ghost" id= "next" >suivant></button>
+              <button type= "button", class= "btn btn-ghost" id= "previous" >précédent></button>
         </fieldset>
 
         <fieldset>
@@ -233,20 +233,19 @@
                 <%# Partie sorties salle de naissance%>
                 <%= p.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
                 <%= p.input :exit_room, collection: Baby::EXITROOM, label: "Sortie de la salle de naissance", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
-
               <% end %>
-          <%#= f.button :submit, name: "previous", class: "previous action-button-previous", value: "Previous" %>
-          
+              <button type= "button", class= "btn btn-ghost" id= "next" >suivant></button>
+              <button type= "button", class= "btn btn-ghost" id= "previous" >précédent></button>
         </fieldset>
         <%= f.button :submit, name: "Enregistrer l'accouchement",class: "next action-button", value: "Enregistrer l'accouchement" %>
       <% end %>
 
      </form>
-     
+
      <div class="dme_link">
      </div>
     </div>
-  
+
 
   <% end %>
   </div>
