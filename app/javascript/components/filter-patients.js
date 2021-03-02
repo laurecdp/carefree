@@ -20,7 +20,6 @@ const displayFilteredPatients = (input) => {
   fetch(url, { headers: { accept: "application/json" } })
   .then(response => response.json())
   .then((data) => {
-    console.log(data.html);
     const result = document.querySelector("#list-of-patients");
     result.innerHTML = data.html;
   });

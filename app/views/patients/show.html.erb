@@ -13,7 +13,60 @@
       </div>
         <%= image_tag "pregnant.jpg" %>
     </div>
-  
+    <div class="container-babyinfo-actions">
+      <div class="buttons-show">
+        <%= link_to(dashboard_path) do %>
+          <button type="button" class="button-action1-show">
+            <i class="fas fa-user-plus fa-3x"></i>
+            <p>Admission</p>
+          </button>
+        <% end %>
+
+        <%= link_to(dashboard_path) do %>
+          <button type="button" class="button-action2-show">
+            <i class="fas fa-stethoscope fa-3x"></i>
+            <p>Consultation</p>
+          </button>
+        <% end %>
+
+        <% @categories.each do |categorie|%>
+           <% if categorie.name == "Naissance"%>
+              <% @naissance = categorie %>
+              <%= link_to dashboard_path(category: @naissance.id)  do %>
+                <button type="button" class="button-action3-show">
+                  <i class="fas fa-baby fa-3x"></i>
+                  <p> Naissance </p>
+                </button>
+              <% end %>
+          <% end %>
+        <% end %>
+
+        <%= link_to(dashboard_path) do %>
+          <button type="button" class="button-action4-show">
+            <i class="fas fa-clinic-medical fa-3x"></i>
+            <p>Hospitalisation</p>
+          </button>
+        <% end %>
+
+        <%= link_to(dashboard_path) do %>
+          <button type="button" class="button-action5-show">
+            <i class="fas fa-prescription-bottle-alt fa-3x"></i>
+            <p>Pharmacie</p>
+          </button>
+        <% end %>
+
+        <%= link_to(dashboard_path) do %>
+          <button type="button" class="button-action6-show">
+            <i class="fas fa-print fa-3x"></i>
+            <p>Impression</p>
+          </button>
+        <% end %>
+      </div>
+      <div class="card-product-baby" id="baby-info">
+          <%= image_tag "pregnant.jpg" %>
+        </div>
+    </div>
+
   <% if params[:category] %>
 
     <div class= "container-form">
@@ -71,6 +124,7 @@
         <fieldset>
           <h3 class="fs-title">Anésthésie</h3>
           <%# Partie anésthésie %>
+
               <div id= "anaesthesia">
                 <%= f.input :anaesthesia, label: 'Anésthésie', as: :radio_buttons, radio_buttons_style: :inline, collection: ['oui', 'non'] %>
               </div>
