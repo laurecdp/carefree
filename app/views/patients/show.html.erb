@@ -92,6 +92,7 @@
                       as: :radio_buttons,
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
+          <%= f.input :labour_end_at, label: "Fin de l'accouchement" %>           
           <%# Partie déclenchement artificel %>
           <div id= "artificial-labour">
             <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
