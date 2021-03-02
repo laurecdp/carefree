@@ -96,11 +96,6 @@
   border-radius: 53px;
 }
 
-.container-form {
-  width: 80vw;
-  margin: 0 auto;
-}
-
  #travail-spontane-checkbox {
   display: none;
  }
@@ -188,3 +183,10 @@
  #pathologies-options {
    display: none;
  }
+
+#new_labour > fieldset {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
