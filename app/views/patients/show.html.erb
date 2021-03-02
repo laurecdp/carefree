@@ -82,9 +82,9 @@
       </div>
     </div>
 
-    <%# if params[:category] %>
+    <% if params[:category] %>
 
-    <div class="container-form" id="msform">
+    <div class="container-labourform" id="msform">
       <ul id="progressbar">
         <li class="present" data-bar="1"><p>Accouchement</p></li>
         <li data-bar="2"><p>Anésthésie</p></li>
@@ -97,7 +97,10 @@
           <h3 class="fs-title">Résumé de l'accouchement</h3>
           <%= f.hidden_field :patient_id  %>
           <%= f.hidden_field :category_id %>
-          <%= f.input :labour_start_at, label: "Début de l'accouchement" %>
+          <%= f.input :labour_start_at, 
+                      as: :string,
+                      label: "Début de l'accouchement", 
+                      input_html: {class: "datetime-picker"}%>
           <%= f.input :labour_start,
                       collection:Labour::LABOUR_START,
                       include_hidden: false,
@@ -105,7 +108,10 @@
                       as: :radio_buttons,
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
-          <%= f.input :labour_end_at, label: "Fin de l'accouchement" %>           
+          <%= f.input :labour_end_at,
+                      as: :string, 
+                      label: "Fin de l'accouchement",
+                      input_html: {class: "datetime-picker"} %>           
           <%# Partie déclenchement artificel %>
           <div id= "artificial-labour">
             <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
@@ -326,6 +332,7 @@
   </div>
   
 
-  <%# end %>
+  <% end %>
   </div>
 </div>
+
