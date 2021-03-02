@@ -1,6 +1,8 @@
 <div class="sidebar">
   <div class="button"><i class="fas fa-times"></i></div>
-  <%= image_tag "logo.png", class:"logo-sidebar" %>
+  <%= link_to root_path  do %>
+      <%= image_tag "logo.png", class:"logo-sidebar" %>
+  <% end %>
     <ul>
 
       <li class="action1"><a href="#"><span class="icone"><i class="fas fa-user-plus"></i></span><span class="label">Admission</span></a></li>

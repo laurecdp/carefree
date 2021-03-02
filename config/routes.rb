@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard'
   get '/login', to: 'pages#login'
-  resources :labours, only: [:new, :create, :edit, :update] do
+  resources :labours, only: [:new, :create, :edit, :update, :show] do
     resources :babies, only: [:new, :create, :index, :show]
     resources :labour_codes, only: [:new, :create]
   end

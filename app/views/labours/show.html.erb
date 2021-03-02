@@ -1,0 +1,9 @@
+ 
+ <h3> Accouchement de <%= "#{@labour.patient.first_name} #{@labour.patient.last_name}" %> </h3>
+ 
+
+  <% d = @labour.labour_start_at %>
+  <% @labourbegin = d.strftime("%d/%m/%Y à %Hh%M") %>
+  <%= "#{@labourbegin}" %>
+  
+ 

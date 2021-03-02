@@ -1,4 +1,10 @@
 class LaboursController < ApplicationController
+  
+  def show
+    @labour = Labour.find(params[:id])
+    authorize @labour
+  end
+
   def new
     @baby = Baby.new
     @labour_code = LabourCode.new
@@ -39,7 +45,6 @@ class LaboursController < ApplicationController
     #------------#
     if @labour.save
       render :edit
-      redirect_to patient_path(@patient)
     else
       render :new
     end
