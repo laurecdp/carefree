@@ -28,14 +28,17 @@ const displayFilteredPatients = (input) => {
 
 const filterpatients = () => {
   const form = document.querySelector(".search-patient-form");
-  const input = form.querySelector("#search_right_query");
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    displayFilteredPatients(input);
-  });
-  input.addEventListener('keyup', (event) => {
-    displayFilteredPatients(input);
-  })
+  if (form) {
+    const input = form.querySelector("#search_right_query");
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      displayFilteredPatients(input);
+    });
+    input.addEventListener('keyup', (event) => {
+      displayFilteredPatients(input);
+    })
+  }
+  
 }
 
 export { filterpatients }
