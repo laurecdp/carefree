@@ -22,7 +22,7 @@ class Baby < ApplicationRecord
   BREASTFEEDING = ['Maternel', 'Artificiel', 'Mixte']
   # validates :breastfeeding, inclusion: { in: BREASTFEEDING }
 
-  MALFORMATIONS = ['Retard de croissance', 'VIH', 'Diabète']
+  # MALFORMATIONS = ['Retard de croissance', 'VIH', 'Diabète']
   # validate :each_malformations
 
   private
@@ -43,7 +43,7 @@ class Baby < ApplicationRecord
     pathologies.map { |baby| PATHOLOGIES.include?(baby) }.all?
   end
 
-  def each_malformations
-    malformations.map { |baby| MALFORMATIONS.include?(baby) }.all?
-  end
+  # def each_malformations
+  #   malformations.map { |baby| MALFORMATIONS.include?(baby) }.all?
+  # end
 end
