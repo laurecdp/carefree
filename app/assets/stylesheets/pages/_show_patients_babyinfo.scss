@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 50px;
   text-decoration: none;
 }
@@ -24,8 +24,8 @@
   font-size: 16px;
   padding: 8px 24px;
   transition: opacity 0.3s ease;
-  width: 100%;
-  height: 220px;
+  width: 82%;
+  height: 82%;
   word-wrap: break-word;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 20px;
@@ -110,8 +110,39 @@
   color: white;
 }
 
+.card-product-baby {
+  padding: 32px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
 .card-product-baby img {
-  object-fit: cover;
-  border-radius: 53px;
-  width: 200px;
+  padding: 0px;
+}
+
+
+#baby-info {
+    padding-top: 8px;
+    height: 135px;
+    width: 445px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4rem;
+    margin-top: 15px;
+    margin-bottom: 80px;
+}
+
+#baby-info h2 {
+font-weight: black;
+font-size: 16px;
+}
+
+#baby-info p {
+font-weight: black;
+font-size: 10px;
+}
+
+.card-product-baby-info {
+  line-height: 8px;
 }
