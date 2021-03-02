@@ -13,6 +13,7 @@
       </div>
         <%= image_tag "pregnant.jpg" %>
     </div>
+
     <div class="container-babyinfo-actions">
       <div class="buttons-show">
         <%= link_to(patient_path) do %>
@@ -81,21 +82,19 @@
       </div>
     </div>
 
+    <% if params[:category] %>
 
-  <% if params[:category] %>
-
-    <div class= "container-form">
-     <div id="msform">
+    <div class= "container-form" id="msform">
       <ul id="progressbar">
-        <li class="active">
-        <p>Résumé de l'accouchement</p></li>
-        <li><p>Anésthésie</p></li>
-        <li><p>Délivrance</p></li>
-        <li><p>Informations du bébé</p></li>
+        <li class="present" data-bar="1">
+        <p>Accouchement</p></li>
+        <li data-bar="2"><p>Anésthésie</p></li>
+        <li data-bar="3"><p>Délivrance</p></li>
+        <li data-bar="4"><p>Nouveau né</p></li>
       </ul>
 
       <%= simple_form_for @labour do |f| %>
-        <fieldset>
+        <fieldset class= "form_step active" data-step="1">
           <h3 class="fs-title">Résumé de l'accouchement</h3>
           <%= f.hidden_field :patient_id  %>
           <%= f.hidden_field :category_id %>
@@ -133,10 +132,14 @@
               <%= l.input :diagnostic %>
             </div>
           <% end %>
-          <%#= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+          <div class="container-button-1">
+            <div>
+              <button type= "button", class= "btn btn-ghost next" >suivant</button>
+            </div>
+          </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class= "form_step" data-step="2">
           <h3 class="fs-title">Anésthésie</h3>
           <%# Partie anésthésie %>
 
@@ -175,11 +178,13 @@
                   <%= l.input :diagnostic %>
                 </div>
               <% end %>
-          <%#= f.button :submit, name: "previous", class: "previous action-button-previous", value: "Previous" %>
-          <%#= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+              <div class="container-button">
+                <button type= "button", class= "btn btn-ghost previous" >précédent</button>
+                <button type= "button", class= "btn btn-ghost next" >suivant</button>
+              </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class= "form_step" data-step="3">
           <h3 class="fs-title">Délivrance</h3>
           <%# Délivrance %>
               <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false %>
@@ -218,11 +223,13 @@
                   <%= l.input :diagnostic %>
                 </div>
               <% end %>
-          <%#= f.button :submit, name: "previous", class: "previous action-button-previous", value: "Previous" %>
-          <%#= f.button :submit, name: "next", class: "next action-button", value: "Next" %>
+              <div class="container-button">
+                <button type= "button", class= "btn btn-ghost previous" >précédent</button>
+                <button type= "button", class= "btn btn-ghost next" >suivant</button>
+              </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class= "form_step" data-step="4">
           <h3 class="fs-title">Informations du bébé</h3>
           <%# Partie bébé %>
               <h3> Informations du bébé</h3>
@@ -302,14 +309,14 @@
                 <%# Partie sorties salle de naissance%>
                 <%= p.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
                 <%= p.input :exit_room, collection: Baby::EXITROOM, label: "Sortie de la salle de naissance", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
-
               <% end %>
-          <%#= f.button :submit, name: "previous", class: "previous action-button-previous", value: "Previous" %>
-
+              <div class="container-button">
+                <button type= "button", class= "btn btn-ghost previous" >précédent</button>
+                <button type= "button", class= "btn btn-ghost next" >suivant</button>
+              </div>
         </fieldset>
         <%= f.button :submit, name: "Enregistrer l'accouchement", class: "next action-button", value: "Enregistrer l'accouchement" %>
       <% end %>
-
      </div>
 
     </div>

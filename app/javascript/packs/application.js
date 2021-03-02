@@ -35,6 +35,7 @@ import { searchbirthautocomplete } from '../components/search-bar-window-right';
 import { filterpatients } from '../components/filter-patients';
 import { initSelect2 } from '../components/select2';
 import { initFlatpickr } from "../plugins/flatpickr";
+import { slide } from "../components/form_slide";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -47,6 +48,7 @@ document.addEventListener('turbolinks:load', () => {
   searchautocomplete();
   searchbirthautocomplete();
   filterpatients();
+  slide();
 });
 
 
