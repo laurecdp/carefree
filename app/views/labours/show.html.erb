@@ -5,26 +5,25 @@
   <% @duration = ((e - b)/3600).round %>
   <% @labourbegin = b.strftime("Déclenchement: %d/%m/%Y à %Hh%M") %>
   <% @labourend = e.strftime("Délivrance: %d/%m/%Y à %Hh%M") %>
+  <% @actesdelivrance = @labour.labour_actes.join(", ").downcase %>
 
   <ul>
     <li> Durée de l'accouchement: <%=@duration%> heures</li>
     <li><%= "Age gestationnel à l'accouchement: #{@labour.patient.number_of_weeks} semaines" %></li>
     <li> <%= "Mode de début du travail :#{@labour.labour_start}" %></li>
-    <li><%= "#{@labourbegin}" %></li>
-    <li> <%= "#{@labourend}" %> </li>
     <li> <%= "Motif de déclenchement artificiel:#{@labour.artificial_labour}" %> </li>
     <li> <%= "Moyens utilisés: #{@labour.labour_drugs}" %> </li>
+    <li><%= "#{@labourbegin}" %></li>
+    <li> <%= "#{@labourend}" %> </li>
     <li> <%= "Type et modalité de la délivrance:#{@labour.labour_end}" %></li>
-    <li> <%= "#{@labour.anaesthesia_category}" %> </li>
-    <li> <%= "#{@labour.anaesthesia_general}" %> </li>
-    <li> <%= "#{@labour.anaesthesia_loco_general}" %> </li>
-    <li> <%= "#{@labour.anaesthesia_moment}" %> </li>
-    <li> <%= "#{@labour.labour_complication_type}" %> </li>
-    <li> <%= "#{@labour.labour_actes}" %> </li>
-    <li> <%= "#{@labour.anaesthesia}" %> </li>
-    <li> <%= "#{@labour.anaesthesia_complication}" %> </li>
-    <li> <%= "#{@labour.labour_complication}" %> </li>
-    <li> <%= "#{@labour.labour_actes_done}" %> </li>
-    <li> <%= "#{@labour.caesarean}" %> </li>
+    <li> <%= "Anesthésie: #{@labour.anaesthesia}" %> </li>
+    <li> <%= "Type d'anésthésie: #{@labour.anaesthesia_category}, #{@labour.anaesthesia_general}, #{@labour.anaesthesia_loco_general}" %> </li>
+    <li> <%= "Complication de l'anesthésie: #{@labour.anaesthesia_complication}" %> </li>
+    <li> <%= "Moment de l'anesthésie: #{@labour.anaesthesia_moment}" %> </li>
+    <li> <%= "Complications: #{@labour.labour_complication}" %> </li>
+    <li> <%= "Complications de la délivrance: #{@labour.labour_complication_type}" %> </li>
+    <li> <%= "Actes : #{@labour.labour_actes_done}" %> </li>
+    <li> <%= "Actes de la délivrance : #{@actesdelivrance}" %> </li>
+    
+    
   </ul>
- 

@@ -154,6 +154,10 @@
                 <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
               </div>
 
+              <div id= "anaesthesia_complication">
+                <%= f.input :anaesthesia_complication, as: :radio_buttons, collection: ['oui', 'non'] %>
+              </div>
+
               <%# ------------Partie codes------------- %>
               <%= f.simple_fields_for :labour_codes do |l| %>
                 <div id="anesthia-checkbox">
