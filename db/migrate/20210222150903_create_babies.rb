@@ -21,7 +21,7 @@ class CreateBabies < ActiveRecord::Migration[6.0]
       t.boolean :pathology, default: false
       t.string :pathologies, array: true, default: []
       t.boolean :malformation, default: false
-      t.string :malformations, array: true, default: []
+      # t.string :malformations, array: true, default: []
       t.references :patient, null: false, foreign_key: true
 
       t.timestamps
