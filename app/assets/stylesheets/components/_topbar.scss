@@ -16,7 +16,7 @@
   margin-right: 32px;
 }
 
-.search-form-control {
+.search-form-control.form-group {
   position: relative;
   margin: 20px 50px;
 }
@@ -56,13 +56,13 @@
 
 
 .navbar-expand-sm .navbar-nav .dropdown-menu {
-  border-radius: 18px;
+  border-radius: 10px;
 }
 
 .fas.fa-search {
-    position: absolute;
-    top: 11px;
-    right: 9px;
+  position: absolute;
+  top: 11px;
+  right: 12px;
 }
 
 #search-data {

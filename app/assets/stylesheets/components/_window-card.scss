@@ -16,7 +16,7 @@
 }
 
 .card-patient-window:hover {
-  border: 5px solid $turquoise;
+  border: 5px solid $lightblue;
 }
 
 .card-patient-window ul {
@@ -35,13 +35,13 @@
 }
 
 .user {
-  color: $turquoise;
+  color: $blue;
   text-align: center;
   padding-top: 5px;
 }
 
 .user .far.fa-user {
-  background-color: #53c3a85c;
+  background-color: $lightblue;
   padding: 12px;
   border-radius: 10px;
 }
