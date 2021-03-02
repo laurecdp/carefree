@@ -82,12 +82,11 @@
       </div>
     </div>
 
-    <% if params[:category] %>
+    <%# if params[:category] %>
 
-    <div class= "container-form" id="msform">
+    <div class="container-form" id="msform">
       <ul id="progressbar">
-        <li class="present" data-bar="1">
-        <p>Accouchement</p></li>
+        <li class="present" data-bar="1"><p>Accouchement</p></li>
         <li data-bar="2"><p>Anésthésie</p></li>
         <li data-bar="3"><p>Délivrance</p></li>
         <li data-bar="4"><p>Nouveau né</p></li>
@@ -322,11 +321,11 @@
         </fieldset>
         <%= f.button :submit, name: "Enregistrer l'accouchement", class: "next action-button", value: "Enregistrer l'accouchement" %>
       <% end %>
-     </div>
-
     </div>
 
+  </div>
+  
 
-  <% end %>
+  <%# end %>
   </div>
 </div>
