@@ -20,7 +20,6 @@ const displayFilteredPatients = (input) => {
   fetch(url, { headers: { accept: "application/json" } })
   .then(response => response.json())
   .then((data) => {
-    console.log(data.html);
     const result = document.querySelector("#list-of-patients");
     result.innerHTML = data.html;
   });
@@ -28,14 +27,17 @@ const displayFilteredPatients = (input) => {
 
 const filterpatients = () => {
   const form = document.querySelector(".search-patient-form");
-  const input = form.querySelector("#search_right_query");
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    displayFilteredPatients(input);
-  });
-  input.addEventListener('keyup', (event) => {
-    displayFilteredPatients(input);
-  })
+  if (form) {
+    const input = form.querySelector("#search_right_query");
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      displayFilteredPatients(input);
+    });
+    input.addEventListener('keyup', (event) => {
+      displayFilteredPatients(input);
+    })
+  }
+  
 }
 
 export { filterpatients }
