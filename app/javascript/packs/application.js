@@ -38,6 +38,10 @@ import { initFlatpickr } from "../plugins/flatpickr";
 import { slide } from "../components/form_slide";
 import { updateTextInput } from "../components/range_bubble";
 
+document.addEventListener('turbolinks:before-cache', () => {
+  document.querySelector('.flatpickr-calendar').outerHTML = '';
+})
+
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   // Call your functions here, e.g:
@@ -53,6 +57,8 @@ document.addEventListener('turbolinks:load', () => {
   slide();
   updateTextInput();
 });
+
+
 
 
 

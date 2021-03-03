@@ -122,7 +122,7 @@ const searchForm = () => {
 
     /* Monitorage */
     /* If yes */
-    const inputYesMonitoring = document.getElementById("labour_baby_monitoring_oui");
+    // const inputYesMonitoring = document.getElementById("labour_baby_monitoring_oui");
 
     inputYesMonitoring.addEventListener("click", (event) => {
 
@@ -133,7 +133,12 @@ const searchForm = () => {
     })
 
     /* If no */
-    const inputNoMonitoring = document.getElementById("labour_baby_monitoring_non");
+    // const inputNoMonitoring = document.getElementById("labour_baby_monitoring_non");
+
+    // inputNoMonitoring.addEventListener("click", (event) => {
+    //   document.getElementById("monitoring-options").style.display = "none"
+    //   document.getElementById("monitoring-checkbox").style.display = "none"
+    // })
 
     inputNoMonitoring.addEventListener("click", (event) => {
       document.querySelector("#form-step-5-labour-wrap").classList.add("d-none")

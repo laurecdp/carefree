@@ -82,8 +82,8 @@
             <% else %>
               <div class="card-product-baby" id="baby-info">
                 <div class="card-product-baby-info">
-                  <h2>Baby information:</h2>
-                  <p>No baby for the moment</p>
+                  <h2>Information du bébé:</h2>
+                  <p> Encore un peu tôt ! (Seulement <%=@patient.number_of_weeks%> semaines)</p>
                 </div>
                 <%= image_tag "motherhood.png" %>
               </div>
@@ -306,10 +306,14 @@
                 <br>
                 <%# Partie monitoring %>
                 <div id="monitoring">
+
+                  <p><strong>Avez vous effectué un monitorage?</strong></p>
                     <%= p.input :monitoring,
-                                label: "Monitorage",
-                                as: :check_boxes,
-                                collection: ['oui', 'non'] %>
+                                label: ",",
+                                as: :boolean,
+                                collection: ['oui', 'non'],
+                                input_html: { class: "toggle-yes-no" } %>
+                  
                 </div>
                 <div class="labour-wrap d-none" id="form-step-5-labour-wrap">
                   <div id="monitoring-options">

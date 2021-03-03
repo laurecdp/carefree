@@ -1,5 +1,6 @@
 require 'json'
 require 'faker'
+require 'date'
 
 
 Labour.destroy_all
@@ -59,20 +60,17 @@ puts 'Creating Patients'
 20.times do 
   patient = Patient.new(
     first_name: Faker::Name.female_first_name,
-    last_name: Faker::Name.last_name, 
-    age: rand(16..50), 
+    last_name: Faker::Name.last_name,
     blood_group: Faker::Blood.group,
     birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), 
     nss:Faker::NationalHealthService.british_number, 
     number_of_weeks: rand(0..39)
   )
-  patient.pregnant = patient.number_of_weeks > 12 
-  patient.save! 
+  patient.pregnant = patient.number_of_weeks > 12
+  patient.age = (Date.current - patient.birth_date).to_i / 365
+  patient.save!
 end
 
-meghan = Patient.create!(first_name: 'Meghan', last_name: 'Markle', age: '35', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), blood_group: Faker::Blood.group, nss:Faker::NationalHealthService.british_number, number_of_weeks: 39)
-
-kate = Patient.create!(first_name: 'Kate', last_name: 'Middleton', age: '38', birth_date: Faker::Date.between(from: '1970-01-01', to: '2004-12-31'), blood_group: Faker::Blood.group, nss:Faker::NationalHealthService.british_number, number_of_weeks: 35)
 
 puts "#{Patient.all.length} patients created"
 
