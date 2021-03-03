@@ -36,6 +36,7 @@ import { filterpatients } from '../components/filter-patients';
 import { initSelect2 } from '../components/select2';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { slide } from "../components/form_slide";
+import { updateTextInput } from "../components/range_bubble";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -49,6 +50,7 @@ document.addEventListener('turbolinks:load', () => {
   searchbirthautocomplete();
   filterpatients();
   slide();
+  updateTextInput();
 });
 
 
