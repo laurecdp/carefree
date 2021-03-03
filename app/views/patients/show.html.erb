@@ -240,53 +240,6 @@
           </fieldset>
 
           <fieldset class= "form_step" data-step="4">
-            <h3 class="fs-title">Informations du bébé</h3>
-            <%# Partie bébé %>
-            <%= f.simple_fields_for :babies do |p| %>
-              <%= p.input :first_name, label: "Prénom" %>
-              <%= p.input :last_name,  label: "Nom de Famille" %>
-              <%= p.input :sex, as: :select, collection: Baby::SEX ,label: "Sexe"  %>
-              <%= p.input :birth_date,  label: "Date et heure de naissance" %>
-              <%= p.input :weight,  label: "Poids (kg)"  %>
-              <%= p.input :heigh,  label: "Taille (cm)"  %>
-              <%= p.input :head_circumference,  label: "Périmètre crânien (cm)"%>
-
-              <%# Partie monitoring %>
-              <div id="monitoring">
-                <%= p.input :monitoring,  label: "Monitorage", as: :radio_buttons, collection: ['oui', 'non'] %>
-              </div>
-              <div id="monitoring-options">
-                <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Type de monitorage", input_html: { multiple: true }, include_hidden: false  %>
-              </div>
-              <%# ------------Partie codes------------- %>
-              <%= f.simple_fields_for :labour_codes do |l| %>
-                <div id="monitoring-checkbox">
-                  <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
-                  <%= l.input :diagnostic %>
-                </div>
-              <% end %>
-
-              <%# Partie réanimation %>
-              <div id="intensivecare">
-                <%= p.input :intensivecare,  label: "Réanimation", as: :radio_buttons, collection: ['oui', 'non'] %>
-              </div>
-              <div id="intensivecare-options">
-                <%= p.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation", input_html: { multiple: true }, include_hidden: false  %>
-              </div>
-              <%# ------------Partie codes------------- %>
-              <%= f.simple_fields_for :labour_codes do |l| %>
-                <div id="intensivecare-checkbox">
-                  <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Complication") %>
-                  <%= l.input :diagnostic %>
-                </div>
-              <% end %>
-              <div class="container-button">
-              <button type= "button", class= "btn btn-ghost previous" >Retour</button>
-              <button type= "button", class= "btn btn-ghost next" >Étape suivante</button>
-            </div>
-        </fieldset>
-
-        <fieldset class= "form_step" data-step="4">
           <h3 class="fs-title">Informations du bébé</h3>
           <%# Partie bébé %>
 
@@ -385,7 +338,8 @@
               <div class="container-button">
                 <button type= "button", class= "btn btn-ghost previous" >Retour</button>
               </div>
-        </fieldset>
+          </fieldset>
+        
         <%= f.button :submit, 
                       name: "Enregistrer la naissance", 
                       class: "icon", 
