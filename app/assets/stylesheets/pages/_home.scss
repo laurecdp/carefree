@@ -61,17 +61,12 @@
 }
 
 .card-category {
-  height: 200px;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: white;
-}
-
-.card-category:hover {
-  box-shadow: 0 0 12px #53c3a838;
-  border-radius: 10px;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .fas.fa-laptop-medical {
@@ -80,8 +75,6 @@
   background-color: #53c3a838;
   color: $teal;
   font-size: 60px;
-  height: 110px;
-  width: 100px;
 }
 
 .far.fa-calendar-alt{
@@ -90,8 +83,8 @@
   background-color: #53c3a838;
   color: $teal;
   font-size: 60px;
-  height: 110px;
-  width: 100px;
+  height: 100px;
+  width: 116px;
 }
 
 .one-click {
@@ -100,8 +93,8 @@
   background-color: #53c3a838;
   color: #53C3A8;
   font-size: 60px;
-  height: 110px;
-  width: 100px;
+  height: 100px;
+  width: 116px;
 }
 
 .banner-3 h1 {
@@ -115,7 +108,7 @@
   font-size: 20px;
 }
 
-.contact{
+.contact {
   display: flex;
   justify-content: center;
   padding: 50px;
@@ -159,12 +152,12 @@
   font-weight: 600;
   font-size: 32px;
   margin-bottom: 52px;
-  margin-top: 25px;
+  margin-top: 20px;
   color: $teal;
 }
 
 .main-services p {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
 }
 
