@@ -1,24 +1,10 @@
-#msform {
-  position: relative;
-}
-
-// #msform fieldset {
-//   background: white;
-//   border: 0 none;
-//   border-radius: 0px;
-//   padding: 30px 30px;
-//   box-sizing: border-box;
-//   margin: 0px 4%;
-//   position: relative;
-// }
-
-.container-form {
+.container-labourform {
+  text-align: center;
   background: white;
   border: 0 none;
   border-radius: 20px;
-  padding: 30px 30px;
+  padding: 40px 30px;
   box-sizing: border-box;
-  margin: 0px 4%;
   position: relative;
   z-index: -1;
 }
@@ -46,14 +32,13 @@
 //*progressbar*--------//
 
 #progressbar {
-  text-align: center;
+  width: 50%;
   overflow: hidden;
   counter-reset: step;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding-left: 0;
 }
-
 
 #progressbar li {
   list-style-type: none;
@@ -63,20 +48,20 @@
 #progressbar li:before {
   content: counter(step);
   counter-increment: step;
-  width: 45px;
-  height: 45px;
-  line-height: 26px;
+  width: 30px;
+  height: 30px;
   display: flex;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
-  background-color: $teal;
+  background-color: #184BA1;
   border-radius: 25px;
   margin: 0 auto 10px auto;
   align-items: center;
   justify-content: center;
   &.present {
-    background-color: $coral;
-    color: white;
+    background-color: #F3F7FD;
+    color: #184BA1;
+    border: 1px solid #184BA1;
   }
 }
 
@@ -85,13 +70,13 @@
   content: '';
   width: 100%;
   height: 2px;
-  background: $teal;
+  background: #184BA1;
   position: absolute;
   left: -50%;
-  top: 22px;
+  top: 14px;
   z-index: -1; /*put it behind the numbers*/
   &.present {
-    background: $coral;
+    background: #F3F7FD;
   }
 }
 
@@ -101,7 +86,7 @@
 }
 
 #progressbar li.active:before, #progressbar li.active:after {
-  background: $teal;
+  background: #184BA1;
   color: white;
 }
 

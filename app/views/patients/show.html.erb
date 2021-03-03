@@ -14,6 +14,8 @@
         <%= image_tag "pregnant.jpg" %>
     </div>
 
+    <% if !params[:category] %>
+
     <div class="container-babyinfo-actions">
       <div class="buttons-show">
         <%= link_to(patient_path) do %>
@@ -82,7 +84,7 @@
       </div>
     </div>
 
-    <% if params[:category] %>
+    <% else %>
 
     <div class="container-labourform" id="msform">
       <ul id="progressbar">
@@ -97,9 +99,9 @@
           <h3 class="fs-title">Résumé de l'accouchement</h3>
           <%= f.hidden_field :patient_id  %>
           <%= f.hidden_field :category_id %>
-          <%= f.input :labour_start_at, 
+          <%= f.input :labour_start_at,
                       as: :string,
-                      label: "Début de l'accouchement", 
+                      label: "Début de l'accouchement",
                       input_html: {class: "datetime-picker"}%>
           <%= f.input :labour_start,
                       collection:Labour::LABOUR_START,
@@ -109,9 +111,9 @@
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
           <%= f.input :labour_end_at,
-                      as: :string, 
+                      as: :string,
                       label: "Fin de l'accouchement",
-                      input_html: {class: "datetime-picker"} %>           
+                      input_html: {class: "datetime-picker"} %>
           <%# Partie déclenchement artificel %>
           <div id= "artificial-labour">
             <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
@@ -246,31 +248,31 @@
               <%= f.simple_fields_for :baby, @baby do |p| %>
                 <%= p.input :first_name, label: "Prénom" %>
                 <%= p.input :last_name,  label: "Nom de Famille" %>
-                <%= p.input :sex, 
-                            as: :radio_buttons, 
+                <%= p.input :sex,
+                            as: :radio_buttons,
                             collection: Baby::SEX ,label: "Sexe"  %>
-                <%= p.input :birth_date,  
+                <%= p.input :birth_date,
                             label: "Date et heure de naissance",
                             as: :string,
                             input_html: {class: "datetime-picker"}%>
-                <%= p.input :weight, 
+                <%= p.input :weight,
                             as: :range,
                             label: "Poids (kg)",
                             input_html: {min: 1, max: 10, step: 1 },
                             collection: 1..10  %>
-                <%= p.input :heigh, 
+                <%= p.input :heigh,
                             as: :range,
-                            label: "Taille (cm)", 
+                            label: "Taille (cm)",
                             collection: 30..60 %>
                 <%= p.input :head_circumference,
-                            as: :range,  
+                            as: :range,
                             label: "Périmètre crânien (cm)"%>
 
                 <%# Partie monitoring %>
                 <div id="monitoring">
-                    <%= p.input :monitoring,  
-                                label: "Monitorage", 
-                                as: :check_boxes, 
+                    <%= p.input :monitoring,
+                                label: "Monitorage",
+                                as: :check_boxes,
                                 collection: ['oui', 'non'] %>
                 </div>
                 <div id="monitoring-options">
@@ -337,10 +339,10 @@
                 <%= p.input :exit_room, collection: Baby::EXITROOM, label: "Sortie de la salle de naissance", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
               <% end %>
               <div class="container-button">
-                <button type= "button", class= "btn btn-ghost previous" >Retour</button>   
-                <%= f.button :submit, 
-                              name: "Enregistrer la naissance", 
-                              class: "btn btn-ghost", 
+                <button type= "button", class= "btn btn-ghost previous" >Retour</button>
+                <%= f.button :submit,
+                              name: "Enregistrer la naissance",
+                              class: "btn btn-ghost",
                               value: "Enregistrer la naissance" %>
               </div>
             </fieldset>
@@ -348,7 +350,7 @@
     </div>
 
   </div>
-  
+
 
     <% end %>
   </div>
