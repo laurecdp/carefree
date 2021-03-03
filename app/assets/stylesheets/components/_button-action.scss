@@ -1,86 +1,90 @@
 .buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin-top: 50px;
-  margin-bottom: 50px;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 44%;
+  padding-left: 25px;
 }
 
-.buttons p {
-  margin-top: 8px;
+.buttons a {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons span {
+  margin-left: 5px;
 }
 
 .button-action1, .button-action2, .button-action3, .button-action4, .button-action5, .button-action6 {
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
   font-size: 16px;
-  padding: 8px 24px;
   transition: opacity 0.3s ease;
-  width: 100%;
-  height: 220px;
-  word-wrap: break-word;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: 20px;
-  margin-bottom: 40px;
-  margin-right: 40px;
-  background-color: white;
+  border-radius: 8px;
+  width: 80%;
+  margin-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .button-action1 {
-  color: $navy;
-  border: 1px solid $navy;
+  color: $white;
+  background-color: $blue;
+  border: 1px solid $blue;
   &:hover {
-    background-color: navy;
-    color: $white;
+    background-color: $white;
+    color: $blue;
   }
 }
 
 .button-action2 {
-  color: $lightblue;
+  color: $white;
+  background-color: $lightblue;
   border: 1px solid $lightblue;
   &:hover {
-    background-color: $lightblue;
-    color: white;
+    background-color: $white;
+    color: $lightblue;
   }
 }
 
 .button-action3 {
+  color: $white;
+  background-color: $pink;
   border: 1px solid $pink;
-  color: $pink;
   &:hover {
-    background-color: $pink;
-    color: $white;
+    background-color: $white;
+    color: $pink;
   }
 }
 
-
 .button-action4 {
-  color: $dark-pink;
+  color: $white;
+  background-color: $dark-pink;
   border: 1px solid $dark-pink;
   &:hover {
-    background-color: $dark-pink;
-    color: $white;
+    background-color: $white;
+    color: $dark-pink;
   }
 }
 
 .button-action5 {
-  color: $coral;
+  color: $white;
+  background-color: $coral;
   border: 1px solid $coral;
   &:hover {
-    background-color: $coral;
-    color: $white;
+    background-color: $white;
+    color: $coral;
   }
 }
 
 .button-action6 {
-  color: $teal;
+  color: $white;
+  background-color: $teal;
   border: 1px solid $teal;
   &:hover {
-    background-color: $teal;
-    color: $white;
+    background-color: $white;
+    color: $teal;
   }
 }
-
 
 .button-action p {
   margin-top: 20px;

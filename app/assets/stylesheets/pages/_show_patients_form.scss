@@ -15,7 +15,7 @@
 .container-form {
   background: white;
   border: 0 none;
-  border-radius: 0px;
+  border-radius: 20px;
   padding: 30px 30px;
   box-sizing: border-box;
   margin: 0px 4%;
@@ -37,7 +37,7 @@
 .fs-title {
   text-align: center;
   font-size: 24px;
-  color: $teal;
+  color: #184BA1;
   margin-bottom: 15px;
   letter-spacing: 1px;
   font-weight: 600;
@@ -124,4 +124,21 @@ label {
 .container-button-1 {
   display: flex;
   justify-content: flex-end;
+}
+
+#artificial-labour {
+  background-color: #184BA1;
+}
+
+.btn-ghost {
+  background-color: #184BA1;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
 }
