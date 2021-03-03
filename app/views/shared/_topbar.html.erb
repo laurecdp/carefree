@@ -1,10 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= simple_form_for :search, url:   patients_path, method: :get do |f| %>
     <!-- <div class="search-form-control form-group"> -->
-      <div id= "search-data" class="form-search search-data" data-patients="<%= Patient.pluck(:first_name, :last_name).map {|x| x.join(" ")}.to_json %>">
+      <div id="search-data" class="form-search search-data" data-patients="<%= Patient.pluck(:first_name, :last_name).map {|x| x.join(" ")}.to_json %>">
         <input class="form-control string required search-input" type="text" name="search[query]" id="search_query" placeholder="Recherche"/>
         <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> </button>
+        <i class="fas fa-search"></i></button>
       </div>
   <% end %>
 
