@@ -37,45 +37,35 @@ const searchForm = () => {
     /* Partie 2 du Form "Anésthésie */
     /* If yes */
     const inputYesAnesthesia = document.getElementById("labour_anaesthesia_oui");
-
-    inputYesAnesthesia.addEventListener("click", (event) => {
-
-      document.querySelector("#form-step-2-labour-wrap").classList.remove("d-none")
-
-      document.getElementById("moment-anesthesia").style.display = "block"
-      document.getElementById("category-anesthesia").style.display = "block"
-      document.getElementById("anesthia-checkbox").style.display = "block"
-
-        const tagItem = document.querySelectorAll(".tag-item");
-        tagItem.forEach(element => {
-          element.addEventListener("click", (event) => {
-
-            if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_loco-régionale") {
-              document.getElementById("anesthesia-loco-general").style.display = "block"
-              document.getElementById("anesthesia-general").style.display = "none"
-            } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_générale") {
-              document.getElementById("anesthesia-general").style.display = "block"
-              document.getElementById("anesthesia-loco-general").style.display = "none"
-            } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_locale") {
-              document.getElementById("anesthesia-general").style.display = "block"
-              document.getElementById("anesthesia-loco-general").style.display = "none"
-            };
-          })
+      if (inputYesAnesthesia) {
+        inputYesAnesthesia.addEventListener("click", (event) => {
+    
+          document.querySelector("#form-step-2-labour-wrap").classList.remove("d-none")
+    
+          document.getElementById("moment-anesthesia").style.display = "block"
+          document.getElementById("category-anesthesia").style.display = "block"
+          document.getElementById("anesthia-checkbox").style.display = "block"
+    
+            const tagItem = document.querySelectorAll(".tag-item");
+            tagItem.forEach(element => {
+              element.addEventListener("click", (event) => {
+    
+                if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_loco-régionale") {
+                  document.getElementById("anesthesia-loco-general").style.display = "block"
+                  document.getElementById("anesthesia-general").style.display = "none"
+                } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_générale") {
+                  document.getElementById("anesthesia-general").style.display = "block"
+                  document.getElementById("anesthesia-loco-general").style.display = "none"
+                } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_locale") {
+                  document.getElementById("anesthesia-general").style.display = "block"
+                  document.getElementById("anesthesia-loco-general").style.display = "none"
+                };
+              })
+            })
+    
         })
-
-    })
-
-    /* If no */
-    const inputNoAnesthesia = document.getElementById("labour_anaesthesia_non");
-
-    inputNoAnesthesia.addEventListener("click", (event) => {
-      document.getElementById("moment-anesthesia").style.display = "none"
-      document.getElementById("category-anesthesia").style.display = "none"
-      document.getElementById("anesthia-checkbox").style.display = "none"
-      document.getElementById("anesthesia-loco-general").style.display = "none"
-      document.getElementById("anesthesia-general").style.display = "none"
-    })
-
+      }
+    
   /* Partie 4 du Form "Complications" */
 
     /* If yes */
@@ -149,7 +139,7 @@ const searchForm = () => {
 
     /* réanimation */
     /* If yes */
-    const inputYesIntensive = document.getElementById("labour_baby_intensivecare_oui");
+    /* const inputYesIntensive = document.getElementById("labour_baby_intensivecare_oui");
 
     inputYesIntensive.addEventListener("click", (event) => {
 
@@ -160,26 +150,26 @@ const searchForm = () => {
     })
 
     /* If no */
-    const inputNoIntensive = document.getElementById("labour_baby_intensivecare_non");
+    // const inputNoIntensive = document.getElementById("labour_baby_intensivecare_non");
 
-    inputNoIntensive.addEventListener("click", (event) => {
-      document.querySelector("#form-step-6-labour-wrap").classList.add("d-none")
+    // inputNoIntensive.addEventListener("click", (event) => {
+      // document.querySelector("#form-step-6-labour-wrap").classList.add("d-none")
       // document.getElementById("intensivecare-checkbox").style.display = "none"
-    })
-
+    // })
+ 
     /* ------------------- */
 
     /* Infections */
     /* If yes */
-    const inputYesInfection = document.getElementById("labour_baby_infectiouscontext_oui");
+    // const inputYesInfection = document.getElementById("labour_baby_infectiouscontext_oui");
 
-    inputYesInfection.addEventListener("click", (event) => {
+    // inputYesInfection.addEventListener("click", (event) => {
 
-      document.querySelector("#form-step-7-labour-wrap").classList.remove("d-none")
+    //  document.querySelector("#form-step-7-labour-wrap").classList.remove("d-none")
 
-      document.getElementById("infections-options").style.display = "block"
-      document.getElementById("infections-checkbox").style.display = "block"
-    })
+    //  document.getElementById("infections-options").style.display = "block"
+    //  document.getElementById("infections-checkbox").style.display = "block"
+    // })
 
     /* If no */
     const inputNoInfection = document.getElementById("labour_baby_infectiouscontext_non");
