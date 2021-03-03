@@ -1,5 +1,5 @@
 class LaboursController < ApplicationController
-  
+
   def show
     @labour = Labour.find(params[:id])
     authorize @labour

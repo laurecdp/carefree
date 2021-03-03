@@ -83,7 +83,7 @@
               <div class="card-product-baby" id="baby-info">
                 <div class="card-product-baby-info">
                   <h2>Information du bébé:</h2>
-                  <p> Encore un peu tôt ! (Seulement <%=@patient.number_of_weeks%> semaines)</p> 
+                  <p> Encore un peu tôt ! (Seulement <%=@patient.number_of_weeks%> semaines)</p>
                 </div>
                 <%= image_tag "motherhood.png" %>
               </div>
@@ -100,7 +100,7 @@
           <li data-bar="3"><p>Délivrance</p></li>
           <li data-bar="4"><p>Nouveau né</p></li>
         </ul>
- 
+
       <%= simple_form_for @labour do |f| %>
         <fieldset class= "form_step active" data-step="1">
           <h3 class="fs-title">Résumé de l'accouchement</h3>
@@ -259,23 +259,23 @@
                 <%= p.input :first_name, label: "Prénom" %>
                 <%= p.input :last_name,  label: "Nom de Famille" %>
               </div>
-                <%= p.input :sex, 
-                            as: :radio_buttons, 
+                <%= p.input :sex,
+                            as: :radio_buttons,
                             collection: Baby::SEX ,label: "Sexe"  %>
-                <%= p.input :birth_date,  
+                <%= p.input :birth_date,
                             label: "Date et heure de naissance",
                             as: :string,
                             input_html: {class: "datetime-picker"}%>
 
                 <div id= "weightrange">
-                  <%= p.input :weight, 
+                  <%= p.input :weight,
                               as: :range,
                               label: "Poids (kg)",
-                              input_html: {min: 1, max: 10, step: 0.1}%>           
+                              input_html: {min: 1, max: 10, step: 0.1}%>
                 </div>
                 <br>
                 <div id= "heightrange">
-                  <%= p.input :heigh, 
+                  <%= p.input :heigh,
                             as: :range,
                             label: "Taille",
                             input_html: {min: 20, max: 65, step: 1} %>
@@ -283,7 +283,7 @@
                 <br>
                 <div id= "headtrange">
                   <%= p.input :head_circumference,
-                            as: :range,  
+                            as: :range,
                             label: "Périmètre crânien",
                             input_html: {min: 30, max: 45, step: 1}
                             %>
@@ -291,10 +291,12 @@
                 <br>
                 <%# Partie monitoring %>
                 <div id="monitoring">
-                    <%= p.input :monitoring,  
-                                label: "Monitorage", 
-                                as: :check_boxes, 
-                                collection: ['oui', 'non'] %>
+                  <p><strong>Avez vous effectué un monitorage?</strong></p>
+                    <%= p.input :monitoring,
+                                label: ",",
+                                as: :boolean,
+                                collection: ['oui', 'non'],
+                                input_html: { class: "toggle-yes-no" } %>
                 </div>
                 <div id="monitoring-options">
                   <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Type de monitorage", input_html: { multiple: true }, include_hidden: false  %>
@@ -348,7 +350,7 @@
                 <%# Partie sorties salle de naissance%>
                 <%= p.input :breastfeeding, collection: Baby::BREASTFEEDING, label: "Allaitement", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
                 <%= p.input :exit_room, collection: Baby::EXITROOM, label: "Sortie de la salle de naissance", include_hidden: false, as: :radio_buttons, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
-          
+
             <div class="container-button">
               <button type= "button", class= "btn btn-ghost previous" >Retour</button>
               <%= f.button :submit,
@@ -359,7 +361,7 @@
           <% end %>
         </fieldset>
       <% end %>
-  
+
     <% end %>
   </div>
 </div>
