@@ -242,19 +242,28 @@
         <fieldset class= "form_step" data-step="4">
           <h3 class="fs-title">Informations du bébé</h3>
           <%# Partie bébé %>
-              <h3> Informations du bébé</h3>
 
               <%= f.simple_fields_for :babies do |p| %>
                 <%= p.input :first_name, label: "Prénom" %>
                 <%= p.input :last_name,  label: "Nom de Famille" %>
-                <%= p.input :sex, as: :radio_buttons, collection: Baby::SEX ,label: "Sexe"  %>
+                <%= p.input :sex, 
+                            as: :check_boxes, 
+                            collection: Baby::SEX ,label: "Sexe"  %>
                 <%= p.input :birth_date,  
                             label: "Date et heure de naissance",
                             as: :string,
                             input_html: {class: "datetime-picker"}%>
-                <%= p.input :weight,  label: "Poids (kg)", collection: 1..10  %>
-                <%= p.input :heigh,  label: "Taille (cm)", collection: 30..60 %>
-                <%= p.input :head_circumference,  label: "Périmètre crânien (cm)"%>
+                <%= p.input :weight, 
+                            as: :range,
+                            label: "Poids (kg)", 
+                            collection: 1..10  %>
+                <%= p.input :heigh, 
+                            as: :range,
+                            label: "Taille (cm)", 
+                            collection: 30..60 %>
+                <%= p.input :head_circumference,
+                            as: :range,  
+                            label: "Périmètre crânien (cm)"%>
 
                 <%# Partie monitoring %>
                 <div id="monitoring">
