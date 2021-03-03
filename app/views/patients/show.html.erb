@@ -179,7 +179,7 @@
             <div id="anaesthesia">
               <%= f.input :anaesthesia, 
                           label: 'Avez-vous du faire une anésthésie?', 
-                          as: :radio_buttons, 
+                          as: :boolean, 
                           radio_buttons_style: :inline,
                           input_html: { class: "toggle-yes-no" },
                           collection: ['oui'] %>

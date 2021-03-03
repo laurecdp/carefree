@@ -36,7 +36,7 @@ const searchForm = () => {
 
     /* Partie 2 du Form "Anésthésie */
     /* If yes */
-    const inputYesAnesthesia = document.getElementById("labour_anaesthesia_oui");
+    const inputYesAnesthesia = document.getElementById("labour_anaesthesia");
       if (inputYesAnesthesia) {
         inputYesAnesthesia.addEventListener("click", (event) => {
     
