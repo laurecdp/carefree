@@ -128,6 +128,11 @@
   border-radius: 2rem;
 }
 
+.baby-prenom-nom {
+  display: flex;
+  justify-content: space-between;
+}
+
  #travail-spontane-checkbox {
   display: none;
  }
