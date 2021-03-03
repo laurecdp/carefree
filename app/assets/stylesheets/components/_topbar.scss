@@ -59,13 +59,12 @@
   border-radius: 10px;
 }
 
-.fas.fa-search {
-  position: absolute;
-  top: 11px;
-  right: 12px;
-}
-
 #search-data {
   position: relative;
+  button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
 }
 
