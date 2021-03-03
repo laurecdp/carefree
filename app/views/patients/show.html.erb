@@ -179,10 +179,8 @@
             <div id="anaesthesia">
               <%= f.input :anaesthesia, 
                           label: 'Avez-vous du faire une anésthésie?', 
-                          as: :boolean, 
-                          radio_buttons_style: :inline,
-                          input_html: { class: "toggle-yes-no" },
-                          collection: ['oui'] %>
+                          as: :radio_buttons,
+                          input_html: { class: "toggle-yes-no"} %>
             </div>
 
             <div class="labour-wrap d-none" id="form-step-2-labour-wrap">
@@ -194,14 +192,6 @@
                             include_hidden: false,
                             input_html: { class: "tag-selector" },
                             item_wrapper_class: 'tag-item' %>
-              </div>
-
-              <div id= "anaesthesia_complication">
-                <%= f.input :anaesthesia_complication, 
-                            label: 'Y-a-t-il eu des complications?',
-                            as: :radio_buttons,
-                            input_html: { class: "toggle-yes-no" },
-                            collection: ['oui'] %>
               </div>
 
               <%# Anésthésie loco-générale %>
@@ -247,9 +237,8 @@
             <div id= "complications">
               <%= f.input :labour_complication, 
                           label: 'Y-a t-il eu des complications?', 
-                          as: :radio_buttons,
-                          input_html: { class: "toggle-yes-no" },
-                          collection: ['oui'] %>
+                          as: :boolean,
+                          input_html: { class: "toggle-yes-no" } %>
             </div>
             <%# Complications %>
             <div class="labour-wrap d-none" id="form-step-3-labour-wrap">
@@ -271,10 +260,9 @@
 
             <div id= "actes">
               <%= f.input :labour_actes_done,
-                          as: :radio_buttons, 
+                          as: :boolean, 
                           label: "Avez-vous du effectuer des actes?",
-                          input_html: { class: "toggle-yes-no" },
-                          collection: ['oui', 'non'] %>
+                          input_html: { class: "toggle-yes-no" } %>
             </div>
             <div class="labour-wrap d-none" id="form-step-4-labour-wrap">
               <%# Actes de la délivrance %>
@@ -337,8 +325,7 @@
                   <div id="monitoring">
                       <%= p.input :monitoring,
                                   label: "Avez vous effectué un monitorage?",
-                                  as: :radio_buttons,
-                                  collection: ['oui'],
+                                  as: :boolean,
                                   input_html: { class: "toggle-yes-no" } %>
                   </div>
                   <div class="labour-wrap d-none" id="form-step-5-labour-wrap">
@@ -358,8 +345,7 @@
                   <div id="intensivecare">
                     <%= p.input :intensivecare,  
                                 label: "Avez vous effectué un réanimation?", 
-                                as: :radio_buttons, 
-                                collection: ['oui'],
+                                as: :boolean,
                                 input_html: { class: "toggle-yes-no" } %>
                   </div>
 
@@ -380,8 +366,7 @@
                   <div id="infections">
                     <%= p.input :infectiouscontext,  
                                 label: "Avez-vous observé des infections chez le bébé?", 
-                                as: :radio_buttons, 
-                                collection: ['oui'],
+                                as: :boolean,
                                 input_html: { class: "toggle-yes-no" } %>
                   </div>
 
@@ -402,16 +387,14 @@
                   <div id="malformation">
                     <%= p.input :malformation,  
                                 label: "Avez-vous observé des malformations chez le bébé?", 
-                                as: :radio_buttons,
-                                input_html: { class: "toggle-yes-no" },
-                                collection: ['oui']   %>
+                                as: :boolean,
+                                input_html: { class: "toggle-yes-no" } %>
                   </div>
                   <div id="pathology">
                     <%= p.input :pathology,  
                                 label: "Avez-vous observé des pathologies chez le bébé?",
-                                as: :radio_buttons,
-                                input_html: { class: "toggle-yes-no" },
-                                collection: ['oui']  %>
+                                as: :boolean,
+                                input_html: { class: "toggle-yes-no" } %>
                   </div>
 
                   <%# Partie sorties salle de naissance%>
