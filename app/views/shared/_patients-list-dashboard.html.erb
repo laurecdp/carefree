@@ -1,4 +1,4 @@
-<% @patients[0..2].each do |patient| %>
+<% @patients.each do |patient| %>
   <div class="patients-list">
     <%= link_to patient_path(id:patient.id, category:params[:category]) do %>
       <div class="list-patient-dashboard">

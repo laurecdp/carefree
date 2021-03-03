@@ -24,7 +24,8 @@
 
 .info-dashboard {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
 }
 
 .search-window {
@@ -35,6 +36,7 @@
   overflow-y: scroll;
   top: 0;
   display: none;
+  z-index: 3;
 }
 
 .search-window.appear {
@@ -100,6 +102,12 @@
   height: 100%;
   object-fit: cover;
   border-radius: 53px;
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 
