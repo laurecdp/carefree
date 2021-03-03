@@ -56,6 +56,28 @@
   justify-content: space-between;
 }
 
+.card-product-labour {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  background: white;
+  border-radius: 4rem;
+  margin-bottom: 15px;
+  h2 {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  p {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  img {
+    padding: 0px;
+    max-width: 200px;
+    object-fit: contain;
+  }
+}
+
 // .cards-show {
 //   display: grid;
 //   grid-template-columns: 1fr 1fr;
@@ -129,6 +151,12 @@
 }
 
 
+.content-below-card {
+  display: flex;
+  margin-top: 20px;
+}
+
+
 // -----------------------------//
 
 .baby-prenom-nom {
@@ -136,6 +164,7 @@
   justify-content: space-between;
 }
 
+//Class pour Javascript//
 
  #travail-spontane-checkbox {
   display: none;
@@ -231,3 +260,5 @@
     display: block;
   }
 }
+
+// -----------------------------//
