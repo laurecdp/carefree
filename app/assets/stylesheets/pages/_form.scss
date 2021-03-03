@@ -17,9 +17,10 @@
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  border-radius: 30rem;
+  border-radius: 15px;
   padding: 0.4rem 0.8rem;
   color: #184BA1;
+  background-color: white;
   border: 1px solid #184BA1;
   margin-right: 1rem;
   margin-bottom: 0.4rem;
@@ -41,8 +42,8 @@
   color: #495057;
   background-color: #ffffff;
   background-clip: padding-box;
-  border: 1px solid $teal;
-  border-radius: 50rem;
+  border: 1px solid #194ba0;
+  border-radius: 15px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 

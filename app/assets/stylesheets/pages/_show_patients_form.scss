@@ -6,7 +6,7 @@
   padding: 40px 30px;
   box-sizing: border-box;
   position: relative;
-  z-index: -1;
+
 }
 
 .form_step {
@@ -38,6 +38,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding-left: 0;
+  margin: auto;
 }
 
 #progressbar li {
@@ -52,16 +53,17 @@
   height: 30px;
   display: flex;
   font-size: 20px;
-  color: white;
-  background-color: #184BA1;
+  color: #184BA1;
+  background-color: #F3F7FD;
+  border: 1px solid #184BA1;
   border-radius: 25px;
   margin: 0 auto 10px auto;
   align-items: center;
   justify-content: center;
+  z-index:2;
   &.present {
-    background-color: #F3F7FD;
-    color: #184BA1;
-    border: 1px solid #184BA1;
+    background-color: #184BA1;
+    color: #F3F7FD;
   }
 }
 
@@ -74,9 +76,9 @@
   position: absolute;
   left: -50%;
   top: 14px;
-  z-index: -1; /*put it behind the numbers*/
+  z-index: 1; /*put it behind the numbers*/
   &.present {
-    background: #F3F7FD;
+    background: #184BA1;
   }
 }
 
@@ -86,8 +88,8 @@
 }
 
 #progressbar li.active:before, #progressbar li.active:after {
-  background: #184BA1;
-  color: white;
+  background-color: #184BA1;
+  color: #F3F7FD;
 }
 
 .fs-subtitle {
@@ -111,8 +113,30 @@ label {
   justify-content: flex-end;
 }
 
+// #artificial-labour {
+//   background-color: #184BA1;
+// }
+
+.labour-wrap {
+  text-align: left;
+  background-color: #F3F7FD;
+  padding: 25px;
+  border-radius: 20px;
+  color: #184BA1;
+  font-size: 16px;
+}
+
 #artificial-labour {
-  background-color: #184BA1;
+  color: #184BA1;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.col-form-label {
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .btn-ghost {
