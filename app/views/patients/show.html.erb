@@ -6,12 +6,12 @@
         <span class="badge2"><i class="far fa-clock"></i> <%= @patient.number_of_weeks %> semaines</span>
         <h2><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
         <% d = @patient.birth_date %>
-        <% @age = d.strftime("%d/%m/%y") %>
-        <p><%= "#{@patient.age} ans (#{@age})" %></p>
+        <% age = d.strftime("%d/%m/%y") %>
+        <p><%= "#{@patient.age} ans (#{age})" %></p>
         <p><i class="far fa-address-card"></i> <%= @patient.nss %></p>
         <p><i class="fas fa-vial"></i> <%= @patient.blood_group %> </p>
       </div>
-        <%= image_tag "pregnant.jpg" %>
+      <%= image_tag "pregnant.jpg" %>
     </div>
 
     <% if !params[:category] %>
@@ -65,22 +65,29 @@
           </button>
         <% end %>
       </div>
-      <div class="card-product-baby" id="baby-info">
-        <div class="card-product-baby-info">
-            <% if @patient.babies.any? %>
-              <% @patient.babies.each do |baby| %>
-              <h2><%= "Prénom: #{baby.first_name} Nom: #{baby.last_name}" %></h2>
-              <p><%= "Né(e) le: #{baby.birth_date}" %></p>
-              <p><i class="fas fa-venus-mars"></i> <%= "Sexe: #{baby.sex}"%></p>
-              <p><i class="fas fa-weight"></i> <%= "Poids: #{baby.weight} kg" %></p>
-              <p><i class="fas fa-arrows-alt-v"></i> <%= "Taille: #{baby.heigh} cm" %></p>
-              <% end %>
-            <% else %>
-              <h2>Baby information:</h2>
-              <p>No baby for the moment</p>
+      <div class="patient-babies">
+        <% if @patient.babies.any? %>
+          <% @patient.babies.each do |baby| %>
+            <div class="card-product-baby" id="baby-info">
+              <div class="card-product-baby-info">
+                <h2><%= "Prénom: #{baby.first_name} Nom: #{baby.last_name}" %></h2>
+                <p><%= "Né(e) le: #{baby.birth_date.strftime("%-d %b %Y")}" %></p>
+                <p><i class="fas fa-venus-mars"></i> <%= "Sexe: #{baby.sex}"%></p>
+                <p><i class="fas fa-weight"></i> <%= "Poids: #{baby.weight} kg" %></p>
+                <p><i class="fas fa-arrows-alt-v"></i> <%= "Taille: #{baby.heigh} cm" %></p>
+              </div>
+              <%= image_tag "motherhood.png" %>
+            </div>
             <% end %>
-        </div>
-        <%= image_tag "motherhood.png" %>
+          <% else %>
+            <div class="card-product-baby" id="baby-info">
+              <div class="card-product-baby-info">
+                <h2>Baby information:</h2>
+                <p>No baby for the moment</p>
+              </div>
+              <%= image_tag "motherhood.png" %>
+            </div>
+        <% end %>
       </div>
     </div>
 
@@ -125,6 +132,44 @@
             <%= f.simple_fields_for :labour_codes do |l| %>
               <div id="travail-spontane-checkbox">
                 <%= l.input :code_id, label: "Cochez les codes associés :", as: :check_boxes, include_blank: :false, collection: Code.where(category: "Travail spontané") %>
+
+    <% if params[:category] %>
+      <div class="container-labourform" id="msform">
+        <ul id="progressbar">
+          <li class="present" data-bar="1"><p>Accouchement</p></li>
+          <li data-bar="2"><p>Anésthésie</p></li>
+          <li data-bar="3"><p>Délivrance</p></li>
+          <li data-bar="4"><p>Nouveau né</p></li>
+        </ul>
+
+        <%= simple_form_for @labour do |f| %>
+          <fieldset class= "form_step active" data-step="1">
+            <h3 class="fs-title">Résumé de l'accouchement</h3>
+            <%= f.hidden_field :patient_id  %>
+            <%= f.hidden_field :category_id %>
+            <%= f.input :labour_start_at,
+                        as: :string,
+                        label: "Début de l'accouchement",
+                        input_html: {class: "datetime-picker"}%>
+            <%= f.input :labour_start,
+                        collection:Labour::LABOUR_START,
+                        include_hidden: false,
+                        label: 'Mode de début du travail',
+                        as: :radio_buttons,
+                        input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+            <%= f.input :labour_end_at,
+                        as: :string,
+                        label: "Fin de l'accouchement",
+                        input_html: {class: "datetime-picker"} %>
+            <%# Partie déclenchement artificel %>
+            <div id= "artificial-labour">
+              <%= f.input :artificial_labour, label: 'Motif de déclenchement artificiel', as: :select, input_html: { class: "select2" }, collection: Labour::ARTIFICIAL_LABOUR, include_hidden: false%>
+            </div>
+            <%# ------------Partie codes------------- %>
+            <%= f.simple_fields_for :labour_codes do |l| %>
+              <div id="travail-spontane-checkbox">
+                <%= l.input :code_id, as: :check_boxes, include_blank: :false, collection: Code.where(category: "Travail spontané") %>
                 <%= l.input :diagnostic %>
               </div>
               <div id="cesarienne-checkbox">
@@ -246,13 +291,16 @@
           </div>
         </fieldset>
 
-        <fieldset class= "form_step" data-step="4">
-        <h3 class="fs-title">Informations du bébé</h3>
-        <%# Partie bébé %>
+          <!-- Partie bébé -->
+
+          <fieldset class= "form_step" data-step="4">
+            <h3 class="fs-title">Informations du bébé</h3>
 
             <%= f.simple_fields_for :baby, @baby do |p| %>
-              <%= p.input :first_name, label: "Prénom" %>
-              <%= p.input :last_name,  label: "Nom de Famille" %>
+              <div class="baby-prenom-nom">
+                <%= p.input :first_name, label: "Prénom" %>
+                <%= p.input :last_name,  label: "Nom de Famille" %>
+              </div>
               <%= p.input :sex,
                           as: :radio_buttons,
                           collection: Baby::SEX ,label: "Sexe"  %>
@@ -351,12 +399,8 @@
                             value: "Enregistrer la naissance" %>
             </div>
           </fieldset>
-      <% end %>
-    </div>
-
-  </div>
-
-
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -38,17 +38,20 @@ import { initFlatpickr } from "../plugins/flatpickr";
 import { slide } from "../components/form_slide";
 
 document.addEventListener('turbolinks:load', () => {
+  initFlatpickr();
   // Call your functions here, e.g:
   // sidebar();
   popup();
   initSelect2();
   searchWindow();
-  initFlatpickr();
+  // initFlatpickr();
   searchForm();
   searchautocomplete();
   searchbirthautocomplete();
   filterpatients();
   slide();
 });
+
+
 
 
