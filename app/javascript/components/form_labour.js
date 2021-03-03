@@ -113,7 +113,7 @@ const searchForm = () => {
   
     /* Monitorage */
     /* If yes */
-    const inputYesMonitoring = document.getElementById("labour_babies_attributes_0_monitoring_oui");
+    const inputYesMonitoring = document.getElementById("labour_baby_monitoring_oui");
 
     inputYesMonitoring.addEventListener("click", (event) => {
       document.getElementById("monitoring-options").style.display = "block"
@@ -121,7 +121,7 @@ const searchForm = () => {
     })
 
     /* If no */
-    const inputNoMonitoring = document.getElementById("labour_babies_attributes_0_monitoring_non");
+    const inputNoMonitoring = document.getElementById("labour_baby_monitoring_non");
 
     inputNoMonitoring.addEventListener("click", (event) => {
       document.getElementById("monitoring-options").style.display = "none"
@@ -132,7 +132,7 @@ const searchForm = () => {
 
     /* réanimation */
     /* If yes */
-    const inputYesIntensive = document.getElementById("labour_babies_attributes_0_intensivecare_oui");
+    const inputYesIntensive = document.getElementById("labour_baby_intensivecare_oui");
 
     inputYesIntensive.addEventListener("click", (event) => {
       document.getElementById("intensivecare-options").style.display = "block"
@@ -140,7 +140,7 @@ const searchForm = () => {
     })
 
     /* If no */
-    const inputNoIntensive = document.getElementById("labour_babies_attributes_0_intensivecare_non");
+    const inputNoIntensive = document.getElementById("labour_baby_intensivecare_non");
 
     inputNoIntensive.addEventListener("click", (event) => {
       document.getElementById("intensivecare-options").style.display = "none"
@@ -151,7 +151,7 @@ const searchForm = () => {
 
     /* Infections */
     /* If yes */
-    const inputYesInfection = document.getElementById("labour_babies_attributes_0_infectiouscontext_oui");
+    const inputYesInfection = document.getElementById("labour_baby_infectiouscontext_oui");
 
     inputYesInfection.addEventListener("click", (event) => {
       document.getElementById("infections-options").style.display = "block"
@@ -159,7 +159,7 @@ const searchForm = () => {
     })
 
     /* If no */
-    const inputNoInfection = document.getElementById("labour_babies_attributes_0_infectiouscontext_non");
+    const inputNoInfection = document.getElementById("labour_baby_infectiouscontext_non");
 
     inputNoInfection.addEventListener("click", (event) => {
       document.getElementById("infections-options").style.display = "none"
@@ -175,7 +175,7 @@ const searchForm = () => {
     /* Pathologies*/
 
       /* If yes */
-    const inputYesPathology = document.getElementById("labour_babies_attributes_0_pathology_oui");
+    const inputYesPathology = document.getElementById("labour_baby_pathology_oui");
 
       inputYesPathology.addEventListener("click", (event) => {
         document.getElementById("pathologies-options").style.display = "block"
@@ -183,7 +183,7 @@ const searchForm = () => {
       })
 
       /* If no */
-    const inputNoPathology = document.getElementById("labour_babies_attributes_0_pathology_non");
+    const inputNoPathology = document.getElementById("labour_baby_pathology_non");
 
       inputNoPathology.addEventListener("click", (event) => {
         document.getElementById("pathologies-options").style.display = "none"

@@ -6,7 +6,6 @@ class LaboursController < ApplicationController
   end
 
   def new
-    @baby = Baby.new
     @labour_code = LabourCode.new
     @labour = Labour.new
     #------------#
@@ -16,7 +15,8 @@ class LaboursController < ApplicationController
     @category = Category.find(params[:category])
     @labour.category = @category
     #------------#
-    @labour.babies.build
+    # @labour.babies.build
+    @baby = Baby.new
     @labour.labour_codes.build
     #------------#
     authorize @labour
@@ -29,7 +29,7 @@ class LaboursController < ApplicationController
     @patient = @labour.patient
     @labour_id = @labour.id
     # Form "baby" nested in form "Labour"
-    @baby = Baby.new(babies_params[:babies_attributes]["0"])
+    @baby = Baby.new(baby_params[:baby])
     @baby.patient = @patient
     @baby.save
     # Form "Labour_codes" included in form "Labour"
@@ -85,8 +85,8 @@ class LaboursController < ApplicationController
                                    labour_complication_type: [])
   end
 
-  def babies_params
-    params.require(:labour).permit(babies_attributes: [:first_name,
+  def baby_params
+    params.require(:labour).permit(baby: [:first_name,
                                                        :last_name,
                                                        :birth_date,
                                                        :alive,
