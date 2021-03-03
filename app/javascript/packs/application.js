@@ -39,12 +39,13 @@ import { slide } from "../components/form_slide";
 import { updateTextInput } from "../components/range_bubble";
 
 document.addEventListener('turbolinks:load', () => {
+  initFlatpickr();
   // Call your functions here, e.g:
   // sidebar();
   popup();
   initSelect2();
   searchWindow();
-  initFlatpickr();
+  // initFlatpickr();
   searchForm();
   searchautocomplete();
   searchbirthautocomplete();
@@ -52,5 +53,7 @@ document.addEventListener('turbolinks:load', () => {
   slide();
   updateTextInput();
 });
+
+
 
 

@@ -51,13 +51,13 @@
       <div class="buttons">
         <%= link_to(dashboard_path) do %>
           <button type="button" class="button-action1">
-            <i class="fas fa-user-plus fa-sm"><span>Admission</span></i>
+            <i class="fas fa-user-plus fa-sm"></i><span>Admission</span>
           </button>
         <% end %>
 
         <%= link_to(dashboard_path) do %>
           <button type="button" class="button-action2">
-            <i class="fas fa-stethoscope fa-sm"><span>Consultation</span></i>
+            <i class="fas fa-stethoscope fa-sm"></i><span>Consultation</span>
           </button>
         <% end %>
 
@@ -66,7 +66,7 @@
               <% @naissance = categorie %>
               <%= link_to dashboard_path(category: @naissance.id)  do %>
                 <button type="button" class="button-action3">
-                  <i class="fas fa-baby fa-sm"><span>Naissance</span></i>
+                  <i class="fas fa-baby fa-sm"></i><span>Naissance</span>
                 </button>
               <% end %>
           <% end %>
@@ -74,19 +74,19 @@
 
         <%= link_to(dashboard_path) do %>
           <button type="button" class="button-action4">
-            <i class="fas fa-clinic-medical fa-sm"><span>Hospitalisation</span></i>
+            <i class="fas fa-clinic-medical fa-sm"></i><span>Hospitalisation</span>
           </button>
         <% end %>
 
         <%= link_to(dashboard_path) do %>
           <button type="button" class="button-action5">
-            <i class="fas fa-prescription-bottle-alt fa-sm"><span>Pharmacie</span></i>
+            <i class="fas fa-prescription-bottle-alt fa-sm"></i><span>Pharmacie</span>
           </button>
         <% end %>
 
         <%= link_to(dashboard_path) do %>
           <button type="button" class="button-action6">
-            <i class="fas fa-print fa-sm"><span>Impression</span></i>
+            <i class="fas fa-print fa-sm"></i><span>Impression</span>
           </button>
         <% end %>
       </div>
@@ -103,7 +103,7 @@
       </div>
     <% end %>
 
-    <div id="list-of-patients">
+    <div id="list-of-patients-rightbar">
       <%= render 'shared/list-of-patients' %>
     </div>
 
