@@ -1,12 +1,12 @@
 .container-babyinfo-actions {
   display: flex;
-  jusitfy-content: space-around;
+  align-items: self-start;
+  margin: 20px 0 50px;
 }
 .buttons-show {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin-top: 20px;
   margin-bottom: 50px;
   text-decoration: none;
 }
@@ -111,38 +111,23 @@
 }
 
 .card-product-baby {
+  display: flex;
+  justify-content: space-between;
   padding: 32px;
-  padding-bottom: 5px;
-  position: relative;
-}
-
-.card-product-baby img {
-  padding: 0px;
-}
-
-
-#baby-info {
-    padding-top: 8px;
-    height: 135px;
-    width: 445px;
-    background: white;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 4rem;
-    margin-top: 15px;
-    margin-bottom: 80px;
-}
-
-#baby-info h2 {
-font-weight: black;
-font-size: 16px;
-}
-
-#baby-info p {
-font-weight: black;
-font-size: 10px;
-}
-
-.card-product-baby-info {
-  line-height: 8px;
+  background: white;
+  border-radius: 4rem;
+  margin-bottom: 15px;
+  h2 {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  p {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  img {
+    padding: 0px;
+    max-width: 200px;
+    object-fit: contain;
+  }
 }

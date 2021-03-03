@@ -20,7 +20,7 @@ const displayFilteredPatients = (input) => {
   fetch(url, { headers: { accept: "application/json" } })
   .then(response => response.json())
   .then((data) => {
-    const result = document.querySelector("#list-of-patients");
+    const result = document.querySelector("#list-of-patients-rightbar");
     result.innerHTML = data.html;
   });
 }
@@ -37,7 +37,7 @@ const filterpatients = () => {
       displayFilteredPatients(input);
     })
   }
-  
+
 }
 
 export { filterpatients }
