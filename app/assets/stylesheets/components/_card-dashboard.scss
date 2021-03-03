@@ -27,7 +27,6 @@
   background-color: white;
   padding-top: 20px;
   margin-right: 20px;
-  padding-bottom: 20px;
 }
 
 .stat-card ul {
@@ -69,11 +68,15 @@
 }
 
 .patients {
-  width: 56%;
+  width: 58%;
   border-radius: 8px;
   background-color: $white;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
   padding-top: 20px;
+}
+
+.patients a {
+  text-decoration: none;
 }
 
 .patients-title {
