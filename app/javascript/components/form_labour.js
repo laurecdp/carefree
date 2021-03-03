@@ -1,5 +1,5 @@
 const searchForm = () => {
- 
+
   /* Partie 1 du Form "Résumé de l'accouchement */
   if (document.getElementById("msform")) {
 
@@ -13,7 +13,7 @@ const searchForm = () => {
            document.getElementById("artificial-labour").style.display = "none"
            document.getElementById("labour_drugs").style.display = "none"
            document.getElementById("pharmacie-checkbox").style.display = "none"
-          
+
          } else if (element.querySelector("input").id === "labour_labour_start_déclenchement_artificiel") {
            document.getElementById("travail-spontane-checkbox").style.display = "block"
            document.getElementById("cesarienne-checkbox").style.display = "none"
@@ -28,19 +28,19 @@ const searchForm = () => {
            document.getElementById("labour_drugs").style.display = "block"
            document.getElementById("pharmacie-checkbox").style.display = "block"
          }
-    
+
        });
      });
-    
+
     /* Partie 2 du Form "Anésthésie */
     /* If yes */
     const inputYesAnesthesia = document.getElementById("labour_anaesthesia_oui");
 
     inputYesAnesthesia.addEventListener("click", (event) => {
-      document.getElementById("moment-anesthesia").style.display = "block" 
+      document.getElementById("moment-anesthesia").style.display = "block"
       document.getElementById("category-anesthesia").style.display = "block"
       document.getElementById("anesthia-checkbox").style.display = "block"
-      
+
       let categoryAnesthesia = document.getElementById("category-anesthesia")
       categoryAnesthesia.style.display = "block"
 
@@ -56,10 +56,10 @@ const searchForm = () => {
             } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_locale") {
               document.getElementById("anesthesia-general").style.display = "block"
               document.getElementById("anesthesia-loco-general").style.display = "none"
-            }; 
+            };
           })
         })
-      
+
     })
 
     /* If no */
@@ -108,26 +108,26 @@ const searchForm = () => {
       document.getElementById("delivrance-checkbox").style.display = "none"
       document.getElementById("labour-actes").style.display = "none"
     })
-  
+
   /* Partie 6 du Form "Informations du bébé" */
-  
+
     /* Monitorage */
     /* If yes */
-    const inputYesMonitoring = document.getElementById("labour_baby_monitoring_oui");
+    // const inputYesMonitoring = document.getElementById("labour_baby_monitoring_oui");
 
-    inputYesMonitoring.addEventListener("click", (event) => {
-      document.getElementById("monitoring-options").style.display = "block"
-      document.getElementById("monitoring-checkbox").style.display = "block"
-    })
+    // inputYesMonitoring.addEventListener("click", (event) => {
+    //   document.getElementById("monitoring-options").style.display = "block"
+    //   document.getElementById("monitoring-checkbox").style.display = "block"
+    // })
 
     /* If no */
-    const inputNoMonitoring = document.getElementById("labour_baby_monitoring_non");
+    // const inputNoMonitoring = document.getElementById("labour_baby_monitoring_non");
 
-    inputNoMonitoring.addEventListener("click", (event) => {
-      document.getElementById("monitoring-options").style.display = "none"
-      document.getElementById("monitoring-checkbox").style.display = "none"
-    })
-  
+    // inputNoMonitoring.addEventListener("click", (event) => {
+    //   document.getElementById("monitoring-options").style.display = "none"
+    //   document.getElementById("monitoring-checkbox").style.display = "none"
+    // })
+
   /* ------------------- */
 
     /* réanimation */
@@ -169,7 +169,7 @@ const searchForm = () => {
     /* ------------------- */
 
     /* Malformation */
-    
+
     /* ------------------- */
 
     /* Pathologies*/
@@ -193,8 +193,8 @@ const searchForm = () => {
     /* ------------------- */
   }
 }
-  
-  
+
+
 
 
 export { searchForm }

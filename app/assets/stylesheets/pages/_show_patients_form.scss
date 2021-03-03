@@ -23,7 +23,7 @@
 .fs-title {
   text-align: center;
   font-size: 24px;
-  color: #184BA1;
+  color: $navy;
   margin-bottom: 15px;
   letter-spacing: 1px;
   font-weight: 600;
@@ -53,16 +53,16 @@
   height: 30px;
   display: flex;
   font-size: 20px;
-  color: #184BA1;
+  color: $navy;
   background-color: #F3F7FD;
-  border: 1px solid #184BA1;
+  border: 1px solid $navy;
   border-radius: 25px;
   margin: 0 auto 10px auto;
   align-items: center;
   justify-content: center;
   z-index:2;
   &.present {
-    background-color: #184BA1;
+    background-color: $navy;
     color: #F3F7FD;
   }
 }
@@ -72,13 +72,13 @@
   content: '';
   width: 100%;
   height: 2px;
-  background: #184BA1;
+  background: $navy;
   position: absolute;
   left: -50%;
   top: 14px;
   z-index: 1; /*put it behind the numbers*/
   &.present {
-    background: #184BA1;
+    background: $navy;
   }
 }
 
@@ -88,7 +88,7 @@
 }
 
 #progressbar li.active:before, #progressbar li.active:after {
-  background-color: #184BA1;
+  background-color: $navy;
   color: #F3F7FD;
 }
 
@@ -114,7 +114,7 @@ label {
 }
 
 // #artificial-labour {
-//   background-color: #184BA1;
+//   background-color: $navy;
 // }
 
 .labour-wrap {
@@ -122,12 +122,12 @@ label {
   background-color: #F3F7FD;
   padding: 25px;
   border-radius: 20px;
-  color: #184BA1;
+  color: $navy;
   font-size: 16px;
 }
 
 #artificial-labour {
-  color: #184BA1;
+  color: $navy;
   font-size: 20px;
   font-weight: 600;
 }
@@ -150,4 +150,54 @@ label {
 
 .btn-ghost:hover {
   opacity: 1;
+}
+
+.toggle-yes-no {
+  position: absolute;
+  transform: scale(0);
+}
+
+.toggle-yes-no + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 40px;
+}
+
+.toggle-yes-no + label::before {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 36px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: #EAEAEA;
+  border-radius: 50rem;
+}
+
+.toggle-yes-no:checked + label::before {
+  background-color: $navy;
+}
+
+.toggle-yes-no + label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  left: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.2s ease;
+}
+
+.toggle-yes-no:checked + label::after {
+  left: 18px;
+}
+
+label.form-check-label.boolean.optional{
+  color: transparent;
 }
