@@ -44,7 +44,7 @@ class LaboursController < ApplicationController
     authorize @labour_code
     #------------#
     if @labour.save
-      render :edit
+      redirect_to patient_path(@patient)
     else
       render :new
     end
