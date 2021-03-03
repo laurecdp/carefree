@@ -124,13 +124,13 @@ const searchForm = () => {
     /* If yes */
     // const inputYesMonitoring = document.getElementById("labour_baby_monitoring_oui");
 
-    inputYesMonitoring.addEventListener("click", (event) => {
+    // inputYesMonitoring.addEventListener("click", (event) => {
 
-      document.querySelector("#form-step-5-labour-wrap").classList.remove("d-none")
+    //   document.querySelector("#form-step-5-labour-wrap").classList.remove("d-none")
 
-      document.getElementById("monitoring-options").style.display = "block"
-      document.getElementById("monitoring-checkbox").style.display = "block"
-    })
+    //   document.getElementById("monitoring-options").style.display = "block"
+    //   document.getElementById("monitoring-checkbox").style.display = "block"
+    // })
 
     /* If no */
     // const inputNoMonitoring = document.getElementById("labour_baby_monitoring_non");
@@ -140,10 +140,10 @@ const searchForm = () => {
     //   document.getElementById("monitoring-checkbox").style.display = "none"
     // })
 
-    inputNoMonitoring.addEventListener("click", (event) => {
-      document.querySelector("#form-step-5-labour-wrap").classList.add("d-none")
-      // document.getElementById("monitoring-checkbox").style.display = "none"
-    })
+    // inputNoMonitoring.addEventListener("click", (event) => {
+    //   document.querySelector("#form-step-5-labour-wrap").classList.add("d-none")
+    //   // document.getElementById("monitoring-checkbox").style.display = "none"
+    // })
 
   /* ------------------- */
 
