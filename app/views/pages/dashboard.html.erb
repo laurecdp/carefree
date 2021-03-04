@@ -39,6 +39,15 @@
             <div class="patients-title-info">
               <h4><%= @patients.count %> <span>Patients</span></h4>
             </div>
+
+            <%= simple_form_for :search,  url: dashboard_path, method: :get do |f| %>
+              <div class="search-form-control form-group form-search" id= "search-right" data-patients="<%= @filterpatients.to_json %>">
+                <input class="form-control string required search-input" type="text" name="search[query]" placeholder="Patient"/>
+                <button name="button" type="submit" class="btn btn-flat">
+                  <i class="fas fa-search" id="search-patient"></i></button>
+              </div>
+            <% end %>
+
           </div>
           <div id="list-of-patients">
             <%= render 'shared/patients-list-dashboard' %>
