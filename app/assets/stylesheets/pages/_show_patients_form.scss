@@ -44,6 +44,7 @@
 #progressbar li {
   list-style-type: none;
   position: relative;
+  z-index: 1;
 }
 
 #progressbar li:before {
@@ -68,18 +69,15 @@
 }
 
 /*progressbar connectors*/
-#progressbar li:after {
+#progressbar:after {
   content: '';
-  width: 100%;
+  width: 35%;
   height: 2px;
-  background: $navy;
+  background: #184BA1;
   position: absolute;
-  left: -50%;
-  top: 14px;
-  z-index: 1;
-  &.present {
-    background: $navy;
-  }
+  left: 33%;
+  top: 55px;
+  z-index: 0;
 }
 
 #progressbar li:first-child:after {
