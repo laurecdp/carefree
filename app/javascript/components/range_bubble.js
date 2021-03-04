@@ -1,4 +1,4 @@
-const updateTextInput = () => {
+/* const updateTextInput = () => {
 
   const inputWeight = document.getElementById('labour_baby_weight');
   if (inputWeight) {
@@ -51,4 +51,4 @@ const updateTextInput = () => {
 
 }
 
-export { updateTextInput };
+export { updateTextInput }; */
