@@ -195,7 +195,6 @@ label {
 
 .toggle-yes-no + label::before {
   content: '';
-  display: block;
   position: absolute;
   cursor: pointer;
   width: 36px;
@@ -212,7 +211,6 @@ label {
 
 .toggle-yes-no + label::after {
   content: '';
-  display: block;
   position: absolute;
   cursor: pointer;
   width: 16px;
@@ -229,7 +227,7 @@ label {
 }
 
 label.form-check-label.boolean.optional{
-  color: transparent;
+  color: #184ba1;
 }
 
 // DO NOT DELETE THOSE LINES WHEN ON GITHUB

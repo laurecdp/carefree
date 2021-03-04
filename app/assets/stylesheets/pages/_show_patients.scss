@@ -166,32 +166,60 @@
 
 //Class pour Javascript//
 
- #travail-spontane-checkbox {
+/*  .travail-spontane-checkbox {
   display: none;
  }
 
- #cesarienne-checkbox {
+ .travail-spontane-checkbox.show {
+  display: show;
+ }
+
+ .cesarienne-checkbox {
   display: none;
  }
 
- #artificial-labour {
+ .cesarienne-checkbox.show {
+  display: show;
+ }
+
+ .artificial-labour {
   display: none;
  }
 
- #labour_drugs {
+ .artificial-labour.show {
+  display: show;
+ }
+
+ .labour_drugs {
   display: none;
  }
 
- #pharmacie-checkbox {
+ .labour_drugs.show {
+  display: show;
+ }
+
+ .pharmacie-checkbox {
   display: none;
  }
 
- #category-anesthesia {
+ .pharmacie-checkbox.show {
+  display: show;
+ }
+
+ .category-anesthesia {
   display: none;
  }
 
- #moment-anesthesia {
+.category-anesthesia.show {
+  display: block;
+}
+
+ .moment-anesthesia {
   display: none;
+ }
+
+ .moment-anesthesia.show {
+  display: show;
  }
 
  #anesthesia-loco-general {
@@ -202,57 +230,113 @@
   display: none;
  }
 
- #anesthia-checkbox {
+ .anesthia-checkbox {
   display: none;
  }
 
- #complication-type {
+ .anesthia-checkbox.show {
+  display: show;
+ }
+
+ .complication-type {
   display: none;
  }
 
- #complication-checkbox {
+  .complication-type.show {
+  display: show;
+ }
+
+ .complication-checkbox {
   display: none;
  }
 
- #labour-actes {
+ .complication-checkbox.show {
+  display: show;
+ }
+
+ .labour-actes {
   display: none;
  }
 
- #delivrance-checkbox {
+ .labour-actes.show {
+  display: show;
+ }
+
+
+ .delivrance-checkbox {
   display: none;
  }
 
- #monitoring-options {
+ .delivrance-checkbox.show {
+  display: show;
+ }
+
+ .monitoring-options {
   display: none;
  }
 
- #monitoring-checkbox {
+ .monitoring-options.show {
+  display: show;
+ }
+
+ .monitoring-checkbox {
   display: none;
  }
 
- #intensivecare-checkbox {
+ .monitoring-checkbox.show {
+  display: show;
+ }
+
+ .intensivecare-checkbox {
   display: none;
  }
 
- #intensivecare-options {
+ .intensivecare-checkbox.show {
+  display: show;
+ }
+
+ .intensivecare-options {
   display: none;
  }
 
- #infections-options {
+ .intensivecare-options.show {
+  display: show;
+ }
+
+ .infections-options {
   display: none;
  }
 
-#infections-checkbox {
+ .infections-options.show {
+  display: show;
+ }
+
+.infections-checkbox {
   display: none;
  }
 
- #pathologies-checkbox {
+ .infections-checkbox.show {
+  display: show;
+ }
+
+ .pathologies-checkbox {
    display: none;
  }
 
- #pathologies-options {
+ .pathologies-checkbox.show {
+   display: show;
+ }
+
+ .pathologies-options {
    display: none;
  }
+
+ .pathologies-options.show {
+   display: show;
+ }
+ */
+ 
+
 
 #new_labour > fieldset {
   display: none;
