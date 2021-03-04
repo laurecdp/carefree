@@ -8,6 +8,7 @@
 .buttons a {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 
 .buttons span {
@@ -87,10 +88,6 @@
 
 .button-action p {
   margin-top: 20px;
-}
-
-.buttons a {
-  text-decoration: none;
 }
 
 #btn-home {
