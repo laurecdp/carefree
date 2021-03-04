@@ -206,10 +206,13 @@
           </fieldset>
 
           <fieldset class= "form_step" data-step="2">
-            <h3 class="fs-title">Anésthésie</h3>
-            <div id="anaesthesia">
+            <h3 class="fs-title">Anesthésie</h3>
+            <div class="boolean-switch-container" id="anaesthesia">
+              <%= label_tag :anaesthesia, for: "labour_anaesthesia" do  %>
+                Avez-vous dû effectuer une anesthésie ?
+              <% end %>
               <%= f.input :anaesthesia,
-                          label: 'Avez-vous du faire une anésthésie?',
+                          label: '&nbsp;'.html_safe,
                           as: :boolean,
                           input_html: { class: "toggle-yes-no"} %>
             </div>
@@ -261,11 +264,14 @@
 
             <%# -----Délivrance----------------------------------- %>
 
-            <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false %>
+            <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false,input_html: { class: "delivrance-check-boxes" } %>
 
-            <div id= "complications">
+            <div class="boolean-switch-container" id= "complications">
+              <%= label_tag :labour_complication, for: "labour_labour_complication" do  %>
+                Y-a t-il eu des complications ?
+              <% end %>
               <%= f.input :labour_complication,
-                          label: 'Y-a t-il eu des complications?',
+                          label: '&nbsp;'.html_safe,
                           as: :boolean,
                           input_html: { class: "toggle-yes-no", "data-id" => "form-step-3-labour-wrap" } %>
             </div>
@@ -281,10 +287,14 @@
               <% end %>
             </div>
 
-            <div id= "actes">
+            <div id="actes" class="boolean-switch-container">
+             <%= label_tag :labour_actes_done, for: "labour_labour_actes_done" do  %>
+                Avez-vous dû effectuer des actes ?
+              <% end %>
+
               <%= f.input :labour_actes_done,
                           as: :boolean,
-                          label: "Avez-vous du effectuer des actes?",
+                          label: '&nbsp;'.html_safe,
                           input_html: { class: "toggle-yes-no",
                           "data-id" => "form-step-4-labour-wrap"} %>
             </div>
@@ -326,7 +336,7 @@
                             label: "Date et heure de naissance",
                             as: :string,
                             input_html: {class: "datetime-picker"}%>
-
+                  <div class="poids-taille-tete">
                     <%= p.input :weight,
                                 label: "Poids (kg)",
                                 input_html: {min: 1, max: 10, step: 0.1}%>
@@ -339,11 +349,17 @@
                               label: "Périmètre crânien",
                               input_html: {min: 30, max: 45, step: 1}%>
                   <br>
+                  </div>
                   <%# Partie monitoring %>
-                      <%= p.input :monitoring,
-                                  label: "Avez vous effectué un monitorage?",
+                  <div class="boolean-switch-container">
+                    <%= label_tag :monitoring, for: "labour_baby_monitoring" do  %>
+                       Avez-vous effectué un monitorage ?
+                     <% end %>
+                    <%= p.input :monitoring,
+                                  label: "&nbsp;".html_safe,
                                   as: :boolean,
                                   input_html: { class: "toggle-yes-no", "data-id" => "form-step-5-labour-wrap"} %>
+                  </div>
 
                   <div class="labour-wrap d-none" id="form-step-5-labour-wrap">
                       <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Type de monitorage", input_html: { multiple: true }, include_hidden: false  %>
@@ -355,10 +371,15 @@
                   </div>
 
                   <%# Partie réanimation %>
+                  <div class="boolean-switch-container">
+                    <%= label_tag :intensivecare, for: "labour_baby_intensivecare" do  %>
+                       Avez-vous effectué une réanimation ?
+                     <% end %>
                     <%= p.input :intensivecare,
-                                label: "Avez vous effectué un réanimation?",
+                                label: "&nbsp;".html_safe,
                                 as: :boolean,
                                 input_html: { class: "toggle-yes-no", "data-id" => "form-step-6-labour-wrap"} %>
+                  </div>
 
                   <div class="labour-wrap d-none" id="form-step-6-labour-wrap">
                       <%= p.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation", input_html: { multiple: true }, include_hidden: false  %>
@@ -370,10 +391,16 @@
                   </div>
 
                   <%# Partie infections %>
-                    <%= p.input :infectiouscontext,
-                                label: "Avez-vous observé des infections chez le bébé?",
+                    <div class="boolean-switch-container">
+                     <%= label_tag :infectiouscontext, for: "labour_baby_infectiouscontext" do  %>
+                       Avez-vous observé des infections chez le bébé ?
+                     <% end %>
+                      <%= p.input :infectiouscontext,
+                                label: "&nbsp;".html_safe,
                                 as: :boolean,
                                 input_html: { class: "toggle-yes-no", "data-id" => "form-step-7-labour-wrap"} %>
+
+                    </div>
 
                   <div class="labour-wrap d-none" id="form-step-7-labour-wrap">
                       <%= p.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, as: :check_boxes, label: "Types d'infections", input_html: { multiple: true }, include_hidden: false  %>
@@ -385,15 +412,26 @@
                   </div>
 
                   <%# Partie pathologies %>
+                  <div class="boolean-switch-container">
+                   <%= label_tag :malformation, for: "labour_baby_malformation" do  %>
+                     Avez-vous observé des malformations chez le bébé ?
+                   <% end %>
                     <%= p.input :malformation,
-                                label: "Avez-vous observé des malformations chez le bébé?",
+                                label: "&nbsp;".html_safe,
                                 as: :boolean,
                                 input_html: { class: "toggle-yes-no" } %>
+                  </div>
 
+                  <div class="boolean-switch-container">
+                    <%= label_tag :pathology, for: "labour_baby_pathology" do  %>
+                      Avez-vous observé des pathologies chez le bébé ?
+                    <% end %>
                     <%= p.input :pathology,
-                                label: "Avez-vous observé des pathologies chez le bébé?",
+                                label: "&nbsp;".html_safe,
                                 as: :boolean,
                                 input_html: { class: "toggle-yes-no" } %>
+                  </div>
+
 
                   <%= p.input :breastfeeding,
                               collection: Baby::BREASTFEEDING,
