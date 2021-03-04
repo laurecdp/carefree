@@ -50,25 +50,23 @@
   height: 300px;
   background: white;
   display: flex;
-  border-radius: 2rem;
+  border-radius: 1rem;
   margin-top: 15px;
   margin-bottom: 80px;
   justify-content: space-between;
 }
 
 .card-product-labour {
-  display: flex;
-  justify-content: space-between;
-  padding: 32px;
+  padding: 20px;
   background: white;
-  border-radius: 4rem;
+  border-radius: 8px;
   margin-bottom: 15px;
   h2 {
-    font-weight: bold;
     font-size: 16px;
+    color: $dark-green;
+    font-weight: 600;
   }
   p {
-    font-weight: bold;
     font-size: 14px;
   }
   img {
@@ -77,58 +75,6 @@
     object-fit: contain;
   }
 }
-
-// .cards-show {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   grid-gap: 40px;
-// }
-
-// .cards-index {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr;
-//   grid-gap: 32px;
-// }
-
-// .card-patient {
-//   color: black;
-//   font-weight: lighter;
-//   transition: opacity 0.3s ease;
-//   background-color: #e7f6ed;
-//   border: 1px solid rgba(0,0,0,.125);
-//   border-radius: 20px;
-//   margin-bottom: 50px;
-// }
-
-// .card-highlight {
-//   color: black;
-//   font-weight: lighter;
-//   transition: opacity 0.3s ease;
-//   background-color: white;
-//   height: 200px;
-//   border: 1px solid rgba(0,0,0,.125);
-//   border-radius: .25rem;
-// }
-
-// .card-patient ul {
-//   list-style-type: none;
-//   padding-top: 8px;
-//   padding-left: 20px;
-//   padding-right: 20px;
-//   padding-bottom: 20px;
-// }
-
-// .card-patient li {
-//   background-color: #a6cdbb;
-//   border-radius: 16px;
-// }
-// .card-patient li p {
-//   margin-top: 0;
-//   margin-bottom: 1rem;
-//   padding: 10px;
-//   font-weight: 600;
-//   color: white;
-// }
 
 .card-title {
   background-color: #a6cdbb;
@@ -150,10 +96,25 @@
   border-radius: 2rem;
 }
 
-
 .content-below-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.buttons-show {
+  text-decoration: none;
   display: flex;
-  margin-top: 20px;
+  flex-direction: column;
+}
+
+.buttons-show a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.buttons-show span {
+  margin-left: 5px;
 }
 
 

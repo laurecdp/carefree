@@ -1,4 +1,4 @@
- <div class="dashboard-container">
+<div class="dashboard-container">
   <div class="container-dashboard">
     <div class="card-product" id= "patient-info">
       <div class="card-infos">
@@ -15,96 +15,93 @@
     </div>
 
     <% if !params[:category] %>
-
-    <div class="content-below-card">
-      <div class="patient-babies">
-        <% if @patient.babies.any? %>
-          <% @patient.babies.each do |baby| %>
-            <div class="card-product-baby" id="baby-info">
-              <div class="card-product-baby-info">
-                <h2><%= "Prénom: #{baby.first_name} Nom: #{baby.last_name}" %></h2>
-                <p><%= "Né(e) le: #{baby.birth_date.strftime("%-d %b %Y")}" %></p>
-                <p><i class="fas fa-venus-mars"></i> <%= "Sexe: #{baby.sex}"%></p>
-                <p><i class="fas fa-weight"></i> <%= "Poids: #{baby.weight} kg" %></p>
-                <p><i class="fas fa-arrows-alt-v"></i> <%= "Taille: #{baby.heigh} cm" %></p>
-              </div>
-              <%= image_tag "motherhood.png" %>
-            </div>
-            <% end %>
-          <% else %>
-            <div class="card-product-baby" id="baby-info">
-              <div class="card-product-baby-info">
-                <h2>Information du bébé:</h2>
-                <p> Encore un peu tôt ! (Seulement <%=@patient.number_of_weeks%> semaines)</p> 
-              </div>
-              <%= image_tag "motherhood.png" %>
-            </div>
-        <% end %>
-
-        
-        <div class="card-product-labour" id="labour-info">
-          <h2> Historique : </h2>
-            <p> Accouchement: <%= @labour.labour_end_at %> </p>
-            <p> </p>
-        </div>
-        
-
-      </div>
-
-      <div class="buttons">
-        <%= link_to(patient_path) do %>
-          <button type="button" class="button-action1">
-            <i class="fas fa-user-plus fa-sm"></i><span>Admission</span>
-          </button>
-        <% end %>
-
-        <%= link_to(patient_path) do %>
-          <button type="button" class="button-action2">
-            <i class="fas fa-stethoscope fa-sm"></i><span>Consultation</span>
-          </button>
-        <% end %>
-
-        <% @categories.each do |categorie|%>
-          <% if categorie.name == "Naissance"%>
-              <% @naissance = categorie %>
-              <%= link_to patient_path(category: @naissance.id) do %>
-                <button type="button" class="button-action3">
-                  <i class="fas fa-baby fa-sm"></i><span>Naissance</span>
-                </button>
+      <div class="content-below-card">
+        <div class="left-content">
+          <div class="patient-babies">
+            <% if @patient.babies.any? %>
+              <% @patient.babies.each do |baby| %>
+                <div class="card-product-baby" id="baby-info">
+                  <div class="card-product-baby-info">
+                    <h2>Prénom: <span><%= "#{baby.first_name}" %></span></h2>
+                    <h2>Nom: <span><%= "#{baby.last_name}" %></span></h2>
+                    <div class="baby-info">
+                      <div class="left-info">
+                        <p><%= "Né(e) le: #{baby.birth_date.strftime("%-d %b %Y")}" %></p>
+                        <p><i class="fas fa-venus-mars"></i> <%= "Sexe: #{baby.sex}"%></p>
+                      </div>
+                      <div class="right-info">
+                        <p><i class="fas fa-weight"></i> <%= "Poids: #{baby.weight} kg" %></p>
+                        <p><i class="fas fa-arrows-alt-v"></i> <%= "Taille: #{baby.heigh} cm" %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <%= image_tag "motherhood.png" %>
+                </div>
+                <div class="card-product-labour" id="labour-info">
+                  <h2>Infos accouchement</h2>
+                </div>
               <% end %>
-
             <% else %>
               <div class="card-product-baby" id="baby-info">
                 <div class="card-product-baby-info">
-                  <h2>Information du bébé:</h2>
-                  <p> Encore un peu tôt ! (Seulement <%=@patient.number_of_weeks%> semaines)</p>
+                  <h2>Infos du bébé</h2>
+                  <p> Encore un peu tôt !</p>
+                  <!-- <p>(Seulement <%=@patient.number_of_weeks%> semaines)</p> -->
                 </div>
                 <%= image_tag "motherhood.png" %>
               </div>
-          <% end %>
-        <% end %>
+              <div class="card-product-labour" id="labour-info">
+                <h2>Infos accouchement</h2>
+                <p>A venir !</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="right-content">
+          <div class="buttons-show">
+            <%= link_to(patient_path) do %>
+              <button type="button" class="button-action1">
+                <i class="fas fa-user-plus fa-sm"></i><span>Admission</span>
+              </button>
+            <% end %>
 
-        <%= link_to(patient_path) do %>
-          <button type="button" class="button-action4">
-            <i class="fas fa-clinic-medical fa-sm"></i><span>Hospitalisation</span>
-          </button>
-        <% end %>
+            <%= link_to(patient_path) do %>
+              <button type="button" class="button-action2">
+                <i class="fas fa-stethoscope fa-sm"></i><span>Consultation</span>
+              </button>
+            <% end %>
 
-        <%= link_to(patient_path) do %>
-          <button type="button" class="button-action5">
-            <i class="fas fa-prescription-bottle-alt fa-sm"></i><span>Pharmacie</span>
-          </button>
-        <% end %>
+            <% @categories.each do |categorie|%>
+              <% if categorie.name == "Naissance"%>
+                  <% @naissance = categorie %>
+                  <%= link_to patient_path(category: @naissance.id) do %>
+                    <button type="button" class="button-action3">
+                      <i class="fas fa-baby fa-sm"></i><span>Naissance</span>
+                    </button>
+                  <% end %>
+              <% end %>
+            <% end %>
 
-        <%= link_to(patient_path) do %>
-          <button type="button" class="button-action6">
-            <i class="fas fa-print fa-sm"></i><span>Impression</span>
-          </button>
-        <% end %>
+            <%= link_to(patient_path) do %>
+              <button type="button" class="button-action4">
+                <i class="fas fa-clinic-medical fa-sm"></i><span>Hospitalisation</span>
+              </button>
+            <% end %>
+
+            <%= link_to(patient_path) do %>
+              <button type="button" class="button-action5">
+                <i class="fas fa-prescription-bottle-alt fa-sm"></i><span>Pharmacie</span>
+              </button>
+            <% end %>
+
+            <%= link_to(patient_path) do %>
+              <button type="button" class="button-action6">
+                <i class="fas fa-print fa-sm"></i><span>Impression</span>
+              </button>
+            <% end %>
+          </div>
+        </div>
       </div>
-    </div>
-
-  </div>
 
     <% else %>
 
@@ -328,7 +325,7 @@
                                 as: :boolean,
                                 collection: ['oui', 'non'],
                                 input_html: { class: "toggle-yes-no" } %>
-                  
+
                 </div>
                 <div class="labour-wrap d-none" id="form-step-5-labour-wrap">
                   <div id="monitoring-options">

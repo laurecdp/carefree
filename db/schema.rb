@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_145854) do
     t.string "nss"
     t.string "blood_group"
     t.integer "number_of_weeks"
+    t.boolean "pregnant", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
