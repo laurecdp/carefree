@@ -1,0 +1,108 @@
+.container-summary {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: $navy;
+}
+
+.container-summary h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: $navy;
+}
+
+.summary-labour {
+  font-size: 16px;
+}
+
+.summary-labour ul {
+  list-style-type: none;
+}
+
+.summary-step {
+  text-align: left;
+  background-color: #F3F7FD;
+  margin: 38px;
+  padding: 25px;
+  border-radius: 20px;
+  color: $navy;
+  font-size: 16px;
+}
+
+.summary-step p {
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.number {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  font-size: 20px;
+  color: white;
+  background-color: $navy;
+  border-radius: 25px;
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-reply {
+  background-color: white;
+  border: 1px solid #ffca5a;
+  font-size: 11px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #ffca5a;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+
+.form-y-n {
+  background-color: white;
+  border: 1px solid #9abfec;
+  font-size: 11px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #9abfec;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 18px;
+  padding-right: 18px;
+
+}
+
+.name-patient {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffca5a;
+}
+
+.summary-step li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.end {
+  margin-top: 25px;
+  background-color: #184BA1;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+}
