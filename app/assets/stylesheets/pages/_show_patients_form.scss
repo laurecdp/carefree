@@ -231,6 +231,11 @@ label.form-check-label.boolean.optional{
 }
 
 // DO NOT DELETE THOSE LINES WHEN ON GITHUB
+.baby-prenom-nom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .category-wrapper {
   display: flex;
   justify-content: space-between;
@@ -273,9 +278,9 @@ label.form-check-label.boolean.optional{
   display: flex;
   justify-content: center;
   align-items: self-start;
-  background-position: center;
+  background-position: center 60%;
   height: 100px;
-  background-size: 13%;
+  background-size: 10%;
   font-size: 12px;
 }
 
@@ -292,7 +297,7 @@ label.form-check-label.boolean.optional{
   display: flex;
   justify-content: center;
   align-items: self-start;
-  background-position: center;
+  background-position: center 60%;
   height: 100px;
   background-size: 7%;
   font-size: 13px;
@@ -312,7 +317,7 @@ label.form-check-label.boolean.optional{
   display: flex;
   justify-content: center;
   align-items: self-start;
-  background-position: center;
+  background-position: center 60%;
   height: 100px;
   background-size: 13%;
   font-size: 13px;
