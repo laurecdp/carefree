@@ -107,9 +107,9 @@
       <div class="container-labourform" id="msform">
         <ul id="progressbar">
           <li class="present" data-bar="1"><p>Accouchement</p></li>
-          <li data-bar="2"><p>Anésthésie</p></li>
+          <li data-bar="2"><p>Anesthésie</p></li>
           <li data-bar="3"><p>Délivrance</p></li>
-          <li data-bar="4"><p>Nouveau né</p></li>
+          <li data-bar="4"><p>Nouveau-né</p></li>
         </ul>
 
         <%= simple_form_for @labour do |f| %>
@@ -168,6 +168,7 @@
                     <%= l.input :diagnostic, label: "Diagnostique :", placeholder: "Écrivez votre diagnostique" %>
                   </div>
                 <% end %>
+              </div>
 
               <div id= "artificial-labour">
                 <%= f.input :artificial_labour,
@@ -323,7 +324,7 @@
                             input_html: {class: 'category-selector'},
                             collection: Baby::SEX %>
 
-                <%= p.input :birth_date,
+                  <%= p.input :birth_date,
                             label: "Date et heure de naissance",
                             as: :string,
                             input_html: {class: "datetime-picker"}%>
