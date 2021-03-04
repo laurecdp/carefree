@@ -150,4 +150,14 @@
 }
 
 
+.sidebar-active {
+  background-color: $pink;
+  .icone {
+    background-color: $pink;
+    color: $white;
+  }
+  .label {
+    color: $white;
+  }
+}
 

@@ -29,7 +29,8 @@
 }
 
 .search-window {
-  background-color: $pink;
+  background-color: white;
+  box-shadow: 0 0 10px #5897fb54;
   position: absolute;
   right: 0;
   height: 100%;
@@ -43,9 +44,9 @@
   display: inline-block;
 }
 
-.container-dashboard {
-  width: 100%;
-}
+// .container-dashboard {
+//   width: 100%;
+// }
 
 #close {
   position: absolute;
@@ -111,4 +112,7 @@
   grid-gap: 20px;
 }
 
+.grey-box {
+  opacity: 0.3;
+}
 
