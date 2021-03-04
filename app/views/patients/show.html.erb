@@ -62,20 +62,23 @@
             <% @patient.babies.last(1).each do |baby| %>
               <div class="card-product-baby" id="baby-info">
                 <div class="card-product-baby-info">
-                  <h2>Prénom: <span><%= "#{baby.first_name}" %></span></h2>
-                  <h2>Nom: <span><%= "#{baby.last_name}" %></span></h2>
+                  <h2>Informations du bébé <span><%= "#{baby.first_name}" %> <%= "#{baby.last_name}" %></span> </h2>
+                  <h3><%= "#{baby.birth_date.strftime("%-d %b %Y")}" %></h3>
                   <div class="baby-info">
-                    <div class="left-info">
-                      <p><%= "Né(e) le: #{baby.birth_date.strftime("%-d %b %Y")}" %></p>
-                      <p><i class="fas fa-venus-mars"></i> <%= "Sexe: #{baby.sex}"%></p>
+                    <div class="sex-info">
+                      <div><i class="fas fa-venus-mars"></i></div>
+                      <div><h4><%= "#{baby.sex}"%></h4></div>
                     </div>
-                    <div class="right-info">
-                      <p><i class="fas fa-weight"></i> <%= "Poids: #{baby.weight} kg" %></p>
-                      <p><i class="fas fa-arrows-alt-v"></i> <%= "Taille: #{baby.heigh} cm" %></p>
+                    <div class="weight-info">
+                      <i class="fas fa-weight-hanging"></i>
+                      <h4><%= "#{baby.weight}" %><span>kg</span></h4>
+                    </div>
+                    <div class="height-info">
+                      <i class="fas fa-arrows-alt-v"></i>
+                      <h4><%= "#{baby.heigh}" %><span>cm</span></h4>
                     </div>
                   </div>
                 </div>
-                <%= image_tag "motherhood.png" %>
               </div>
               <div class="card-product-labour" id="labour-info">
                 <div class="form-summary">
