@@ -4,7 +4,7 @@ const searchForm = () => {
   if (document.getElementById("msform")) {
 
     const tagItem = document.querySelectorAll(".tag-item");
-     tagItem.forEach(element => {
+    tagItem.forEach(element => {
        element.addEventListener("click", (event) => {
        document.querySelector(".labour-wrap").classList.remove("d-none")
 
@@ -18,53 +18,25 @@ const searchForm = () => {
       });
     });
 
-    const anesthesiaItem = document.querySelectorAll(".tag-item");
-    anesthesiaItem.forEach(element => {
-      element.addEventListener("click", (event) => {
-
-        if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_loco-régionale") {
-          document.getElementById("anesthesia-loco-general").style.display = "block"
-          document.getElementById("anesthesia-general").style.display = "none"
-        } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_générale") {
-          document.getElementById("anesthesia-general").style.display = "block"
-          document.getElementById("anesthesia-loco-general").style.display = "none"
-        } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_locale") {
-          document.getElementById("anesthesia-general").style.display = "block"
-          document.getElementById("anesthesia-loco-general").style.display = "none"
-        };
-      })
-    })
-
-
     const toggleButtons = document.querySelectorAll(".toggle-yes-no");
     toggleButtons.forEach(element => {
       element.addEventListener("click", (event) => {
-        if (element.value) {
-          document.querySelector("#form-step-2-labour-wrap").classList.toggle("d-none")
-            document.querySelector(".category-anesthesia").classList.toggle("show")
-            document.querySelector(`#${element.dataset.id}`).classList.toggle("d-none")
-           }
-           
-           const tagItem = document.querySelectorAll(".tag-item");
-           tagItem.forEach(element => {
-             element.addEventListener("click", (event) => {
+          document.querySelector(`#${element.dataset.id}`).classList.toggle("d-none") 
+      })
+    })
+    
+    const anesthesiaLoco = document.getElementById("labour_anaesthesia_category_anesthésie_loco-régionale")
+    anesthesiaLoco.addEventListener("click", (event) => {
+      document.getElementById("anesthesia-loco-general").classList.remove("d-none")
+      document.getElementById("anesthesia-general").classList.add("d-none")
+    })
 
-               if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_loco-régionale") {
-                 document.getElementById("anesthesia-loco-general").style.display = "block"
-                 document.getElementById("anesthesia-general").style.display = "none"
-               } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_générale") {
-                 document.getElementById("anesthesia-general").style.display = "block"
-                 document.getElementById("anesthesia-loco-general").style.display = "none"
-               } else if (element.querySelector("input").id === "labour_anaesthesia_category_anesthésie_locale") {
-                 document.getElementById("anesthesia-general").style.display = "block"
-                 document.getElementById("anesthesia-loco-general").style.display = "none"
-               };
-             })
-           })
-         })
-      });
+    const anesthesiaGeneral = document.getElementById("labour_anaesthesia_category_anesthésie_générale")
+    anesthesiaGeneral.addEventListener("click", (event) => {
+      document.getElementById("anesthesia-general").classList.remove("d-none")
+      document.getElementById("anesthesia-loco-general").classList.add("d-none")
+    })
 
- 
   }
 }
 

@@ -15,7 +15,7 @@ class Labour < ApplicationRecord
 
   LABOUR_END = ['Dirigée', 'Naturelle', 'Complète', 'Incomplète']
 
-  ANAESTHESIA_CATEGORY = ['Anesthésie loco-régionale', 'Anesthésie générale', 'Anesthésie locale']
+  ANAESTHESIA_CATEGORY = ['Anesthésie loco-régionale', 'Anesthésie générale']
 
   ANAESTHESIA_GENERAL = ['D\'emblée', 'Post péridurale', 'Après rachianesthésie']
 
