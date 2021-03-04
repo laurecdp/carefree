@@ -326,3 +326,30 @@ label.form-check-label.boolean.optional{
   border-color: $navy;
   background-image: asset-url('no-gender.svg');
 }
+
+// CODE HERE AIMED TO MODIFY SELECT2 DESIGN
+
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    width: 275px;
+}
+
+.select2 {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+
+label.select.optional {
+  margin-right: 30px;
+}
