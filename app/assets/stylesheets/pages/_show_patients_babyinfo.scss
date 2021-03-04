@@ -6,18 +6,19 @@
 
 .card-product-baby {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: center;
+  padding: 30px;
   background: white;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   h2 {
-    font-size: 16px;
-    color: $dark-green;
+    font-size: 22px;
     font-weight: 600;
+    color: $navy;
+    text-align: center;
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
   }
   img {
     padding: 0px;
@@ -32,10 +33,45 @@
 }
 
 .baby-info {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   padding-top: 20px;
+  grid-gap: 28px;
+  color: $navy;
+  h4 {
+    margin-top: 8px;
+    color: $navy;
+  }
+}
+
+.card-product-baby-info {
+  span {
+    font-size: 28px;
+    color: #ffca5a;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 22px;
+    color: $navy;
+    text-align: center;
+  }
+}
+
+.name-info {
+  margin-right: 20px;
 }
 
 .baby-info .left-info {
-  padding-right: 30px;
+  padding-right: 60px;
+
+}
+
+.sex-info, .weight-info, .height-info {
+  background-color: #f2f7fe;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
 }

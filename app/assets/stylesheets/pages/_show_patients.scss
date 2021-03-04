@@ -115,8 +115,10 @@
   margin-left: 5px;
 }
 
-.buttons-show .button-action1, .button-action2, .button-action3, .button-action4, .button-action5, .button-action6 {
-  width: 146px;
+.buttons-show {
+  .button-action1, .button-action2, .button-action3, .button-action4, .button-action5, .button-action6  {
+    width: 146px;
+  }
 }
 
 
