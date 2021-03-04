@@ -1,0 +1,75 @@
+<div class="container-summary">
+  <h3> Résumé de l'accouchement de <span class="name-patient"><%= "#{@patient.labours.last.patient.first_name} #{@patient.labours.last.patient.last_name}" %></span></h3>
+  <div class= "summary-labour" id="summary-form-labour">
+    <% b = @patient.labours.last.labour_start_at %>
+    <% e = @patient.labours.last.labour_end_at %>
+    <% @duration = ((e - b)/3600).round %>
+    <% @labourbegin = b.strftime("%d/%m/%Y à %Hh%M") %>
+    <% @labourend = e.strftime("%d/%m/%Y à %Hh%M") %>
+    <% @actesdelivrance = @patient.labours.last.labour_actes.join(", ").downcase %>
+    <% @complicationdelivrance = @patient.labours.last.labour_complication_type.join(", ").downcase %>
+    <% @moyensutilises = @patient.labours.last.labour_drugs.join(", ").downcase %>
+
+    <div class= "summary-step">
+      <p><span class="number"> 1 </span> Accouchement</p>
+        <ul>
+          <li>Âge gestationnel à l'accouchement : <span class="form-reply"><%= @patient.labours.last.patient.number_of_weeks %> semaines</span></li>
+          <li>Mode de début du travail : <span class="form-reply"><%= @patient.labours.last.labour_start %></span></li>
+
+          <% if @patient.labours.last.artificial_labour != "" %>
+            <li>Motif de déclenchement artificiel : <span class=""><%= @patient.labours.last.artificial_labour %></span></li>
+          <% end %>
+
+          <% if @patient.labours.last.labour_drugs.any? %>
+            <li>Moyens utilisés : <span class="form-reply"><%= @moyensutilises %></span></li>
+          <% end %>
+        </ul>
+    </div>
+
+    <div class= "summary-step">
+      <p><span class="number"> 2 </span>Anesthésie</p>
+        <ul>
+          <% if @patient.labours.last.anaesthesia %>
+            <li>Anesthésie : <span class="form-y-n"> oui </span></li>
+          <% else %>
+            <li>Anesthésie : <span class="form-y-n"> non </span></li>
+          <% end %>
+          <li>Type d'anesthésie : <span class="form-reply"><%= "#{@patient.labours.last.anaesthesia_category} #{@patient.labours.last.anaesthesia_general} #{@patient.labours.last.anaesthesia_loco_general}" %></span></li>
+          <li>Moment de l'anesthésie : <span class="form-reply"><%= @patient.labours.last.anaesthesia_moment %></span></li>
+          <% if @patient.labours.last.anaesthesia_complication %>
+            <li> Complication de l'anesthésie : <span class="form-y-n"> oui </span></li>
+          <% else %>
+            <li> Complication de l'anesthésie : <span class="form-y-n"> non </span></li>
+          <% end %>
+        </ul>
+    </div>
+
+    <div class= "summary-step">
+      <p><span class="number"> 3 </span>Délivrance</p>
+        <ul>
+          <li>Déclenchement : <span class="form-reply"> <%= @labourbegin %></span></li>
+          <li>Délivrance : <span class="form-reply"> <%= @labourend %></span></li>
+
+          <li> Durée de l'accouchement : <span class="form-reply"><%= @duration%> heures</span></li>
+          <% if @patient.labours.last.labour_end %>
+            <li>Type et modalité de la délivrance : <span class="form-reply"><%= @patient.labours.last.labour_end %></span></li>
+          <% end %>
+          <% if @patient.labours.last.labour_complication %>
+            <li>Complication de la délivrance : <span class="form-y-n"> oui </span></li>
+          <% else %>
+            <li>Complication de la délivrance : <span class="form-y-n"> non </span></li>
+          <% end  %>
+
+          <% if @patient.labours.last.labour_actes_done %>
+            <li>Actes : <span class="form-y-n"> oui </span></li>
+          <% else %>
+            <li>Actes : <span class="form-y-n"> non </span></li>
+          <% end  %>
+
+          <li> Actes de la délivrance : <span class="form-reply"><%= @actesdelivrance %></span></li>
+        </ul>
+    </div>
+
+  </div>
+</div>
+
