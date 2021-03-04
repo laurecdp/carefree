@@ -195,7 +195,6 @@ label {
 
 .toggle-yes-no + label::before {
   content: '';
-  display: block;
   position: absolute;
   cursor: pointer;
   width: 36px;
@@ -212,7 +211,6 @@ label {
 
 .toggle-yes-no + label::after {
   content: '';
-  display: block;
   position: absolute;
   cursor: pointer;
   width: 16px;
@@ -229,5 +227,99 @@ label {
 }
 
 label.form-check-label.boolean.optional{
-  color: transparent;
+  color: #184ba1;
+}
+
+// DO NOT DELETE THOSE LINES WHEN ON GITHUB
+.category-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  flex: 0 0 30%;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: white;
+  border-color: $navy;
+}
+
+.category-selector:checked + label {
+  color: white !important;
+  background-color: $navy;
+}
+
+
+#labour_baby_sex_masculin + label {
+  color: $navy;
+  background-image: asset-url('male-black.svg');
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  background-position: center;
+  height: 100px;
+  background-size: 13%;
+  font-size: 12px;
+}
+
+#labour_baby_sex_masculin:checked + label {
+  background-color: $navy;
+  border-color: $navy;
+  background-image: asset-url('male.svg');
+}
+
+#labour_baby_sex_féminin + label {
+  color: $navy;
+  background-image: asset-url('female-black.svg');
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  background-position: center;
+  height: 100px;
+  background-size: 7%;
+  font-size: 13px;
+}
+
+#labour_baby_sex_féminin:checked + label {
+  background-color: $navy;
+  border-color: $navy;
+  background-image: asset-url('female.svg');
+}
+
+
+#labour_baby_sex_indéterminé + label {
+  color: $navy;
+  background-image: asset-url('no-gender-black.svg');
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  background-position: center;
+  height: 100px;
+  background-size: 13%;
+  font-size: 13px;
+}
+
+#labour_baby_sex_indéterminé:checked + label {
+  background-color: $navy;
+  border-color: $navy;
+  background-image: asset-url('no-gender.svg');
 }
