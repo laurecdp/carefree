@@ -39,7 +39,9 @@ import { slide } from "../components/form_slide";
 import { updateTextInput } from "../components/range_bubble";
 
 document.addEventListener('turbolinks:before-cache', () => {
-  document.querySelector('.flatpickr-calendar').outerHTML = '';
+  if (document.querySelector('.flatpickr-calendar')) {
+    document.querySelector('.flatpickr-calendar').outerHTML = '';
+  }
 })
 
 document.addEventListener('turbolinks:load', () => {

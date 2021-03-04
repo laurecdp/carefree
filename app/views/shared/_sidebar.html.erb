@@ -12,7 +12,7 @@
 
       <li class="action3"><a href="#"><span class="icone"><i class="fas fa-clinic-medical"></i></span><span class="label">Hospitalisation</span></a></li>
 
-      <li class="action4" id="baby-sidebar">
+      <li class="action4 <%= "sidebar-active" if params[:category] == "4"%>" id="baby-sidebar">
             <% @categories = Category.all %>
             <% @categories.each do |categorie|%>
                <% if categorie.name == "Naissance"%>

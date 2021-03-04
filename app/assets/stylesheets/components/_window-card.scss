@@ -8,7 +8,7 @@
   font-weight: lighter;
   transition: opacity 0.3s ease;
   background-color: white;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 2px solid #ff9e9e4d;
   border-radius: 10px;
   margin-bottom: 20px;
   width: 150px;
@@ -16,7 +16,12 @@
 }
 
 .card-patient-window:hover {
-  border: 5px solid $lightblue;
+  background-color: #ff9e9e4d;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 150px;
+  text-align: center;
 }
 
 .card-patient-window ul {
@@ -35,14 +40,15 @@
 }
 
 .user {
-  color: $blue;
+  color: #ff9f9fa1;
   text-align: center;
   padding-top: 5px;
 }
 
 .user .far.fa-user {
-  background-color: $lightblue;
+  background-color: #ff9e9e4d;
   padding: 12px;
+  margin-top: 10px;
   border-radius: 10px;
 }
 
