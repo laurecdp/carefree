@@ -52,7 +52,7 @@
   display: flex;
   border-radius: 1rem;
   margin-top: 15px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   justify-content: space-between;
 }
 
@@ -61,6 +61,8 @@
   background: white;
   border-radius: 8px;
   margin-bottom: 15px;
+  // overflow: hidden;
+  // height: 370px;
   h2 {
     font-size: 16px;
     color: $dark-green;
@@ -96,15 +98,11 @@
   border-radius: 2rem;
 }
 
-.content-below-card {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
 .buttons-show {
   text-decoration: none;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .buttons-show a {
@@ -115,6 +113,10 @@
 
 .buttons-show span {
   margin-left: 5px;
+}
+
+.buttons-show .button-action1, .button-action2, .button-action3, .button-action4, .button-action5, .button-action6 {
+  width: 146px;
 }
 
 

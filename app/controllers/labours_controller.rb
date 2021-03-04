@@ -44,7 +44,7 @@ class LaboursController < ApplicationController
     authorize @labour_code
     #------------#
     if @labour.save
-      render "../views/shared/_modal_form"
+      redirect_to patient_path
     else
       render :new
     end

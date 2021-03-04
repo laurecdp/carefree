@@ -106,3 +106,23 @@
   font-weight: 400;
   transition: opacity 0.3s ease;
 }
+
+#summary-form-labour {
+  overflow-y: scroll;
+    height: 270px;
+}
+
+#summary-form-labour::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+#summary-form-labour::-webkit-scrollbar-track {
+  background: #ddd;        /* color of the tracking area */
+}
+
+#summary-form-labour::-webkit-scrollbar-thumb {
+  background-color: $blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 1px solid #ddd;  /* creates padding around scroll thumb */
+}
+
