@@ -1,0 +1,5 @@
+meta_product_name: "EasyCare"
+meta_title: "EasyCare - Sauvez du temps et des vies"
+meta_description: "Le dashboard préféré des sages-femmes"
+meta_image: "midwife.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
