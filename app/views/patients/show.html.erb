@@ -35,19 +35,19 @@
             <div class="card-product-baby" id="baby-info">
               <div class="card-product-baby-info">
                 <h2>Information du bébé:</h2>
-                <p> Encore un peu tôt ! (Seulement <%=@patient.number_of_weeks%> semaines)</p> 
+                <p> Encore un peu tôt ! (Seulement <%=@patient.number_of_weeks%> semaines)</p>
               </div>
               <%= image_tag "motherhood.png" %>
             </div>
         <% end %>
 
-        
+
         <div class="card-product-labour" id="labour-info">
           <h2> Historique : </h2>
             <p> Accouchement: <%= @labour.labour_end_at %> </p>
             <p> </p>
         </div>
-        
+
 
       </div>
 
@@ -316,14 +316,20 @@
                 <div class="baby-prenom-nom">
                   <%= p.input :first_name, label: "Prénom" %>
                   <%= p.input :last_name,  label: "Nom de Famille" %>
-                </div>
+
                   <%= p.input :sex,
-                              as: :radio_buttons,
-                              collection: Baby::SEX ,label: "Sexe"  %>
-                  <%= p.input :birth_date,
-                              label: "Date et heure de naissance",
-                              as: :string,
-                              input_html: {class: "datetime-picker"}%>
+                            as: :radio_buttons,
+                            label: "Sexe",
+                            collection_wrapper_tag: 'div',
+                            collection_wrapper_class: 'category-wrapper',
+                            item_wrapper_class: 'category-item',
+                            input_html: {class: 'category-selector'},
+                            collection: Baby::SEX %>
+
+                <%= p.input :birth_date,
+                            label: "Date et heure de naissance",
+                            as: :string,
+                            input_html: {class: "datetime-picker"}%>
 
                     <%= p.input :weight,
                                 label: "Poids (kg)",
