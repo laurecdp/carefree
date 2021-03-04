@@ -1,0 +1,12 @@
+.boolean-switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 3rem;
+  fieldset, label {
+    margin: 0;
+  }
+  label:hover {
+    cursor: pointer;
+  }
+}
