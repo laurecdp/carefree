@@ -195,7 +195,6 @@ label {
 
 .toggle-yes-no + label::before {
   content: '';
-  display: block;
   position: absolute;
   cursor: pointer;
   width: 36px;
@@ -212,7 +211,6 @@ label {
 
 .toggle-yes-no + label::after {
   content: '';
-  display: block;
   position: absolute;
   cursor: pointer;
   width: 16px;
