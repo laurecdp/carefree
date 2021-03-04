@@ -44,6 +44,8 @@ gem 'simple_form'
 # Seed
 gem 'faker', '~> 2.16.0'
 
+gem 'rails-i18n'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
