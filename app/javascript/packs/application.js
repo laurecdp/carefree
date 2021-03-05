@@ -36,7 +36,7 @@ import { filterpatients } from '../components/filter-patients';
 import { initSelect2 } from '../components/select2';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { slide } from "../components/form_slide";
-import { updateTextInput } from "../components/range_bubble";
+// import { updateTextInput } from "../components/range_bubble";
 
 document.addEventListener('turbolinks:before-cache', () => {
   if (document.querySelector('.flatpickr-calendar')) {
@@ -46,12 +46,10 @@ document.addEventListener('turbolinks:before-cache', () => {
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
-  // Call your functions here, e.g:
   // sidebar();
   popup();
   initSelect2();
   searchWindow();
-  // initFlatpickr();
   searchForm();
   searchautocomplete();
   searchbirthautocomplete();

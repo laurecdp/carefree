@@ -63,7 +63,8 @@
               <div class="card-product-baby" id="baby-info">
                 <div class="card-product-baby-info">
                   <h2>Informations du bébé <span><%= "#{baby.first_name}" %> <%= "#{baby.last_name}" %></span> </h2>
-                  <h3><%= "#{baby.birth_date.strftime("%-d %b %Y")}" %></h3>
+                  <h3> <%= I18n.l baby.birth_date, format: "%A %e %B %Y", locale: :fr %> </h3>
+                  
                   <div class="baby-info">
                     <div class="sex-info">
                       <div><i class="fas fa-venus-mars"></i></div>
@@ -169,36 +170,36 @@
                     <%= l.input :diagnostic, label: "Diagnostique :", placeholder: "Écrivez votre diagnostique" %>
                   </div>
                 <% end %>
-              </div>
 
-              <div id= "artificial-labour">
-                <%= f.input :artificial_labour,
-                            label: 'Motif de déclenchement artificiel',
-                            as: :select,
-                            input_html: { class: "select2" },
-                            collection: Labour::ARTIFICIAL_LABOUR,
-                            include_hidden: false%>
-              </div>
+                <div id= "artificial-labour">
+                  <%= f.input :artificial_labour,
+                              label: 'Motif de déclenchement artificiel',
+                              as: :select,
+                              input_html: { class: "select2" },
+                              collection: Labour::ARTIFICIAL_LABOUR,
+                              include_hidden: false%>
+                </div>
 
-              <div id="labour-drugs">
-                <%= f.input :labour_drugs,
-                            label: 'Moyens utilisés',
-                            as: :check_boxes,
-                            collection: Labour::LABOUR_DRUGS,
-                            include_hidden: false %>
-              </div>
-
-              <%= f.simple_fields_for :labour_codes do |l| %>
-                  <%= l.input :code_id,
-                              label: "Cochez les codes associés :",
+                <div id="labour-drugs">
+                  <%= f.input :labour_drugs,
+                              label: 'Moyens utilisés',
                               as: :check_boxes,
-                              include_blank: :false,
-                              collection: Code.where(category: "Pharmacie") %>
+                              collection: Labour::LABOUR_DRUGS,
+                              include_hidden: false %>
+                </div>
 
-                  <%= l.input :diagnostic,
-                              label: "Diagnostique :",
-                              placeholder: "Écrivez votre diagnostique" %>
-              <% end %>
+                <%= f.simple_fields_for :labour_codes do |l| %>
+                    <%= l.input :code_id,
+                                label: "Cochez les codes associés :",
+                                as: :check_boxes,
+                                include_blank: :false,
+                                collection: Code.where(category: "Pharmacie") %>
+
+                    <%= l.input :diagnostic,
+                                label: "Diagnostique :",
+                                placeholder: "Écrivez votre diagnostique" %>
+                <% end %>
+              </div>
             </div>
 
             <div class="container-button-1">
@@ -209,12 +210,15 @@
           </fieldset>
 
           <fieldset class= "form_step" data-step="2">
-            <h3 class="fs-title">Anésthésie</h3>
-            <div id="anaesthesia">
+            <h3 class="fs-title">Anesthésie</h3>
+            <div class="boolean-switch-container" id="anaesthesia">
+              <%= label_tag :anaesthesia, for: "labour_anaesthesia" do  %>
+                Avez-vous dû effectuer une anesthésie ?
+              <% end %>
               <%= f.input :anaesthesia,
-                          label: 'Avez-vous du faire une anésthésie?',
+                          label: '&nbsp;'.html_safe,
                           as: :boolean,
-                          input_html: { class: "toggle-yes-no"} %>
+                          input_html: { class: "toggle-yes-no", "data-id" => "form-step-2-labour-wrap" } %>
             </div>
 
             <div class="labour-wrap d-none" id="form-step-2-labour-wrap">
@@ -229,18 +233,19 @@
               </div>
 
               <%# Anésthésie loco-générale %>
-              <div id= "anesthesia-loco-general">
-                <%= f.input :anaesthesia_loco_general, label: 'Anésthésie loco-régionale',  as: :select, collection: Labour::ANAESTHESIA_LOCO_GENERAL, include_hidden: false %>
+
+              <div id= "anesthesia-loco-general" class="labour-wrap d-none">
+                <%= f.input :anaesthesia_loco_general, label: 'Anesthésie loco-régionale',  as: :select, collection: Labour::ANAESTHESIA_LOCO_GENERAL, include_hidden: false %>
               </div>
 
               <%# Anésthésie générale %>
-              <div id= "anesthesia-general">
-                <%= f.input :anaesthesia_general,  label: 'Anésthésie générale', as: :select, collection: Labour::ANAESTHESIA_GENERAL, include_hidden: false %>
+              <div id= "anesthesia-general" class="labour-wrap d-none">
+                <%= f.input :anaesthesia_general,  label: 'Anesthésie générale', as: :select, collection: Labour::ANAESTHESIA_GENERAL, include_hidden: false %>
               </div>
 
               <%# Moment de l'anésthesie %>
               <div id= "moment-anesthesia">
-                <%= f.input :anaesthesia_moment, label: 'Moment de l\'anésthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
+                <%= f.input :anaesthesia_moment, label: 'Moment de l\'anesthésie', as: :select, collection: Labour::ANAESTHESIA_MOMENT, include_hidden: false %>
               </div>
 
               <%# ------------Partie codes------------- %>
@@ -264,11 +269,14 @@
 
             <%# -----Délivrance----------------------------------- %>
 
-            <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false %>
+            <%= f.input :labour_end, label: 'Type et modalité de la délivrance', as: :check_boxes, collection: Labour::LABOUR_END, include_hidden: false,input_html: { class: "delivrance-check-boxes" } %>
 
-            <div id= "complications">
+            <div class="boolean-switch-container" id= "complications">
+              <%= label_tag :labour_complication, for: "labour_labour_complication" do  %>
+                Y-a t-il eu des complications ?
+              <% end %>
               <%= f.input :labour_complication,
-                          label: 'Y-a t-il eu des complications?',
+                          label: '&nbsp;'.html_safe,
                           as: :boolean,
                           input_html: { class: "toggle-yes-no", "data-id" => "form-step-3-labour-wrap" } %>
             </div>
@@ -284,10 +292,14 @@
               <% end %>
             </div>
 
-            <div id= "actes">
+            <div id="actes" class="boolean-switch-container">
+             <%= label_tag :labour_actes_done, for: "labour_labour_actes_done" do  %>
+                Avez-vous dû effectuer des actes ?
+              <% end %>
+
               <%= f.input :labour_actes_done,
                           as: :boolean,
-                          label: "Avez-vous du effectuer des actes?",
+                          label: '&nbsp;'.html_safe,
                           input_html: { class: "toggle-yes-no",
                           "data-id" => "form-step-4-labour-wrap"} %>
             </div>
@@ -329,7 +341,7 @@
                             label: "Date et heure de naissance",
                             as: :string,
                             input_html: {class: "datetime-picker"}%>
-
+                  <div class="poids-taille-tete">
                     <%= p.input :weight,
                                 label: "Poids (kg)",
                                 input_html: {min: 1, max: 10, step: 0.1}%>
@@ -344,11 +356,19 @@
                   <br>
 
                   <h4 class="fs-title" id="complication">Complications</h4>
+
+                  </div>
+
                   <%# Partie monitoring %>
-                      <%= p.input :monitoring,
-                                  label: "Avez vous effectué un monitorage?",
+                  <div class="boolean-switch-container">
+                    <%= label_tag :monitoring, for: "labour_baby_monitoring" do  %>
+                       Avez-vous effectué un monitoring ?
+                     <% end %>
+                    <%= p.input :monitoring,
+                                  label: "&nbsp;".html_safe,
                                   as: :boolean,
                                   input_html: { class: "toggle-yes-no", "data-id" => "form-step-5-labour-wrap"} %>
+                  </div>
 
                   <div class="labour-wrap d-none" id="form-step-5-labour-wrap">
                       <%= p.input :monitoring_options, collection: Baby::MONITORINGOPTIONS, as: :check_boxes, label: "Type de monitorage", input_html: { multiple: true }, include_hidden: false  %>
@@ -360,10 +380,15 @@
                   </div>
 
                   <%# Partie réanimation %>
+                  <div class="boolean-switch-container">
+                    <%= label_tag :intensivecare, for: "labour_baby_intensivecare" do  %>
+                       Avez-vous effectué une réanimation ?
+                     <% end %>
                     <%= p.input :intensivecare,
-                                label: "Avez vous effectué un réanimation?",
+                                label: "&nbsp;".html_safe,
                                 as: :boolean,
                                 input_html: { class: "toggle-yes-no", "data-id" => "form-step-6-labour-wrap"} %>
+                  </div>
 
                   <div class="labour-wrap d-none" id="form-step-6-labour-wrap">
                       <%= p.input :intensivecare_options, collection: Baby::INTENSIVECAREOPTIONS, as: :check_boxes, label: "Actes de réanimation", input_html: { multiple: true }, include_hidden: false  %>
@@ -375,10 +400,16 @@
                   </div>
 
                   <%# Partie infections %>
-                    <%= p.input :infectiouscontext,
-                                label: "Avez-vous observé des infections chez le bébé?",
+                    <div class="boolean-switch-container">
+                     <%= label_tag :infectiouscontext, for: "labour_baby_infectiouscontext" do  %>
+                       Avez-vous observé des infections chez le bébé ?
+                     <% end %>
+                      <%= p.input :infectiouscontext,
+                                label: "&nbsp;".html_safe,
                                 as: :boolean,
                                 input_html: { class: "toggle-yes-no", "data-id" => "form-step-7-labour-wrap"} %>
+
+                    </div>
 
                   <div class="labour-wrap d-none" id="form-step-7-labour-wrap">
                       <%= p.input :infectiouscontext_options, collection: Baby::INFECTIOUSCONTEXTOPTIONS, as: :check_boxes, label: "Types d'infections", input_html: { multiple: true }, include_hidden: false  %>
@@ -390,15 +421,26 @@
                   </div>
 
                   <%# Partie pathologies %>
+                  <div class="boolean-switch-container">
+                   <%= label_tag :malformation, for: "labour_baby_malformation" do  %>
+                     Avez-vous observé des malformations chez le bébé ?
+                   <% end %>
                     <%= p.input :malformation,
-                                label: "Avez-vous observé des malformations chez le bébé?",
+                                label: "&nbsp;".html_safe,
                                 as: :boolean,
                                 input_html: { class: "toggle-yes-no" } %>
+                  </div>
 
+                  <div class="boolean-switch-container">
+                    <%= label_tag :pathology, for: "labour_baby_pathology" do  %>
+                      Avez-vous observé des pathologies chez le bébé ?
+                    <% end %>
                     <%= p.input :pathology,
-                                label: "Avez-vous observé des pathologies chez le bébé?",
+                                label: "&nbsp;".html_safe,
                                 as: :boolean,
                                 input_html: { class: "toggle-yes-no" } %>
+                  </div>
+
 
                   <%= p.input :breastfeeding,
                               collection: Baby::BREASTFEEDING,
