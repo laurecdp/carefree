@@ -29,13 +29,7 @@
     "libelle": "Accouchement par césarienne au cours du travail, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 362.61
   },
-  {
-    "acte": "JQGD012",
-    "category": "Travail spontané",
-    "regroupement": "Acte d'obstétrique",
-    "libelle": "Accouchement céphalique unique par voie naturelle, chez une multipare",
-    "tarif_secteur_1_adherent_optam_optam_co": 313.5
-  },
+
   {
     "acte": "JNJD002",
     "category": "Acte",
@@ -75,14 +69,6 @@
     "libelle": "Accouchement par césarienne programmée, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
   },
-
-  {
-    "acte": "DZQJ001",
-    "category": "Travail spontané",
-    "regroupement": "Acte d'échographie",
-    "libelle": "Échographie-doppler du cœur et des vaisseaux intrathoraciques, par voie œsophagienne [Échocardiographie-doppler transœsophagienne]",
-    "tarif_secteur_1_adherent_optam_optam_co": 143.08
-  },
  
   {
     "acte": "JKFA031",
@@ -90,14 +76,6 @@
     "regroupement": "Actes d'anesthésie/Actes de chirurgie",
     "libelle": "Conisation du col de l'utérus",
     "tarif_secteur_1_adherent_optam_optam_co": 93.42
-  },
-
-  {
-    "acte": "JQGD010",
-    "category": "Travail spontané",
-    "regroupement": "Acte d'obstétrique",
-    "libelle": "Accouchement céphalique unique par voie naturelle, chez une primipare",
-    "tarif_secteur_1_adherent_optam_optam_co": 313.5
   },
 
   {
@@ -122,14 +100,6 @@
     "regroupement": "Actes d'anesthésie/Acte d'obstétrique",
     "libelle": "Accouchement par césarienne programmée, par laparotomie",
     "tarif_secteur_1_adherent_optam_optam_co": 313.5
-  },
- 
-  {
-    "acte": "AFLB010",
-    "category": "Travail spontané",
-    "regroupement": "Actes d'anesthésie/Actes d'anesthésie",
-    "libelle": "Anesthésie rachidienne au cours d'un accouchement par voie basse",
-    "tarif_secteur_1_adherent_optam_optam_co": ""
   },
 
   {
