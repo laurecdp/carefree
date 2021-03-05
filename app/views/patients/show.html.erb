@@ -64,7 +64,7 @@
                 <div class="card-product-baby-info">
                   <h2>Informations du bébé <span><%= "#{baby.first_name}" %> <%= "#{baby.last_name}" %></span> </h2>
                   <h3> <%= I18n.l baby.birth_date, format: "%A %e %B %Y", locale: :fr %> </h3>
-                  
+
                   <div class="baby-info">
                     <div class="sex-info">
                       <div><i class="fas fa-venus-mars"></i></div>
@@ -339,25 +339,26 @@
 
                   <%= p.input :birth_date,
                             label: "Date et heure de naissance",
+                            label_html: {class: "subtitle"},
                             as: :string,
                             input_html: {class: "datetime-picker"}%>
+                  <h4 class="fs-title" id="complication">Mensurations</h4>
                   <div class="poids-taille-tete">
                     <%= p.input :weight,
                                 label: "Poids (kg)",
                                 input_html: {min: 1, max: 10, step: 0.1}%>
-                  <br>
-                    <%= p.input :heigh,
-                              label: "Taille",
-                              input_html: {min: 20, max: 65, step: 1} %>
-                  <br>
-                    <%= p.input :head_circumference,
-                              label: "Périmètre crânien",
-                              input_html: {min: 30, max: 45, step: 1}%>
-                  <br>
+                    <br>
+                      <%= p.input :heigh,
+                                label: "Taille",
+                                input_html: {min: 20, max: 65, step: 1} %>
+                    <br>
+                      <%= p.input :head_circumference,
+                                label: "Périmètre crânien",
+                                input_html: {min: 30, max: 45, step: 1}%>
+                    <br>
+                  </div>
 
                   <h4 class="fs-title" id="complication">Complications</h4>
-
-                  </div>
 
                   <%# Partie monitoring %>
                   <div class="boolean-switch-container">
