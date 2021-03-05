@@ -100,9 +100,10 @@
 
 .buttons-show {
   text-decoration: none;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(146px, 1fr));
+  width: 70%;
+  margin: 0 auto 50px;
 }
 
 .buttons-show a {
