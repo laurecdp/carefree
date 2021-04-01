@@ -1,0 +1,42 @@
+<div class="new-patient-container">
+
+  <div class="container-patientform" id="patientform">
+
+    <h3 class="fs-title">Admission</h3>
+
+    <%= simple_form_for @patient do |f| %>
+    <div class="patient-prenom-nom">
+      <%= f.input :first_name, label: "Prénom" %>
+      <%= f.input :last_name, label: "Nom de famille" %>
+    </div>
+    <%= f.input :birth_date, 
+                label: "Date de naissance",
+                label_html: {class: "subtitle"},
+                as: :string,
+                input_html: {class: "birthdatepicker"} %>
+    <%= f.input :age, 
+                label: "Age",
+                input_html: {min: 10, max: 65, step: 1}%>
+    <%= f.input :nss, label: "Sécurité Sociale" %>
+    <%= f.input :blood_group, label: "Groupe sanguin" %>
+    <div class="boolean-switch-container" id="pregnant">
+      <%= label_tag :pregnant, for: "patient_pregnant" do  %>
+      La patiente est-elle enceinte?
+      <% end %>
+      <%= f.input :pregnant, 
+                  label: "&nbsp;".html_safe,
+                  as: :boolean,
+                  input_html: { class: "toggle-yes-no" } %>
+    </div>
+    <%= f.input :number_of_weeks, 
+                label: "Nombre de semaines",
+                input_html: {min: 1, max: 45, step: 1}%>
+    <%= f.button :submit,
+                name: "Faire l'admission",
+                class: "btn btn-ghost",
+                value: "Faire l'admission" %>
+    <% end %>
+
+  </div>
+
+</div>

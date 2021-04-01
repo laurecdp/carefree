@@ -1,0 +1,21 @@
+.new-patient-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.container-patientform {
+  text-align: center;
+  background: white;
+  border: 0 none;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  position: relative;
+
+}
+
+.patient-prenom-nom {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -5,8 +5,13 @@
     <% end %>
   </div>
     <ul>
-
-      <li class="action1"><a href="#"><span class="icone"><i class="fas fa-user-plus"></i></span><span class="label">Admission</span></a></li>
+      <%= link_to(new_patient_path) do %>
+        <li class="action1">
+          <span class="icone"><i class="fas fa-user-plus"></i></span>
+          <span class="label">Admission</span>
+        </li>
+      <% end %>
+      
 
       <li class="action2"><a href="#"><span class="icone"><i class="fas fa-stethoscope"></i></span><span class="label">Consultation</span></a></li>
 

@@ -1,4 +1,19 @@
 class PatientsController < ApplicationController
+  def new
+    @patient = Patient.new
+    authorize @patient
+  end
+
+  def create
+    @patient = Patient.new(patient_params)
+    if @patient.save 
+      redirect_to patient_path(@patient)
+    else
+      render :new
+    end
+    authorize @patient
+  end
+
   def index
     @patients = policy_scope(Patient).order(created_at: :desc)
     if params[:search] && params[:search][:query]
@@ -32,15 +47,19 @@ class PatientsController < ApplicationController
     @patient = Patient.new
   end
 
-  def create
-  end
-
   def update
   end
 
   private
 
   def patient_params
-    params.require(:patient).permit(:first_name, :last_name, :age, :birth_date, :nss, :description, :number_of_weeks)
+    params.require(:patient).permit(:first_name,
+                                    :last_name,
+                                    :age,
+                                    :birth_date,
+                                    :nss,
+                                    :blood_group,
+                                    :pregnant,
+                                    :number_of_weeks)
   end
 end
