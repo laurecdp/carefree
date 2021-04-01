@@ -1,17 +1,21 @@
 class PatientsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show, :new]
+
   def new
     @patient = Patient.new
     authorize @patient
   end
 
   def create
-    @patient = Patient.new(patient_params)
-    if @patient.save 
-      redirect_to patient_path(@patient)
-    else
-      render :new
+    if current_user == current_user
+      @patient = Patient.new(patient_params)
+      authorize @patient
+      if @patient.save
+        redirect_to patient_path(@patient)
+      else
+        render :new
+      end
     end
-    authorize @patient
   end
 
   def index
