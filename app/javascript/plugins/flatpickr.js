@@ -9,6 +9,12 @@ const initFlatpickr = () => {
   "locale": French,
   });
 
+  flatpickr(".birthdatepicker", {
+    defaultDate: "10/05/1990",
+    dateFormat: "d-m-Y",
+    "locale": French,
+  });
+
   flatpickr(".datetime-picker", {
     altInput: true,
     altFormat: "d F Y  -  H:i",
