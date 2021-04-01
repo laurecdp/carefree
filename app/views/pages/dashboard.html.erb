@@ -2,7 +2,11 @@
   <div class="container-dashboard">
     <div class="card-product" id= "welcome-message">
       <div class="card-product-infos">
-        <h2>Bonjour <%= current_user.first_name %></h2>
+        <% if current_user %>
+          <h2>Bonjour <%= current_user.first_name %></h2>
+        <% else %>
+          <h2>Bonjour</h2>
+        <% end %>
         <p>Passez une belle journée !</p>
       </div>
       <div class="card-image">

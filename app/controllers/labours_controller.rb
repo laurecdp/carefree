@@ -46,7 +46,7 @@ class LaboursController < ApplicationController
     if @labour.save
       redirect_to patient_path(@patient)
     else
-      render :new
+      render :show
     end
   end
 

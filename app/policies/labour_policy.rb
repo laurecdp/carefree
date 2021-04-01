@@ -20,7 +20,7 @@ class LabourPolicy
 
   def show?
     true
-  end 
+  end
 
   def edit?
     update?
