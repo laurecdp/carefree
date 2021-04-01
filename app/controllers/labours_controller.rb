@@ -1,4 +1,5 @@
 class LaboursController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :new]
 
   def show
     @labour = Labour.find(params[:id])
@@ -23,30 +24,32 @@ class LaboursController < ApplicationController
   end
 
   def create
-    @categories = Category.all
-    @codes = Code.all
-    @labour = Labour.new(labour_params)
-    @patient = @labour.patient
-    @labour_id = @labour.id
-    # Form "baby" nested in form "Labour"
-    @baby = Baby.new(baby_params[:baby])
-    @baby.patient = @patient
-    @baby.save
-    # Form "Labour_codes" included in form "Labour"
-    @labour_code = LabourCode.new(labour_code_params[:labour_codes_attributes]["0"])
-    @labour_code.labour_id = @labour_id
-    @labour_code.save
-    #------------#
-    @labour.user = current_user
-    #------------#
-    authorize @labour
-    authorize @baby
-    authorize @labour_code
-    #------------#
-    if @labour.save
-      redirect_to patient_path(@patient)
-    else
-      render :show
+    if current_user == current_user
+      @categories = Category.all
+      @codes = Code.all
+      @labour = Labour.new(labour_params)
+      @patient = @labour.patient
+      @labour_id = @labour.id
+      # Form "baby" nested in form "Labour"
+      @baby = Baby.new(baby_params[:baby])
+      @baby.patient = @patient
+      @baby.save
+      # Form "Labour_codes" included in form "Labour"
+      @labour_code = LabourCode.new(labour_code_params[:labour_codes_attributes]["0"])
+      @labour_code.labour_id = @labour_id
+      @labour_code.save
+      #------------#
+      @labour.user = current_user
+      #------------#
+      authorize @labour
+      authorize @baby
+      authorize @labour_code
+      #------------#
+      if @labour.save
+        redirect_to patient_path(@patient)
+      else
+        render :new
+      end
     end
   end
 
