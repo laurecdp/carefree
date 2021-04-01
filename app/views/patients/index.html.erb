@@ -1,21 +1,23 @@
 <div class= "container">
-  <div class="title"><h2>Patientes</h2></div>
+  <div class="index-title"><h2>Mes patientes</h2></div>
 
-  <div class="cards-index">
+  <div class="cards-index-container">
     <% @patients.each do |patient| %>
-      <div class="card-patient">
-        <%= link_to(patient_path(patient.id)) do %>
-        <div class="card-title">
-          <h3><%= "#{patient.first_name} #{patient.last_name}" %></h3>
-        </div>
-        <% end %>
-        <ul>
-          <li><%= patient.age %> ans</li>
-          <li><%= patient.birth_date %></li>
-          <li><%= patient.nss %></li>
-          <li><%= patient.number_of_weeks %> semaines</li>
-        </ul>
-      </div>
+        <div class="card-index">
+          <span class="badge">Enceinte</span>
+          <span class="badge2"><i class="far fa-clock"></i> <%= patient.number_of_weeks %> semaines</span>
+          <%= link_to(patient_path(patient.id)) do %>
+          <h2><%= "#{patient.first_name} #{patient.last_name}" %></h2>
+          <% end %>
+          <% d = patient.birth_date %>
+          <% age = d.strftime("%d/%m/%y") %>
+          <p><%= "#{patient.age} ans (#{age})" %></p>
+          <p><i class="far fa-address-card"></i> <%= patient.nss %></p>
+          <p><i class="fas fa-vial"></i> <%= patient.blood_group %> </p>
+        </div> 
     <% end %>
   </div>
+
+  </div>
 </div>
+
