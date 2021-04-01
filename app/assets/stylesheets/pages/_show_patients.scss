@@ -60,16 +60,19 @@
   padding: 20px;
   background: white;
   border-radius: 8px;
-  margin-bottom: 15px;
-  // overflow: hidden;
-  // height: 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   h2 {
-    font-size: 16px;
-    color: $dark-green;
+    font-size: 22px;
     font-weight: 600;
+    color: $navy;
   }
   p {
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFC0C7;
   }
   img {
     padding: 0px;
@@ -127,6 +130,12 @@
   &.active {
     display: block;
   }
+}
+
+.container-card-baby {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 22px;
 }
 
 // -----------------------------//

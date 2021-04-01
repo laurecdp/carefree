@@ -88,17 +88,22 @@
               </div>
             <% end %>
           <% else %>
-            <div class="card-product-baby" id="baby-info">
-              <div class="card-product-baby-info">
-                <h2>Infos du bébé</h2>
-                <p> Encore un peu tôt !</p>
-                <!-- <p>(Seulement <%=@patient.number_of_weeks%> semaines)</p> -->
+            <div class="container-card-baby">
+              <div class="card-product-baby" id="baby-info">
+                <div class="card-product-baby-info">
+                  <h2>Infos du bébé</h2>
+                  <p> Encore un peu tôt !</p>
+                  <!-- <p>(Seulement <%=@patient.number_of_weeks%> semaines)</p> -->
+                </div>
+                <%= image_tag "motherhood.png" %>
+                </div>
+
+              <div class="card-product-labour" id="labour-info">
+                <div class="card-product-labour-info">
+                  <h2>Infos accouchement</h2>
+                  <p>A venir !</p>
+                </div>
               </div>
-              <%= image_tag "motherhood.png" %>
-            </div>
-            <div class="card-product-labour" id="labour-info">
-              <h2>Infos accouchement</h2>
-              <p>A venir !</p>
             </div>
           <% end %>
         </div>
