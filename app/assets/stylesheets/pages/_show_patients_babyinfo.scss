@@ -4,21 +4,26 @@
   margin: 20px 0 50px;
 }
 
+.card-product-baby-info {
+  padding: 20px;
+}
+
 .card-product-baby {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 30px;
   background: white;
   border-radius: 8px;
-  margin-bottom: 30px;
   h2 {
     font-size: 22px;
     font-weight: 600;
     color: $navy;
-    text-align: center;
   }
   p {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFC0C7;
   }
   img {
     padding: 0px;

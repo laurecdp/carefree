@@ -64,7 +64,7 @@
                 <div class="card-product-baby-info">
                   <h2>Informations du bébé <span><%= "#{baby.first_name}" %> <%= "#{baby.last_name}" %></span> </h2>
                   <h3> <%= I18n.l baby.birth_date, format: "%A %e %B %Y", locale: :fr %> </h3>
-                  
+
                   <div class="baby-info">
                     <div class="sex-info">
                       <div><i class="fas fa-venus-mars"></i></div>
@@ -88,17 +88,22 @@
               </div>
             <% end %>
           <% else %>
-            <div class="card-product-baby" id="baby-info">
-              <div class="card-product-baby-info">
-                <h2>Infos du bébé</h2>
-                <p> Encore un peu tôt !</p>
-                <!-- <p>(Seulement <%=@patient.number_of_weeks%> semaines)</p> -->
+            <div class="container-card-baby">
+              <div class="card-product-baby" id="baby-info">
+                <div class="card-product-baby-info">
+                  <h2>Infos du bébé</h2>
+                  <p> Encore un peu tôt !</p>
+                  <!-- <p>(Seulement <%=@patient.number_of_weeks%> semaines)</p> -->
+                </div>
+                <%= image_tag "motherhood.png" %>
+                </div>
+
+              <div class="card-product-labour" id="labour-info">
+                <div class="card-product-labour-info">
+                  <h2>Infos accouchement</h2>
+                  <p>A venir !</p>
+                </div>
               </div>
-              <%= image_tag "motherhood.png" %>
-            </div>
-            <div class="card-product-labour" id="labour-info">
-              <h2>Infos accouchement</h2>
-              <p>A venir !</p>
             </div>
           <% end %>
         </div>
