@@ -1,6 +1,6 @@
 const searchForm = () => {
 
-  /* Partie 1 du Form "Résumé de l'accouchement */
+  /* Display or hide form's parts */
   if (document.getElementById("msform")) {
 
     const tagItem = document.querySelectorAll(".tag-item");
@@ -18,6 +18,7 @@ const searchForm = () => {
       });
     });
 
+    /* Manage the interactions with the toggle buttons */
     const toggleButtons = document.querySelectorAll(".toggle-yes-no");
     toggleButtons.forEach(element => {
       element.addEventListener("click", (event) => {
