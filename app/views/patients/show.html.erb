@@ -2,17 +2,29 @@
   <div class="container-dashboard">
     <div class="card-product" id= "patient-info">
       <div class="card-infos">
-        <span class="badge">Enceinte</span>
-        <span class="badge2"><i class="far fa-clock"></i> <%= @patient.number_of_weeks %> semaines</span>
-        <h2><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
-        <% d = @patient.birth_date %>
-        <% age = d.strftime("%d/%m/%y") %>
-        <p><%= "#{@patient.age} ans (#{age})" %></p>
-        <p><i class="far fa-address-card"></i> <%= @patient.nss %></p>
-        <p><i class="fas fa-vial"></i> <%= @patient.blood_group %> </p>
-      </div>
-      <%= image_tag "pregnant.jpg" %>
+        <% if @patient.babies.any? %>
+          <h2><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
+          <% d = @patient.birth_date %>
+          <% age = d.strftime("%d/%m/%y") %>
+          <p><%= "#{@patient.age} ans (#{age})" %></p>
+          <p><i class="far fa-address-card"></i> <%= @patient.nss %></p>
+          <p><i class="fas fa-vial"></i> <%= @patient.blood_group %> </p>
+        </div>
+        <%= image_tag "pregnant.jpg" %>
+        <% else %>
+          <span class="badge">Enceinte</span>
+          <span class="badge2"><i class="far fa-clock"></i> <%= @patient.number_of_weeks %> semaines</span>
+          <h2><%= "#{@patient.first_name} #{@patient.last_name}" %></h2>
+          <% d = @patient.birth_date %>
+          <% age = d.strftime("%d/%m/%y") %>
+          <p><%= "#{@patient.age} ans (#{age})" %></p>
+          <p><i class="far fa-address-card"></i> <%= @patient.nss %></p>
+          <p><i class="fas fa-vial"></i> <%= @patient.blood_group %> </p>
+        </div>
+        <%= image_tag "pregnant.jpg" %>
+        <% end %>
     </div>
+
     <% if !params[:category] %>
       <div class="content-below-card">
         <div class="buttons-show">
@@ -53,7 +65,7 @@
 
           <%= link_to(patient_path) do %>
             <button type="button" class="button-action6">
-              <i class="fas fa-print fa-sm"></i><span>Impression</span>
+              <i class="fas fa-print fa-sm"></i><span>Impressions</span>
             </button>
           <% end %>
         </div>
@@ -81,6 +93,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="card-product-labour" id="labour-info">
                 <div class="form-summary">
                   <%= render 'shared/summary_form' %>
@@ -93,7 +106,6 @@
                 <div class="card-product-baby-info">
                   <h2>Infos du bébé</h2>
                   <p> Encore un peu tôt !</p>
-                  <!-- <p>(Seulement <%=@patient.number_of_weeks%> semaines)</p> -->
                 </div>
                 <%= image_tag "motherhood.png" %>
                 </div>

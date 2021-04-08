@@ -63,11 +63,12 @@
 
             <% if @labour.labour_actes_done %>
               <li>Actes : <span class="form-y-n"> oui </span></li>
+              <li> Actes de la délivrance : <span class="form-reply"><%= @actesdelivrance %></span></li>
             <% else %>
               <li>Actes : <span class="form-y-n"> non </span></li>
+              <li> Actes de la délivrance : <span class="form-y-n"> non </span></li>
             <% end  %>
 
-            <li> Actes de la délivrance : <span class="form-reply"><%= @actesdelivrance %></span></li>
           </ul>
       </div>
 
